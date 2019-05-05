@@ -1,0 +1,11 @@
+.DS_Store
+.env.*
+.vscode/settings.json
+/build
+/coverage
+/node_modules
+/tmp
+npm-debug.log*
+TODO.md
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,42 @@
+.header {
+  background: #fff;
+  padding: 35px 0;
+}
+
+.wrapper {
+  max-width: 1224px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin-right: 15px;
+}
+
+.breadcrumb {
+  display: inline-block;
+  text-align: left;
+}
+
+.heading {
+  text-align: left;
+  padding: 0 5px;
+}
+
+@media (max-width: 1224px) {
+  .header {
+    padding: 17px 0;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+  }
+}

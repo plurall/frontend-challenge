@@ -1,0 +1,23 @@
+{
+  "extends": "plurall/react",
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-double"],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to", "hrefLeft", "hrefRight"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "no-confusing-arrow": "off",
+    "react/no-danger": "off",
+    "react/no-typos": "off"
+  }
+}

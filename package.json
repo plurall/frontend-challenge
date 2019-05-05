@@ -1,0 +1,58 @@
+{
+  "name": "somos-front-end-challange",
+  "private": false,
+  "version": "0.1.0",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "client-oauth2": "^4.1.0",
+    "md5": "^2.2.1",
+    "plurall-footer": "^2.4.29",
+    "plurall-header": "^5",
+    "plurall-tracker": "1",
+    "plurall-ui": "^0.3.0",
+    "prop-types": "^15.6.2",
+    "query-string": "^5.1.0",
+    "react": "^16.2.0",
+    "react-app-polyfill": "^0.1.3",
+    "react-app-rewired": "^1.5.2",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "2.1.0",
+    "styled-jsx": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2",
+    "eslint-config-plurall": "^1.5.28",
+    "eslint-plugin-prettier": "^3.0.0",
+    "jsencrypt": "^3.0.0-rc.1",
+    "lint-staged": "^7.0.0",
+    "opn": "^5.4.0",
+    "prettier": "^1.15.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --no-semi --trailing-comma all --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "build": "react-app-rewired build",
+    "lint": "eslint src/",
+    "precommit": "lint-staged",
+    "start": "react-app-rewired start",
+    "test": "react-scripts test"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  }
+}
