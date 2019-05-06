@@ -35,7 +35,9 @@ npm start
 
 Após os passos acima, você conseguirá abrir a aplicação em http://boilerplate.local.plurall.net:3000/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
 
-Isso quer dizer que o projeto esta funcionando. Porém, para esse desafio, queremos que você use a API do Spotify para autenticação. Como eles também usam OAuth, trocar a configuração do projeto é bem simples. Basta seguir os passos abaixo:
+Isso quer dizer que o projeto esta funcionando. Porém, para esse desafio, queremos que você use a API do Spotify para autenticação.
+
+Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
 
 ## Setup Spotify API
 
