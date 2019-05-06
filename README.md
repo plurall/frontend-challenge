@@ -84,3 +84,6 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
 
+Agora voce já pode fazer o [desafio](/CHALLENGE.md)
+
+Boa Sorte!
