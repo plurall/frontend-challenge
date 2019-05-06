@@ -29,7 +29,6 @@ class Layout extends Component {
   render() {
     const {
       props: { children },
-      state: { menu },
     } = this
 
     const { content, footer, 'nav-bar': navBar } = styles
@@ -39,7 +38,7 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 16739 }] },
+              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
             }}
             logout={this.handleLogout}
             service="reader"

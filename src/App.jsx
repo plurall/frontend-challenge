@@ -21,9 +21,7 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <Switch>
-          <PrivateRoute path="/" component={Home} />
-        </Switch>
+        <Home />
       </Layout>
     )
   }
