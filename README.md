@@ -15,6 +15,7 @@ Esse projeto é um `boilerplate` baseado nos projetos do [Plurall](https://plura
 Abaixo estão algumas caracteristicas que achamos importantes:
 
 - Organização e legibilidade do código.
+- Simplicidade.
 - Boas praticas.
 - Conhecimento de Javascript.
 - Conhecimento de React.
