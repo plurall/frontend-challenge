@@ -6,7 +6,7 @@
 
 Nesse desafio iremos avaliar o seu conhecimento nas tecnologias de front-end utilizadas no [Plurall](https://plurall.net) (React, JavaScript, CSS, HTML/JSX).
 
-Você deverá implementar o desafio descrito em [`INSTRUCTIONS.md`](/INSTRUCTIONS.md) usando esse codebase como base.
+Você deverá implementar o desafio descrito em [`INSTRUCTIONS.md`](/CHALLENGE.md) usando esse codebase como base.
 
 Esse projeto é um `boilerplate` baseado nos projetos do [Plurall](https://plurall.net) (produto no qual você ira trabalhar).
 
