@@ -19,7 +19,9 @@ npm install
 npm start
 ```
 
-Apos os passos acima, você consegue abrir a aplicação, em http://boilerplate.local.plurall.net:3000/, porém como nossas aplicações são autenticadas como OAuth, você irá ser redirecionado para logar em nosso autenticador (Somos ID) - Isso quer dizer que tudo esta ok, para continuar, queremos que você use a API do Spotify como modelo, como eles também usam OAth, a configuração do projeto para trocar o metodo é bem simples. Basta seguir os passos abaixo
+Apos os passos acima, você consegue abrir a aplicação, em http://boilerplate.local.plurall.net:3000/, porém como nossas aplicações são autenticadas como OAuth, você irá ser redirecionado para logar em nosso autenticador (Somos ID)
+
+Isso quer dizer que tudo esta ok, para continuar, queremos que você use a API do Spotify como modelo, como eles também usam OAuth, a configuração do projeto para trocar o metodo é bem simples. Basta seguir os passos abaixo
 
 ### Setup Spotify API
 
@@ -33,7 +35,17 @@ Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
 
 ![image](https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png)
 
-- Abrir o arquivo `.env` no `root` do projeto, e trocar o valor de `REACT_APP_CLIENT_ID` para a sua chave, ela aparece logo abaixo do nome de sua aplicação, `Client ID`
+- Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
+
+```shell
+NODE_PATH=src/
+REACT_APP_ACCESS_TOKEN_URL=https://accounts.spotify.com/api/token
+REACT_APP_AUTHORIZATION_URL=https://accounts.spotify.com/authorize
+REACT_APP_CLIENT_ID=YOUR_SPOTIFY_API_CLIENT
+REACT_APP_API_URL=https://api.spotify.com/v1
+REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
+```
+
 - Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa abaixo ![image](https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png)
 - Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo ![image](https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png)
 
