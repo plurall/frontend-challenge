@@ -4,7 +4,7 @@ O objetivo do desafio é implementar um sistema de busca de artistas baseado na 
 
 O sistema deverá conter 3 páginas:
 
-* A home page.
+* A homepage.
 * A página de busca (/busca).
 * A página do artista selecionado (/artista/:id).
 
