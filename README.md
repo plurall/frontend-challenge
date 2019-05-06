@@ -42,7 +42,8 @@ Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
 ## Setup Spotify API
 
 - Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
-- Entrar na aplicação criada, clicar no botão `edit settings` e preencher os seguintes campos abaixo, logo após clicar em `save`.
+- Entrar na aplicação criada, clicar no botão `edit settings` e preencher os seguintes campos abaixo.
+- Clicar em `save`.
 
 ```
 Website: http://boilerplate.local.plurall.net:3000
@@ -66,7 +67,7 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" width="50%">
 
-- Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo.
+- Logue com suas credenciais, e você será redirecionado para a aplicação :facepunch: :smile: e já deve estar vendo uma página como essa abaixo.
 
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
 
