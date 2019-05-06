@@ -4,36 +4,66 @@
 
 ## Objetivo
 
-Avaliarmos o seu conhecimento em front-end, aqui vamos passar por React, JavaScript, CSS, HTML/JSX, estamos lhe entregando um `boilerplate` que é baseado nos projetos do [Plurall](https://plurall.net) (produto em qual você ira trabalhar)
+Nesse desafio iremos avaliar o seu conhecimento nas tecnologias de front-end utilizadas no [Plurall](https://plurall.net) (React, JavaScript, CSS, HTML/JSX).
 
-Aqui vamos olhar sua organização, boas praticas, conhecimentos em React e Class do JavaScript, conhecimento sobre o framework React, o qual usamos aqui e outras coisinhas a mais.
+Você deverá implementar o desafio descrito em [`CHALLENGE.md`](/CHALLENGE.md) usando esse codebase como base.
 
-## Configurando o ambiente para rodar
+Esse projeto é um `boilerplate` baseado nos projetos do [Plurall](https://plurall.net) (produto no qual você ira trabalhar).
 
-Você precisa ter [`node LTS ou superior`](https://nodejs.org/en/) instalado para conseguir rodar o teste, fazer fork do projeto em sua conta pessoal e seguir os passos seguintes
+## Critério de avaliação
 
-- Adicionar `127.0.0.1 boilerplate.local.plurall.net` em seu host ([Mac](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-mac-os-x-apple/)/[Windows](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/)).
+Abaixo estão algumas caracteristicas que achamos importantes:
+
+- Organização e legibilidade do código.
+- Simplicidade.
+- Boas praticas.
+- Conhecimento de Javascript.
+- Conhecimento de React.
+- Outros.
+
+Caso esteja com uma dúvida ou algum impedimento, faça da forma mais simples e continue com o desafio. É mais importante tentar fazer todos os items do desafio do que fazer uma parte de forma elaborada e não fazer outras partes.
+
+## Configurando o ambiente
+
+Você precisa ter [`node LTS ou superior`](https://nodejs.org/en/) instalado para conseguir rodar o desafio.
+
+Faça fork do projeto em sua conta pessoal e siga os passos a seguir.
+
+### Adicione o url do Plurall no seu `/etc/hosts`.
+
+No Mac/Linux, faça:
+
+```shell
+echo '127.0.0.1\tboilerplate.local.plurall.net' | sudo tee -a /etc/hosts
+```
+
+No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/), e adicione a linha `127.0.0.1 boilerplate.local.plurall.net` no arquivo de hosts.
+
+### Instale as dependências e start o projeto
 
 ```shell
 npm install
 npm start
 ```
 
-Apos os passos acima, você consegue abrir a aplicação, em http://boilerplate.local.plurall.net:3000/, porém como nossas aplicações são autenticadas como OAuth, você irá ser redirecionado para logar em nosso autenticador (Somos ID)
+Após os passos acima, você conseguirá abrir a aplicação em http://boilerplate.local.plurall.net:3000/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
 
-Isso quer dizer que tudo esta ok, para continuar, queremos que você use a API do Spotify como modelo, como eles também usam OAuth, a configuração do projeto para trocar o metodo é bem simples. Basta seguir os passos abaixo
+Isso quer dizer que o projeto esta funcionando. Porém, para esse desafio, queremos que você use a API do Spotify para autenticação.
 
-### Setup Spotify API
+Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
+
+## Setup Spotify API
 
 - Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
-- Entar na aplicação criada, e clicar no botão `edit settings` e preencher os seguintes campos abaixo, logo após clicar em `save`.
+- Entrar na aplicação criada, clicar no botão `edit settings` e preencher os seguintes campos abaixo.
+- Clicar em `save`.
 
 ```
 Website: http://boilerplate.local.plurall.net:3000
 Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
 ```
 
-![image](https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png)
+<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png" width="50%">
 
 - Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
@@ -46,14 +76,14 @@ REACT_APP_API_URL=https://api.spotify.com/v1
 REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 ```
 
-- Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa abaixo ![image](https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png)
-- Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo ![image](https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png)
+- Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
-## Regras
+<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" width="50%">
 
-1.  - Siga as intruções em [`INSTRUCTIONS.md`](/INSTRUCTIONS.md).
-2.  - Resolva o desafio com o melhor que você possa fazer.
-3.  - Quando finalizar, abra um PR do seu fork para nosso avaliar.
-4.  - Use o maximo que puder de [https://elo.ui.e.plurall.net/](Plurall UI)
-5.  - Layout Responsivo
-6.  - Precisa ter pelo menos 1 teste rodando
+- Logue com suas credenciais, e você será redirecionado para a aplicação :facepunch: :smile: e já deve estar vendo uma página como essa abaixo.
+
+<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
+
+Agora voce já pode fazer o [desafio](/CHALLENGE.md).
+
+Boa Sorte!
