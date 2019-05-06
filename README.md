@@ -66,7 +66,9 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" width="50%">
 
-- Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
+- Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo.
+
+<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
 
 ## Regras
 
