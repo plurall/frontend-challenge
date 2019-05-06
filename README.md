@@ -77,5 +77,5 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 2. Resolva o desafio com o melhor que você possa fazer.
 3. Quando finalizar, abra um PR do seu fork para que possamos avaliar.
 4. Use o maximo que puder da nossa biblioteca de componentes ([Plurall UI](https://elo.ui.e.plurall.net/)).
-5. Faça o layout ser Responsivo.
+5. Faça o layout ser responsivo.
 6. Escreva pelo menos um teste.
