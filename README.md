@@ -14,7 +14,7 @@ Iremos analizar sua organização, boas praticas, conhecimentos em React e em Cl
 
 Você precisa ter [`node LTS ou superior`](https://nodejs.org/en/) instalado para conseguir rodar o desafio.
 
-Fazer fork do projeto em sua conta pessoal e seguir os passos seguintes
+Faça fork do projeto em sua conta pessoal e siga os passos a seguir.
 
 ### Adicione o url do Plurall no seu `/etc/hosts`.
 
@@ -24,7 +24,7 @@ No Mac/Linux, faça:
 echo '127.0.0.1\tboilerplate.local.plurall.net' | sudo tee -a /etc/hosts
 ```
 
-No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/)).
+No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/)), e adicione a linha `127.0.0.1 boilerplate.local.plurall.net` no arquivo de hosts.
 
 ### Instale as dependências e start o projeto
 
