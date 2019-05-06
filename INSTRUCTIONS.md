@@ -1,30 +1,45 @@
-Exemplos de projetos de front-end challange
+# Objetivo
 
-- https://github.com/felipefialho/frontend-challenges
+O objetivo do desafio é implementar um sistema de busca de artistas baseado na API do Spotify.
 
-Objetivo: Implementar busca e página d detalhe de um artista. A busca deve ser feita na rota `http://boilerplate.local.plurall.net:3000/busca` e a página de detalhe do artista em `http://boilerplate.local.plurall.net:3000/artista/:id`
+O sistema deverá conter 3 páginas:
 
-Cumprindo os checkpoints abaixo, você poderá enviar o PR para que possamos analizar seu código.
+* A home page.
+* A página de busca (/busca).
+* A página do artista selecionado (/artista/:id).
 
-- Usar o que for possivel da https://elo.ui.e.plurall.net/ (Já esta instalado, `plurall-ui`)
-- Modificar a integração OAuth para a do spotify - Você pode criar uma aplicação aqui https://developer.spotify.com/dashboard/applications
-- Implementar um Client que fara toda a conexão com API do Spotify, na view, queremos que fique apenas, já temos a base aqui `src/utils/client.js`
+As chamadas para a API devem ficar restritas ao arquivo `src/utils/client.js`. Os componentes React devem apenas utilizar esse 'client'.
 
-```
-class Home extends React.Component {
-  ...jsx
-  client = new SomosClient()
+# Descrição das páginas
 
-  componentDidMount() {
-    const artist = client.getArtist(id)
-    this.setState({ artist })
-  }
-  ...
-}
-```
+## Homepage
 
-- Implementar um botão na home que use o link do react para levar a página de busca
-- Implementar página de busca, contendo um input e quando tiver mais de 4 caracteres, aparecer o resultado que api esta entrangando, mostrando nome do artista e foto, quando eu clicar em algum, deve me levar até página de detalhe do artista
-- Implementar página de detalhe do artista, nessa página, deve ser mostrado as seguintes informações do artista, `nome, popularidade, foto, generos` e logo abaixo das informações do artista, queremos que liste 10 albuns, mostrando `imagem, nome do album e e quando foi lançado` OBS: a data de lancamento deve ser `DD/MM/AAAA` - Se possivel não queremos lib externa para formatar a data :)
+A homepage deve conter um botão na home que use o `Link` do React para levar a página de busca.
 
-- alert: caso você não tenha conhecimento de OAuth, lista artistas desse endpoint, ignore o passo
+## Busca
+
+A página de busca deve conter um `input` onde o usuário irá digitar a busca.
+
+Ao digitar mais de 4 caracteres, os resultados devem aparecer abaixo, mostrando o nome e a foto do Artista.
+
+Ao clicar em um artista o usuário deve ser levado apara a página do artista.
+
+## Página do Artista
+
+A pagina do Artista deve exibir os seguintes dados:
+
+* Nome
+* Popularidade
+* Foto
+* Lista de gêneros
+* Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento.
+
+A data de lançamento do album deve estar no formato `DD/MM/AAAA`.
+
+# Regras do Desafio
+
+1. Resolva o desafio com o melhor que você possa fazer.
+2. Quando finalizar, abra um PR do seu fork para que possamos avaliar.
+3. Use o maximo que puder da nossa biblioteca de componentes ([Plurall UI](https://elo.ui.e.plurall.net/)).
+4. Faça o layout ser responsivo.
+5. Escreva pelo menos um teste.
