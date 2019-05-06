@@ -1,4 +1,4 @@
-<img src="https://uploads-ssl.webflow.com/5b52377eeadb580b7fb78787/5b59ff5b2217c07065eb783d_logo-plurall-white.svg" width="150" /> <img src="https://static.somos.in/wp-somoseducacao/uploads/2017/10/09122212/logo-rodape-2-e1507250588814-1.png" />
+<img src="https://uploads-ssl.webflow.com/5b52377eeadb580b7fb78787/5b59ff5b2217c07065eb783d_logo-plurall-white.svg" width="150" style="background: #724aea; padding: 10px" /> <img src="https://static.somos.in/wp-somoseducacao/uploads/2017/10/09122212/logo-rodape-2-e1507250588814-1.png" width="107" style="background: #724aea; padding: 10px" />
 
 # Front-end Challenge
 
