@@ -10,7 +10,17 @@ Você deverá implementar o desafio descrito em [`INSTRUCTIONS.md`](/INSTRUCTION
 
 Esse projeto é um `boilerplate` baseado nos projetos do [Plurall](https://plurall.net) (produto no qual você ira trabalhar).
 
-Iremos analizar sua organização, boas praticas, conhecimentos em React e em Classes do JavaScript (e Javascript em geral), dentre outras coisas.
+## Critério de avaliação
+
+Abaixo estão algumas caracteristicas que achamos importantes:
+
+- Organização e legibilidade do código.
+- Boas praticas.
+- Conhecimento de Javascript.
+- Conhecimento de React.
+- Outros.
+
+Caso esteja com uma dúvida ou algum impedimento, faça da forma mais simples e continue com o desafio. É mais importante tentar fazer todos os items do desafio do que fazer uma parte de forma elaborada e não fazer outras partes.
 
 ## Configurando o ambiente
 
