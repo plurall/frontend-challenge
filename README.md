@@ -24,7 +24,7 @@ No Mac/Linux, faça:
 echo '127.0.0.1\tboilerplate.local.plurall.net' | sudo tee -a /etc/hosts
 ```
 
-No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/)), e adicione a linha `127.0.0.1 boilerplate.local.plurall.net` no arquivo de hosts.
+No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/), e adicione a linha `127.0.0.1 boilerplate.local.plurall.net` no arquivo de hosts.
 
 ### Instale as dependências e start o projeto
 
@@ -37,7 +37,7 @@ Após os passos acima, você conseguirá abrir a aplicação em http://boilerpla
 
 Isso quer dizer que tudo esta ok. Para continuar, queremos que você use a API do Spotify para autenticação. Como eles também usam OAuth, trocar a configuração do projeto é bem simples. Basta seguir os passos abaixo:
 
-### Setup Spotify API
+## Setup Spotify API
 
 - Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
 - Entar na aplicação criada, e clicar no botão `edit settings` e preencher os seguintes campos abaixo, logo após clicar em `save`.
