@@ -42,14 +42,14 @@ Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
 ## Setup Spotify API
 
 - Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
-- Entar na aplicação criada, e clicar no botão `edit settings` e preencher os seguintes campos abaixo, logo após clicar em `save`.
+- Entrar na aplicação criada, clicar no botão `edit settings` e preencher os seguintes campos abaixo, logo após clicar em `save`.
 
 ```
 Website: http://boilerplate.local.plurall.net:3000
 Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
 ```
 
-<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png" style="max-width: 55%;">
+<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png" width="50%">
 
 - Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
@@ -64,9 +64,9 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 
 - Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
-<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" style="max-width: 55%;">
+<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" width="50%">
 
-- Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png" style="max-width: 55%;">
+- Logue com suas credenciais, e você será redirecionado para a aplicação :facepumbch: :smile: e já deve estar vendo uma página como essa abaixo <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
 
 ## Regras
 
