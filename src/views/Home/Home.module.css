@@ -4,3 +4,8 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}

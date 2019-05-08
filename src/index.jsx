@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { LoginCallback } from 'views'
+import { LoginCallback, Search, Artist } from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
@@ -18,7 +18,9 @@ ReactDOM.render(
   <Router history={customHistory}>
     <Switch>
       <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute path="/" component={App} />
+      <Route path="/busca" component={Search} />
+      <Route path="/artista/:id" component={Artist} />
+      <PrivateRoute exact path="/" component={App} />
     </Switch>
   </Router>,
   document.getElementById('root'),
