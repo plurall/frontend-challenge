@@ -1,0 +1,10 @@
+.searchInput div div div {
+	display: none;
+}
+
+.wrapper section{
+	margin: 0 10px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}

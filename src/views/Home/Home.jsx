@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import { SubHeader, ButtonLink } from 'components'
 import { SomosClient } from 'utils'
@@ -18,7 +19,7 @@ class Home extends React.Component {
           heading="Somos Front-end Challenge"
         />
         <div className={styles.wrapper}>
-          <h1>Hi, click <ButtonLink>here</ButtonLink> and search your favorite artists.</h1>
+          <h1>Hi, click <Link to='/search'><ButtonLink>here</ButtonLink></Link> and search your favorite artists.</h1>
         </div>
       </React.Fragment>
     )
