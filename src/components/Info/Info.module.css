@@ -1,0 +1,31 @@
+.wrapper {
+}
+.info {
+	height: 50vh;
+	background-size: cover;
+}
+.info h1,
+.info p,
+.albums {
+	margin: 0 15px;
+}
+.album {
+	text-align: center;
+	margin: 25px 10px;
+}
+.album .cover {
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	background-size: cover;
+}
+.album .title {
+	width: 160px
+}
+.list {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.cover {
+	width: 160px;
+	height: 160px;
+}

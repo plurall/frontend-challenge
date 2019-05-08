@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import PlurallTracker from 'plurall-tracker'
 
 import { Layout, PrivateRoute } from 'components'
-import { Home, Search } from 'views'
+import { Home, Search, About } from 'views'
 
 import './App.module.css'
 
@@ -24,7 +24,8 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Route exact path="/" component={Home} />
-            <Route exact path="/search" component={Search} />
+            <Route path="/search" component={Search} />
+            <Route path="/artist/:id" component={About} />
           </React.Fragment>
         </Router>
       </Layout>

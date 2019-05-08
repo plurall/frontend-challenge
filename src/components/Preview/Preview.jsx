@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './Artist.module.css'
+import styles from './Preview.module.css'
 
-const Artist = ({ image, name, id }) => (
+const Preview = ({ image, name, id }) => (
 	<Link to={`/artist/${id}`}>
 	  <div className={styles.artist}>
 	    <div className={styles.cover} style={{ backgroundImage: `url(${image})` }}></div>
@@ -15,4 +15,4 @@ const Artist = ({ image, name, id }) => (
 	</Link>
 )
 
-export default Artist
+export default Preview

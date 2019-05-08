@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SubHeader, SearchInput, Artist } from 'components'
+import { SubHeader, SearchInput, Preview } from 'components'
 import { SomosClient } from 'utils';
 
 import styles from './Search.module.css'
@@ -41,7 +41,6 @@ class Search extends React.Component {
       const artists = res['artists']['items'];
       this.setState({ artists })
     });
-
   }
 
   render() {
@@ -68,7 +67,7 @@ class Search extends React.Component {
                 background = e['images'][1]['url']
               }
               return (
-                <Artist
+                <Preview
                   key={k}
                   id={e['id']}
                   image={background}
