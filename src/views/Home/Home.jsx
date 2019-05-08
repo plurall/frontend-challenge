@@ -2,9 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 import { SubHeader, ButtonLink } from 'components'
+import { Heading } from 'plurall-ui'
 import { SomosClient } from 'utils'
 
 import styles from './Home.module.css'
+import smile from '../../smile.svg'
 
 class Home extends React.Component {
   state = {}
@@ -19,7 +21,15 @@ class Home extends React.Component {
           heading="Somos Front-end Challenge"
         />
         <div className={styles.wrapper}>
-          <h1>Hi, click <Link to='/search'><ButtonLink>here</ButtonLink></Link> and search your favorite artists.</h1>
+          <Heading>Olá, procure por seus artistas preferidos</Heading>
+          <div className={styles.link}>
+            <Link to='/search'>
+              <ButtonLink>aqui</ButtonLink>
+              <div className={styles.smile}>
+                <img src={smile} />
+              </div>
+            </Link>
+          </div>
         </div>
       </React.Fragment>
     )

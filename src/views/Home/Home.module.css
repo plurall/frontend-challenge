@@ -3,8 +3,15 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
-}
-.wrapper h1 {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
+}
+.link {
+	text-align: center;
+}
+.smile {
+	margin: 20px;
+	width: 125px;
+	height: 125px;
 }

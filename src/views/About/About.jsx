@@ -40,8 +40,8 @@ class About extends React.Component {
     return (
       <React.Fragment>
         <SubHeader
-          breadcrumb={[{ text: 'About' }]}
-          heading="Somos Front-end Challenge"
+          breadcrumb={[{ text: 'Sobre' }]}
+          heading={info['name']}
         />
         <Info
           name={info['name']}

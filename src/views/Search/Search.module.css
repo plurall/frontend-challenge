@@ -1,5 +1,10 @@
+/* Workaround to use Search plurall component and remove results panel */
 .searchInput div div div {
 	display: none;
+}
+
+.wrapper{
+	padding: 30px 20px;
 }
 
 .wrapper section{

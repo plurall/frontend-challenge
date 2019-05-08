@@ -21,7 +21,7 @@ const Info = ({ name, popularity, image, genres, albums }) => {
 }
 
 const Genres = ({ genres }) => (
-	<Text>{genres ? genres.join(', ') : null }</Text>
+	<Text className={styles.genres}>{genres ? genres.join(', ') : null }</Text>
 )
 
 const Albums = ({ albums }) => {
@@ -39,11 +39,11 @@ const Albums = ({ albums }) => {
 				return (
 					<div className={styles.album} key={k}>
 						<div className={styles.date}>
-							<Text size="small">{FormatDate(e['release_date'], e['release_date_precision'])}</Text>
+							<Text secondary size="small">{FormatDate(e['release_date'], e['release_date_precision'])}</Text>
 						</div>
 						<div className={styles.cover} style={{ backgroundImage: `url(${image})` }}></div>
 						<div className={styles.title}>
-							<Text>{e['name']}</Text>
+							<Text bold>{e['name']}</Text>
 						</div>
 					</div>
 			)}) : null }

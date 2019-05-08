@@ -1,3 +1,6 @@
+a {
+	text-decoration: none;
+}
 .artist {
 	text-align: center;
 	width: 200px;
@@ -6,18 +9,15 @@
 }
 
 .cover {
+	background-color: rgb(101, 90, 163);
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
 	border-radius: 50%;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: cubic-bezier(.3,0,.4,1);
   position: relative;
-  top: 0;
   width: 100%;
   height: 100%;
-  background-size: cover!important;
+  background-size: cover;
   background-position: 50%;
-  opacity: 1;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .info {
@@ -25,7 +25,11 @@
 	color: rgb(27, 188, 156);
 	transition: all 300ms ease 0;
 }
-.info:hover {
+
+.artist:hover .cover{
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+.artist:hover .info{
 	cursor: pointer;
 	color: rgb(19, 134, 111);
 }
