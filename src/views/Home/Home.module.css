@@ -4,3 +4,7 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+.wrapper h1 {
+	display: flex;
+	align-items: center;
+}

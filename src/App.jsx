@@ -10,7 +10,7 @@ import './App.module.css'
 
 window.tracker = new PlurallTracker({
   env: 'staging',
-  clientId: 'frontEndChallange',
+  clientId: 'frontEndChallenge',
 })
 
 class App extends Component {

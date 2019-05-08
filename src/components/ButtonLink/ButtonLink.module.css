@@ -1,0 +1,7 @@
+button.link {
+	background-color: rgb(101, 90, 163, 0.8);
+	margin: 0px 10px;
+}
+button.link:hover {
+	background-color: rgb(101, 90, 163);
+}
