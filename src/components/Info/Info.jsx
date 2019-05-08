@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react';
 
 import { Heading, Text } from 'plurall-ui'
@@ -57,21 +56,18 @@ const FormatDate = (date, precision) => {
 		case 'year': {
 
 			return date;
-			break;
 		}
 		case 'month':{
 			const split = date.split('-');
 			const month = split[1], year = split[0];
 
 			return `${month}/${year}`
-			break;
 		}
 		case 'day': {
 			const split = date.split('-');
 			const day = split[2], month = split[1], year = split[0];
 
 			return `${month}/${day}/${year}`
-			break;
 		}
 		default:
 			return date

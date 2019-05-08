@@ -26,7 +26,7 @@ class Home extends React.Component {
             <Link to='/search'>
               <ButtonLink>aqui</ButtonLink>
               <div className={styles.smile}>
-                <img src={smile} />
+                <img alt='Smile' src={smile} />
               </div>
             </Link>
           </div>

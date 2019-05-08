@@ -27,7 +27,8 @@
     "jsencrypt": "^3.0.0-rc.1",
     "lint-staged": "^7.0.0",
     "opn": "^5.4.0",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "react-test-renderer": "^16.8.6"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
