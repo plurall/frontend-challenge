@@ -31,9 +31,13 @@ describe('<Album />', () => {
     },
   ]
 
-  // beforeEach(() => {})
   it('should render have Heading when mount', () => {
     const wrapper = shallow(<Album data={data} />)
     expect(wrapper.find(Heading)).toHaveLength(1)
+  })
+
+  it('should render a list when mount', () => {
+    const wrapper = shallow(<Album data={data} />)
+    expect(wrapper.find('li').length > 1)
   })
 })

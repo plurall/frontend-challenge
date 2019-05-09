@@ -7,7 +7,7 @@ import styles from './Album.module.css'
 const Album = ({ data }) => (
   <div>
     <Heading size="small">Álbuns do artista</Heading>
-    {console.log('ALBUM', data)}
+    {/* {console.log('ALBUM', data)} */}
     <ul className={styles.wrapper_list}>
       {data.map(album => (
         <li className={styles.list} key={album.id}>

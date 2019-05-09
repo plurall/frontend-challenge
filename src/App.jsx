@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Switch } from 'react-router-dom'
-
 import PlurallTracker from 'plurall-tracker'
 
-import { Layout, PrivateRoute } from 'components'
+import { Layout } from 'components'
 import { Home } from 'views'
 
 import './App.module.css'
