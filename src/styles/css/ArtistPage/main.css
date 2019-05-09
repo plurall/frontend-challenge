@@ -1,0 +1,19 @@
+.cell-img {
+  width: 200px;
+  height: 200px; }
+
+.cell-border {
+  border-top: 1px solid #fff; }
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border-bottom: 3px solid #6d9ee8;
+  animation: rotate 0.7s linear infinite; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }

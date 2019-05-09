@@ -1,0 +1,36 @@
+@mixin position($pos, $top, $right, $bottom, $left) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin displayAlign($pos) {
+    display: flex;
+    @if($pos == center){
+        justify-content: center;
+        align-items: center;
+    }
+    @if($pos == ver){
+        justify-content: center;
+    }
+    @if($pos == hor){
+        align-items: center;
+    }
+}
+
+@mixin size($w, $h){
+    width: $w;
+    height: $h;
+}
+
+@mixin font($size, $weight){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin borderline($val){
+    border: $val;
+    outline: $val;
+}

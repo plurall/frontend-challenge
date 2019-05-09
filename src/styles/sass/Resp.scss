@@ -1,0 +1,26 @@
+@media (min-width: 320px) and (max-width: 767px) {
+    .r-cell{
+        display: block;
+        text-align: center;
+
+        .album-details{
+            margin-top: 16px;
+
+            .album-external{
+                margin: 10px 0;
+                display: block;
+
+                .external-site{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .track-details{
+        display: block;
+        
+        .track-title{
+            margin: 0;
+        }
+    }
+}

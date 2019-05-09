@@ -1,0 +1,11 @@
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g transform="translate(-226.000000, -102.000000)" fill="#989EA0">
+      <g transform="translate(0.000000, 60.000000)">
+        <g transform="translate(224.000000, 42.000000)">
+          <path d="M3,3 L3,9.5 C3,9.77614237 2.77614237,10 2.5,10 C2.22385763,10 2,9.77614237 2,9.5 L2,2.5 C2,2.22385763 2.22385763,2 2.5,2 L9.5,2 C9.77614237,2 10,2.22385763 10,2.5 C10,2.77614237 9.77614237,3 9.5,3 L3,3 Z" transform="translate(6.000000, 6.000000) scale(-1, 1) rotate(-45.000000) translate(-6.000000, -6.000000) "></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

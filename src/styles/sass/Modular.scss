@@ -1,0 +1,104 @@
+@import "Variables";
+@import "Mixins";
+@import "Padding";
+
+//Color
+
+.c-white{color: #F1F1F1;}
+
+
+//Weight
+
+.w-regular{font-weight: 400}
+
+.w-medium{font-weight: 500}
+
+.w-semibold{font-weight: 600}
+
+.w-bold{font-weight: 700}
+
+
+//Style
+
+.sty-italic{font-style: italic;}
+
+//Size
+
+.s-12{font-size: 12px;}
+
+.s-13{font-size: 13px;}
+
+.s-14{font-size: 14px;}
+
+.s-16{font-size: 16px;}
+
+.s-18{font-size: 18px;}
+
+.s-20{font-size: 20px;}
+
+.s-21{font-size: 21px;}
+
+.s-22{font-size: 22px;}
+
+.s-24{font-size: 24px;}
+
+.s-26{font-size: 26px;}
+
+.s-28{font-size: 28px;}
+
+.s-30{font-size: 30px;}
+
+.s-32{font-size: 32px;}
+
+.s-34{font-size: 34px;}
+
+.s-36{font-size: 36px;}
+
+//Background
+
+.bg-white{background-color: #fff;}
+
+//Display
+
+.d-none{display: none;}
+
+.d-flex{display: flex;}
+
+//Alignment
+
+.a-ver{align-items: center;}
+
+.a-hor{justify-content: center}
+
+.a-cen{justify-content: center; align-items: center;}
+
+.a-bet{justify-content: space-between}
+
+.f-left{text-align:left;}
+
+.f-right{text-align:right;}
+
+//Float
+.float-right{float: right;}
+.float-left{float: left;}
+
+
+//Overflow
+
+.overflow-x-scroll{overflow-x: scroll}
+
+.overflow-y-scroll{overflow-y: scroll}
+
+//Mics
+
+.clickable{cursor: pointer;}
+
+.width-fit{width: fit-content;}
+
+.no-outline{outline: none;}
+
+.v-align{vertical-align: middle;}
+
+.no-select{user-select: none;}
+
+.price-top{top: -0.5em;}

@@ -11,6 +11,8 @@ import { PrivateRoute } from 'components'
 import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
 
+import './bundle.css'
+
 const customHistory = createBrowserHistory()
 customHistory.listen(() => window.tracker.pageView())
 

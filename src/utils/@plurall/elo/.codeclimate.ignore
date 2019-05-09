@@ -1,0 +1,7 @@
+_coverage_/*
+build/*
+docs/*
+node_modules/*
+.docz/*
+.storybook/*
+**/test.jsx

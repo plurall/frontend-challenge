@@ -1,0 +1,653 @@
+{
+  "config": {
+    "title": "Elo",
+    "description": "Resources, tooling, and design guidelines for building websites with Elo UI, the web incarnation of the Plurall Design System",
+    "themeConfig": {
+      "colors": {
+        "primary": "#5a5aa3",
+        "secondary": "#7878cb",
+        "gray": "#494c4d",
+        "link": "#1abc9c",
+        "sidebarBg": "#e9eced",
+        "sidebarText": "#333354"
+      },
+      "styles": {
+        "body": {
+          "fontFamily": "Nunito, Open Sans, -apple-system, BlinkMacSystemFont, \"Segoe UI\""
+        }
+      }
+    },
+    "menu": [],
+    "ordering": "descending",
+    "version": "0.3.0",
+    "native": false,
+    "codeSandbox": true
+  },
+  "entries": {
+    "src/components/index.mdx": {
+      "name": "Home",
+      "route": "/",
+      "id": "8f6609a989594e49bce5582173f1be02",
+      "filepath": "src/components/index.mdx",
+      "link": null,
+      "slug": "src-components-index",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "",
+          "value": ""
+        },
+        {
+          "depth": 2,
+          "slug": "introduction",
+          "value": "Introduction"
+        },
+        {
+          "depth": 2,
+          "slug": "getting-started",
+          "value": "Getting started"
+        },
+        {
+          "depth": 2,
+          "slug": "contributing",
+          "value": "Contributing"
+        }
+      ]
+    },
+    "src/components/Alert/Alert.mdx": {
+      "name": "Alert",
+      "route": "/components/alert",
+      "menu": "Components",
+      "id": "9c91e8af3f0bac2312d1cef1739af53e",
+      "filepath": "src/components/Alert/Alert.mdx",
+      "link": null,
+      "slug": "src-components-alert-alert",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "alert",
+          "value": "Alert"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/ArrowButton/ArrowButton.mdx": {
+      "name": "ArrowButton",
+      "route": "/components/arrow_button",
+      "menu": "Components",
+      "id": "caadb3ee16e69b12008aa630ff5c781b",
+      "filepath": "src/components/ArrowButton/ArrowButton.mdx",
+      "link": null,
+      "slug": "src-components-arrow-button-arrow-button",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "arrowbutton",
+          "value": "ArrowButton"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic Usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Breadcrumb/Breadcrumb.mdx": {
+      "name": "Breadcrumb",
+      "route": "/components/breadcrumb",
+      "menu": "Components",
+      "id": "44e5a745a1f57fb9729d3452f4581fe2",
+      "filepath": "src/components/Breadcrumb/Breadcrumb.mdx",
+      "link": null,
+      "slug": "src-components-breadcrumb-breadcrumb",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "breadcrumb",
+          "value": "Breadcrumb"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Checkbox/Checkbox.mdx": {
+      "name": "Checkbox",
+      "route": "/components/checkbox",
+      "menu": "Components",
+      "id": "6b594e68467646bd7b8dd84ff8303acc",
+      "filepath": "src/components/Checkbox/Checkbox.mdx",
+      "link": null,
+      "slug": "src-components-checkbox-checkbox",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "checkbox",
+          "value": "Checkbox"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Button/Button.mdx": {
+      "name": "Button",
+      "route": "/components/button",
+      "menu": "Components",
+      "id": "2b773349a016959194c905ce6ad9d2d4",
+      "filepath": "src/components/Button/Button.mdx",
+      "link": null,
+      "slug": "src-components-button-button",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "button",
+          "value": "Button"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "with-onclick-handler",
+          "value": "With onClick handler"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Dropdown/Dropdown.mdx": {
+      "name": "Dropdown",
+      "route": "/components/dropdown",
+      "menu": "Components",
+      "id": "d51b6aecda304e9f603f42bb216f8f90",
+      "filepath": "src/components/Dropdown/Dropdown.mdx",
+      "link": null,
+      "slug": "src-components-dropdown-dropdown",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "dropdown",
+          "value": "Dropdown"
+        },
+        {
+          "depth": 2,
+          "slug": "single-select-dropdown",
+          "value": "Single select dropdown"
+        },
+        {
+          "depth": 2,
+          "slug": "multiselect-dropdown",
+          "value": "Multiselect Dropdown"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Link/Link.mdx": {
+      "name": "Link",
+      "route": "/components/link",
+      "menu": "Components",
+      "id": "071f9748d27a7d40897478636e1b3d63",
+      "filepath": "src/components/Link/Link.mdx",
+      "link": null,
+      "slug": "src-components-link-link",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "link",
+          "value": "Link"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "with-onclick-handler",
+          "value": "With onClick handler"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Heading/Heading.mdx": {
+      "name": "Heading",
+      "route": "/components/heading",
+      "menu": "Components",
+      "id": "188db32c956f8325bfe39c2af8949bff",
+      "filepath": "src/components/Heading/Heading.mdx",
+      "link": null,
+      "slug": "src-components-heading-heading",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "heading",
+          "value": "Heading"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Icon/Icon.mdx": {
+      "name": "Icon",
+      "route": "/components/icon",
+      "menu": "Components",
+      "id": "e3fc531106e64472fee730eea48e21ec",
+      "filepath": "src/components/Icon/Icon.mdx",
+      "link": null,
+      "slug": "src-components-icon-icon",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "icon",
+          "value": "Icon"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/ProgressBar/ProgressBar.mdx": {
+      "name": "ProgressBar",
+      "route": "/components/progressBar",
+      "menu": "Components",
+      "id": "7e8c1133ccf7a5f1a01d6a9572c6bc69",
+      "filepath": "src/components/ProgressBar/ProgressBar.mdx",
+      "link": null,
+      "slug": "src-components-progress-bar-progress-bar",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "progressbar",
+          "value": "ProgressBar"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/SearchBox/SearchBox.mdx": {
+      "name": "SearchBox",
+      "route": "/components/search_box",
+      "menu": "Components",
+      "id": "9a3cd026d03161deae5987ed59d9a5ec",
+      "filepath": "src/components/SearchBox/SearchBox.mdx",
+      "link": null,
+      "slug": "src-components-search-box-search-box",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "searchbox",
+          "value": "SearchBox"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Text/Text.mdx": {
+      "name": "Text",
+      "route": "/components/text",
+      "menu": "Components",
+      "id": "466fa8551cc28f43d1f38ce375d9c589",
+      "filepath": "src/components/Text/Text.mdx",
+      "link": null,
+      "slug": "src-components-text-text",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "text",
+          "value": "Text"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/TextBox/TextBox.mdx": {
+      "name": "TextBox",
+      "route": "/components/text_box",
+      "menu": "Components",
+      "id": "f9ad3bdde0262aebb43d836e3c63b382",
+      "filepath": "src/components/TextBox/TextBox.mdx",
+      "link": null,
+      "slug": "src-components-text-box-text-box",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "textbox",
+          "value": "TextBox"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/components/Tooltip/Tooltip.mdx": {
+      "name": "Tooltip",
+      "route": "/components/tooltip",
+      "menu": "Components",
+      "id": "b49d0b1357cb8eadab69ba6390eabe3b",
+      "filepath": "src/components/Tooltip/Tooltip.mdx",
+      "link": null,
+      "slug": "src-components-tooltip-tooltip",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "tooltip",
+          "value": "Tooltip"
+        },
+        {
+          "depth": 2,
+          "slug": "base-usage",
+          "value": "Base usage"
+        },
+        {
+          "depth": 2,
+          "slug": "props",
+          "value": "Props"
+        }
+      ]
+    },
+    "src/docs/getting-started/designers.mdx": {
+      "name": "Designers",
+      "route": "/getting-started/designers",
+      "menu": "Getting Started",
+      "id": "4d4fd380c9bad745078442477f9176a5",
+      "filepath": "src/docs/getting-started/designers.mdx",
+      "link": null,
+      "slug": "src-docs-getting-started-designers",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "designers",
+          "value": "Designers"
+        }
+      ]
+    },
+    "src/docs/getting-started/developers.mdx": {
+      "name": "Developers",
+      "route": "/getting-started/developers",
+      "menu": "Getting Started",
+      "id": "a6e6a2ced38d3da179e5ceadf3590c33",
+      "filepath": "src/docs/getting-started/developers.mdx",
+      "link": null,
+      "slug": "src-docs-getting-started-developers",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "developers",
+          "value": "Developers"
+        },
+        {
+          "depth": 2,
+          "slug": "install",
+          "value": "Install"
+        },
+        {
+          "depth": 2,
+          "slug": "configuring-the-theme",
+          "value": "Configuring the theme"
+        },
+        {
+          "depth": 2,
+          "slug": "using-components",
+          "value": "Using components"
+        },
+        {
+          "depth": 2,
+          "slug": "component-methodology",
+          "value": "Component methodology"
+        },
+        {
+          "depth": 2,
+          "slug": "contributing-or-feedback",
+          "value": "Contributing or Feedback"
+        }
+      ]
+    },
+    "src/docs/styles/colors.mdx": {
+      "name": "Colors",
+      "route": "/styles/colors",
+      "menu": "Styles",
+      "id": "bb741e451934be5bd32c432a086e3cc1",
+      "filepath": "src/docs/styles/colors.mdx",
+      "link": null,
+      "slug": "src-docs-styles-colors",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "default-theme",
+          "value": "Default theme"
+        },
+        {
+          "depth": 2,
+          "slug": "colors",
+          "value": "Colors"
+        },
+        {
+          "depth": 3,
+          "slug": "primary-colors",
+          "value": "Primary Colors"
+        },
+        {
+          "depth": 3,
+          "slug": "neutrals",
+          "value": "Neutrals"
+        },
+        {
+          "depth": 3,
+          "slug": "blues",
+          "value": "Blues"
+        },
+        {
+          "depth": 3,
+          "slug": "greens",
+          "value": "Greens"
+        },
+        {
+          "depth": 3,
+          "slug": "puralls",
+          "value": "Puralls"
+        },
+        {
+          "depth": 3,
+          "slug": "reds",
+          "value": "Reds"
+        },
+        {
+          "depth": 3,
+          "slug": "whites",
+          "value": "Whites"
+        },
+        {
+          "depth": 3,
+          "slug": "violets",
+          "value": "Violets"
+        },
+        {
+          "depth": 3,
+          "slug": "yellows",
+          "value": "Yellows"
+        },
+        {
+          "depth": 2,
+          "slug": "usage-in-code",
+          "value": "Usage in code"
+        },
+        {
+          "depth": 2,
+          "slug": "best-practices-for-using-color",
+          "value": "Best practices for using color"
+        }
+      ]
+    },
+    "src/docs/styles/fonts.mdx": {
+      "name": "Fonts",
+      "route": "/styles/fonts",
+      "menu": "Styles",
+      "id": "19cf29f9d371af80c339086752995126",
+      "filepath": "src/docs/styles/fonts.mdx",
+      "link": null,
+      "slug": "src-docs-styles-fonts",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "fonts",
+          "value": "Fonts"
+        },
+        {
+          "depth": 2,
+          "slug": "defining-the-font-stack",
+          "value": "Defining the font stack"
+        },
+        {
+          "depth": 2,
+          "slug": "usage-in-code",
+          "value": "Usage in code"
+        }
+      ]
+    },
+    "src/docs/styles/typography.mdx": {
+      "name": "Typography",
+      "route": "/styles/typography",
+      "menu": "Styles",
+      "id": "2c2a0a687bd20acb68de465de3b95827",
+      "filepath": "src/docs/styles/typography.mdx",
+      "link": null,
+      "slug": "src-docs-styles-typography",
+      "order": 0,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "typography",
+          "value": "Typography"
+        },
+        {
+          "depth": 2,
+          "slug": "headings",
+          "value": "Headings"
+        },
+        {
+          "depth": 2,
+          "slug": "text",
+          "value": "Text"
+        },
+        {
+          "depth": 2,
+          "slug": "font-weights",
+          "value": "Font weights"
+        },
+        {
+          "depth": 2,
+          "slug": "best-practices",
+          "value": "Best practices"
+        }
+      ]
+    }
+  }
+}

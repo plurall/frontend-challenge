@@ -1,0 +1,18 @@
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M7,7 C7,6.44771525 7.44771525,6 8,6 C8.55228475,6 9,6.44771525 9,7 L9,12 C9,12.5522847 8.55228475,13 8,13 C7.44771525,13 7,12.5522847 7,12 L7,7 Z M8,5 C7.44771525,5 7,4.55228475 7,4 C7,3.44771525 7.44771525,3 8,3 C8.55228475,3 9,3.44771525 9,4 C9,4.55228475 8.55228475,5 8,5 Z" id="path-1"></path>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g transform="translate(-69.000000, -306.000000)">
+      <g transform="translate(50.000000, 290.000000)">
+        <g transform="translate(19.000000, 16.000000)">
+          <circle fill="#4978BB" cx="8" cy="8" r="7"></circle>
+          <g>
+            <use fill="#D8D8D8" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" xlink:href="#path-1"></use>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
