@@ -18,9 +18,9 @@ ReactDOM.render(
   <Router history={customHistory}>
     <Switch>
       <Route path="/login/callback" component={LoginCallback} />
-      <Route path="/busca" component={Search} />
-      <Route path="/artista/:id" component={Artist} />
       <PrivateRoute exact path="/" component={App} />
+      <PrivateRoute path="/busca" component={Search} />
+      <PrivateRoute path="/artista/:id" component={Artist} />
     </Switch>
   </Router>,
   document.getElementById('root'),

@@ -1,4 +1,4 @@
-import { clearToken, getToken } from 'utils'
+import { getToken } from 'utils'
 import axios from 'axios'
 import Qs from 'qs'
 
@@ -7,7 +7,7 @@ import artistsIds from '../data/artirts'
 class SomosClient {
   // constructor() {}
 
-  onError = error => {}
+  // onError = error => {}
 
   getArtists = async () => {
     /*
@@ -32,7 +32,8 @@ class SomosClient {
       )
       return response
     } catch (error) {
-      console.error(error)
+      // console.error(error)
+      return error
     }
     // console.log(getToken())
   }
@@ -55,7 +56,7 @@ class SomosClient {
         `https://api.spotify.com/v1/artists/${id}`,
         config,
       )
-      console.log('RESPONSE', response)
+      // console.log('RESPONSE', response)
       return response
     } catch (error) {
       return error
@@ -65,7 +66,7 @@ class SomosClient {
   getAlbums = async artistId => {
     const { id } = artistId
 
-    console.log('TOKEN', getToken())
+    // console.log('TOKEN', getToken())
 
     try {
       const config = {
@@ -77,7 +78,7 @@ class SomosClient {
         `https://api.spotify.com/v1/artists/${id}/albums`,
         config,
       )
-      console.log('RESPONSE', response)
+      // console.log('RESPONSE', response)
       return response
     } catch (error) {
       return error

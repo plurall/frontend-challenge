@@ -1,7 +1,6 @@
 .wrapper_list {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
 }
 .list{
   padding-top: var(--padding-top);
