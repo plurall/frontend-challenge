@@ -11,9 +11,11 @@ class About extends React.Component {
   }
 
   componentDidMount(){
-    const { params } = this.props.match;
+    if(this.props.match){
+      const { params } = this.props.match;
 
-    this.search(params['id'])
+      this.search(params['id'])
+    }
   }
 
   /* Use results from fetch */
