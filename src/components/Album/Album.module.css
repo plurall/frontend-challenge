@@ -1,8 +1,11 @@
-.wrapper {
+.wrapper_list {
   display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
 }
-.albumList {
+.list {
   padding: 10px;
+  list-style: none;
 }
 .img {
   width: 200px;

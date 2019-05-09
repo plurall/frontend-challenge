@@ -9,7 +9,7 @@ const Box = value => {
   if (value === undefined || value.data.length <= 0) return null
 
   return (
-    <ul className={styles.wrapper}>
+    <ul className={styles.wrapper_list}>
       {value.data.map(artist => (
         <li className={styles.list} key={artist.id}>
           <Link className={styles.link}to={`/artista/${artist.id}`} render={Artist}>

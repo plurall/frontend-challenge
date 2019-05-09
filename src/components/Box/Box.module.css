@@ -1,7 +1,7 @@
-.wrapper {
-  width: 100%;
+.wrapper_list {
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
+  /* justify-content: center; */
 }
 .list{
   padding-top: var(--padding-top);

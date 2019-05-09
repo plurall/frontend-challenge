@@ -20,11 +20,12 @@ class Home extends React.Component {
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
         />
-        <Button>
-          <Link to="/busca" className={styles.link}>Página de Busca</Link>
-        </Button>
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <Button>
+            <Link to="/busca" className={styles.link}>
+              Página de Busca
+            </Link>
+          </Button>
         </div>
       </React.Fragment>
     )
