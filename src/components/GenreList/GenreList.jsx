@@ -5,14 +5,19 @@ import { Heading, Text } from '@plurall/elo'
 import styles from './GenreList.module.css'
 
 const GenreList = ({ data }) => (
-  <ul>
+  <div className={styles.wrapperGender}>
+    {/* {console.log('GENRE LIST', data)} */}
     <Heading size="small">Lista de gêneros</Heading>
-    {data.map(genre => (
-      <li className={styles.list} key={genre}>
-        <Text>{genre}</Text>
-      </li>
-    ))}
-  </ul>
+    <ul className={styles.wrapperList}>
+      {data.map(genre => (
+        <li className={styles.list} key={genre}>
+          <div className={styles.genre}>
+            <Text>{genre}</Text>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
 )
 GenreList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.string).isRequired,

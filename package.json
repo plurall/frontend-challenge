@@ -53,7 +53,8 @@
     "lint": "eslint src/",
     "precommit": "lint-staged",
     "start": "react-app-rewired start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "allTests": "react-scripts --watch"
   },
   "browserslist": {
     "development": [

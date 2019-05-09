@@ -3,9 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: var(--padding-top)
+  padding-top: var(--padding-top);
 }
-
+.wrapper > p {
+  padding-bottom: var(--padding-top);
+}
 .image {
   max-width: 60%;
 }

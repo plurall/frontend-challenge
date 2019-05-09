@@ -1,3 +1,16 @@
 .list {
   list-style: none;
 }
+.wrapperList {
+  align-items: flex-start;
+}
+.wrapperGender {
+  padding-top: var(--padding-top);
+}
+.genre {
+  background: #bee21cbd;
+  border-radius: 5px;
+}
+.genre > p {
+  margin: 5px;
+}

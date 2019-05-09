@@ -25,25 +25,19 @@ class Search extends React.Component {
       data: { artists },
     } = allArtists
 
-    this.setState(
-      {
-        artists,
-      },
-      () => console.log('ARTISTS', this.state.artists),
-    )
+    this.setState({
+      artists,
+    })
   }
 
   handleChange = event => {
     if (event.length >= 4) {
       const data = filterElement(this.state.artists, event)
       const list = filterNameToValue(this.state.artists)
-      this.setState(
-        {
-          data,
-          list,
-        },
-        () => console.log(this.state.data),
-      )
+      this.setState({
+        data,
+        list,
+      })
     }
   }
 
