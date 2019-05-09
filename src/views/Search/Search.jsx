@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SubHeader, SearchInput, Preview } from 'components'
 import { SomosClient } from 'utils';
-import { Heading } from 'plurall-ui';
+import { Heading, Alert } from 'plurall-ui';
 
 import styles from './Search.module.css';
 import noImage from '../../noImage.svg';
@@ -15,6 +15,7 @@ class Search extends React.Component {
   state = {
     artists: [],
     notFound: false,
+    loading: false,
     searchValue: '',
     typingTimeout: 0
   }
@@ -29,6 +30,7 @@ class Search extends React.Component {
     if(value.length > 4){
       /* Timeout to handle user typing */
       self.setState({
+        loading: true,
         searchValue: value,
         typingTimeout: setTimeout(function () {
           self.search(self.state.searchValue);
@@ -41,17 +43,21 @@ class Search extends React.Component {
   search = (value) => {
     client.getArtists(value)
     .then((res) => {
-      if(res && res['artists']['items'].length > 0){
+      if(res['artists'] && res['artists']['items'].length > 0){
         const artists = res['artists']['items'];
-        this.setState({ artists, notFound: false })
+        this.setState({ loading: false, artists, notFound: false })
       } else {
-        this.setState({ artists: [], notFound: true })
+        this.setState({ loading: false, artists: [], notFound: true })
       }
+    })
+    .catch((err) => {
+      this.setState({ loading: false, notFound: false })
+      return alert(err.message)
     });
   }
 
   render() {
-    const { artists, notFound, searchValue } = this.state;
+    const { artists, notFound, searchValue, loading } = this.state;
     return (
       <React.Fragment>
         <SubHeader
@@ -70,7 +76,7 @@ class Search extends React.Component {
           </div>
           { artists.length > 0 ? 
             <React.Fragment>
-              <Heading>Artistas encontrados: {artists.length}</Heading>
+              <Heading>{`Artistas encontrados: ${artists.length}`}</Heading>
               <section>
                 {artists.map((e, k) => {
                   let background;
@@ -91,7 +97,8 @@ class Search extends React.Component {
               </section>
             </React.Fragment>
           : null }
-          { notFound ? <Heading>Nenhum artista encontrad@ para '{searchValue}'</Heading> : null }
+          { loading ? <Heading>Carregando...</Heading> : null }
+          { !loading && notFound ? <Heading>{`Nenhum artista encontrad@ para '${searchValue}'`}</Heading> : null }
         </div>
       </React.Fragment>
     )

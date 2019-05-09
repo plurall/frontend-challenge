@@ -12,7 +12,13 @@ class SomosClient {
 	    }
   	})
 	    .then(response => {
+	    	if(response.status !== 200){
+	    		throw new Error('Erro ao carregar os artistas, cheque suas crendeciais e tente novamente.');
+	    	}
 	      return response.json();
+	    })
+	    .catch(error => {
+    		throw new Error('Erro ao carregar os artistas, cheque suas crendeciais e tente novamente.');
 	    })
   }
   async getAboutArtist(id) {
@@ -23,7 +29,13 @@ class SomosClient {
 	    }
   	})
 	    .then(response => {
+	    	if(response.status !== 200){
+	    		throw new Error('Erro ao carregar as informações do artista, cheque suas crendeciais e tente novamente.');
+	    	}
 	      return response.json();
+	    })
+	    .catch(error => {
+    		throw new Error('Erro ao carregar as informações do artista, cheque suas crendeciais e tente novamente.');
 	    })
   }
 	async getAboutArtistAlbums(id) {
@@ -34,7 +46,12 @@ class SomosClient {
 	    }
   	})
 	    .then(response => {
-	      return response.json();
+	      if(response.status !== 200){
+	    		throw new Error('Erro ao carregar os álbuns do artista, cheque suas crendeciais e tente novamente.');
+	    	}
+	    })
+	    .catch(error => {
+    		throw new Error('Erro ao carregar os álbuns do artista, cheque suas crendeciais e tente novamente.');
 	    })
   }
 }

@@ -23,11 +23,17 @@ class About extends React.Component {
     client.getAboutArtist(id)
       .then((res) => {
         this.setState({ info: res })
-    });
+    })
+      .catch((err) => {
+        return alert(err.message)
+    });;
     client.getAboutArtistAlbums(id)
       .then((res) => {
         this.setState({ albums: res })
-    });
+    })
+      .catch((err) => {
+        return alert(err.message)
+      });
 
   }
 
