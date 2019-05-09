@@ -1,6 +1,6 @@
 import React from 'react'
 import { SearchBox } from '@plurall/elo'
-import { Box } from 'components'
+import { Box, Layout } from 'components'
 
 import SomosClient from 'utils/client'
 import styles from './Search.module.css'
@@ -51,7 +51,7 @@ class Search extends React.Component {
     // const { data } = this.state
 
     return (
-      <React.Fragment>
+      <Layout>
         <div className={styles.wrapper}>
           <SearchBox
             label="Digite o nome do artista"
@@ -70,7 +70,7 @@ class Search extends React.Component {
           />
           <Box data={this.state.data} />
         </div>
-      </React.Fragment>
+      </Layout>
     )
   }
 }

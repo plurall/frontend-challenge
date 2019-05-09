@@ -2,7 +2,7 @@ import { clearToken, getToken } from 'utils'
 import axios from 'axios'
 import Qs from 'qs'
 
-import artistsId from '../data/artirts'
+import artistsIds from '../data/artirts'
 
 class SomosClient {
   // constructor() {}
@@ -18,7 +18,7 @@ class SomosClient {
     try {
       const config = {
         params: {
-          ids: [...artistsId],
+          ids: [...artistsIds],
         },
         paramsSerializer: params =>
           Qs.stringify(params, { arrayFormat: 'comma' }),
@@ -40,9 +40,9 @@ class SomosClient {
   getArtist = async artistsId => {
     // console.log('GET ARTIST ID', id)
     const { id } = artistsId
-    console.log('ID', id)
-    console.log('TOKEN', getToken())
-    console.log('METHOD GET ARTIST')
+    // console.log('ID', id)
+    // console.log('TOKEN', getToken())
+    // console.log('METHOD GET ARTIST')
     try {
       const config = {
         // params: id,
@@ -53,6 +53,28 @@ class SomosClient {
       }
       const response = await axios.get(
         `https://api.spotify.com/v1/artists/${id}`,
+        config,
+      )
+      console.log('RESPONSE', response)
+      return response
+    } catch (error) {
+      return error
+    }
+  }
+
+  getAlbums = async artistId => {
+    const { id } = artistId
+
+    console.log('TOKEN', getToken())
+
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      }
+      const response = await axios.get(
+        `https://api.spotify.com/v1/artists/${id}/albums`,
         config,
       )
       console.log('RESPONSE', response)
