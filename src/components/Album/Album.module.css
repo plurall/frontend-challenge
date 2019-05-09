@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+}
+.albumList {
+  padding: 10px;
+}
+.img {
+  width: 200px;
+}

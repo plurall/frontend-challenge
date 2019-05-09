@@ -4,6 +4,7 @@ import { Heading, Text } from '@plurall/elo'
 
 import { SomosClient } from '../../utils'
 import { Album, GenreList, Layout } from '../../components'
+import styles from './Artist.module.css'
 
 class Artist extends React.Component {
   state = {
@@ -43,13 +44,18 @@ class Artist extends React.Component {
     if (loading) return null
     return (
       <Layout>
-        <Heading size="normal">{artist.data.name}</Heading>
-        {console.log(albums.data.items)}
-        <Text>Popularidade{artist.data.popularity}</Text>
-        <img src={artist.data.images[0].url} alt={artist.data.name} />
+        <div className={styles.wrapper}>
+          <Heading size="normal">{artist.data.name}</Heading>
+          <Text>Popularidade:{artist.data.popularity}</Text>
+          <img
+            className={styles.image}
+            src={artist.data.images[0].url}
+            alt={artist.data.name}
+          />
 
-        <GenreList data={artist.data.genres} />
-        <Album data={albums.data.items} />
+          <GenreList data={artist.data.genres} />
+          <Album data={albums.data.items} />
+        </div>
       </Layout>
     )
   }

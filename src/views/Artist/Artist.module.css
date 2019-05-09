@@ -1,0 +1,11 @@
+.wrapper {
+  max-width: 1224px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--padding-top)
+}
+
+.image {
+  max-width: 60%;
+}
