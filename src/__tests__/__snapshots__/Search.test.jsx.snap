@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders correctly 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <div
+      className="wrapper"
+    >
+      <div
+        className="innerDiv"
+      >
+        <div
+          className="css-12qg8yb"
+        >
+          <div
+            className="css-12qg8yb"
+          >
+            <div
+              className="css-1xdrpc5"
+            >
+              <p
+                className="css-1g0yeft"
+              >
+                Pesquisa
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1
+          className="heading css-1n7fvwb"
+        >
+          Somos Front-end Challenge
+        </h1>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="wrapper"
+  >
+    <div
+      className="searchInput"
+    >
+      <div
+        className="css-1iyoj2o"
+      >
+        <p
+          className="css-stlxfv"
+        >
+          Encontre seus artistas preferidos
+        </p>
+        <div
+          className="css-cssveg"
+        >
+          <input
+            className="css-kxo4w0"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Comece a digitar"
+            value=""
+          />
+          <div
+            className="css-lwqyx4"
+          >
+            <div
+              className="css-18oxwfi"
+            >
+              <span
+                className="css-kr383g"
+              >
+                No artists found
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

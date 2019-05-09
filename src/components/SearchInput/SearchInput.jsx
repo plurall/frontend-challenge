@@ -17,8 +17,11 @@ const SearchInput = ({ label, placeholder, notFoundMessage, onChange, value }) =
 )
 
 SearchInput.propTypes = {
-  buttonHref: PropTypes.string,
-  children: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  notFoundMessage: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 }
 
 export default SearchInput

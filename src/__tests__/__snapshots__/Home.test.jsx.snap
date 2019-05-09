@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <div
+      className="wrapper"
+    >
+      <div
+        className="innerDiv"
+      >
+        <div
+          className="css-12qg8yb"
+        >
+          <div
+            className="css-12qg8yb"
+          >
+            <div
+              className="css-1xdrpc5"
+            >
+              <p
+                className="css-1g0yeft"
+              >
+                Home
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1
+          className="heading css-1n7fvwb"
+        >
+          Somos Front-end Challenge
+        </h1>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="wrapper"
+  >
+    <h1
+      className="css-1n7fvwb"
+    >
+      Olá, procure por seus artistas preferidos
+    </h1>
+    <div
+      className="link"
+    >
+      <a
+        href="/search"
+        onClick={[Function]}
+      >
+        <a
+          className="css-1p0t412"
+          href="#"
+          size="normal"
+          target="_self"
+        >
+          <button
+            className="link css-3i0ao"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            aqui
+          </button>
+        </a>
+        <div
+          className="smile"
+        >
+          <img
+            alt="Smile"
+            src="smile.svg"
+          />
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <div
+      className="wrapper"
+    >
+      <div
+        className="innerDiv"
+      >
+        <div
+          className="css-12qg8yb"
+        >
+          <div
+            className="css-12qg8yb"
+          >
+            <div
+              className="css-1xdrpc5"
+            >
+              <p
+                className="css-1g0yeft"
+              >
+                Home
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1
+          className="heading css-1n7fvwb"
+        >
+          Somos Front-end Challenge
+        </h1>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="wrapper"
+  >
+    <h1
+      className="css-1n7fvwb"
+    >
+      Olá, procure por seus artistas preferidos
+    </h1>
+    <div
+      className="link"
+    >
+      <a
+        href="/search"
+        onClick={[Function]}
+      >
+        <a
+          className="css-1p0t412"
+          href="#"
+          size="normal"
+          target="_self"
+        >
+          <button
+            className="link css-3i0ao"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            aqui
+          </button>
+        </a>
+        <div
+          className="smile"
+        >
+          <img
+            alt="Smile"
+            src="smile.svg"
+          />
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;
