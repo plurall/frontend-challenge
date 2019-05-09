@@ -46,7 +46,7 @@ class SomosClient {
     // console.log('METHOD GET ARTIST')
     try {
       const config = {
-        // params: id,
+        params: id,
 
         headers: {
           Authorization: `Bearer ${getToken()}`,
@@ -75,7 +75,7 @@ class SomosClient {
         },
       }
       const response = await axios.get(
-        `https://api.spotify.com/v1/artists/${id}/albums`,
+        `https://api.spotify.com/v1/artists/${id}/albums?limit=10`,
         config,
       )
       // console.log('RESPONSE', response)

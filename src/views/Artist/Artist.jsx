@@ -21,11 +21,7 @@ class Artist extends React.Component {
   getArtistData = async id => {
     const client = new SomosClient()
     const artist = await client.getArtist(id)
-    console.log('ARTIST', artist)
-
     const albums = await client.getAlbums(id)
-
-    console.log('ALBUMS', albums)
 
     this.setState(
       {
@@ -61,4 +57,11 @@ class Artist extends React.Component {
   }
 }
 
+Artist.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+}
 export default Artist

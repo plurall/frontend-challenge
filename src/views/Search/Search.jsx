@@ -48,7 +48,7 @@ class Search extends React.Component {
   }
 
   render() {
-    // const { data } = this.state
+    const { data } = this.state
 
     return (
       <Layout>
@@ -68,7 +68,7 @@ class Search extends React.Component {
             // onClick={item => console.log(item)}
             onChange={this.handleChange}
           />
-          <Box data={this.state.data} />
+          <Box data={data} />
         </div>
       </Layout>
     )
