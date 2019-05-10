@@ -11,6 +11,8 @@ export class Busca extends Component {
     artistas: {
       items: [],
       next: [],
+      popularity: [],
+      genres: [],
       isLoading: false
     }
   }
@@ -18,10 +20,10 @@ export class Busca extends Component {
   buscarArtista = async (textInput) => {
     if(textInput.length>4) {
       this.setState({isLoading: true})
-      console.log('fetchData.artists')
-       let fetchData = await this.client.getArtists(textInput)
-       if(!fetchData.artists) return false
-      let { items, next} = fetchData.artists
+      let fetchData = await this.client.getArtists(textInput)
+      if(!fetchData.artists) return false
+      let { items, next, popularity, genres} = fetchData.artists
+      console.log(fetchData)
       this.setState({artistas: {items, next, isLoading: false}})
     }
   }
@@ -35,7 +37,6 @@ export class Busca extends Component {
           <TextBox label="Digite o nome" onChange={this.buscarArtista}></TextBox>
           {items && items.map((element, index)=>{
             element = items[index]
-            console.log(element.images[0] ? element.images[0].url : '')
             return(<div>
               <img src={element.images[0] ? element.images[0].url : 'https://bit.ly/2PYBAXl'}/>
               <div>{element.name}</div>
