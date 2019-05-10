@@ -9,7 +9,8 @@ import ReactDOM from 'react-dom'
 import { LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
-import registerServiceWorker from 'registerServiceWorker'
+import registerServiceWorker from 'registerServiceWorker';
+import { Busca } from './views/busca'
 
 const customHistory = createBrowserHistory()
 customHistory.listen(() => window.tracker.pageView())

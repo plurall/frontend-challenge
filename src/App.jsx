@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import PlurallTracker from 'plurall-tracker'
 
 import { Layout, PrivateRoute } from 'components'
 import { Home } from 'views'
+import { Busca } from 'views'
 
 import './App.module.css'
 
@@ -21,7 +22,9 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <Home />
+        
+        <Route path="/" exact component={Home} />
+        <Route path="/busca" component={Busca} />
       </Layout>
     )
   }

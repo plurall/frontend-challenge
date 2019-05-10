@@ -1,13 +1,20 @@
-import { clearToken, getToken } from 'utils'
+import { clearToken, getToken, setToken } from 'utils'
 
 class SomosClient {
-  constructor() {}
+  constructor() {
+  }
 
-  onError = error => {}
+  async getArtists(textSearch) {
+    let token = await getToken()
+    const header = {headers: {
+        'Authorization': 'Bearer ' + token
+    }}
+  
+    let listaArtistas = fetch(`https://api.spotify.com/v1/search?q=${textSearch}&type=artist`,
+      {...header}
+      ).then(response=> response.json())
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+      return listaArtistas
   }
 }
 

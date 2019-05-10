@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
+
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
+
+
 
 import { getToken, setToken, SomosClient } from 'utils'
 
@@ -43,10 +46,12 @@ class Layout extends Component {
             logout={this.handleLogout}
             service="reader"
             userToken={getToken()}
-          />
+            />
         </div>
 
-        <div className={content}>{children}</div>
+        <div className={content}>{children}
+            
+        </div>
 
         <div className={footer}>
           <Footer />
