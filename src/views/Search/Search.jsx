@@ -10,7 +10,7 @@ import { filterElement, filterNameToValue } from '../../utils'
 class Search extends React.Component {
   state = {
     artists: [],
-    data: '',
+    data: [],
     list: [{ id: 0, value: '' }],
   }
 
@@ -49,7 +49,7 @@ class Search extends React.Component {
         <div className={styles.wrapper}>
           <SearchBox
             label="Digite o nome do artista"
-            placeholder="Digite a sua busca ex: Daron"
+            placeholder="Digite a sua busca ex: Daron, Djavan "
             notFoundMessage="Nenhum resultado encontrado"
             items={[...list]}
             // onClick={item => console.log(item)}

@@ -14,15 +14,17 @@ const Box = ({ data }) => {
         <li className={styles.list} key={artist.id}>
           <Link
             className={styles.link}
-            to={`/artista/${artist.id}`}
+            to={`/artista/${artist.id}/`}
             render={Artist}
           >
-            <img
-              className={styles.image}
-              src={artist.images[1].url}
-              alt={artist.name}
-            />
-            <Heading size="small">{artist.name}</Heading>
+            <div>
+              <img
+                className={styles.image}
+                src={artist.images[1].url}
+                alt={artist.name}
+              />
+              <Heading size="small">{artist.name}</Heading>
+            </div>
           </Link>
         </li>
       ))}

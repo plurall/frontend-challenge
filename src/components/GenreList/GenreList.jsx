@@ -6,7 +6,6 @@ import styles from './GenreList.module.css'
 
 const GenreList = ({ data }) => (
   <div className={styles.wrapperGender}>
-    {/* {console.log('GENRE LIST', data)} */}
     <Heading size="small">Lista de gêneros</Heading>
     <ul className={styles.wrapperList}>
       {data.map(genre => (

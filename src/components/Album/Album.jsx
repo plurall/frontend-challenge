@@ -5,7 +5,7 @@ import { formatDate } from '../../utils'
 import styles from './Album.module.css'
 
 const Album = ({ data }) => (
-  <div>
+  <div className={styles.wrapper}>
     <Heading size="small">Álbuns do artista</Heading>
     <ul className={styles.wrapperList}>
       {data.map(album => (

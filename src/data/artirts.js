@@ -8,6 +8,8 @@ const artistsId = [
   '6tw6EpC9RgmSRZiZg0n22t',
   '6pmxr66tMAePxzOLfjGNcX',
   '1BtLi9yMFWLkJAD0JBSaxz',
+  '7n1XMwvxPf10t4OX6h6Ufy',
+  '5rrmaoBXZ7Jcs4Qb77j0YA',
 ]
 
 export default artistsId
