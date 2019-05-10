@@ -52,7 +52,6 @@ class Search extends React.Component {
             placeholder="Digite a sua busca ex: Daron, Djavan "
             notFoundMessage="Nenhum resultado encontrado"
             items={[...list]}
-            // onClick={item => console.log(item)}
             onChange={this.handleChange}
           />
           <Box data={data} />
