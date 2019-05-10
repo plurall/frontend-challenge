@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Heading } from '@plurall/elo'
-import { Artist } from '../../views'
 import styles from './Box.module.css'
 
 const Box = ({ data }) => {
@@ -12,11 +11,7 @@ const Box = ({ data }) => {
     <ul className={styles.wrapperList}>
       {data.map(artist => (
         <li className={styles.list} key={artist.id}>
-          <Link
-            className={styles.link}
-            to={`/artista/${artist.id}/`}
-            render={Artist}
-          >
+          <Link className={styles.link} to={`/artista/${artist.id}/`}>
             <div>
               <img
                 className={styles.image}
