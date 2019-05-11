@@ -1,11 +1,11 @@
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import queryString from 'query-string'
-import React from 'react'
+import React, { Component } from 'react'
 
 import { getOauthClient, setToken } from 'utils'
 
-class LoginCallback extends React.Component {
+class LoginCallback extends Component {
   static propTypes = {
     location: PropTypes.object.isRequired,
   }
