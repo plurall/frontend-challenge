@@ -1,0 +1,125 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.artist-wrapper {
+  display: flex;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-img {
+  margin-bottom: 20px;
+}
+
+.album-wrapper {
+  margin-left: 50px;
+}
+
+.album {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.album-info p {
+  margin-left: 10px;
+}
+
+.album-info p:first-child { 
+  margin-bottom: 10px;
+}
+
+.album-img {
+  width: 70px;
+  height: 70px;
+}
+
+.genres {
+  display: list-item;
+  margin-left: 20px;
+}
+
+.artist-info p, span {
+  margin-top: 4px;
+}
+
+@media (max-width: 306px) 
+{
+  .artist-wrapper {
+    display: block;
+  }
+
+  .artist-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .album-wrapper {
+    margin: 30px 0 0 0;
+  }
+
+  .album {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .album-info p {
+    margin-left: 0;
+  }
+
+  .album-info p:first-child { 
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 307px) and (max-width: 500px)
+{
+  .artist-wrapper {
+    display: block;
+  }
+
+  .artist-img {
+    width: 110px;
+    height: 110px;
+    margin-right: 20px;
+  }
+
+  .artist { 
+    flex-direction: row;
+  }
+
+  .album-wrapper {
+    margin: 30px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 767px) 
+{
+  .artist-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px)
+{
+  .artist-img {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1024px) 
+{
+  .artist-img {
+    width: 640px;
+    height: 640px;
+  }
+}
