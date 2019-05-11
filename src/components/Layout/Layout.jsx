@@ -9,17 +9,13 @@ import { getToken, setToken, SomosClient } from 'utils'
 import styles from './Layout.module.css'
 
 class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  }
+  state = {}
+
+  componentDidMount() {}
 
   client = new SomosClient({
     accessToken: getToken(),
   })
-
-  state = {}
-
-  componentDidMount() {}
 
   handleLogout = path => {
     setToken('')
@@ -38,7 +34,7 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+              menu: { items: [{ name: 'Início', slug: 'account', id: 0, href: '/' }] },
             }}
             logout={this.handleLogout}
             service="reader"
@@ -54,6 +50,10 @@ class Layout extends Component {
       </>
     )
   }
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
