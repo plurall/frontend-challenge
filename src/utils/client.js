@@ -1,14 +1,59 @@
-import { clearToken, getToken } from 'utils'
+import {
+  getToken
+} from 'utils'
 
 class SomosClient {
-  constructor() {}
-
   onError = error => {}
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtistas(queryString) {
+    return fetch(`https://api.spotify.com/v1/search?q=${queryString}&type=artist`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
+      .then(response => {
+        if (response.status !== 200) {
+          throw new Error('Erro ao carregar os artistas');
+        }
+        return response.json();
+      })
+      .catch(error => {
+        throw new Error('Erro ao carregar os artistas');
+      })
   }
+    async getArtistaAlbums(id) {
+      return fetch(`https://api.spotify.com/v1/artists/${id}/albums?limit=10`, {
+          headers: {
+            Authorization: `Bearer ${getToken()}`
+          }
+        })
+        .then(response => {
+          if (response.status !== 200) {
+            throw new Error('Erro ao carregar os álbuns do artista');
+          }
+          return response.json();
+        })
+        .catch(error => {
+          throw new Error('Erro ao carregar os álbuns do artista');
+        })
+    }
+  async getInfoArtista(id) {
+    return fetch(`https://api.spotify.com/v1/artists/${id}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
+      .then(response => {
+        if (response.status !== 200) {
+          throw new Error('Erro ao carregar dados do artista');
+        }
+        return response.json();
+      })
+      .catch(error => {
+        throw new Error('Erro ao carregar dados do artista');
+      })
+  }
+
 }
 
 export default SomosClient
