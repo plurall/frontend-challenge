@@ -1,0 +1,7 @@
+.p-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: auto;
+}
+
