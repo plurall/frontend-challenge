@@ -4,7 +4,7 @@ import { Switch } from 'react-router-dom'
 import PlurallTracker from 'plurall-tracker'
 
 import { Layout, PrivateRoute } from 'components'
-import { Home } from 'views'
+import { Home, Artista, Busca } from 'views'
 
 import './App.module.css'
 
@@ -21,7 +21,11 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <Home />
+        <Switch>
+          <PrivateRoute path="/" exact={true} component={Home} />
+          <PrivateRoute path="/busca" exact={true} component={Busca} />
+          <PrivateRoute path="/artista/:id" exact={true} component={Artista} />
+        </Switch>
       </Layout>
     )
   }
