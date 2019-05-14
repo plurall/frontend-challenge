@@ -3,14 +3,10 @@ import { Button, Heading } from '@plurall/elo'
 import React from 'react'
 
 import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
-
 import styles from './Home.module.css'
 
 class Home extends React.Component {
   state = {}
-
-  client = new SomosClient()
 
   render() {
     return (
