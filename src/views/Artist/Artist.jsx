@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { AlbumsList, GenresList, Layout, SubHeader } from 'components'
-import { SomosClient } from 'utils'
+import { Client } from 'utils'
 
 import styles from './Artist.module.css'
 
@@ -36,8 +36,8 @@ class Artist extends React.Component {
 
     try {
       const result = await Promise.all([
-        SomosClient.getArtist(id),
-        SomosClient.getArtistAlbums(id, 10),
+        Client.getArtist(id),
+        Client.getArtistAlbums(id, 10),
       ])
 
       const [

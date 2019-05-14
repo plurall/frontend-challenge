@@ -11,7 +11,7 @@ spotifyInstance.interceptors.request.use(config => {
   return config
 })
 
-class SomosClient {
+class Client {
   static async searchArtists(query) {
     let response
     try {
@@ -33,7 +33,7 @@ class SomosClient {
     try {
       response = await spotifyInstance.get(`/artists/${id}`)
     } catch (error) {
-      throw new Error('Failed to get fetch on Spotify.')
+      throw new Error('Failed to get artist on Spotify.')
     }
 
     return response.data
@@ -48,11 +48,11 @@ class SomosClient {
         },
       })
     } catch (error) {
-      throw new Error('Failed to get fetch artist albums on Spotify.')
+      throw new Error('Failed to get artist albums on Spotify.')
     }
 
     return response.data.items
   }
 }
 
-export default SomosClient
+export default Client

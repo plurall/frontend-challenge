@@ -3,7 +3,7 @@ import { debounceTime, filter, switchMap, tap, catchError } from 'rxjs/operators
 import { Alert, Heading, Text, TextBox } from '@plurall/elo'
 import React from 'react'
 
-import { SomosClient } from 'utils'
+import { Client } from 'utils'
 import { ArtistsList, Layout, SubHeader } from 'components'
 import styles from './Search.module.css'
 
@@ -32,7 +32,7 @@ class Search extends React.Component {
         isSearching: true,
       })),
       debounceTime(400),
-      switchMap(query => from(SomosClient.searchArtists(query)).pipe(
+      switchMap(query => from(Client.searchArtists(query)).pipe(
         catchError(error => {
           this.setState({
             error,
