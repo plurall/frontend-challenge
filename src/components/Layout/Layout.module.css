@@ -8,5 +8,5 @@
 
 .footer {
   background-color: var(--color-dark-gray);
-  padding: var(--padding);
+  padding: 30px 20px;
 }

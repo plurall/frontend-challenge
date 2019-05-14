@@ -6,9 +6,9 @@
 }
 
 .textWrapper {
-  margin-top: 10px;
+  margin-top: var(--margin);
 }
 
 .artistsListWrapper {
-  margin-top: 10px;
+  margin-top: var(--margin);
 }

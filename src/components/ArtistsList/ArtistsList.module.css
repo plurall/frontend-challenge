@@ -1,5 +1,5 @@
 .list {
-  margin-top: 5px 0;
+  margin-top: var(--margin) 0;
 }
 
 .item {
@@ -14,14 +14,14 @@
   align-items: center;
   display: flex;
   min-height: 45px;
-  padding: 5px 0;
+  padding: var(--padding) 0;
   width: 100%;
 }
 
 .image {
   border-radius: 50%;
   height: 45px;
-  margin-right: 10px;
+  margin-right: var(--margin);
   min-width: 45px;
   width: 45px;
 }

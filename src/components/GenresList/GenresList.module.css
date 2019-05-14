@@ -1,5 +1,5 @@
 .list {
-  margin-top: 5px;
+  margin-top: var(--margin);
 }
 
 .item {
