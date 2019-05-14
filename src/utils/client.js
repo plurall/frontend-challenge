@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-import { clearToken, getToken } from 'utils'
+import { getToken } from 'utils'
 
 const spotifyInstance = axios.create({
   baseURL: 'https://api.spotify.com/v1',
 })
 
 spotifyInstance.interceptors.request.use(config => {
-  config.headers.Authorization = `Bearer ${getToken()}`
+  config.headers.Authorization = `Bearer ${getToken()}` // eslint-disable-line no-param-reassign
   return config
 })
 
