@@ -20,11 +20,15 @@ class Home extends React.Component {
         />
         <div className={styles.wrapper}>
           <Heading>Home page - Frontend Challenge</Heading>
-          <Button>
-            <Link to="/search" className={styles.link}>
-              Go to Search Page
-            </Link>
-          </Button>
+          <div
+            className={styles.buttonWrapper}
+          >
+            <Button>
+              <Link to="/search" className={styles.link}>
+                Go to Search Page
+              </Link>
+            </Button>
+          </div>
         </div>
       </React.Fragment>
     )

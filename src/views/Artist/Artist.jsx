@@ -2,8 +2,8 @@ import { Heading, Text } from '@plurall/elo'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Layout, SubHeader } from 'components'
-// import { SomosClient } from 'utils'
+import { AlbumsList, GenresList, Layout, SubHeader } from 'components'
+import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
 
@@ -18,21 +18,50 @@ class Artist extends React.Component {
 
   state = {
     artist: null,
-    isLoading: true,
+    albums: [],
     error: '',
+    isLoading: true,
   }
 
-  componentDidMount() {
-    const { params } = this.props.match
+  async componentDidMount() {
+    const { id } = this.props.match.params
+    await this.fetchArtistWithAlbums(id)
+  }
+
+  fetchArtistWithAlbums = async id => {
     this.setState({
-      artist: {
-        id: params.id,
-      },
+      isLoading: true,
+      error: '',
+    })
+
+    try {
+      const result = await Promise.all([
+        SomosClient.getArtist(id),
+        SomosClient.getArtistAlbums(id, 10),
+      ])
+
+      const [
+        artist,
+        albums,
+      ] = result
+
+      this.setState({
+        artist,
+        albums,
+      })
+    } catch (error) {
+      this.setState({
+        error,
+      })
+    }
+
+    this.setState({
+      isLoading: false,
     })
   }
 
   render() {
-    const { artist, isLoading, error } = this.state
+    const { artist, albums, isLoading, error } = this.state
     return (
       <Layout>
         <SubHeader
@@ -43,8 +72,72 @@ class Artist extends React.Component {
           ]}
         />
         <div className={styles.wrapper}>
-          <Heading>Artist page</Heading>
-          <Text>{JSON.stringify({ artist })}</Text>
+          {isLoading ? (
+            <Text
+              element="p"
+              className={styles.message}
+            >
+              Wait a little bit. Fetching artist on Spotify...
+            </Text>
+          ) : (
+            null
+          )}
+          {!isLoading && error ? (
+            <Text
+              element="p"
+              className={styles.message}
+            >
+              {error.message}
+            </Text>
+          ) : (
+            null
+          )}
+          {!isLoading && !artist && !error ? (
+            <Text
+              element="p"
+              className={styles.message}
+            >
+              Artist not found on Spotify.
+            </Text>
+          ) : (
+            null
+          )}
+          {!isLoading && artist ? (
+            <div>
+              <div className={styles.artist}>
+                {artist.images && artist.images.length ? (
+                  <img
+                    className={styles.image}
+                    src={artist.images[0].url}
+                    alt={artist.name}
+                  />
+                ) : (
+                  null
+                )}
+                <div>
+                  <Heading>{artist.name}</Heading>
+                  <Text
+                    element="p"
+                  >
+                    Popularity: {artist.popularity}
+                  </Text>
+                </div>
+              </div>
+              <div className={styles.genresWrapper}>
+                <GenresList
+                  genres={artist.genres}
+                />
+              </div>
+              <div className={styles.albumsWrapper}>
+                <AlbumsList
+                  albums={albums}
+                  className={styles.albumsWrapper}
+                />
+              </div>
+            </div>
+          ) : (
+            null
+          )}
         </div>
       </Layout>
     )

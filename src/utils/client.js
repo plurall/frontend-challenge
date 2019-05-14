@@ -21,11 +21,37 @@ class SomosClient {
           type: 'artist',
         },
       })
-    } catch (err) {
+    } catch (error) {
       throw new Error('Failed to search artists on Spotify.')
     }
 
     return response.data.artists.items
+  }
+
+  static async getArtist(id) {
+    let response
+    try {
+      response = await spotifyInstance.get(`/artists/${id}`)
+    } catch (error) {
+      throw new Error('Failed to get fetch on Spotify.')
+    }
+
+    return response.data
+  }
+
+  static async getArtistAlbums(artistId, limit = 10) {
+    let response
+    try {
+      response = await spotifyInstance.get(`/artists/${artistId}/albums`, {
+        params: {
+          limit,
+        },
+      })
+    } catch (error) {
+      throw new Error('Failed to get fetch artist albums on Spotify.')
+    }
+
+    return response.data.items
   }
 }
 

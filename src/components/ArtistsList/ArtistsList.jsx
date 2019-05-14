@@ -14,7 +14,7 @@ const ArtistsList = ({ artists }) => (
             {artist.images && artist.images.length ? (
               <img
                 className={styles.image}
-                src={artist.images[0].url}
+                src={artist.images[2].url}
                 alt={artist.name}
               />
             ) : (

@@ -1,11 +1,13 @@
-import { Heading, Text, TextBox } from '@plurall/elo'
 import { from, Subject, of } from 'rxjs'
 import { debounceTime, filter, switchMap, tap, catchError } from 'rxjs/operators'
+import { Alert, Heading, Text, TextBox } from '@plurall/elo'
 import React from 'react'
 
 import { SomosClient } from 'utils'
 import { ArtistsList, Layout, SubHeader } from 'components'
 import styles from './Search.module.css'
+
+const MIN_QUERY_LENGTH = 5
 
 class Search extends React.Component {
   state = {
@@ -16,8 +18,16 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    this.createSearchSubscription()
+  }
+
+  componentWillUnmount() {
+    this.searchSubscription.unsubscribe()
+  }
+
+  createSearchSubscription() {
     this.searchSubscription = this.searchSubject.pipe(
-      filter(query => query.length >= this.minQueryLength),
+      filter(query => query.length >= MIN_QUERY_LENGTH),
       tap(() => this.setState({
         isSearching: true,
       })),
@@ -39,12 +49,7 @@ class Search extends React.Component {
     }))
   }
 
-  componentWillUnmount() {
-    this.searchSubscription.unsubscribe()
-  }
-
   searchSubject = new Subject()
-  minQueryLength = 5
 
   handleQueryChange = query => {
     const formattedQuery = query.trim().toLowerCase()
@@ -68,54 +73,68 @@ class Search extends React.Component {
           ]}
         />
         <div className={styles.wrapper}>
+          {!isSearching && error ? (
+            <Alert
+              type="error"
+            >
+              {error.message}
+            </Alert>
+          ) : (
+            null
+          )}
           <Heading>Search page</Heading>
           <TextBox
-            label="Search by artist name:"
+            label="Search by artist on Spotify:"
             placeholder="E.g. Michael Jackson"
             onChange={this.handleQueryChange}
           />
           {isSearching ? (
-            <Text
-              element="p"
-              className={styles.message}
+            <div
+              className={styles.textWrapper}
             >
-              Wait a little bit. Searching on Spotify...
-            </Text>
+              <Text
+                element="p"
+              >
+                Wait a little bit. Searching on Spotify...
+              </Text>
+            </div>
           ) : (
             null
           )}
-          {!isSearching && error && error.message ? (
-            <Text
-              element="p"
-              className={styles.message}
+          {!isSearching && query.length < MIN_QUERY_LENGTH ? (
+            <div
+              className={styles.textWrapper}
             >
-              {error.message}
-            </Text>
+              <Text
+                element="p"
+                className={styles.textWrapper}
+              >
+                You must enter at least {MIN_QUERY_LENGTH} characters to search.
+              </Text>
+            </div>
           ) : (
             null
           )}
-          {!isSearching && query.length < this.minQueryLength ? (
-            <Text
-              element="p"
-              className={styles.message}
+          {!isSearching && !artists.length && query.length >= MIN_QUERY_LENGTH && !error ? (
+            <div
+              className={styles.textWrapper}
             >
-              You must enter at least {this.minQueryLength} characters to search.
-            </Text>
-          ) : (
-            null
-          )}
-          {!isSearching && !artists.length && query.length >= this.minQueryLength && !error ? (
-            <Text
-              element="p"
-              className={styles.message}
-            >
-              No artist found on Spotify.
-            </Text>
+              <Text
+                element="p"
+                className={styles.textWrapper}
+              >
+                No artist found on Spotify.
+              </Text>
+            </div>
           ) : (
             null
           )}
           {!isSearching && artists && artists.length ? (
-            <ArtistsList artists={artists} />
+            <div
+              className={styles.artistsListWrapper}
+            >
+              <ArtistsList artists={artists} />
+            </div>
           ) : (
             null
           )}

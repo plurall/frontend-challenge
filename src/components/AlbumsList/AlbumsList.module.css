@@ -1,0 +1,23 @@
+.list {
+  margin-top: 5px;
+}
+
+.item {
+  list-style: none;
+}
+
+.album {
+  align-items: center;
+  display: flex;
+  min-height: 54px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.image {
+  border-radius: 5px;
+  height: 54px;
+  margin-right: 10px;
+  min-width: 54px;
+  width: 54px;
+}
