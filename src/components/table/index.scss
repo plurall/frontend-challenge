@@ -1,0 +1,103 @@
+.table {
+    width: 100%;
+    margin-top: 40px;
+    
+    & .a {
+        text-decoration: none;
+    }
+    
+    & .table-header {
+        display: flex;
+        
+        & > div {
+            padding: 5px;
+            width: 30%;
+
+            &.icon-ver-mais {
+                width:4%;
+            }
+
+        }
+
+        & .header-foto  {
+            width: auto;
+        }
+    }
+    & .table-body {
+        display: flex;
+        align-items: center;
+        color: rgb(97, 97, 97);
+        margin: 7px 0px;
+        border-radius: 5px;
+        background-color: rgb(211, 211, 211);
+
+        & > div {
+            padding: 5px;
+            width: 30%;
+
+            &.icon-ver-mais {
+                width:4%;
+            }
+
+            & .genero-hide {
+                display: none;
+            }
+
+            & span {
+                display: inline-block;
+            }
+        }
+        & .body-foto  {
+            width: auto;
+        }
+
+        & span {
+            color: rgb(51, 51, 51);
+        }
+
+        &:hover {
+            box-shadow:  1px 1px 8px rgb(100, 100, 100);
+        }
+
+        & .body-stars {
+            width: 20%;
+        }
+        
+    }
+
+    & .foto-cantor {
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid rgb(129, 129, 129);
+        box-shadow: 1px 1px 10px -5px black;
+    }
+
+    .fake-input {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.ver-mais {
+
+    color: rgb(23, 120, 185);
+    font-size: .7rem;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.inside-ver-mais {
+    background-color: red;
+}

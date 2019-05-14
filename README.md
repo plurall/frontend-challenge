@@ -1,3 +1,12 @@
+
+# Considerações:
+- Usei SCSS ao invés de styled component:
+
+Tenho maior domínio do framework e achei a melhor opção para um projeto rápido como esse
+- Optei por baixar o menor número de dependências externas possível
+- Algumas coisas não estão feitas da melhor forma por questão de tempo
+- Achei baixo o tempo estimado de duas horas, apesar dos problemas que tive com versão de dependência, pra fazer algum minimamente usável levei muito mais tempo que isso.
+
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/7aea2a2436087e4ae1d1ec595837f7ce/image.png" width="150" /> <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/e56cb536325ee0e5d3abc645b2defc43/image.png" width="116" />
 
 # Front-end Challenge

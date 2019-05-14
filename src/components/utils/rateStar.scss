@@ -1,0 +1,18 @@
+.star-rating {
+    display: inline-block;
+    align-items: center;
+}
+.back-stars {
+    display: flex;
+    color: #ffffff;
+    position: relative;
+    text-shadow: 4px 4px 10px #313131;
+}
+.front-stars {
+    display: flex;
+    color: #FFBC0B;
+    overflow: hidden;
+    position: absolute;
+    text-shadow: 2px 2px 5px #d29b09; 
+    top: 0;
+}

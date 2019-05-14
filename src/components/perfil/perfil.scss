@@ -1,0 +1,75 @@
+.wrapper-perfil {
+    width: 100%;
+
+    & .Profile-name {
+        font-size: 2rem;
+        padding: 10px 0px;
+        color: rgb(255, 255, 255);
+    }
+
+    &::before {
+        content: '';
+        display: inline-block;
+        background-color: rgb(136, 133, 182);
+        width: 100%;
+        height: 30%;
+        position: absolute;
+        z-index: -1;
+    }
+
+    & .perfil-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .profile-photo {
+            width: 300px;
+            border-radius: 50%;
+        }
+
+        & .star-rating {
+            margin-top: 10px;
+        }
+    }
+}
+
+.perfil-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+
+    & .album-content {
+        width: 100%;
+
+        & .album-title {
+            font-size: 2.5rem;
+            color: rgb(63, 63, 63);
+        }
+    }
+}
+
+.album-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(150, 144, 236);
+    border: 1px solid rgb(98, 98, 98);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+
+    & img {
+        border-radius: 50%;
+    }
+
+    & .album-name {
+        font-weight: 800;
+        color: rgb(34, 34, 34);
+    }
+    & .album-date {
+        font-weight: 500;
+        font-size: .9rem;
+    }
+}

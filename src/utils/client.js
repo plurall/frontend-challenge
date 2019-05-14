@@ -2,19 +2,24 @@ import { clearToken, getToken, setToken } from 'utils'
 
 class SomosClient {
   constructor() {
+    this.header = {headers: {
+      'Authorization': 'Bearer ' + getToken()
+    }}
   }
 
   async getArtists(textSearch) {
-    let token = await getToken()
-    const header = {headers: {
-        'Authorization': 'Bearer ' + token
-    }}
-  
-    let listaArtistas = fetch(`https://api.spotify.com/v1/search?q=${textSearch}&type=artist`,
-      {...header}
-      ).then(response=> response.json())
+    let listaArtistas = await fetch(`https://api.spotify.com/v1/search?q=${textSearch}&type=artist`,{...this.header})
+    return listaArtistas.json()
+  }
 
-      return listaArtistas
+  async getArtist(artista) {
+    let artistaResponse = await fetch(`https://api.spotify.com/v1/artists/${artista}`,{...this.header})
+    return artistaResponse.json()
+  }
+  
+  async getAlbuns(artistaID) {
+      let listaAlbuns = await fetch(`https://api.spotify.com/v1/artists/${artistaID}/albums`,{...this.header})
+      return await listaAlbuns.json()
   }
 }
 
