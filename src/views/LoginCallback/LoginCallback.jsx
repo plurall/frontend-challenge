@@ -10,13 +10,14 @@ class LoginCallback extends React.Component {
     location: PropTypes.object.isRequired,
   }
 
-  state = {}
+  state = {
+    redirect: false,
+  }
 
   componentWillMount() {
     const oauth = getOauthClient()
     const { location } = this.props
     const fullPath = `${location.pathname}${location.search}${location.hash}`
-
     oauth.token.getToken(fullPath).then(({ accessToken }) => {
       setToken(accessToken)
       this.setState({ redirect: true })

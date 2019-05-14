@@ -8,15 +8,21 @@ import styles from './SubHeader.module.css'
 const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
   <div className={styles.header}>
     <div className={styles.wrapper}>
-      {buttonHref && (
+      {buttonHref ? (
         <Link href={buttonHref} className={styles.button}>
           <ArrowButton direction="left" />
         </Link>
+      ) : (
+        null
       )}
 
       <div className={styles.innerDiv}>
         <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
-        <Heading className={styles.heading}>{heading}</Heading>
+        {heading ? (
+          <Heading className={styles.heading}>{heading}</Heading>
+        ) : (
+          null
+        )}
       </div>
     </div>
   </div>
@@ -30,7 +36,7 @@ SubHeader.propTypes = {
     }),
   ),
   buttonHref: PropTypes.string,
-  heading: PropTypes.string.isRequired,
+  heading: PropTypes.string,
 }
 
 export default SubHeader

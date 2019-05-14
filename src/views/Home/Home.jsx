@@ -1,5 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button, Heading } from '@plurall/elo'
+import React from 'react'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
@@ -16,14 +17,14 @@ class Home extends React.Component {
       <React.Fragment>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challenge"
         />
         <div className={styles.wrapper}>
-          <button type="button">
+          <Heading>Home page - Frontend Challenge</Heading>
+          <Button>
             <Link to="/search" className={styles.link}>
               Go to Search Page
             </Link>
-          </button>
+          </Button>
         </div>
       </React.Fragment>
     )

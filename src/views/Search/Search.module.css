@@ -4,3 +4,7 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.message {
+  padding-top: 10px;
+}

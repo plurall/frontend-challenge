@@ -1,13 +1,31 @@
+import axios from 'axios'
+
 import { clearToken, getToken } from 'utils'
 
+const spotifyInstance = axios.create({
+  baseURL: 'https://api.spotify.com/v1',
+})
+
+spotifyInstance.interceptors.request.use(config => {
+  config.headers.Authorization = `Bearer ${getToken()}`
+  return config
+})
+
 class SomosClient {
-  constructor() {}
+  static async searchArtists(query) {
+    let response
+    try {
+      response = await spotifyInstance.get('/search', {
+        params: {
+          q: query,
+          type: 'artist',
+        },
+      })
+    } catch (err) {
+      throw new Error('Failed to search artists on Spotify.')
+    }
 
-  onError = error => {}
-
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+    return response.data.artists.items
   }
 }
 
