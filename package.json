@@ -22,12 +22,16 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "axios": "^0.18.0",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
     "lint-staged": "^7.0.0",
     "opn": "^5.4.0",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

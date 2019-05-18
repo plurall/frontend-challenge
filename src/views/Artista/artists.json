@@ -1,0 +1,16 @@
+
+{
+  "artists":[{
+  "genres": ["album rock", "art rock", "dance rock", "glam rock", "new wave", "permanent wave", "protopunk", "rock"],
+  "id": "0oSGxfWSnnOXhD2fKuz2Gy",
+  "images": [
+    {"height": 1000, "url": "https://i.scdn.co/image/6efa04809a6358a5da0e701d24449cfb8348ebf5", "width": 1000},
+    {"height": 640, "url": "https://i.scdn.co/image/76e50c6493a4173e5294374ae88be0ce42ed091e", "width": 640},
+    {"height": 200, "url": "https://i.scdn.co/image/c74188cfa692266ce5d61790d8b00880980bef20", "width": 200},
+    {"height": 64, "url": "https://i.scdn.co/image/0fc6cc36af66813555cc969755a1a30488758e2a", "width": 64}
+  ],
+  "name": "David Bowie",
+  "popularity": 82
+  }]
+}
+

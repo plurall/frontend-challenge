@@ -1,26 +1,37 @@
-import React from 'react'
-
+import React, {Fragment} from 'react'
+import {  Link } from "react-router-dom";
 import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
 
 import styles from './Home.module.css'
 
-class Home extends React.Component {
-  state = {}
+import SomosClient from '../../utils/client'
 
-  client = new SomosClient()
+class Home extends React.Component {
+  state = {
+    data: {},
+  }
+
+  getApi = () => {
+    SomosClient(res =>
+      this.setState({ data: res.data }))
+  }
 
   render() {
+    const { data: { artists } } = this.state
+    console.log(artists)
+
     return (
-      <React.Fragment>
+      <Fragment>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
         />
+        <button onClick={this.getApi}>API</button>
+        <Link to="/search">Pesquisar Artista</Link>
         <div className={styles.wrapper}>
           <h1>Hi</h1>
         </div>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }
