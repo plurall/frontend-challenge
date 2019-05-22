@@ -1,11 +1,8 @@
-import { combineReducers } from "redux"
-import {artists} from "./views/Artista/artists.json"
+import { combineReducers } from 'redux'
+import { searchReducer } from './views'
 
 const rootReducer = combineReducers({
-  artists: ()=> ({
-    type: "ARTISTS",
-    payload: artists
-  })
+  searchData: searchReducer,
 })
 
-export default rootReducer;
+export default rootReducer

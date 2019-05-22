@@ -1,0 +1,44 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-item {
+  border: solid #333 0.5px;
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 10px;
+  width: 350px;
+  height: 110px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.artist {
+  margin: 10px;
+}
+
+.list-img {
+  height: 110px;
+  width: 110px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0 10%
+}
+
+.date {
+  font-size: 12px;
+}

@@ -5,23 +5,22 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-import {Provider} from "react-redux"
+import { Provider } from 'react-redux'
 import { LoginCallback } from 'views'
-import { Artista } from 'views'
-import {Search} from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from "./rootReducer"
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import rootReducer from './rootReducer'
+import thunk from 'redux-thunk'
 
 const customHistory = createBrowserHistory()
-customHistory.listen(() => window.tracker.pageView())
+// customHistory.listen(() => window.tracker.pageView())
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk)
+  composeWithDevTools(applyMiddleware(thunk)),
 )
 
 ReactDOM.render(
@@ -29,8 +28,6 @@ ReactDOM.render(
     <Router history={customHistory}>
       <Switch>
         <Route path="/login/callback" component={LoginCallback} />
-        <Route path="/artista" component={Artista} />
-        <Route path="/serarch" component={Search} />
         <PrivateRoute path="/" component={App} />
       </Switch>
     </Router>

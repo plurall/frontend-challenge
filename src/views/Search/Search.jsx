@@ -1,60 +1,78 @@
-import React, {Fragment} from "react"
-import { SomosClient } from "utils";
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { changeValue, changeAlbums } from './actions'
 
+import style from './Search.module.css'
 
-class Search extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      artists: "",
-      api: {},
-    }
-  }
+const Search = ({ api, changeValue, changeAlbums }) => {
+  const {
+    content,
+    list,
+    'list-img': listImg,
+    'content-item': contentItem,
+    input,
+    name,
+    img,
+  } = style
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
-    e.target.value.length > 4 && this.findArtist()
-  }
-
-  findArtist = () => {
-    const { artists } = this.state
-    const params = {
-      q: artists,
-      type: 'artist',
-      market: 'us',
-    }
-
-    SomosClient('search', params, res => {
-      this.setState({
-        api: res.data.artists
-      })
-    })
-    console.log(params)
-  }
-
-  render(){
-    const {value, artists, api} = this.state;
-
-    console.log(this.state);
-
-    return(
-      <Fragment>
-        <input
-          type="text"
-          placeholder="Nome do Artista"
-          onChange={this.handleChange.bind(this)}
-          name="artists"
-          value={value}
-        />
-        <div style={{display: 'flex', flexDirection: 'center'}}>
-          <ul>
-          {api.items && api.items.map((todo, key) =><li key={key}>{todo.id}</li>)}
-          </ul>
-        </div>
-      </Fragment>
-    )
-  }
+  return (
+    <Fragment>
+      <input
+        type="text"
+        placeholder="Nome do Artista"
+        onChange={changeValue}
+        name="q"
+        className={input}
+      />
+      <div className={content}>
+        <ul className={list}>
+          {!!api &&
+            api.items &&
+            api.items.map(todo => (
+              <div key={todo.id} className={contentItem}>
+                <li className={img}>
+                  <Link
+                    onClick={() => {
+                      changeAlbums(todo.id)
+                    }}
+                    to="artists"
+                  >
+                    <img
+                      className={listImg}
+                      src={
+                        todo.images.length === 0
+                          ? '/Img/spotify.jpeg'
+                          : todo.images[0].url
+                      }
+                      alt={todo.name}
+                    />
+                  </Link>
+                </li>
+                <li className={name}>{todo.name}</li>
+              </div>
+            ))}
+        </ul>
+      </div>
+    </Fragment>
+  )
 }
 
+Search.propTypes = {
+  changeValue: PropTypes.func.isRequired,
+}
 
-export default Search;
+const mapStateToProps = state => ({
+  api: state.searchData.artists,
+})
+
+const mapDispachToProps = dispatch => {
+  return bindActionCreators({ changeValue, changeAlbums }, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispachToProps,
+)(Search)

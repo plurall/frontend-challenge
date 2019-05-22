@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
+import { Link } from 'react-router-dom'
 
 import { getToken, setToken, SomosClient } from 'utils'
 
@@ -31,7 +32,7 @@ class Layout extends Component {
       props: { children },
     } = this
 
-    const { content, footer, 'nav-bar': navBar } = styles
+    const { content, footer, 'nav-bar': navBar, nav, link } = styles
 
     return (
       <>
@@ -44,6 +45,16 @@ class Layout extends Component {
             service="reader"
             userToken={getToken()}
           />
+          <ul className={nav}>
+            <li>
+              <Link className={link} to="/home">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/search">Busca</Link>
+            </li>
+          </ul>
         </div>
 
         <div className={content}>{children}</div>

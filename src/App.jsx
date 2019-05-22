@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import PlurallTracker from 'plurall-tracker'
 
-import { Layout, PrivateRoute } from 'components'
+import { Layout } from 'components'
 import { Home, Search, Artista } from 'views'
 
 import './App.module.css'
@@ -14,17 +14,17 @@ window.tracker = new PlurallTracker({
 })
 
 class App extends Component {
-  async componentDidMount() {
-    window.tracker.pageView()
-  }
+  // async componentDidMount() {
+  //   // window.tracker.pageView()
+  // }
 
   render() {
     return (
       <Layout>
         <Switch>
-           <Route path="/home" component={Home} />
-           <Route path="/artists" component={Artista} />
-           <Route path="/search" component={Search} />
+          <Route path="/artists" component={Artista} />
+          <Route path="/search" component={Search} />
+          <Route path="/home" component={Home} />
         </Switch>
       </Layout>
     )
