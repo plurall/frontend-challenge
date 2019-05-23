@@ -1,4 +1,4 @@
-import MD5 from 'md5'
+// import MD5 from 'md5'
 
 const domain = () => {
   const {

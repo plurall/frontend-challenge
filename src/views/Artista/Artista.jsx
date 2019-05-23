@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import style from './Artista.module.css'
 
 const Artista = ({ artists, albums }) => {
@@ -18,8 +19,6 @@ const Artista = ({ artists, albums }) => {
     const { name, popularity } = artists[0]
     return (
       <Fragment>
-        {console.log('artists: ', name, popularity)}
-
         <div className={content}>
           <h1 className={artist}>{name}</h1>
           <h4>
@@ -33,7 +32,11 @@ const Artista = ({ artists, albums }) => {
               <div key={todo.id}>
                 <li className={contentItem}>
                   <img
-                    src={todo.images[1].url}
+                    src={
+                      todo.images.length === 0
+                        ? '/Img/spotify.jpeg'
+                        : todo.images[1].url
+                    }
                     alt={todo.name}
                     className={listImg}
                   />
@@ -50,12 +53,12 @@ const Artista = ({ artists, albums }) => {
         </div>
       </Fragment>
     )
-  } else {
-    return null
   }
+  return <Redirect to="/search" />
 }
 
 Artista.propTypes = {
+  artists: PropTypes.array.isRequired,
   albums: PropTypes.array.isRequired,
 }
 
@@ -65,12 +68,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(Artista)
-
-// A pagina do Artista deve exibir os seguintes dados:
-
-// Nome
-// Popularidade
-// Foto
-// Lista de gêneros
-// Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento.
-// A data de lançamento do album deve estar no formato DD/MM/AAAA.
