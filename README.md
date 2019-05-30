@@ -65,7 +65,7 @@ Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
 
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png" width="50%">
 
-- Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
+- Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify. 
 
 ```shell
 NODE_PATH=src/
