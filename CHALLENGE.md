@@ -4,9 +4,9 @@ O objetivo do desafio é implementar um sistema de busca de artistas baseado na 
 
 O sistema deverá conter 3 páginas:
 
-* A homepage.
-* A página de busca (`/busca`).
-* A página do artista selecionado (`/artista/:id`).
+- A homepage.
+- A página de busca (`/busca`).
+- A página do artista selecionado (`/artista/:id`).
 
 As chamadas para a API devem ficar restritas ao arquivo `src/utils/client.js`. Os componentes React devem apenas utilizar esse 'client'.
 
@@ -28,11 +28,11 @@ Ao clicar em um artista o usuário deve ser levado apara a página do artista.
 
 A pagina do Artista deve exibir os seguintes dados:
 
-* Nome
-* Popularidade
-* Foto
-* Lista de gêneros
-* Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento.
+- Nome
+- Popularidade
+- Foto
+- Lista de gêneros
+- Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento.
 
 A data de lançamento do album deve estar no formato `DD/MM/AAAA`.
 
@@ -40,6 +40,5 @@ A data de lançamento do album deve estar no formato `DD/MM/AAAA`.
 
 1. Resolva o desafio com o melhor que você possa fazer.
 2. Quando finalizar, abra um PR do seu fork para que possamos avaliar.
-3. Use o maximo que puder da nossa biblioteca de componentes ([Plurall UI](https://elo.ui.e.plurall.net/)).
-4. Faça o layout ser responsivo.
-5. Escreva pelo menos um teste.
+3. Faça o layout ser responsivo.
+4. Escreva pelo menos um teste.
