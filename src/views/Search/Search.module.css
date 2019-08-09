@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Open Sans', sans-serif;
+}
+
+.logo {
+  width: 300px;
+}
+
+p {
+  color: #fff;
+  margin-top: 60px;
+  font-size: 18px;
+}
+
+.inputText {
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid #ccc;
+  border-radius: 500px;
+  width: 100%;
+  max-width: 360px;
+  color: #bbb;
+  margin: 30px;
+}
+
+.results {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+}
+
+.results a {
+  text-decoration: none;
+}
+
+.item {
+  display: flex;
+  border-bottom: 1px solid #fff;
+  padding: 15px;
+  color: #fff;
+}
+
+.item:hover {
+  background-color: #303030;
+}
+
+.photo img {
+  width: 50px;
+  height: 50px;
+}
+
+.artistName {
+  align-self: center;
+  padding: 0px 20px;
+  font-size: 18px;
+  line-height: 18px;
+  word-break: break-word;
+}
