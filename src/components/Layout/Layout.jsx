@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
-import { Footer } from 'plurall-footer'
-import NavBar from 'plurall-header'
-
-import { getToken, setToken, SomosClient } from 'utils'
+import { getToken, setToken, SpotifyClient } from 'utils'
 
 import styles from './Layout.module.css'
 
@@ -13,13 +10,13 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
   }
 
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
-
   state = {}
 
   componentDidMount() {}
+
+  client = new SpotifyClient({
+    accessToken: getToken(),
+  })
 
   handleLogout = path => {
     setToken('')
@@ -31,26 +28,11 @@ class Layout extends Component {
       props: { children },
     } = this
 
-    const { content, footer, 'nav-bar': navBar } = styles
+    const { content } = styles
 
     return (
       <>
-        <div className={navBar}>
-          <NavBar
-            data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
-            }}
-            logout={this.handleLogout}
-            service="reader"
-            userToken={getToken()}
-          />
-        </div>
-
         <div className={content}>{children}</div>
-
-        <div className={footer}>
-          <Footer />
-        </div>
       </>
     )
   }
