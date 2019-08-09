@@ -1,14 +1,67 @@
 import { clearToken, getToken } from 'utils'
+import axios from 'axios'
 
-class SomosClient {
-  constructor() {}
+class SpotifyClient {
+  constructor() {
+    this.token = getToken()
+  }
 
-  onError = error => {}
+  onError = error => {
+    console.log(error)
+    clearToken()
+    window.location.reload(true)
+  }
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtists(q) {
+    const result = await axios
+      .get(`https://api.spotify.com/v1/search?type=artist&q=${q}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.token}`,
+        },
+      })
+      .catch(error => {
+        if (error.response) {
+          this.onError()
+        }
+      })
+
+    return result.data.artists
+  }
+
+  async getArtist(id) {
+    const result = await axios
+      .get(`https://api.spotify.com/v1/artists/${id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.token}`,
+        },
+      })
+      .catch(error => {
+        if (error.response) {
+          this.onError()
+        }
+      })
+
+    return result.data
+  }
+
+  async getArtistAlbums(id) {
+    const result = await axios
+      .get(`https://api.spotify.com/v1/artists/${id}/albums?limit=10`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.token}`,
+        },
+      })
+      .catch(error => {
+        if (error.response) {
+          this.onError()
+        }
+      })
+
+    return result.data.items
   }
 }
 
-export default SomosClient
+export default SpotifyClient
