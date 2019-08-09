@@ -20,11 +20,12 @@ class Search extends React.Component {
 
   async handleChange(e) {
     const search = e.target.value
-    if (e.target.value.length >= 4) {
+    await this.setState({ search })
+    if (search.length >= 4) {
       const artists = await this.client.getArtists(search)
-      await this.setState({ search, artists: artists.items })
+      await this.setState({ artists: artists.items })
     } else {
-      await this.setState({ search, artists: '' })
+      await this.setState({ artists: '' })
     }
   }
 
