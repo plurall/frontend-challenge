@@ -21,8 +21,6 @@ Abaixo estão algumas caracteristicas que achamos importantes:
 - Conhecimento de React.
 - Outros.
 
-Caso esteja com uma dúvida ou algum impedimento, faça da forma mais simples e continue com o desafio. É mais importante tentar fazer todos os items do desafio do que fazer uma parte de forma elaborada e não fazer outras partes.
-
 ## Configurando o ambiente
 
 Você precisa ter [`node LTS ou superior`](https://nodejs.org/en/) instalado para conseguir rodar o desafio.
