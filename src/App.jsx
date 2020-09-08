@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { Layout } from 'components'
-import { Home } from 'views'
+import { Home, Search } from 'views'
 
 import './App.module.css'
 
@@ -11,6 +11,7 @@ const App = () => (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route exact path="/busca" component={Search} />
       </Switch>
     </BrowserRouter>
   </Layout>
