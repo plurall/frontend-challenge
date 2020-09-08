@@ -33,7 +33,7 @@ class Search extends React.Component {
     return (
       <>
         <div className={styles.wrapper}>
-          <p>Pesquise artistas pelo nome:</p>
+          <p>Pesquise um artistas pelo nome:</p>
           <input
             type="text"
             className={styles.searchInput}

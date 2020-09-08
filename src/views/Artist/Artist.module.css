@@ -1,0 +1,124 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+h1 {
+  line-height: 1.2em;
+}
+
+p {
+  text-align: center;
+  margin-top: 60px;
+  line-height: 18px;
+  color: #666;
+  font-size: 18px;
+}
+
+strong {
+  color: #000;
+}
+
+.profile {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.profile .photo img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.profile .info {
+  text-align: center;
+  padding: 30px;
+  max-width: 600px;
+}
+
+.profile .info .infoItem {
+  padding-top: 15px;
+}
+
+.albums {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+}
+
+.albums h2 {
+  margin: 40px 0px 20px 0px;
+  text-align: center;
+}
+
+.albums a {
+  text-decoration: none;
+}
+
+.albums .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.albums .photo img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.albumName {
+  word-break: break-word;
+  flex-grow: 1;
+  align-self: center;
+  padding: 0px 20px;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.albumReleaseDate {
+  align-self: center;
+  padding: 0px 20px;
+  font-size: 18px;
+}
+
+.backButton {
+  margin-top: 30px;
+  background: var(--color-purple);
+  border-radius: 30px;
+  padding: 20px 30px;
+  border: 0px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: background 0.3s;
+}
+
+.backButton:hover {
+  background: var(--color-purple-light);
+}

@@ -26,3 +26,7 @@
 .searchButton:hover {
   background: var(--color-purple-light);
 }
+
+.spotifyLogo {
+  width: 200px;
+}
