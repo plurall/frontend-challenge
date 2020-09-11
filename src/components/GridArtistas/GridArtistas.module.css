@@ -1,0 +1,44 @@
+.artistList {
+  margin-top: 3rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 1rem;
+}
+
+.artistList a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.artistList a:hover {
+  opacity: 0.8;
+}
+
+.artistList li {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.artistList img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.artistList p {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.artistList span {
+  font-size: 0.7rem;
+  font-weight: 200;
+}
+
+.empty {
+  font-size: 2rem;
+  margin: 6rem auto 0;
+  line-height: 1.2;
+  text-align: center;
+}

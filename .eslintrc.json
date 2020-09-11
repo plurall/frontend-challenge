@@ -19,5 +19,6 @@
     "no-confusing-arrow": "off",
     "react/no-danger": "off",
     "react/no-typos": "off"
-  }
+  },
+  "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
 }

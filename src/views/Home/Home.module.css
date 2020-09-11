@@ -3,4 +3,16 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--color-purple);
+  color: #fff;
+  border: 0;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
 }
