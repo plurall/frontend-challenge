@@ -3,49 +3,51 @@ import React from 'react'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 
-import { getToken } from '../../utils/'
+import Loading from '../../components/Loading'
 
 import styles from './Busca.module.css'
 
 class Busca extends React.Component {
   state = {
-    name: '',
     artists: [],
+    loading: false,
   }
 
-  client = new SomosClient()
+  hadleSetLoading = () => {
+    this.setState(() => ({
+      loading: !this.state.loading,
+    }))
+  }
 
   handleFectchArtist = async artistname => {
-    const response = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/search?type=artist&q=${artistname}&limit=10`,
-      {
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      },
-    )
+    const client = new SomosClient()
+    const response = await client.getArtists(artistname)
 
     this.setState({
-      artists: response.data.artists.items,
+      artists: response.artists.items,
     })
+
+    this.hadleSetLoading()
   }
 
   handleChangeInput = event => {
     const { value } = event.target
 
-    this.setState( state => ({
+    this.setState(() => ({
       name: value,
     }))
 
     if (value.length > 4) {
+      this.hadleSetLoading()
       this.handleFectchArtist(value)
     }
   }
 
 
   render() {
+    if (this.state.loading) return <Loading />
+
     return (
       <React.Fragment>
         <SubHeader
@@ -67,14 +69,16 @@ class Busca extends React.Component {
                   {artist.images.length !== 0 && (
                     <img
                       src={artist.images[1].url}
-                      alt="artistname"
+                      alt={artist.name}
                       style={{ borderRadius: '50%' }}
                     />
                   )}
-                  <b>{artist.name}</b>
+                  <p>{artist.name}</p>
                 </li>
               </Link>
             ))}
+
+            {!this.state.artists && <p> Nenhum artista encontrado. </p>}
           </ul>
         </div>
       </React.Fragment>

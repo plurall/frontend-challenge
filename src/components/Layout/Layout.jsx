@@ -45,7 +45,7 @@ class Layout extends Component {
                     name: 'Início',
                     slug: 'account',
                     id: 0,
-                  }
+                  },
                 ],
               },
             }}

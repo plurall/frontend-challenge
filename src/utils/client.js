@@ -1,16 +1,68 @@
-import { clearToken, getToken } from 'utils'
+import { getToken } from 'utils'
+
+import api from '../service/api'
 
 class SomosClient {
-  constructor() {}
+  async getArtists(artists) {
+    this.artists = artists
 
-  onError = error => console.log(error)
+    try {
+      const response = await api.get(
+        `/search?type=artist&q=${this.artists}&limit=10`,
+        {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        },
+      )
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+      return response.data
+
+    } catch (error) {
+      return error
+    }
   }
 
+  async showArtist(id) {
+    this.id = id
 
+    try {
+      const response = await api.get(
+        `/artists/${this.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        },
+      )
+
+      return response.data
+    } catch (error) {
+      return error
+    }
+  }
+
+  async getArtistAlbums(id) {
+    this.id = id
+
+    try {
+      const response = await api.get(
+        `/artists/${this.id}/albums?limit=10`,
+        {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        },
+      )
+
+      return response.data
+    } catch (error) {
+      return error
+    }
+  }
 }
+
+
+
 
 export default SomosClient
