@@ -1,0 +1,22 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.buscacaixa {
+  border: 2px solid #000000;
+  border-radius: 15px;
+  list-style: none;
+  cursor: pointer;
+
+  padding: 15px;
+
+  transition: 0.2s;
+}
+
+.buscacaixa:hover {
+  background-color: antiquewhite;
+}
+

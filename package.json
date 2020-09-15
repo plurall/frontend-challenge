@@ -3,8 +3,10 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "axios": "^0.20.0",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "date-fns": "^2.16.1",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
@@ -38,7 +40,7 @@
     "build": "react-app-rewired build",
     "lint": "eslint src/",
     "precommit": "lint-staged",
-    "start": "react-app-rewired start",
+    "start": "PORT=3030 react-app-rewired start",
     "test": "react-scripts test"
   },
   "browserslist": {

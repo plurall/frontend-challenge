@@ -4,12 +4,22 @@ import React from 'react'
 
 import { getOauthClient, getToken } from 'utils'
 
+import Layout from '../Layout'
+
+const handleNotAuthenticated = path => {
+  const OAuth = getOauthClient(path)
+  window.location.href = OAuth.token.getUri()
+  return null
+}
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
       getToken() ? (
-        <Component {...props} />
+        <Layout>
+          <Component {...props} />
+        </Layout>
       ) : (
         handleNotAuthenticated(props.match.path)
       )
@@ -22,10 +32,5 @@ PrivateRoute.propTypes = {
   match: PropTypes.object,
 }
 
-const handleNotAuthenticated = path => {
-  const OAuth = getOauthClient(path)
-  window.location.href = OAuth.token.getUri()
-  return null
-}
 
 export default PrivateRoute

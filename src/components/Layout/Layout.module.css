@@ -8,5 +8,10 @@
 
 .footer {
   background-color: var(--color-dark-gray);
-  padding: var(--padding);
+  padding: "20px";
+  position: "fixed";
+  left: "0";
+  bottom: "0";
+  height: "60px";
+  width: "100%";
 }
