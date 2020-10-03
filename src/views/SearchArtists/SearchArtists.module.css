@@ -1,0 +1,66 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px "Nunito", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 950px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchInput {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  height: 40px;
+  width: 60%;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.loading {
+  color: rgb(101, 90, 163);
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.artistContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+  overflow-x: auto;
+  transition: ease-in-out 0.4s;
+}
+
+.artistItem {
+  text-align: center;
+  padding: 10px;
+}
+
+.photoContainer {
+}
+
+.photoArtist {
+  width: 200px;
+  height: 200px;
+  border-radius: 25px;
+}
+
+.nameSection {
+  color: #555;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.artistName {
+}

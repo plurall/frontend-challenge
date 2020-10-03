@@ -2,5 +2,27 @@
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  font: 16px/14px "Nunito", sans-serif;
+}
+
+.subtitle {
+  color: #333;
+  padding-bottom: 10px;
+}
+
+.searchBtn {
+  background: rgb(101, 90, 163);
+  color: #fff;
+  height: 30px;
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: relative;
+  top: 50px;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+}
+
+.searchBtn:active {
+  background: rgb(61, 70, 150);
 }

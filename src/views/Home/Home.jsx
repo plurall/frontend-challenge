@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
@@ -18,7 +19,12 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <h3 className={styles.subtitle}>
+            Clique no botão para buscar seu artista preferido :D
+          </h3>
+          <Link className={styles.searchBtn} to="search-artists">
+            Buscar artista
+          </Link>
         </div>
       </React.Fragment>
     )
