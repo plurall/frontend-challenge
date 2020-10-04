@@ -6,6 +6,7 @@ import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
 import ArtistCard from 'components/ArtistCard/ArtistCard'
+import AlbumsCard from 'components/AlbumsCard/AlbumsCard'
 
 class Artist extends Component {
   state = {
@@ -13,9 +14,6 @@ class Artist extends Component {
     albums: [],
     loading: null,
     error: {},
-    opacity: 0,
-    transition: '',
-    visibility: 'hidden',
   }
 
   client = new SomosClient()
@@ -45,15 +43,8 @@ class Artist extends Component {
     }
   }
 
-  onShowDetailsAlbum() {
-    this.setState({ opacity: '0.7' })
-  }
-  onHiddenDetailsAlbum() {
-    this.setState({ opacity: '0' })
-  }
-
   render() {
-    const { artist, albums, opacity, loading, error } = this.state
+    const { artist, albums, loading } = this.state
 
     return (
       <React.Fragment>
@@ -63,51 +54,17 @@ class Artist extends Component {
             heading="Somos Front-end Challange"
           />
           <div className={styles.wrapper}>
+            {loading && <div className={styles.loading}>Carregando...</div>}
+
             {artist !== undefined && (
               <div className={styles.container}>
                 <ArtistCard artist={artist} />
+
                 <div style={{ width: '100%' }}>
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      paddingBottom: 15,
-                      width: '100%',
-                    }}
-                  >
-                    Albuns:
-                    <hr style={{ width: '100%', border: '1px solid #ddd' }} />
-                  </span>
+                  <span className={styles.albumsText}>Albuns:</span>
+                  <hr className={styles.line} />
                   <br />
-                  <div className={styles.albumsSection}>
-                    {albums.map(album => (
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          position: 'relative',
-                        }}
-                      >
-                        <div className={styles.photoAlbumContainer}>
-                          <img
-                            src={album.images[0].url}
-                            className={styles.photoAlbum}
-                            alt="Foto do album"
-                          />
-                        </div>
-                        <div
-                          className={styles.detailsAlbum}
-                          onMouseEnter={() => this.onShowDetailsAlbum()}
-                          onMouseLeave={() => this.onHiddenDetailsAlbum()}
-                          style={{ opacity }}
-                        >
-                          <span>{album.name}</span>
-                          <br />
-                          <span>{album.release_date}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <AlbumsCard albums={albums} />
                 </div>
               </div>
             )}
