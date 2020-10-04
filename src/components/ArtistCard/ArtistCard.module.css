@@ -1,0 +1,58 @@
+.detailsSection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  background: #fff;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.artistImage {
+  height: 180px;
+  width: 180px;
+  border-radius: 15px;
+}
+
+.detailsText {
+  width: 100%;
+  padding: 15px;
+}
+
+.text {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #111;
+  font-size: 18px;
+}
+
+#nameText {
+  color: rgb(101, 90, 163);
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+#genderText {
+  margin-bottom: 10px;
+  display: block;
+}
+
+@media (min-width: 425px) {
+  .detailsSection {
+    height: 180px;
+    justify-content: initial;
+    padding-top: initial;
+  }
+
+  .detailsText {
+    width: initial;
+  }
+}
+
+@media (min-width: 768px) {
+  #genderText {
+    display: inline-block;
+  }
+}

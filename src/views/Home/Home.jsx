@@ -22,7 +22,7 @@ class Home extends React.Component {
           <h3 className={styles.subtitle}>
             Clique no botão para buscar seu artista preferido :D
           </h3>
-          <Link className={styles.searchBtn} to="search-artists">
+          <Link className={styles.searchBtn} to="/search-artists">
             Buscar artista
           </Link>
         </div>

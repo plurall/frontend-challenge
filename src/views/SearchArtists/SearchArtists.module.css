@@ -32,6 +32,12 @@
   padding-left: 10px;
 }
 
+.errorMessage {
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
 .artistContainer {
   display: flex;
   flex-wrap: wrap;
