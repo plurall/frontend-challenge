@@ -1,0 +1,413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders correctly 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="sidebar"
+  >
+    <a
+      className="logo-link no-outline"
+      href="/"
+    >
+      <div
+        className="logo"
+      >
+        <svg
+          className="spotify-logo"
+          viewBox="0 0 1134 340"
+        >
+          <title>
+            Spotify
+          </title>
+          <path
+            d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </a>
+    <ul
+      className="nav-list"
+    >
+      <li>
+        <button
+          className="create-button no-outline"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 512 512"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            style={
+              Object {
+                "margin": 8,
+              }
+            }
+          >
+            Início
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          className="create-button no-outline"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 512 512"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M357.079 341.334l94.476 110.73-32.508 27.683-94.222-110.476q-45.714 30.476-100.826 30.476-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 23.365-5.841 45.714t-16.635 41.651-25.778 35.555zM224 357.079q28.19 0 53.841-11.048t44.19-29.587 29.587-44.19 11.048-53.841-11.048-53.841-29.587-44.191-44.19-29.587-53.841-11.047-53.841 11.047-44.191 29.588-29.587 44.19-11.047 53.841 11.047 53.841 29.588 44.19 44.19 29.587 53.841 11.048z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            style={
+              Object {
+                "margin": 8,
+              }
+            }
+          >
+            Buscar
+          </span>
+        </button>
+      </li>
+      <li>
+        <button
+          className="create-button no-outline"
+        >
+          <svg
+            height="24"
+            viewBox="0 0 512 512"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M311.873 77.46l166.349 373.587-39.111 17.27-166.349-373.587zM64 463.746v-384h42.666v384h-42.666zM170.667 463.746v-384h42.667v384h-42.666z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            style={
+              Object {
+                "margin": 8,
+              }
+            }
+          >
+            Sua Biblioteca
+          </span>
+        </button>
+      </li>
+    </ul>
+    <div
+      className="playlists"
+    >
+      <h1
+        className="play-title"
+      >
+        playlists
+      </h1>
+      <div
+        className="featured-playlists"
+      >
+        <button
+          className="create-button no-outline"
+        >
+          <div
+            className="playlist-icon"
+          >
+            <svg
+              shapeRendering="crispEdges"
+              style={
+                Object {
+                  "height": "32px",
+                  "padding": "4px",
+                  "width": "32px",
+                }
+              }
+              viewBox="0 0 36 36"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m28 20h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"
+                fill="black"
+              />
+            </svg>
+          </div>
+          Criar playlist
+        </button>
+      </div>
+      <div
+        className="featured-item"
+      >
+        <button
+          className="create-button no-outline"
+        >
+          <div
+            className="playlist-icon"
+          >
+            <div
+              className="heart-wrapper"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "background": "linear-gradient(135deg,#450af5,#c4efd9)",
+                  "display": "flex",
+                  "height": "32px",
+                  "justifyContent": "center",
+                  "margin": "0",
+                  "padding": "4px",
+                  "width": "32px",
+                }
+              }
+            >
+              <svg
+                height="16px"
+                viewBox="0 -28 512 512"
+                width="16px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m471.382812 44.578125c-26.503906-28.746094-62.871093-44.578125-102.410156-44.578125-29.554687 0-56.621094 9.34375-80.449218 27.769531-12.023438 9.300781-22.917969 20.679688-32.523438 33.960938-9.601562-13.277344-20.5-24.660157-32.527344-33.960938-23.824218-18.425781-50.890625-27.769531-80.445312-27.769531-39.539063 0-75.910156 15.832031-102.414063 44.578125-26.1875 28.410156-40.613281 67.222656-40.613281 109.292969 0 43.300781 16.136719 82.9375 50.78125 124.742187 30.992188 37.394531 75.535156 75.355469 127.117188 119.3125 17.613281 15.011719 37.578124 32.027344 58.308593 50.152344 5.476563 4.796875 12.503907 7.4375 19.792969 7.4375 7.285156 0 14.316406-2.640625 19.785156-7.429687 20.730469-18.128907 40.707032-35.152344 58.328125-50.171876 51.574219-43.949218 96.117188-81.90625 127.109375-119.304687 34.644532-41.800781 50.777344-81.4375 50.777344-124.742187 0-42.066407-14.425781-80.878907-40.617188-109.289063zm0 0"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+          <span>
+            Músicas Curtidas
+          </span>
+        </button>
+      </div>
+      <hr
+        className="list-separator"
+      />
+    </div>
+    <div
+      className="cta-wrapper"
+    >
+      <a
+        className="nav-link"
+        href="https://spotify.com/download"
+      >
+        <div
+          className="nav-icon install-icon "
+        >
+          <svg
+            height="20px"
+            viewBox="0 0 20 20"
+            width="20px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 11.657V6h-1v5.65L9.076 9.414l-.758.65 3.183 3.702 3.195-3.7-.758-.653L12 11.657zM11.5 2C7.358 2 4 5.358 4 9.5c0 4.142 3.358 7.5 7.5 7.5 4.142 0 7.5-3.358 7.5-7.5C19 5.358 15.642 2 11.5 2zm0 14C7.916 16 5 13.084 5 9.5S7.916 3 11.5 3 18 5.916 18 9.5 15.084 16 11.5 16z"
+              fill="currentColor"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+        Instalar aplicativo
+      </a>
+    </div>
+  </div>
+  <div
+    className="featured"
+  >
+    <div
+      className="header-bar"
+    >
+      <div
+        className="HistoryNav"
+      >
+        <button
+          className="navButton no-outline"
+        >
+          <svg
+            style={
+              Object {
+                "height": "22px",
+                "width": "22px",
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.54 21.15L5.095 12.23 15.54 3.31l.65.76-9.555 8.16 9.555 8.16"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <button
+          className="navButton mediaNone no-outline"
+        >
+          <svg
+            style={
+              Object {
+                "height": "22px",
+                "width": "22px",
+              }
+            }
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.96 21.15l-.65-.76 9.555-8.16L7.31 4.07l.65-.76 10.445 8.92"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="SearchContainer"
+      >
+        <div
+          className="SearchBar"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": "0",
+                "cursor": "text",
+                "display": "flex",
+                "left": "12px",
+                "position": "absolute",
+                "top": "0",
+              }
+            }
+          >
+            <svg
+              height="24"
+              role="img"
+              viewBox="0 0 512 512"
+              width="24"
+            >
+              <path
+                d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <input
+            autoCapitalize="off"
+            autoCorrect="off"
+            autoFocus={true}
+            className="SearchInput no-outline"
+            maxLength="80"
+            onChange={[Function]}
+            placeholder="Busque artistas, músicas ou podcasts"
+            spellCheck="false"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="UserPrompt"
+      >
+        <a
+          href="https://spotify.com/signup"
+        >
+          <button
+            className="PromptButton no-outline"
+            name="INSCREVE-SE"
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "#fff",
+              }
+            }
+          >
+            INSCREVE-SE
+          </button>
+        </a>
+        <a
+          href="https://spotify.com/login"
+        >
+          <button
+            className="PromptButton no-outline"
+            name="ENTRAR"
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "color": "#181818",
+              }
+            }
+          >
+            ENTRAR
+          </button>
+        </a>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    className="footer"
+  >
+    <div
+      className="CTA-banner"
+    >
+      <div
+        className="cta-content"
+      >
+        <h2
+          style={
+            Object {
+              "fontSize": "12px",
+              "fontWeight": "400",
+              "letterSpacing": ".1em",
+              "lineHeight": "16px",
+              "marginBottom": "4px",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          AMOSTRA DO SPOTIFY
+        </h2>
+        <h3
+          style={
+            Object {
+              "fontSize": "16px",
+              "fontWeight": "500",
+              "letterSpacing": "normal",
+              "lineHeight": "24px",
+              "textTransform": "none",
+            }
+          }
+        >
+          Inscreva-se para curtir músicas ilimitada e podcast só com alguns anúncios. Não pricisa de cartão de crédito.
+        </h3>
+      </div>
+      <a
+        href="https://spotify.com/signup"
+      >
+        <button
+          className="PromptButton no-outline"
+          name="INSCREVA-SE GRÁTIS "
+          style={
+            Object {
+              "color": "#2e77d0",
+              "fontSize": "14px",
+              "margin": "8px 0 12px",
+              "padding": "8px 48px",
+              "whiteSpace": "nowrap",
+            }
+          }
+        >
+          INSCREVA-SE GRÁTIS 
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

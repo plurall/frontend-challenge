@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom'
 import { LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
+import './index.css'
 import registerServiceWorker from 'registerServiceWorker'
 
 ReactDOM.render(

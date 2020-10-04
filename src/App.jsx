@@ -1,14 +1,16 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Layout } from 'components'
-import { Home } from 'views'
-
-import './App.module.css'
+import { Home, Search, Artist } from 'views'
 
 const App = () => (
-  <Layout>
-    <Home />
-  </Layout>
+    <Router>
+      <Switch>
+        <Route exact path="/busca" component={Search} />
+        <Route exact path="/artista/:id" component={Artist} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
 )
 
 export default App

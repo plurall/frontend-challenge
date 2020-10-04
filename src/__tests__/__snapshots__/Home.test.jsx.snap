@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<div
+  className="home"
+>
+  <a
+    href="/busca"
+    onClick={[Function]}
+  >
+    <img
+      alt="Spotify"
+      className="logo-spotify"
+      src="logo-spotify.png"
+    />
+  </a>
+</div>
+`;

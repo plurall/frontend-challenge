@@ -1,28 +1,28 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-import { SubHeader } from 'components'
+import { Link } from 'react-router-dom';
 import { SomosClient } from 'utils'
+import logoURL from '../../assets/logo-spotify.png'
 
-import styles from './Home.module.css'
-
-class Home extends React.Component {
+export default class Home extends Component {
   state = {}
 
   client = new SomosClient()
 
   render() {
     return (
-      <React.Fragment>
-        <SubHeader
+      <>
+        {/* <SubHeader
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
-        />
-        <div className={styles.wrapper}>
-          <h1>Hi</h1>
+        /> */}
+        <div className="home">
+          <Link to="/busca">
+            <img src={logoURL} alt="Spotify" className="logo-spotify" />
+          </Link>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }
 
-export default Home
