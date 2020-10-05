@@ -3,7 +3,11 @@ import { clearToken, getToken } from './token'
 
 class SomosClient {
 
-  constructor() { }
+  api;
+
+  constructor() {
+    this.api = this.configApi()
+  }
 
   configApi = () => {
     const token = getToken()
@@ -21,11 +25,10 @@ class SomosClient {
   onError = error => { }
 
   async getArtists(name) {
-    const api = this.configApi()
     // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
     // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
     try {
-      const res = await api.get(`/search?q=${name}&type=artist`)
+      const res = await this.api.get(`/search?q=${name}&type=artist`)
       return { artists: res.data.artists.items }
     } catch (error) {
       return { error }
@@ -33,10 +36,9 @@ class SomosClient {
   }
 
   async getArtistById(id) {
-    const api = this.configApi()
 
     try {
-      const res = await api.get(`/artists/${id}`)
+      const res = await this.api.get(`/artists/${id}`)
       return { artist: res.data }
     } catch (error) {
       return { error }
@@ -44,10 +46,9 @@ class SomosClient {
   }
 
   async getAlbums(id) {
-    const api = this.configApi()
-
+    // const api = this.configApi()
     try {
-      const res = await api.get(`/artists/${id}/albums?limit=10`)
+      const res = await this.api.get(`/artists/${id}/albums?limit=10`)
       return { albums: res.data.items }
     } catch (error) {
       return { error }

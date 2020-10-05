@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { convertDate } from 'utils/common'
 
 import styles from './AlbumsCard.module.css'
 
@@ -20,12 +21,7 @@ class AlbumsCard extends Component {
             <div className={styles.detailsAlbum}>
               <span className={styles.albumName}>{album.name}</span>
               <br />
-              <span>
-                {album.release_date
-                  .split('-')
-                  .reverse()
-                  .join('/')}
-              </span>
+              <span>{convertDate(album.release_date)}</span>
             </div>
           </div>
         ))}
