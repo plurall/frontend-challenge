@@ -23,14 +23,13 @@ class ArtistCard extends Component {
           </span>
           <br />
           <span className={styles.text}>
-            <b>Generos:</b> &nbsp;
+            <b className={styles.bText}>Generos:</b> &nbsp;
             {artist.genres.map((gender, i) => (
               <span key={i} id={styles.genderText}>
                 {gender},
               </span>
             ))}
           </span>
-          <br />
         </div>
       </div>
     )

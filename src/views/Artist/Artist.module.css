@@ -10,7 +10,6 @@
 .container {
   width: 100%;
   max-width: 950px;
-  /* max-height: 80vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,4 +37,10 @@
 .line {
   width: 100%;
   border: 1px solid #ddd;
+}
+
+@media (max-width: 425px) {
+  .albumsText {
+    text-align: center;
+  }
 }
