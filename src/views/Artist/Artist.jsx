@@ -7,6 +7,7 @@ import { SomosClient } from 'utils'
 import styles from './Artist.module.css'
 import ArtistCard from 'components/ArtistCard/ArtistCard'
 import AlbumsCard from 'components/AlbumsCard/AlbumsCard'
+import Loading from 'components/Loading/Loading'
 
 class Artist extends Component {
   state = {
@@ -54,7 +55,7 @@ class Artist extends Component {
             heading="Somos Front-end Challange"
           />
           <div className={styles.wrapper}>
-            {loading && <div className={styles.loading}>Carregando...</div>}
+            <Loading loading={loading} />
 
             {artist !== undefined && (
               <div className={styles.container}>

@@ -6,6 +6,8 @@ import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './SearchArtists.module.css'
+import ArtistsList from 'components/ArtistsList/ArtistsList'
+import Loading from 'components/Loading/Loading'
 
 class SearchArtists extends React.Component {
   state = {
@@ -32,10 +34,6 @@ class SearchArtists extends React.Component {
     }
   }
 
-  async onSelectArtist(id) {
-    this.props.history.push(`/artist/${id}`)
-  }
-
   render() {
     const { artists, loading, error } = this.state
 
@@ -55,43 +53,14 @@ class SearchArtists extends React.Component {
                 placeholder="Informe o nome do artista desejado"
               />
               <br />
-              {loading && <div className={styles.loading}>Carregando...</div>}
+              <Loading loading={loading} />
               {error.status && (
                 <div className={styles.errorMessage}>
                   <b>Ocorreu um erro!</b> &nbsp; {error.message}
                 </div>
               )}
 
-              <div
-                className={styles.artistContainer}
-                style={{
-                  visibility: !loading ? 'visible' : 'hidden',
-                  opacity: !loading ? 1 : 0,
-                }}
-              >
-                {artists.length > 0 &&
-                  artists.map(art => (
-                    <div
-                      className={styles.artistItem}
-                      key={art.id}
-                      onClick={() => this.onSelectArtist(art.id)}
-                    >
-                      <div className={styles.photoContainer}>
-                        {art.images.length > 0 && (
-                          <img
-                            src={art.images[0].url}
-                            className={styles.photoArtist}
-                            alt="Foto do artista"
-                          />
-                        )}{' '}
-                        <br />
-                      </div>
-                      <div className={styles.nameSection}>
-                        <span className={styles.artistName}>{art.name}</span>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+              <ArtistsList artists={artists} loading={loading} />
             </div>
           </div>
         </Layout>
