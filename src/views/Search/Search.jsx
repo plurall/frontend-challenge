@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import { Alert, TextBox } from 'plurall-ui'
 
-import { ArtistsList, Layout, SubHeader } from 'components'
+import { ArtistsList, Layout, Loading, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Search.module.css'
@@ -12,24 +12,27 @@ class Search extends React.Component {
   state = {
     artists: [],
     error: {},
+    isLoading: null,
   }
 
   client = new SomosClient()
 
   async onSearch(value) {
     if (value.length > 4) {
+      this.setState({ isLoading: true })
       const res = await this.client.getArtists(value)
 
       res && res.artists
-        ? this.setState({ artists: res.artists.items })
+        ? this.setState({ artists: res.artists.items, isLoading: false })
         : this.setState({
             error: res.error,
+            isLoading: false,
           })
     }
   }
 
   render() {
-    const { artists, error } = this.state
+    const { artists, error, isLoading } = this.state
 
     return (
       <Layout>
@@ -39,7 +42,7 @@ class Search extends React.Component {
           buttonHref="/"
         />
         <div className={styles.wrapper}>
-          {error.message && (
+          {!isLoading && error.message && (
             <Alert name={`Erro ${error.status}`} type="error">
               {error.message}
             </Alert>
@@ -49,7 +52,7 @@ class Search extends React.Component {
             placeholder="Buscar um artista"
             onChange={value => this.onSearch(value)}
           />
-          <ArtistsList artists={artists} loading={false} />
+          {isLoading ? <Loading /> : <ArtistsList artists={artists} />}
         </div>
       </Layout>
     )
