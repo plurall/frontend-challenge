@@ -1,3 +1,4 @@
+export { default as ArtistInfo } from './ArtistInfo'
 export { default as ArtistsList } from './ArtistsList'
 export { default as ImageCard } from './ImageCard'
 export { default as Layout } from './Layout'
