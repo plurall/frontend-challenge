@@ -2,14 +2,7 @@ import React from 'react'
 
 import { Alert } from 'plurall-ui'
 
-import {
-  AlbumsList,
-  ArtistInfo,
-  ImageCard,
-  Layout,
-  Loading,
-  SubHeader,
-} from 'components'
+import { AlbumsList, ArtistInfo, Layout, Loading, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
