@@ -21,11 +21,10 @@ class ArtistsList extends React.Component {
         <div className={styles.wrapper}>
           <div className={styles.artistWrapper}>
             {artists.map(artist => (
-              <div className={styles.artistContainer}>
+              <div className={styles.artistContainer} key={artist.id}>
                 <ImageCard
                   item={artist}
                   onSelect={artistId => this.onSelect(artistId)}
-                  key={artist.id}
                 />
                 <Text secondary>{artist.name}</Text>
               </div>
