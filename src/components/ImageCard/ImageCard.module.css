@@ -1,0 +1,26 @@
+.wrapper {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+}
+
+.imageWrapper {
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-light-gray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artistImage {
+  width: 120px;
+  height: 120px;
+  transition: ease-in-out 0.4s;
+}
+
+.artistImage:hover {
+  width: 130px;
+  height: 130px;
+}

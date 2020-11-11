@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 
-import { Tooltip } from 'plurall-ui'
+import { ImageCard } from 'components'
 
 import styles from './ArtistsList.module.css'
 
@@ -17,28 +18,19 @@ class ArtistsList extends React.Component {
       <div className={styles.wrapper}>
         {!!artists.length &&
           artists.map(artist => (
-            <Tooltip content={artist.name} position="bottom" key={artist.id}>
-              <div
-                className={styles.artistItem}
-                onClick={() => this.onSelect(artist.id)}
-              >
-                <div className={styles.imageWrapper}>
-                  {!!artist.images.length ? (
-                    <img
-                      src={artist.images[0].url}
-                      className={styles.artistImage}
-                      alt={`Imagem de ${artist.name}`}
-                    />
-                  ) : (
-                    artist.name
-                  )}
-                </div>
-              </div>
-            </Tooltip>
+            <ImageCard
+              item={artist}
+              onSelect={artistId => this.onSelect(artistId)}
+              key={artist.id}
+            />
           ))}
       </div>
     )
   }
+}
+
+ArtistsList.propTypes = {
+  artists: PropTypes.array.isRequired,
 }
 
 export default withRouter(ArtistsList)
