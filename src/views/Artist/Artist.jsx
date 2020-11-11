@@ -54,10 +54,7 @@ class Artist extends React.Component {
   }
 
   render() {
-    const { albums, artist, isLoading } = this.state
-
-    console.log('artist', artist)
-    console.log('albums', albums)
+    const { albums, artist, error, isLoading } = this.state
 
     return (
       <Layout>
@@ -68,12 +65,12 @@ class Artist extends React.Component {
         />
         <div className={styles.wrapper}>
           {isLoading && <Loading />}
-          {/*
+
           {!isLoading && error.message && (
             <Alert name={`Erro ${error.status}`} type="error">
               {error.message}
             </Alert>
-          )} */}
+          )}
           {!isLoading && artist !== undefined && (
             <div className={styles.container}>
               <ArtistInfo artist={artist} />
