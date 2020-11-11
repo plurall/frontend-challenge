@@ -5,7 +5,6 @@ class SomosClient {
 
   onError = error => {
     console.warn(error)
-    clearToken()
   }
 
   async getArtists(searchQuery) {
@@ -18,9 +17,9 @@ class SomosClient {
           },
           method: 'GET',
         },
-      ).then(res => console.log(res.json()))
+      ).then(res => res.json())
     } catch (error) {
-      console.log('error', error)
+      this.onError(error)
     }
   }
 
@@ -31,9 +30,9 @@ class SomosClient {
           Authorization: `Bearer ${getToken()}`,
         },
         method: 'GET',
-      }).then(res => console.log(res.json()))
+      }).then(res => res.json())
     } catch (error) {
-      console.log('error', error)
+      this.onError(error)
     }
   }
 
@@ -44,9 +43,9 @@ class SomosClient {
           Authorization: `Bearer ${getToken()}`,
         },
         method: 'GET',
-      }).then(res => console.log(res.json()))
+      }).then(res => res.json())
     } catch (error) {
-      console.log('error', error)
+      this.onError(error)
     }
   }
 }
