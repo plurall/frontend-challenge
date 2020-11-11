@@ -22,7 +22,6 @@ class AlbumsList extends React.Component {
     return (
       <div className={styles.wrapper}>
         <Heading>Albums:</Heading>
-
         <div className={styles.albumWrapper}>
           {!!albums.length &&
             albums.map(album => (

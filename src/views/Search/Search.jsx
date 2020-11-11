@@ -32,28 +32,26 @@ class Search extends React.Component {
     const { artists, error } = this.state
 
     return (
-      <>
-        <Layout>
-          <SubHeader
-            breadcrumb={[{ text: 'Busca' }]}
-            heading="Somos Front-end Challenge"
-            buttonHref="/"
+      <Layout>
+        <SubHeader
+          breadcrumb={[{ text: 'Busca' }]}
+          heading="Somos Front-end Challenge"
+          buttonHref="/"
+        />
+        <div className={styles.wrapper}>
+          {error.message && (
+            <Alert name={`Erro ${error.status}`} type="error">
+              {error.message}
+            </Alert>
+          )}
+          <TextBox
+            label="Digite o nome do artista"
+            placeholder="Buscar um artista"
+            onChange={value => this.onSearch(value)}
           />
-          <div className={styles.wrapper}>
-            {error.message && (
-              <Alert name={`Erro ${error.status}`} type="error">
-                {error.message}
-              </Alert>
-            )}
-            <TextBox
-              label="Digite o nome do artista"
-              placeholder="Buscar um artista"
-              onChange={value => this.onSearch(value)}
-            />
-            <ArtistsList artists={artists} loading={false} />
-          </div>
-        </Layout>
-      </>
+          <ArtistsList artists={artists} loading={false} />
+        </div>
+      </Layout>
     )
   }
 }
