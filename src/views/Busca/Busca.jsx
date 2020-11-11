@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
-import styles from './Home.module.css'
+import styles from './Busca.module.css'
 
-class Home extends React.Component {
+class Busca extends React.Component {
   state = {}
 
   client = new SomosClient()
@@ -15,15 +14,15 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
+          breadcrumb={[{ text: 'Busca' }]}
+          heading="Busque por um artista"
         />
         <div className={styles.wrapper}>
-          <Link to="/busca">Encontre um artista</Link>
+          <input type="text" />
         </div>
       </React.Fragment>
     )
   }
 }
 
-export default Home
+export default Busca

@@ -7,14 +7,16 @@ import ReactDOM from 'react-dom'
 
 import { LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
-import App from 'App'
+import HomePage from './pages/Home/HomePage'
+import BuscaPage from './pages/Busca/BuscaPage';
 import registerServiceWorker from 'registerServiceWorker'
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute path="/" component={App} />
+      <Route  path="/login/callback" component={LoginCallback} />
+      <PrivateRoute path="/busca" component={BuscaPage} />
+      <PrivateRoute path="/" component={HomePage} />      
     </Switch>
   </Router>,
   document.getElementById('root'),

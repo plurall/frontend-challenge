@@ -5,10 +5,10 @@ import { Home } from 'views'
 
 import './App.module.css'
 
-const App = () => (
+const HomePage = () => (
   <Layout>
     <Home />
   </Layout>
 )
 
-export default App
+export default HomePage
