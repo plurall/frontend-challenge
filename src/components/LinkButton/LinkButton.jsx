@@ -11,8 +11,8 @@ const LinkButton = ({ buttonHref, children }) => (
 )
 
 LinkButton.propTypes = {
-  buttonHref: PropTypes.string,
-  children: PropTypes.node,
+  buttonHref: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default LinkButton
