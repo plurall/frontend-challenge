@@ -11,11 +11,17 @@ class ArtistInfo extends Component {
 
     return (
       <div className={styles.wrapper}>
-        <img
-          src={artist.images[0].url}
-          alt={`Imagem de ${artist.name}`}
-          className={styles.artistImage}
-        />
+        <div className={styles.imageWrapper}>
+          {!!artist.images.length ? (
+            <img
+              src={artist.images[0].url}
+              alt={`Imagem de ${artist.name}`}
+              className={styles.artistImage}
+            />
+          ) : (
+            artist.name
+          )}
+        </div>
         <div className={styles.artistDetails}>
           <Heading>{artist.name}</Heading>
           <span className={styles.info}>

@@ -77,7 +77,7 @@ class Artist extends React.Component {
           {!isLoading && artist !== undefined && (
             <div className={styles.container}>
               <ArtistInfo artist={artist} />
-              {!!albums.length && <AlbumsList albums={albums} />}
+              <AlbumsList albums={albums} />
             </div>
           )}
         </div>
