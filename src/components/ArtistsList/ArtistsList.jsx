@@ -17,10 +17,9 @@ class ArtistsList extends React.Component {
       <div className={styles.wrapper}>
         {!!artists.length &&
           artists.map(artist => (
-            <Tooltip content={artist.name} position="bottom">
+            <Tooltip content={artist.name} position="bottom" key={artist.id}>
               <div
                 className={styles.artistItem}
-                key={artist.id}
                 onClick={() => this.onSelect(artist.id)}
               >
                 <div className={styles.imageWrapper}>
