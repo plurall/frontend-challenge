@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 
+import { Text } from 'plurall-ui'
+
 import { ImageCard } from 'components'
 
 import styles from './ArtistsList.module.css'
@@ -15,16 +17,22 @@ class ArtistsList extends React.Component {
     const { artists } = this.props
 
     return (
-      <div className={styles.wrapper}>
-        {!!artists.length &&
-          artists.map(artist => (
-            <ImageCard
-              item={artist}
-              onSelect={artistId => this.onSelect(artistId)}
-              key={artist.id}
-            />
-          ))}
-      </div>
+      !!artists.length && (
+        <div className={styles.wrapper}>
+          <div className={styles.artistWrapper}>
+            {artists.map(artist => (
+              <div className={styles.artistContainer}>
+                <ImageCard
+                  item={artist}
+                  onSelect={artistId => this.onSelect(artistId)}
+                  key={artist.id}
+                />
+                <Text secondary>{artist.name}</Text>
+              </div>
+            ))}
+          </div>
+        </div>
+      )
     )
   }
 }

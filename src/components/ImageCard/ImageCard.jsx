@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Tooltip } from 'plurall-ui'
-
 import styles from './ImageCard.module.css'
 
 class ImageCard extends React.Component {
@@ -10,21 +8,23 @@ class ImageCard extends React.Component {
     const { item, onSelect } = this.props
 
     return (
-      <Tooltip content={item.name} position="bottom" key={item.id}>
-        <div className={styles.wrapper} onClick={() => onSelect(item.id)}>
-          <div className={styles.imageWrapper}>
-            {!!item.images.length ? (
-              <img
-                src={item.images[0].url}
-                className={styles.artistImage}
-                alt={`Imagem de ${item.name}`}
-              />
-            ) : (
-              item.name
-            )}
-          </div>
+      <div
+        className={styles.wrapper}
+        key={item.id}
+        onClick={() => onSelect(item.id)}
+      >
+        <div className={styles.imageWrapper}>
+          {!!item.images.length ? (
+            <img
+              src={item.images[0].url}
+              className={styles.artistImage}
+              alt={`Imagem de ${item.name}`}
+            />
+          ) : (
+            item.name
+          )}
         </div>
-      </Tooltip>
+      </div>
     )
   }
 }
