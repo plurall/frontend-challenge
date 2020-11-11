@@ -1,9 +1,8 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 
 import { Alert, TextBox } from 'plurall-ui'
 
-import { ArtistsList, Layout, Loading, SubHeader } from 'components'
+import { ArtistsList, Loading, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Search.module.css'
@@ -35,7 +34,7 @@ class Search extends React.Component {
     const { artists, error, isLoading } = this.state
 
     return (
-      <Layout>
+      <>
         <SubHeader
           breadcrumb={[{ text: 'Busca' }]}
           heading="Somos Front-end Challenge"
@@ -59,9 +58,9 @@ class Search extends React.Component {
           />
           {isLoading ? <Loading /> : <ArtistsList artists={artists} />}
         </div>
-      </Layout>
+      </>
     )
   }
 }
 
-export default withRouter(Search)
+export default Search

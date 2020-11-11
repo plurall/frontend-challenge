@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Alert } from 'plurall-ui'
 
-import { AlbumsList, ArtistInfo, Layout, Loading, SubHeader } from 'components'
+import { AlbumsList, ArtistInfo, Loading, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
@@ -50,7 +50,7 @@ class Artist extends React.Component {
     const { albums, artist, error, isLoading } = this.state
 
     return (
-      <Layout>
+      <>
         <SubHeader
           breadcrumb={[{ text: 'Artista' }]}
           heading="Somos Front-end Challenge"
@@ -76,7 +76,7 @@ class Artist extends React.Component {
             </div>
           )}
         </div>
-      </Layout>
+      </>
     )
   }
 }
