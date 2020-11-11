@@ -43,7 +43,12 @@ class Search extends React.Component {
         />
         <div className={styles.wrapper}>
           {!isLoading && error.message && (
-            <Alert name={`Erro ${error.status}`} type="error">
+            <Alert
+              name={`Erro ${error.status}`}
+              type="error"
+              hrefText={error.status === 401 ? 'Clique aqui para renovar' : ''}
+              href={error.status === 401 ? '/' : ''}
+            >
               {error.message}
             </Alert>
           )}

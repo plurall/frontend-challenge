@@ -60,7 +60,12 @@ class Artist extends React.Component {
           {isLoading && <Loading />}
 
           {!isLoading && error.message && (
-            <Alert name={`Erro ${error.status}`} type="error">
+            <Alert
+              name={`Erro ${error.status}`}
+              type="error"
+              hrefText={error.status === 401 ? 'Clique aqui para renovar' : ''}
+              href={error.status === 401 ? '/' : ''}
+            >
               {error.message}
             </Alert>
           )}

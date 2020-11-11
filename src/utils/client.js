@@ -5,6 +5,7 @@ class SomosClient {
 
   onError = error => {
     console.warn(error)
+    clearToken()
   }
 
   async getArtists(searchQuery) {
