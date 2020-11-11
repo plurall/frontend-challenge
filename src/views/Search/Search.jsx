@@ -36,7 +36,7 @@ class Search extends React.Component {
         <Layout>
           <SubHeader
             breadcrumb={[{ text: 'Busca' }]}
-            heading="Somos Front-end Challange"
+            heading="Somos Front-end Challenge"
             buttonHref="/"
           />
           <div className={styles.wrapper}>

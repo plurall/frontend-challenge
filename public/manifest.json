@@ -1,11 +1,13 @@
 {
-  "short_name": "Somos Front-End Challange",
-  "name": "Somos Front-End Challange",
-  "icons": [{
-    "src": "https://s.gravatar.com/avatar/2e078a3b3eaba0db93d848b40cb91f6a?size=496",
-    "sizes": "64x64 32x32 24x24 16x16",
-    "type": "image/x-icon"
-  }],
+  "short_name": "Somos Front-End Challenge",
+  "name": "Somos Front-End Challenge",
+  "icons": [
+    {
+      "src": "https://s.gravatar.com/avatar/2e078a3b3eaba0db93d848b40cb91f6a?size=496",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

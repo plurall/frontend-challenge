@@ -15,7 +15,7 @@ class Home extends React.Component {
       <React.Fragment>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
+          heading="Somos Front-end Challenge"
         />
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Seja bem-vindo</h2>

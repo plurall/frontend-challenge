@@ -60,7 +60,7 @@ class Artist extends React.Component {
       <Layout>
         <SubHeader
           breadcrumb={[{ text: 'Artista' }]}
-          heading="Somos Front-end Challange"
+          heading="Somos Front-end Challenge"
           buttonHref="/search"
         />
         <div className={styles.wrapper}>
