@@ -37,8 +37,12 @@ class AlbumsList extends React.Component {
   }
 }
 
+AlbumsList.defaultProps = {
+  albums: [],
+}
+
 AlbumsList.propTypes = {
-  albums: PropTypes.array.isRequired,
+  albums: PropTypes.array,
 }
 
 export default AlbumsList
