@@ -29,8 +29,8 @@ class AlbumsList extends React.Component {
         <div className={styles.albumWrapper}>
           {!!albums.length &&
             albums.map(album => (
-              <div className={styles.albumContainer}>
-                <ImageCard item={album} key={album.id} />
+              <div className={styles.albumContainer} key={album.id}>
+                <ImageCard item={album} />
                 <Text secondary>{album.name}</Text>
                 <Text>{this.formatDate(album.release_date)}</Text>
               </div>
