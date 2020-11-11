@@ -24,12 +24,14 @@ class ArtistsList extends React.Component {
                 onClick={() => this.onSelect(artist.id)}
               >
                 <div className={styles.imageWrapper}>
-                  {!!artist.images.length && (
+                  {!!artist.images.length ? (
                     <img
                       src={artist.images[0].url}
                       className={styles.artistImage}
                       alt={`Imagem de ${artist.name}`}
                     />
+                  ) : (
+                    artist.name
                   )}
                 </div>
               </div>

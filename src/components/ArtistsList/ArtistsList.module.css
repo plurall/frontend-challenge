@@ -16,8 +16,11 @@
 .imageWrapper {
   width: 120px;
   height: 120px;
-  background-color: gray;
+  background-color: var(--color-light-gray);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .artistImage {
