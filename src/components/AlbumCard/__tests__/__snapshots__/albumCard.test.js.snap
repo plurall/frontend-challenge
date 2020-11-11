@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumCard should render AlbumCard 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AlbumCard
+    images={
+      Array [
+        Object {
+          "url": "https://i.scdn.co/image/5bd95fbc961256c56560d838bd74d05be50701d4",
+        },
+      ]
+    }
+    name="SRV"
+    releaseDate="2020-07-17"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="SRV"
+          className="albumPhoto"
+          src="https://i.scdn.co/image/5bd95fbc961256c56560d838bd74d05be50701d4"
+          width="100%"
+        />,
+        <h3
+          className="albumName"
+          title="SRV"
+        >
+          SRV
+        </h3>,
+        <h4
+          className="albumDate"
+          data-test="releaseDate"
+        >
+          17/07/2020
+        </h4>,
+      ],
+      "className": "albumInfo",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "SRV",
+          "className": "albumPhoto",
+          "src": "https://i.scdn.co/image/5bd95fbc961256c56560d838bd74d05be50701d4",
+          "width": "100%",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "SRV",
+          "className": "albumName",
+          "title": "SRV",
+        },
+        "ref": null,
+        "rendered": "SRV",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "17/07/2020",
+          "className": "albumDate",
+          "data-test": "releaseDate",
+        },
+        "ref": null,
+        "rendered": "17/07/2020",
+        "type": "h4",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="SRV"
+            className="albumPhoto"
+            src="https://i.scdn.co/image/5bd95fbc961256c56560d838bd74d05be50701d4"
+            width="100%"
+          />,
+          <h3
+            className="albumName"
+            title="SRV"
+          >
+            SRV
+          </h3>,
+          <h4
+            className="albumDate"
+            data-test="releaseDate"
+          >
+            17/07/2020
+          </h4>,
+        ],
+        "className": "albumInfo",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "SRV",
+            "className": "albumPhoto",
+            "src": "https://i.scdn.co/image/5bd95fbc961256c56560d838bd74d05be50701d4",
+            "width": "100%",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "SRV",
+            "className": "albumName",
+            "title": "SRV",
+          },
+          "ref": null,
+          "rendered": "SRV",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "17/07/2020",
+            "className": "albumDate",
+            "data-test": "releaseDate",
+          },
+          "ref": null,
+          "rendered": "17/07/2020",
+          "type": "h4",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;

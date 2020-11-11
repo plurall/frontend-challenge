@@ -4,3 +4,42 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.resultTitle {
+  margin: 0 0 20px 0;
+}
+
+.resultContainer {
+  margin: 30px 0px;
+}
+
+.grid {
+  column-gap: 20px;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0px;
+}
+
+@media (max-width: 1140px) {
+  .grid {
+    column-gap: 20px;
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    column-gap: 20px;
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0px;
+  }
+}

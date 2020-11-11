@@ -1,0 +1,79 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+  display: flex;
+}
+
+.subTitle {
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.labelPopularity {
+  margin: 20px 0;
+}
+
+.artistData {
+  column-gap: 20px;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  padding: 0px;
+}
+
+.badgeGenre {
+  background: #fff;
+  padding: 5px;
+  border-radius: 14px;
+  border: 1px solid #f0f0f0;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.artistPhoto {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.albumsList {
+  column-gap: 20px;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0px;
+}
+
+@media (max-width: 1140px) {
+  .artistData {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .artistData {
+    grid-template-columns: 150px 1fr;
+  }
+
+  .albumsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .subTitle {
+    margin: 45px 0 20px 0;
+  }
+
+  .artistData {
+    grid-template-columns: 1fr;
+  }
+
+  .albumsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}

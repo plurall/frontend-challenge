@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'plurall-ui'
 import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
@@ -19,7 +20,7 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <Link to="/busca">Encontre um artista</Link>
+          <Link to="/busca"><Button>Encontre um artista</Button></Link>
         </div>
       </React.Fragment>
     )

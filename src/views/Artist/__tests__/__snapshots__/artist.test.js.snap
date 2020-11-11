@@ -1,0 +1,1437 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist should render Artist page 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Artist
+    albums={
+      Object {
+        "items": Array [
+          Object {
+            "id": "1jxoZexZHDkPPyoxkanW5m",
+            "images": Array [
+              Object {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                "width": 640,
+              },
+            ],
+            "name": "Album 1",
+            "release_date": "2017-12-01",
+          },
+          Object {
+            "id": "1jxoZexZHDkPPyfdfdssdm",
+            "images": Array [
+              Object {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                "width": 640,
+              },
+            ],
+            "name": "Album 2",
+            "release_date": "2017-12-01",
+          },
+        ],
+      }
+    }
+    artist={
+      Object {
+        "genres": Array [
+          "instrumental rock",
+          "modern blues",
+          "rock",
+          "texas blues",
+        ],
+        "id": "5fsDcuclIe8ZiBD5P787K1",
+        "images": Array [
+          Object {
+            "height": 1021,
+            "url": "https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085",
+            "width": 1000,
+          },
+          Object {
+            "height": 654,
+            "url": "https://i.scdn.co/image/5bd95fbc961256c56560d838bd74d05be50701d4",
+            "width": 640,
+          },
+        ],
+        "name": "Stevie Ray Vaughan",
+        "popularity": 68,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <SubHeader
+          breadcrumb={
+            Array [
+              Object {
+                "text": "Artista",
+              },
+            ]
+          }
+          buttonHref="/busca"
+          heading="Stevie Ray Vaughan"
+        />,
+        <div
+          className="wrapper"
+        >
+          <div
+            className="artistData"
+          >
+            <div>
+              <img
+                alt="Stevie Ray Vaughan"
+                className="artistPhoto"
+                src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                width="100%"
+              />
+              <p
+                className="labelPopularity"
+              >
+                Popularidade: 
+                <b>
+                  68
+                </b>
+              </p>
+              <React.Fragment>
+                <h2
+                  className="subTitle"
+                >
+                  Gêneros
+                </h2>
+                <span
+                  className="badgeGenre"
+                >
+                  instrumental rock
+                </span>
+                <span
+                  className="badgeGenre"
+                >
+                  modern blues
+                </span>
+                <span
+                  className="badgeGenre"
+                >
+                  rock
+                </span>
+                <span
+                  className="badgeGenre"
+                >
+                  texas blues
+                </span>
+              </React.Fragment>
+            </div>
+            <div>
+              <h2
+                className="subTitle"
+              >
+                Discografia
+              </h2>
+              <div
+                className="albumsList"
+              >
+                <AlbumCard
+                  images={
+                    Array [
+                      Object {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                        "width": 640,
+                      },
+                    ]
+                  }
+                  name="Album 1"
+                  releaseDate="2017-12-01"
+                />
+                <AlbumCard
+                  images={
+                    Array [
+                      Object {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                        "width": 640,
+                      },
+                    ]
+                  }
+                  name="Album 2"
+                  releaseDate="2017-12-01"
+                />
+              </div>
+            </div>
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "breadcrumb": Array [
+            Object {
+              "text": "Artista",
+            },
+          ],
+          "buttonHref": "/busca",
+          "heading": "Stevie Ray Vaughan",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="artistData"
+          >
+            <div>
+              <img
+                alt="Stevie Ray Vaughan"
+                className="artistPhoto"
+                src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                width="100%"
+              />
+              <p
+                className="labelPopularity"
+              >
+                Popularidade: 
+                <b>
+                  68
+                </b>
+              </p>
+              <React.Fragment>
+                <h2
+                  className="subTitle"
+                >
+                  Gêneros
+                </h2>
+                <span
+                  className="badgeGenre"
+                >
+                  instrumental rock
+                </span>
+                <span
+                  className="badgeGenre"
+                >
+                  modern blues
+                </span>
+                <span
+                  className="badgeGenre"
+                >
+                  rock
+                </span>
+                <span
+                  className="badgeGenre"
+                >
+                  texas blues
+                </span>
+              </React.Fragment>
+            </div>
+            <div>
+              <h2
+                className="subTitle"
+              >
+                Discografia
+              </h2>
+              <div
+                className="albumsList"
+              >
+                <AlbumCard
+                  images={
+                    Array [
+                      Object {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                        "width": 640,
+                      },
+                    ]
+                  }
+                  name="Album 1"
+                  releaseDate="2017-12-01"
+                />
+                <AlbumCard
+                  images={
+                    Array [
+                      Object {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                        "width": 640,
+                      },
+                    ]
+                  }
+                  name="Album 2"
+                  releaseDate="2017-12-01"
+                />
+              </div>
+            </div>
+          </div>,
+          "className": "wrapper",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <img
+                  alt="Stevie Ray Vaughan"
+                  className="artistPhoto"
+                  src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                  width="100%"
+                />
+                <p
+                  className="labelPopularity"
+                >
+                  Popularidade: 
+                  <b>
+                    68
+                  </b>
+                </p>
+                <React.Fragment>
+                  <h2
+                    className="subTitle"
+                  >
+                    Gêneros
+                  </h2>
+                  <span
+                    className="badgeGenre"
+                  >
+                    instrumental rock
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    modern blues
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    rock
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    texas blues
+                  </span>
+                </React.Fragment>
+              </div>,
+              <div>
+                <h2
+                  className="subTitle"
+                >
+                  Discografia
+                </h2>
+                <div
+                  className="albumsList"
+                >
+                  <AlbumCard
+                    images={
+                      Array [
+                        Object {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                          "width": 640,
+                        },
+                      ]
+                    }
+                    name="Album 1"
+                    releaseDate="2017-12-01"
+                  />
+                  <AlbumCard
+                    images={
+                      Array [
+                        Object {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                          "width": 640,
+                        },
+                      ]
+                    }
+                    name="Album 2"
+                    releaseDate="2017-12-01"
+                  />
+                </div>
+              </div>,
+            ],
+            "className": "artistData",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="Stevie Ray Vaughan"
+                    className="artistPhoto"
+                    src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                    width="100%"
+                  />,
+                  <p
+                    className="labelPopularity"
+                  >
+                    Popularidade: 
+                    <b>
+                      68
+                    </b>
+                  </p>,
+                  <React.Fragment>
+                    <h2
+                      className="subTitle"
+                    >
+                      Gêneros
+                    </h2>
+                    <span
+                      className="badgeGenre"
+                    >
+                      instrumental rock
+                    </span>
+                    <span
+                      className="badgeGenre"
+                    >
+                      modern blues
+                    </span>
+                    <span
+                      className="badgeGenre"
+                    >
+                      rock
+                    </span>
+                    <span
+                      className="badgeGenre"
+                    >
+                      texas blues
+                    </span>
+                  </React.Fragment>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "Stevie Ray Vaughan",
+                    "className": "artistPhoto",
+                    "src": "https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085",
+                    "width": "100%",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Popularidade: ",
+                      <b>
+                        68
+                      </b>,
+                    ],
+                    "className": "labelPopularity",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Popularidade: ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": 68,
+                      },
+                      "ref": null,
+                      "rendered": 68,
+                      "type": "b",
+                    },
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <h2
+                        className="subTitle"
+                      >
+                        Gêneros
+                      </h2>,
+                      Array [
+                        <span
+                          className="badgeGenre"
+                        >
+                          instrumental rock
+                        </span>,
+                        <span
+                          className="badgeGenre"
+                        >
+                          modern blues
+                        </span>,
+                        <span
+                          className="badgeGenre"
+                        >
+                          rock
+                        </span>,
+                        <span
+                          className="badgeGenre"
+                        >
+                          texas blues
+                        </span>,
+                      ],
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Gêneros",
+                        "className": "subTitle",
+                      },
+                      "ref": null,
+                      "rendered": "Gêneros",
+                      "type": "h2",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "0",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "instrumental rock",
+                        "className": "badgeGenre",
+                      },
+                      "ref": null,
+                      "rendered": "instrumental rock",
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "1",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "modern blues",
+                        "className": "badgeGenre",
+                      },
+                      "ref": null,
+                      "rendered": "modern blues",
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "2",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "rock",
+                        "className": "badgeGenre",
+                      },
+                      "ref": null,
+                      "rendered": "rock",
+                      "type": "span",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "3",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "texas blues",
+                        "className": "badgeGenre",
+                      },
+                      "ref": null,
+                      "rendered": "texas blues",
+                      "type": "span",
+                    },
+                  ],
+                  "type": Symbol(react.fragment),
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h2
+                    className="subTitle"
+                  >
+                    Discografia
+                  </h2>,
+                  <div
+                    className="albumsList"
+                  >
+                    <AlbumCard
+                      images={
+                        Array [
+                          Object {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                            "width": 640,
+                          },
+                        ]
+                      }
+                      name="Album 1"
+                      releaseDate="2017-12-01"
+                    />
+                    <AlbumCard
+                      images={
+                        Array [
+                          Object {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                            "width": 640,
+                          },
+                        ]
+                      }
+                      name="Album 2"
+                      releaseDate="2017-12-01"
+                    />
+                  </div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Discografia",
+                    "className": "subTitle",
+                  },
+                  "ref": null,
+                  "rendered": "Discografia",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <AlbumCard
+                        images={
+                          Array [
+                            Object {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                              "width": 640,
+                            },
+                          ]
+                        }
+                        name="Album 1"
+                        releaseDate="2017-12-01"
+                      />,
+                      <AlbumCard
+                        images={
+                          Array [
+                            Object {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                              "width": 640,
+                            },
+                          ]
+                        }
+                        name="Album 2"
+                        releaseDate="2017-12-01"
+                      />,
+                    ],
+                    "className": "albumsList",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": "0",
+                      "nodeType": "function",
+                      "props": Object {
+                        "images": Array [
+                          Object {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                            "width": 640,
+                          },
+                        ],
+                        "name": "Album 1",
+                        "releaseDate": "2017-12-01",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "1",
+                      "nodeType": "function",
+                      "props": Object {
+                        "images": Array [
+                          Object {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                            "width": 640,
+                          },
+                        ],
+                        "name": "Album 2",
+                        "releaseDate": "2017-12-01",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <SubHeader
+            breadcrumb={
+              Array [
+                Object {
+                  "text": "Artista",
+                },
+              ]
+            }
+            buttonHref="/busca"
+            heading="Stevie Ray Vaughan"
+          />,
+          <div
+            className="wrapper"
+          >
+            <div
+              className="artistData"
+            >
+              <div>
+                <img
+                  alt="Stevie Ray Vaughan"
+                  className="artistPhoto"
+                  src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                  width="100%"
+                />
+                <p
+                  className="labelPopularity"
+                >
+                  Popularidade: 
+                  <b>
+                    68
+                  </b>
+                </p>
+                <React.Fragment>
+                  <h2
+                    className="subTitle"
+                  >
+                    Gêneros
+                  </h2>
+                  <span
+                    className="badgeGenre"
+                  >
+                    instrumental rock
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    modern blues
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    rock
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    texas blues
+                  </span>
+                </React.Fragment>
+              </div>
+              <div>
+                <h2
+                  className="subTitle"
+                >
+                  Discografia
+                </h2>
+                <div
+                  className="albumsList"
+                >
+                  <AlbumCard
+                    images={
+                      Array [
+                        Object {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                          "width": 640,
+                        },
+                      ]
+                    }
+                    name="Album 1"
+                    releaseDate="2017-12-01"
+                  />
+                  <AlbumCard
+                    images={
+                      Array [
+                        Object {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                          "width": 640,
+                        },
+                      ]
+                    }
+                    name="Album 2"
+                    releaseDate="2017-12-01"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "breadcrumb": Array [
+              Object {
+                "text": "Artista",
+              },
+            ],
+            "buttonHref": "/busca",
+            "heading": "Stevie Ray Vaughan",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="artistData"
+            >
+              <div>
+                <img
+                  alt="Stevie Ray Vaughan"
+                  className="artistPhoto"
+                  src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                  width="100%"
+                />
+                <p
+                  className="labelPopularity"
+                >
+                  Popularidade: 
+                  <b>
+                    68
+                  </b>
+                </p>
+                <React.Fragment>
+                  <h2
+                    className="subTitle"
+                  >
+                    Gêneros
+                  </h2>
+                  <span
+                    className="badgeGenre"
+                  >
+                    instrumental rock
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    modern blues
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    rock
+                  </span>
+                  <span
+                    className="badgeGenre"
+                  >
+                    texas blues
+                  </span>
+                </React.Fragment>
+              </div>
+              <div>
+                <h2
+                  className="subTitle"
+                >
+                  Discografia
+                </h2>
+                <div
+                  className="albumsList"
+                >
+                  <AlbumCard
+                    images={
+                      Array [
+                        Object {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                          "width": 640,
+                        },
+                      ]
+                    }
+                    name="Album 1"
+                    releaseDate="2017-12-01"
+                  />
+                  <AlbumCard
+                    images={
+                      Array [
+                        Object {
+                          "height": 640,
+                          "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                          "width": 640,
+                        },
+                      ]
+                    }
+                    name="Album 2"
+                    releaseDate="2017-12-01"
+                  />
+                </div>
+              </div>
+            </div>,
+            "className": "wrapper",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  <img
+                    alt="Stevie Ray Vaughan"
+                    className="artistPhoto"
+                    src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                    width="100%"
+                  />
+                  <p
+                    className="labelPopularity"
+                  >
+                    Popularidade: 
+                    <b>
+                      68
+                    </b>
+                  </p>
+                  <React.Fragment>
+                    <h2
+                      className="subTitle"
+                    >
+                      Gêneros
+                    </h2>
+                    <span
+                      className="badgeGenre"
+                    >
+                      instrumental rock
+                    </span>
+                    <span
+                      className="badgeGenre"
+                    >
+                      modern blues
+                    </span>
+                    <span
+                      className="badgeGenre"
+                    >
+                      rock
+                    </span>
+                    <span
+                      className="badgeGenre"
+                    >
+                      texas blues
+                    </span>
+                  </React.Fragment>
+                </div>,
+                <div>
+                  <h2
+                    className="subTitle"
+                  >
+                    Discografia
+                  </h2>
+                  <div
+                    className="albumsList"
+                  >
+                    <AlbumCard
+                      images={
+                        Array [
+                          Object {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                            "width": 640,
+                          },
+                        ]
+                      }
+                      name="Album 1"
+                      releaseDate="2017-12-01"
+                    />
+                    <AlbumCard
+                      images={
+                        Array [
+                          Object {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                            "width": 640,
+                          },
+                        ]
+                      }
+                      name="Album 2"
+                      releaseDate="2017-12-01"
+                    />
+                  </div>
+                </div>,
+              ],
+              "className": "artistData",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <img
+                      alt="Stevie Ray Vaughan"
+                      className="artistPhoto"
+                      src="https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085"
+                      width="100%"
+                    />,
+                    <p
+                      className="labelPopularity"
+                    >
+                      Popularidade: 
+                      <b>
+                        68
+                      </b>
+                    </p>,
+                    <React.Fragment>
+                      <h2
+                        className="subTitle"
+                      >
+                        Gêneros
+                      </h2>
+                      <span
+                        className="badgeGenre"
+                      >
+                        instrumental rock
+                      </span>
+                      <span
+                        className="badgeGenre"
+                      >
+                        modern blues
+                      </span>
+                      <span
+                        className="badgeGenre"
+                      >
+                        rock
+                      </span>
+                      <span
+                        className="badgeGenre"
+                      >
+                        texas blues
+                      </span>
+                    </React.Fragment>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "Stevie Ray Vaughan",
+                      "className": "artistPhoto",
+                      "src": "https://i.scdn.co/image/1de60c936683320769a1bfb6fba7f75902859085",
+                      "width": "100%",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Popularidade: ",
+                        <b>
+                          68
+                        </b>,
+                      ],
+                      "className": "labelPopularity",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Popularidade: ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 68,
+                        },
+                        "ref": null,
+                        "rendered": 68,
+                        "type": "b",
+                      },
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <h2
+                          className="subTitle"
+                        >
+                          Gêneros
+                        </h2>,
+                        Array [
+                          <span
+                            className="badgeGenre"
+                          >
+                            instrumental rock
+                          </span>,
+                          <span
+                            className="badgeGenre"
+                          >
+                            modern blues
+                          </span>,
+                          <span
+                            className="badgeGenre"
+                          >
+                            rock
+                          </span>,
+                          <span
+                            className="badgeGenre"
+                          >
+                            texas blues
+                          </span>,
+                        ],
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Gêneros",
+                          "className": "subTitle",
+                        },
+                        "ref": null,
+                        "rendered": "Gêneros",
+                        "type": "h2",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "0",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "instrumental rock",
+                          "className": "badgeGenre",
+                        },
+                        "ref": null,
+                        "rendered": "instrumental rock",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "1",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "modern blues",
+                          "className": "badgeGenre",
+                        },
+                        "ref": null,
+                        "rendered": "modern blues",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "2",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "rock",
+                          "className": "badgeGenre",
+                        },
+                        "ref": null,
+                        "rendered": "rock",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "3",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "texas blues",
+                          "className": "badgeGenre",
+                        },
+                        "ref": null,
+                        "rendered": "texas blues",
+                        "type": "span",
+                      },
+                    ],
+                    "type": Symbol(react.fragment),
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h2
+                      className="subTitle"
+                    >
+                      Discografia
+                    </h2>,
+                    <div
+                      className="albumsList"
+                    >
+                      <AlbumCard
+                        images={
+                          Array [
+                            Object {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                              "width": 640,
+                            },
+                          ]
+                        }
+                        name="Album 1"
+                        releaseDate="2017-12-01"
+                      />
+                      <AlbumCard
+                        images={
+                          Array [
+                            Object {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                              "width": 640,
+                            },
+                          ]
+                        }
+                        name="Album 2"
+                        releaseDate="2017-12-01"
+                      />
+                    </div>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Discografia",
+                      "className": "subTitle",
+                    },
+                    "ref": null,
+                    "rendered": "Discografia",
+                    "type": "h2",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <AlbumCard
+                          images={
+                            Array [
+                              Object {
+                                "height": 640,
+                                "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                                "width": 640,
+                              },
+                            ]
+                          }
+                          name="Album 1"
+                          releaseDate="2017-12-01"
+                        />,
+                        <AlbumCard
+                          images={
+                            Array [
+                              Object {
+                                "height": 640,
+                                "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                                "width": 640,
+                              },
+                            ]
+                          }
+                          name="Album 2"
+                          releaseDate="2017-12-01"
+                        />,
+                      ],
+                      "className": "albumsList",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": "0",
+                        "nodeType": "function",
+                        "props": Object {
+                          "images": Array [
+                            Object {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                              "width": 640,
+                            },
+                          ],
+                          "name": "Album 1",
+                          "releaseDate": "2017-12-01",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "1",
+                        "nodeType": "function",
+                        "props": Object {
+                          "images": Array [
+                            Object {
+                              "height": 640,
+                              "url": "https://i.scdn.co/image/ab67616d0000b273f43584a669892a6fca22545d",
+                              "width": 640,
+                            },
+                          ],
+                          "name": "Album 2",
+                          "releaseDate": "2017-12-01",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "childContextTypes": Object {
+      "router": [Function],
+    },
+    "context": Object {
+      "router": Object {
+        "history": Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        },
+        "route": Object {
+          "location": Object {},
+          "match": Object {},
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render home 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Home />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <SubHeader
+          breadcrumb={
+            Array [
+              Object {
+                "text": "Home",
+              },
+            ]
+          }
+          heading="Somos Front-end Challange"
+        />,
+        <div
+          className="wrapper"
+        >
+          <Link
+            replace={false}
+            to="/busca"
+          >
+            <Button
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Encontre um artista
+            </Button>
+          </Link>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "breadcrumb": Array [
+            Object {
+              "text": "Home",
+            },
+          ],
+          "heading": "Somos Front-end Challange",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <Link
+            replace={false}
+            to="/busca"
+          >
+            <Button
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Encontre um artista
+            </Button>
+          </Link>,
+          "className": "wrapper",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Button
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Encontre um artista
+            </Button>,
+            "replace": false,
+            "to": "/busca",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Encontre um artista",
+              "disabled": false,
+              "onClick": [Function],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": "Encontre um artista",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <SubHeader
+            breadcrumb={
+              Array [
+                Object {
+                  "text": "Home",
+                },
+              ]
+            }
+            heading="Somos Front-end Challange"
+          />,
+          <div
+            className="wrapper"
+          >
+            <Link
+              replace={false}
+              to="/busca"
+            >
+              <Button
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Encontre um artista
+              </Button>
+            </Link>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "breadcrumb": Array [
+              Object {
+                "text": "Home",
+              },
+            ],
+            "heading": "Somos Front-end Challange",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Link
+              replace={false}
+              to="/busca"
+            >
+              <Button
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Encontre um artista
+              </Button>
+            </Link>,
+            "className": "wrapper",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <Button
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Encontre um artista
+              </Button>,
+              "replace": false,
+              "to": "/busca",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Encontre um artista",
+                "disabled": false,
+                "onClick": [Function],
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": "Encontre um artista",
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "childContextTypes": Object {
+      "router": [Function],
+    },
+    "context": Object {
+      "router": Object {
+        "history": Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        },
+        "route": Object {
+          "location": Object {},
+          "match": Object {},
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;

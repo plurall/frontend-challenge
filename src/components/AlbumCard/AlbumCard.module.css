@@ -1,0 +1,40 @@
+.albumInfo {
+  border: 1px solid transparent;
+  padding: 8px;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 0 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: grid;
+}
+
+.albumName {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: block;
+  height: 20px;
+}
+
+.albumDate {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.albumPhoto {
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

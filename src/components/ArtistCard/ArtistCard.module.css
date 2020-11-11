@@ -1,0 +1,43 @@
+.item {
+  border: 1px solid transparent;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  text-decoration: none;
+  color: #333;
+  height: 100%;
+}
+
+.item:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 5px 0 rgba(156, 123, 123, 0.8);
+}
+
+.item img {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+
+.artistName {
+  font-size: 16px;
+  font-weight: bold;
+}
