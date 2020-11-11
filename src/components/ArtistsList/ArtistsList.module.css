@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.artistItem {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+}
+
+.imageWrapper {
+  width: 120px;
+  height: 120px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.artistImage {
+  width: 120px;
+  height: 120px;
+  transition: ease-in-out 0.4s;
+}
+
+.artistImage:hover {
+  width: 130px;
+  height: 130px;
+}
