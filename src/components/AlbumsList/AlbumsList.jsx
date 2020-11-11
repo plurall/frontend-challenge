@@ -13,10 +13,7 @@ class AlbumsList extends React.Component {
   }
 
   formatDate(date) {
-    return date
-      .split('-')
-      .reverse()
-      .join('/')
+    return new Date(Date.parse(date)).toLocaleDateString()
   }
 
   render() {
