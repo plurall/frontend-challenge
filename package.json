@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.5.3",
     "client-oauth2": "^4.1.0",
+    "jquery": "^3.5.1",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",

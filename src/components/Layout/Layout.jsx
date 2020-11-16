@@ -19,7 +19,7 @@ class Layout extends Component {
 
   state = {}
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   handleLogout = path => {
     setToken('')
@@ -38,7 +38,11 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+              menu: {
+                items: [{ name: 'Home', slug: 'account', id: 0 , href: '/'},
+                //{ name: 'Artista', slug: 'account', id: 1, href: '/Artista/:id' },
+                { name: 'Pesquisar', slug: 'account', id: 2, href: '/Pesquisa' }]
+              },
             }}
             logout={this.handleLogout}
             service="reader"

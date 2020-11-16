@@ -11,8 +11,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       getToken() ? (
         <Component {...props} />
       ) : (
-        handleNotAuthenticated(props.match.path)
-      )
+          handleNotAuthenticated(props.match.path)
+        )
     }
   />
 )
