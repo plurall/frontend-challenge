@@ -4,3 +4,29 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.wraphome { 
+  height: calc(100vh - 185px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h2.texthome {
+  text-align: center;
+  line-height: 1;
+}
+
+a.btnhome {
+  padding: 20px;
+  text-align: center;
+  display: block;
+  background: #655aa3;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}

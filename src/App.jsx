@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Layout } from 'components'
 import { Home } from 'views'
 
@@ -9,6 +8,7 @@ const App = () => (
   <Layout>
     <Home />
   </Layout>
+  
 )
 
 export default App
