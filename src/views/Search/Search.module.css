@@ -1,0 +1,104 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: var(--font);
+  height: 150px;
+  transition: 200ms;
+  transition-timing-function: linear;
+}
+
+.fullWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  font: var(--font);
+  height: calc(100vh - 140px);
+  transition: 150ms;
+  transition-timing-function: linear;
+}
+
+
+.searchInput {
+  border-radius: 10px;
+  color: #666;
+  max-width: 400px;
+  font-size: 18px;
+  padding: 15px 25px;
+  border: 1px solid #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+.searchInput:focus {
+  outline-color: darkgray;
+}
+
+.msgSearch {
+  margin-top: 10px;
+}
+
+.resultArtists {
+  max-width: 1224px;
+  margin: 10px auto;
+  display: flex;  
+  font: var(--font);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resultArtists a {
+  text-decoration: none;
+  flex: 0 0 18em;
+  margin: 5px;
+}
+
+.itemArtist {
+  border-radius: 10px;
+  color: #666;
+  padding: 17px;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.25);
+  transition: background 0.3s;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.itemArtist:hover {
+  background: white;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
+}
+
+.itemArtist:hover p{
+  color: #5a5959;
+  font-weight: bold;
+}
+
+.photoArtist img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.titleArtist {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.accessArtist {
+  background: rebeccapurple;
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+

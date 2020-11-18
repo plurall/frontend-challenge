@@ -17,7 +17,7 @@ ReactDOM.render(
       <PrivateRoute path="/" component={App} />
     </Switch>
   </Router>,
-  document.getElementById('root'),
-)
+  document.getElementById('root')
+);
 
-registerServiceWorker()
+registerServiceWorker();

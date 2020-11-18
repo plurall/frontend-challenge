@@ -2,5 +2,26 @@
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  font: var(--font);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: calc(100vh - 120px);
+  text-align: center;
 }
+
+.titleHome {
+  line-height: 20px;
+  margin-bottom: 40px;
+}
+
+.buttonHome {
+  background: #655aa3;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+

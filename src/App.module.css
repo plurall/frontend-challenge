@@ -5,6 +5,7 @@
   --height-footer: 59px;
   --height-nav-bar: 63px;
   --padding: 20px;
+  --font: 16px/14px 'Nunito', sans-serif;
 }
 
 * {

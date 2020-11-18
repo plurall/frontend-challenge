@@ -1,28 +1,25 @@
-import React from 'react'
-
-import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
-
-import styles from './Home.module.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Home.module.css';
 
 class Home extends React.Component {
-  state = {}
-
-  client = new SomosClient()
-
   render() {
-    return (
-      <React.Fragment>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
-        />
+    return ( 
+      <>
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <div className={styles.wrapHome}>
+            <h2 className={styles.titleHome}>Faça aqui a sua busca por artistas do Spotify!!</h2>
+            <Link 
+              data-testid="form-btn"
+              to="/busca" 
+              className={styles.buttonHome}>
+              Buscar por artistas
+          </Link>
+          </div>
         </div>
-      </React.Fragment>
-    )
-  }
-}
+      </>
+    );
+  };
+};
 
 export default Home

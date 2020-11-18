@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 2px 2px 7px 1px rgba(0,0,0,0.5);
+}
+
+.profile h1 {
+  text-align: center;
+  line-height: 1.2em;
+}
+
+.infoArtist {
+  margin: 0 auto;
+}
+
+.infoItem {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.titleAlbums {
+  border-top: 1px solid #d8d8d8; 
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.albums h2 {
+  margin: 40px 0px 20px 0px;
+  text-align: center;
+}
+
+.albums {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.albums .item {
+  padding: 15px;
+  flex: 0 0 24em;
+  margin: 5px;
+  border: 1px solid darkgray;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.albums img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.albumName {
+  font-size: 18px;
+  line-height: 18px;
+  margin-top: 15px;
+}
+
+.albumDate {
+  margin-top: 10px;
+  display: block;
+}
+
+.backButton {
+  margin-bottom: 30px;
+  background: var(--color-purple);
+  border-radius: 10px;
+  padding: 10px 40px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
