@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SomosClient } from 'utils';
 import ArtistAlbumItem from './ArtistAlbumItem';
 import styles from './Artist.module.css';
+import ArtistImg from '../../assets/artist-avatar.png';
 
 class Artist extends React.Component {
   static propTypes = {
@@ -39,10 +40,18 @@ class Artist extends React.Component {
             </Link>
             <div className={styles.profile}>
               <h1>{this.state.artist.name}</h1>
-              <img
-                src={this.state.artist.images[0].url}
-                alt={this.state.artist.name}
-              />
+              {this.state.artist.images.length > 0 ? (
+                <img
+                  src={this.state.artist.images[0].url}
+                  alt={this.state.artist.name}
+                />
+               ) :
+               (
+                <img 
+                  src={ArtistImg} 
+                  alt={this.state.artist.name} />
+               )
+              }
               <div className={styles.infoItem}>
                 <b>{this.state.artist.genres.join(" - ")}</b>
               </div>
