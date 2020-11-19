@@ -20,7 +20,7 @@ class Search extends React.Component {
   async onChangeSearch(e) {
     const search = e.target.value;
     this.setState({ search });
-    if (search.length >= 4) {
+    if (search.length > 4) {
       const artists = await this.client.getArtists(search);
       this.setState({ artists: artists });
     } else {
@@ -30,18 +30,18 @@ class Search extends React.Component {
   };
 
   returnSearch = () => {
-    if (this.state.search.length >= 4) {
+    if (this.state.search.length > 4) {
       return (
         <p>A sua busca por <b><i>"{this.state.search}"</i></b> encontrou <b>{this.state.artists.length}</b> resultados.</p>
       );
     }
-    else return (<p>Sua busca deve conter pelo menos 4 caracteres.</p>);
+    else return (<p>Sua busca deve conter mais de 4 caracteres.</p>);
   };
 
   render() {
     return (
       <>
-        <div className={this.state.search.length >= 4 ? styles.wrapper : styles.fullWrap}>
+        <div className={this.state.search.length > 4 ? styles.wrapper : styles.fullWrap}>
           <input
             type="text"
             className={styles.searchInput}
