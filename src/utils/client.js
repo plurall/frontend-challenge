@@ -13,7 +13,7 @@ class SomosClient {
     return {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.token}`,
+        'Authorization': `Bearer ${this.token}`,
       },
     };
   };
