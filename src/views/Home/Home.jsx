@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
@@ -17,9 +18,14 @@ class Home extends React.Component {
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
         />
-        <div className={styles.wrapper}>
-          <h1>Hi</h1>
-        </div>
+          <div className={styles.wrapper}>
+            <h1>Hi</h1>
+            <button>
+              <Link to="/busca">
+                Buscar
+              </Link>
+            </button>
+          </div>
       </React.Fragment>
     )
   }
