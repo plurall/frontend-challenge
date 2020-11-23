@@ -3,12 +3,13 @@ import { clearToken, getToken } from 'utils'
 class SomosClient {
   constructor() {}
 
-  onError = error => {}
+  onError = error => {console.log("Erro")}
 
-  artistList = {items:[]}
+  searchResult = {}
 
   //Request using fetch
-  call($method, $url, $data) {
+  call($method, $route, $data="") {
+    $data = new URLSearchParams($data)
     const requestOptions = {
       method: $method,
       headers: { 
@@ -17,21 +18,36 @@ class SomosClient {
           'Authorization': 'Bearer '+ getToken()
       }
     };
-    return fetch($url+"?"+$data.toString(), requestOptions)
+    return fetch(process.env.REACT_APP_API_URL+$route+($data?"?"+$data.toString():""), requestOptions)
         .then(response => response.json())
         // .then(data => console.log('This is your data', data));
         .then(data => {
-          return data;
+          if (!data.error) {
+            this.searchResult = data
+            // console.log(data)
+            return data
+          }
+          
         })
-        .then(error => this.onError());
+        .catch(error => this.onError());
         
   };
   
+  async searchArtists($searchKey) {
+    return await this.call("GET", "/search", {'q':$searchKey, 'type':'artist'})
+    
+  }
 
-  async getArtists($searchKey) {
+  async getArtist($id) {
     // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
     // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
-    this.call("GET", "https://api.spotify.com/v1/search", new URLSearchParams({'q':$searchKey, 'type':'artist'}));
+    return await this.call("GET","/artists/"+ $id)
+  
+  }
+
+  async getAlbums($id) {
+    return await this.call("GET","/artists/"+ $id +"/albums", {'limit': 10})
+  
   }
 
 }

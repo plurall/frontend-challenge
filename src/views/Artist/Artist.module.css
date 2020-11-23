@@ -12,27 +12,6 @@
 h1 {
   margin-bottom: 20px;
 }
-input {
-  width: 100%;
-  box-sizing: border-box;
-  background-color: transparent;
-  border: 0;
-  border-radius: 500px;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  line-height: 1;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 17px 20px;
-  position: relative;
-  background-color: rgb(182 176 216 / 50%);
-  color: #000;
-}
-input:focus {
-  outline: none;
-}
 ul {
   position: relative;
   width: auto;
@@ -60,8 +39,12 @@ li {
 }
 .card {
   width: 100%;
-  margin: 5px 0;
   background-color: rgb(67 61 103 / 68%);
+}
+.album {
+  background-color: rgb(55 50 88 / 29%);
+  padding: 15px;
+  margin: 5px 0;
 }
 .row {
   display: inline-block;
@@ -75,17 +58,17 @@ h2 {
 .artistName {
   text-transform: uppercase;
   margin-bottom: unset;
-  font-size: 20px;
 }
 img {
+  display: block;
   max-width: 100px;
   min-width: 100px;
   background-color: rgb(0 0 0 / 50%)
 }
-a, a:visited, a:hover {
-  color: unset;
-  text-decoration: unset;
+.albumName {
+  display: block;
+  margin: 10px 0;
 }
-a:hover {
-  text-decoration: unset;
+.release {
+  font-size: 12px;
 }

@@ -4,6 +4,7 @@
 
 .content {
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
+  background-color: rgb(113 105 160 / 68%);
 }
 
 .footer {

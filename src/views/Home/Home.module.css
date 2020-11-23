@@ -1,6 +1,57 @@
 .wrapper {
   max-width: 1224px;
-  padding: 30px 20px;
+  /* padding: 30px 20px; */
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+}
+.content {
+  /* max-width: 500px; */
+  width: 100%;
+  padding: 60px 20px;
+  margin: 0 auto;
+  background-color: rgb(113 105 160 / 68%);
+}
+.logo {
+  font-size: 50px;
+  font-weight: 100;
+  letter-spacing: -2px;
+  padding: 10px;
+  margin: 10px 20px;
+}
+.logo > strong{
+    font-weight: normal;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 50px;
+  margin-bottom: 25px;
+}
+.center {
+  margin: 0 auto;
+  display: block;
+}
+button {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 0;
+  border-radius: 500px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 17px 48px;
+  position: relative;
+  background-color: #000;
+  color: #ffffff;
+}
+a:visited {
+  color: unset;
+}
+a:hover {
+  text-decoration: unset;
 }
