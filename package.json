@@ -3,6 +3,8 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "axios": "^0.21.0",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
     "md5": "^2.2.1",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "babel-eslint": "9.0.0",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",

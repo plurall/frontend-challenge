@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+import { Button } from '@material-ui/core'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
@@ -18,7 +20,11 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <Link to="busca">
+            <Button variant="contained" color="primary">
+              Ir para a página de busca
+            </Button>
+          </Link>
         </div>
       </React.Fragment>
     )
