@@ -1,0 +1,66 @@
+.wrapper {
+    max-width: 1224px;
+    padding: 30px 20px;
+    margin: 0 auto;
+    font: 16px/14px 'Nunito', sans-serif;
+    flex-direction: row;
+    display: flex;
+
+  }
+
+.infoArtista {
+  padding: 10px;
+  padding-top: 30px
+}
+
+.fotoArtista {
+  max-width: 1224px;
+  padding-left: 10px;
+}
+
+.fotosAlbuns {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.albunsArtista {
+  max-width: 1224px;
+  font: 16px/14px 'Nunito', sans-serif;
+
+}
+.albumArtista {
+  flex-direction: row;
+  display:flex;
+  width:100%;
+  align-self: stretch;
+  padding-left: 20px;
+}
+
+.infoAlbum p { 
+  display: flex;
+  align-self: center;
+  padding-left: 20px;
+}
+
+.semImagem{
+  margin: auto;
+  padding-top: 78px;
+}
+
+p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+
+}
+strong {
+  padding-left: 10px;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+li>*:first-child {
+  padding-top: 10px
+}

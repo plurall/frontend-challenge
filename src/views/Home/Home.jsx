@@ -1,7 +1,9 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
+
 
 import styles from './Home.module.css'
 
@@ -18,7 +20,11 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <Link to="/busca">
+            <button className={styles.wrapper} type="button">
+              Buscar Artistas
+            </button>
+          </Link>
         </div>
       </React.Fragment>
     )
