@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import Paper from '@material-ui/core/Paper'
-import { Layout, SubHeader } from 'components'
-
-import Wrapper from 'components/Wrapper/Wrapper'
-import { SomosClient } from 'utils'
-import Image from 'components/Image/Image'
 import { Link } from 'react-router-dom'
-import { Grid, withStyles } from '@material-ui/core'
+import { Grid, Typography, withStyles } from '@material-ui/core'
 import PropTypes from 'prop-types'
+
+import { SomosClient } from 'utils'
 import { isEmptyArray } from 'utils/array'
+import { Layout, SubHeader, Wrapper, Image } from 'components'
+import { isGreaterThanFour } from './utils'
 
 const cliente = new SomosClient()
 
@@ -23,13 +22,6 @@ const styles = () => ({
     display: 'flex',
     flex: 1,
     justifyContent: 'center',
-  },
-  artistName: {
-    fontSize: 18,
-    color: '#607d8b',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 10,
   },
   artistPhoto: {
     display: 'block',
@@ -52,12 +44,8 @@ class Search extends Component {
     artists: [],
   }
 
-  componentDidMount() {
-    this.fetchArtists('ed')
-  }
-
   handleChangeSearch = ({ target: { value: search } }) => {
-    if (search && search.length > 4) {
+    if (isGreaterThanFour(search)) {
       this.fetchArtists(search)
     }
   }
@@ -108,7 +96,9 @@ class Search extends Component {
                         alt={artist.name}
                         className={classes.artistPhoto}
                       />
-                      <p className={classes.artistName}>{artist.name}</p>
+                      <Typography variant="h6" align="center">
+                        {artist.name}
+                      </Typography>
                     </Paper>
                   </Link>
                 </Grid>

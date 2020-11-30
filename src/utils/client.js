@@ -42,9 +42,31 @@ class SomosClient {
     } catch (error) {
       return this.onError()
     }
+  }
 
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtistDetail(artistId) {
+    try {
+      const response = await this.spotifyApi.get(`/artists/${artistId}`)
+
+      return response
+    } catch (error) {
+      return this.onError()
+    }
+  }
+
+  async getArtistAlbums(params) {
+    const { artistId, ...restParams } = params
+
+    try {
+      const response = await this.spotifyApi.get(
+        `/artists/${artistId}/albums`,
+        { params: restParams },
+      )
+
+      return response
+    } catch (error) {
+      return this.onError()
+    }
   }
 }
 

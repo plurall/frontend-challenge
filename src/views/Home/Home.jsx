@@ -20,7 +20,7 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <Link to="busca">
+          <Link to="/busca">
             <Button variant="contained" color="primary">
               Ir para a página de busca
             </Button>

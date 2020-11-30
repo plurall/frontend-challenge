@@ -1,3 +1,6 @@
 export { default as Layout } from './Layout'
 export { default as SubHeader } from './SubHeader'
 export { default as PrivateRoute } from './PrivateRoute'
+export { default as Wrapper } from './Wrapper'
+export { default as Image } from './Image'
+export { default as Loading } from './Loading'
