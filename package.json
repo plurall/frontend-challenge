@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "dependencies": {
     "@types/react-router-dom": "^5.1.6",
+    "axios": "^0.21.0",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
     "md5": "^2.2.1",

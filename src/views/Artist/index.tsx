@@ -4,7 +4,6 @@ import React from 'react';
 
 import SubHeader from '../../components/SubHeader';
 
-import { SomosClient } from '../../utils';
 import style from './Artist.module.css';
 import artistPhoto from '../../assets/Henrell.jpg';
 import Guriah from '../../assets/guriah.jpeg';
@@ -12,7 +11,6 @@ import TouchMe from '../../assets/touchme.jpeg';
 
 const Artist: React.FC = () => {
 
-  const client = new SomosClient();
 
   return (
     <>

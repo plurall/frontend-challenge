@@ -98,3 +98,7 @@ div > p {
   color: #a8a8b3;
   margin-top: 4px;
 }
+
+.error {
+  color: red;
+}
