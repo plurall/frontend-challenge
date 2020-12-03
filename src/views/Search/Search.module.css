@@ -1,0 +1,100 @@
+.container {
+  padding: 25px;
+}
+
+h1 {
+  font: 30px 'Nunito', sans-serif;
+}
+
+form {
+  margin-top: 40px;
+  max-width: 700px;
+
+  display: flex;
+  font-size: 16px;
+}
+
+form > input {
+  flex: 1;
+  height: 70px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  color: #3a3a3a;
+  border: 2px solid #fff;
+  border-right: 0;
+  font-size: 16px;
+}
+
+form > input::placeholder {
+  color: #a8a8b3;
+}
+
+form > input:focus {
+  outline: none;
+}
+
+form > button {
+  width: 210px;
+  height: 70px;
+  background: #04d361;
+  border-radius: 0 5px 5px 0;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  outline: none;
+}
+
+form > button:hover {
+  background:  #0ea14e;
+}
+
+.artists {
+  margin-top: 80px;
+  max-width: 700px;
+}
+
+.artists > a {
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 24px;
+  display: block;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.artists > a:hover {
+  transform: translateX(10px);
+}
+
+.artists > a + a {
+  margin-top: 16px;
+}
+
+.artists > a > img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.artists > a > div {
+  margin: 0 16px;
+  flex: 1;
+}
+
+div > strong {
+  font-size: 20px;
+  color: #3d3d4d;
+}
+
+div > p {
+  font-size: 18px;
+  color: #a8a8b3;
+  margin-top: 4px;
+}

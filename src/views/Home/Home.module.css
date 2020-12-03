@@ -9,7 +9,7 @@
   margin-bottom: 50px;
 }
 
-a {
+.wrapper > a {
   color: #81b71a;
   display: block;
   margin-top: 24px;
@@ -17,6 +17,6 @@ a {
   transition: color 0.2s;
 }
 
-a:hover {
+.wrapper > a:hover {
   color:  #4f730d;
 }
