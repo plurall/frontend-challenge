@@ -3,6 +3,7 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@types/react-router-dom": "^5.1.6",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
     "md5": "^2.2.1",
@@ -21,12 +22,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
     "lint-staged": "^7.0.0",
     "opn": "^5.4.0",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "typescript": "^4.1.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

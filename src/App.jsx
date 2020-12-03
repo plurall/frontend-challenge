@@ -1,13 +1,17 @@
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import Routes from './routes';
 
 import { Layout } from 'components'
-import { Home } from 'views'
 
 import './App.module.css'
 
 const App = () => (
   <Layout>
-    <Home />
+    <Router>
+      <Routes />
+    </Router>
   </Layout>
 )
 
