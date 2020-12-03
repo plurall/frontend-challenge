@@ -19,7 +19,8 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <h1 className={styles.title}>Olá, seja bem vindo ao teste resolvido pelo Felipe Monteiro!</h1>
+          <h4 className={styles.paragraph}>Para ir até a página de busca por artistas, clique no link abaixo:</h4>
           <Link to='/busca' >Buscar Artista</Link>
         </div>
       </React.Fragment>

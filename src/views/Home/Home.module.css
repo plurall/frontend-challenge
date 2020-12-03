@@ -4,3 +4,19 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.title, .paragraph {
+  margin-bottom: 50px;
+}
+
+a {
+  color: #81b71a;
+  display: block;
+  margin-top: 24px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color:  #4f730d;
+}

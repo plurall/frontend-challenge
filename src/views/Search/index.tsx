@@ -13,7 +13,7 @@ const Search: React.FC = () => {
     <>
       <SubHeader
         buttonHref="/"
-        breadcrumb={[{ text: 'Busca' }]}
+        breadcrumb={[{ text: 'Home  >  Busca' }]}
         heading="Somos Front-end Challange"
       />
       <h1>Buscar Artista</h1>
