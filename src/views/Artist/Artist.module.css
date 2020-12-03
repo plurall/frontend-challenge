@@ -27,13 +27,18 @@
 }
 
 .artistInfoWords {
+  width: 60%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .artistInfoWords > h2 {
   margin: 10px 0 10px 20px;
+}
+
+h2 > p {
+  color: #04d361;
 }
 
 .genreInfo > h2, .albumsInfo > h2 {
@@ -45,16 +50,9 @@ li {
   margin: 10px 20px;
 }
 
-/* .albumsCards{
-  width: 100%;
-  padding: 24px;
-  display: block;
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s;
-} */
+li > h4 {
+  color:  #04d361;
+}
 
 .albumsCards > ul > li {
   display: flex;
@@ -62,8 +60,8 @@ li {
 }
 
 .albumsCards > ul > li > img {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 
@@ -76,3 +74,8 @@ li {
 .albumInfoWords > h3 {
   margin: 10px 0 10px 20px;
 }
+
+h3 > p {
+  color:  #04d361;
+}
+

@@ -39,7 +39,7 @@ const Artist: React.FC = () => {
             </ul>
           </div>
           <div className={style.albumsInfo}>
-            <h2>Albums</h2>
+            <h2>Álbums</h2>
             <div className={style.albumsCards}>
               <ul>
                 <li>
