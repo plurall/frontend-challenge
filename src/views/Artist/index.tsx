@@ -1,16 +1,33 @@
-import { kStringMaxLength } from 'buffer';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-
+import { useRouteMatch } from 'react-router-dom';
 import SubHeader from '../../components/SubHeader';
+import api from '../../utils/client';
 
 import style from './Artist.module.css';
 import artistPhoto from '../../assets/Henrell.jpg';
 import Guriah from '../../assets/guriah.jpeg';
 import TouchMe from '../../assets/touchme.jpeg';
 
-const Artist: React.FC = () => {
+interface ArtistParams {
+  artistId: string;
+}
 
+const Artist: React.FC = () => {
+  const [artistData, setArtistData] = useState([]);
+  const [genreData, setGenreData] = useState([]);
+  const [albumsData, setAlbumsData] = useState([]);
+
+  const { params } = useRouteMatch<ArtistParams>();
+
+  useEffect(() => {
+    api.get(`artist/${params.artistId}`).then(response => {
+      console.log('artistResponse', response);
+    });
+    api.get(`album/${params.artistId}`).then(response => {
+      console.log('albumResponse', response);
+    });
+  },[]);
 
   return (
     <>

@@ -53,18 +53,12 @@ const Search: React.FC = () => {
         params: {
           q: searchArtist,
           type: 'artist'
-        },
-        headers: {
-          Authorization: `Bearer ${token}`
         }
       });
       const albumResults = await api.get('search', {
         params: {
           q: searchArtist,
           type: 'album'
-        },
-        headers: {
-          Authorization: `Bearer ${token}`
         }
       });
       setArtistsList(artistResults.data.artists.items);

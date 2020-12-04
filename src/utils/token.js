@@ -12,6 +12,8 @@ const getToken = () => {
   return r ? r[1] : undefined
 }
 
+export const token = getToken();
+
 const setToken = token => {
   document.cookie = `authenticated_token=${token ||
     ''};path=/;domain=${domain()}`

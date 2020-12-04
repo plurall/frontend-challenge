@@ -7,6 +7,7 @@
     "axios": "^0.21.0",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "date-fns": "^2.16.1",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
@@ -18,7 +19,7 @@
     "react-app-rewired": "^1.5.2",
     "react-dom": "^16.2.0",
     "react-icons": "^4.1.0",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "2.1.0",
     "styled-jsx": "^3.2.1"
   },
