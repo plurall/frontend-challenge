@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
@@ -37,7 +37,24 @@ export interface ArtistSearchData {
 const Search: React.FC = () => {
   const [searchArtist, setSearchArtist] = useState<string>('');
   const [inputError, setinputError] = useState<string>('');
-  const [artistsList, setArtistsList] = useState<ArtistSearchData[]>([]);
+  const [artistsList, setArtistsList] = useState<ArtistSearchData[]>(() => {
+    const storagedArtists = localStorage.getItem(
+      '@SomosEducacaoTesteFront: Artists',
+    );
+
+    if (storagedArtists) {
+      return JSON.parse(storagedArtists);
+    }
+
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      '@SomosEducacaoTesteFront: Artists',
+      JSON.stringify(artistsList),
+    );
+  }, [artistsList]);
 
   async function handleSearchArtist(
     event: FormEvent<HTMLFormElement>,
@@ -56,7 +73,6 @@ const Search: React.FC = () => {
         }
       });
       setArtistsList(artistResults.data.artists.items);
-      console.log('artistresults', artistResults.data.artists.items);
     }
   }
 

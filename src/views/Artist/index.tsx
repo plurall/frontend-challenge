@@ -54,7 +54,6 @@ const Artist: React.FC = () => {
 
   useEffect(() => {
     api.get(`artists/${params.id}`).then(response => {
-      console.log('artistResponse', response.data);
       setArtistData(response.data);
       setGenresData(response.data.genres);
       if (response.data.images[0] !== undefined) {
@@ -62,13 +61,11 @@ const Artist: React.FC = () => {
       }
     });
     api.get(`artists/${params.id}/albums`).then(response => {
-      console.log('albumResponse', response.data.items);
       const albums: AlbumsData[] = response.data.items;
       if (albums.length > 10) {
         albums.splice(10);
       }
       setAlbumsData(albums);
-      console.log('date', format(parseISO(albums[0].release_date), 'dd/MM/yyyy'));
     });
   },[]);
 
