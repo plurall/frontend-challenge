@@ -3,7 +3,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import SubHeader from '../../components/SubHeader';
-import artistPhoto from '../../assets/Henrell.jpg';
+import artistPhoto from '../../assets/User_profile2.png';
 
 import api from '../../utils/client';
 import { getToken } from '../../utils';
@@ -88,10 +88,13 @@ const Search: React.FC = () => {
               key={artist.id}
               to={`/artista/${artist.id}`}
             >
-              {artist.images.length > 0 && <img
+              {artist.images.length > 0 ? <img
                 src={artist.images[0].url}
                 alt={`Imagem de ${artist.name}`}
-              />}
+              /> : <img
+              src={artistPhoto}
+              alt={`Imagem de ${artist.name}`}
+            />}
               <div>
                 <strong>{artist.name}</strong>
               </div>

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import { useRouteMatch } from 'react-router-dom';
 import SubHeader from '../../components/SubHeader';
 import api from '../../utils/client';
 
 import style from './Artist.module.css';
-import artistPhoto from '../../assets/Henrell.jpg';
-import Guriah from '../../assets/guriah.jpeg';
-import TouchMe from '../../assets/touchme.jpeg';
+import artistPhoto from '../../assets/User_profile2.png';
 
 import { ArtistSearchData, ImageData } from '../Search';
 
@@ -59,15 +57,18 @@ const Artist: React.FC = () => {
       console.log('artistResponse', response.data);
       setArtistData(response.data);
       setGenresData(response.data.genres);
-      setImageData(response.data.images[0].url);
+      if (response.data.images[0] !== undefined) {
+        setImageData(response.data.images[0].url);
+      }
     });
     api.get(`artists/${params.id}/albums`).then(response => {
       console.log('albumResponse', response.data.items);
-      const albums = response.data.items;
+      const albums: AlbumsData[] = response.data.items;
       if (albums.length > 10) {
         albums.splice(10);
       }
       setAlbumsData(albums);
+      console.log('date', format(parseISO(albums[0].release_date), 'dd/MM/yyyy'));
     });
   },[]);
 
@@ -82,7 +83,9 @@ const Artist: React.FC = () => {
         <h1>Informações do Artista</h1>
         <div className={style.artistCard}>
           <div className={style.artistInfo}>
+            {imageData.length > 0 ?
             <img src={imageData} alt={`Foto de ${artistData.name}`}/>
+             : <img src={artistPhoto} alt={`Foto de ${artistData.name}`}/>}
             <div className={style.artistInfoWords}>
               <h2>Nome: <p>{artistData.name}</p></h2>
               <h2>Popularidade: <p>{artistData.popularity}</p></h2>
@@ -105,24 +108,10 @@ const Artist: React.FC = () => {
                   <img src={album.images[0].url} alt={`Imagem do álbum ${album.name}`}/>
                   <div className={style.albumInfoWords}>
                     <h3>Nome: <p>{album.name}</p></h3>
-                    <h3>Data de lançamento: <p>{album.release_date}</p></h3>
+                    <h3>Data de lançamento: <p>{format(parseISO(album.release_date), 'dd/MM/yyyy')}</p></h3>
                   </div>
                 </li>
                 )) : <li><h4>Não há albums cadastrados</h4></li>}
-                {/* <li>
-                  <img src={Guriah} alt="Guriah album"/>
-                  <div className={style.albumInfoWords}>
-                    <h3>Nome do Álbum: <p>Guriah</p></h3>
-                    <h3>Data de lançamento: <p>12/12/2019</p></h3>
-                  </div>
-                </li>
-                <li>
-                  <img src={TouchMe} alt="TouchMe album"/>
-                  <div className={style.albumInfoWords}>
-                    <h3>Nome do Álbum: <p>TouchMe</p></h3>
-                    <h3>Data de lançamento: <p>12/12/2019</p></h3>
-                  </div>
-                </li> */}
               </ul>
             </div>
           </div>
