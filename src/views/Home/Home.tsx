@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     <>
       <SubHeader
         breadcrumb={[{ text: 'Home' }]}
-        heading="Somos Front-end Challange"
+        heading="Somos Front-end Challenge"
       />
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Olá, seja bem vindo ao teste resolvido pelo Felipe Monteiro!</h1>

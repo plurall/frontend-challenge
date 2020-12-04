@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import SubHeader from '../../components/SubHeader';
 import artistPhoto from '../../assets/User_profile2.png';
 
-import api from '../../utils/client';
-import { getToken } from '../../utils';
+import { searchAndGetArtists } from '../../utils/client';
 
 import styles from './Search.module.css';
 
@@ -64,14 +63,7 @@ const Search: React.FC = () => {
     if (searchArtist.length < 4) {
       setinputError('A busca precisa ter pelo menos 4 caracters.')
     } else {
-      const token = getToken();
-
-      const artistResults = await api.get('search', {
-        params: {
-          q: searchArtist,
-          type: 'artist'
-        }
-      });
+      const artistResults = await searchAndGetArtists(searchArtist);
       setArtistsList(artistResults.data.artists.items);
     }
   }
@@ -81,7 +73,7 @@ const Search: React.FC = () => {
       <SubHeader
         buttonHref="/"
         breadcrumb={[{ text: 'Home  >  Busca' }]}
-        heading="Somos Front-end Challange"
+        heading="Somos Front-end Challenge"
       />
       <div className={styles.container}>
         <h1>Buscar Artista</h1>

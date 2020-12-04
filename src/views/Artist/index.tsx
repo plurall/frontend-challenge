@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
+import { searchAndGetAlbums, getArtistById } from '../../utils/client';
 
 import { useRouteMatch } from 'react-router-dom';
 import SubHeader from '../../components/SubHeader';
-import api from '../../utils/client';
 
 import style from './Artist.module.css';
 import artistPhoto from '../../assets/User_profile2.png';
@@ -53,20 +53,18 @@ const Artist: React.FC = () => {
   const { params } = useRouteMatch<ArtistParams>();
 
   useEffect(() => {
-    api.get(`artists/${params.id}`).then(response => {
+    searchAndGetAlbums(params).then((response: AlbumsData[]) => {
+      setAlbumsData(response);
+    });
+
+    getArtistById (params).then(response => {
       setArtistData(response.data);
       setGenresData(response.data.genres);
       if (response.data.images[0] !== undefined) {
         setImageData(response.data.images[0].url);
       }
     });
-    api.get(`artists/${params.id}/albums`).then(response => {
-      const albums: AlbumsData[] = response.data.items;
-      if (albums.length > 10) {
-        albums.splice(10);
-      }
-      setAlbumsData(albums);
-    });
+
   },[]);
 
   return (
@@ -74,7 +72,7 @@ const Artist: React.FC = () => {
       <SubHeader
         buttonHref="/busca"
         breadcrumb={[{ text: 'Home  >  Busca  >  Artista' }]}
-        heading="Somos Front-end Challange"
+        heading="Somos Front-end Challenge"
       />
       <div className={style.container}>
         <h1>Informações do Artista</h1>

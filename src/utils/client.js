@@ -8,7 +8,34 @@ const api = axios.create({
   }
 });
 
-export default api;
+export async function searchAndGetArtists (searchArtist) {
+  console.log('Entrei na função pra fazer a chamada');
+  const result = await api.get('search', {
+    params: {
+      q: searchArtist,
+      type: 'artist'
+    }
+  });
+  return result;
+}
+
+export async function searchAndGetAlbums (params) {
+  const result = await api.get(`artists/${params.id}/albums`).then(response => {
+    const albums = response.data.items;
+    if (albums.length > 10) {
+      albums.splice(10);
+    }
+    return albums;
+  });
+  return result;
+}
+
+export async function getArtistById (params) {
+  const result = await api.get(`artists/${params.id}`).then(response => {
+    return response;
+  });
+  return result;
+}
 
 
 // class SomosClient {
