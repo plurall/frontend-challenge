@@ -10,13 +10,13 @@ import { getToken } from '../../utils';
 
 import styles from './Search.module.css';
 
-interface ImageData {
+export interface ImageData {
   height: number;
   url: string;
   width: number;
 }
 
-interface ArtistSearchData {
+export interface ArtistSearchData {
   external_url: {
     spotify: string;
   };
@@ -55,15 +55,8 @@ const Search: React.FC = () => {
           type: 'artist'
         }
       });
-      const albumResults = await api.get('search', {
-        params: {
-          q: searchArtist,
-          type: 'album'
-        }
-      });
       setArtistsList(artistResults.data.artists.items);
       console.log('artistresults', artistResults.data.artists.items);
-      console.log('albumresults', albumResults);
     }
   }
 
@@ -89,33 +82,7 @@ const Search: React.FC = () => {
         {inputError.length > 2 && <p className={styles.error}>{inputError}</p>}
 
         <div className={styles.artists}>
-          {/* <Link
-            to="/artista"
-          >
-            <img
-              src={artistPhoto}
-              alt="Henrell"
-            />
-            <div>
-              <strong>Artista 1</strong>
-              <p>Artista Muito Bom</p>
-            </div>
-            <FiChevronRight size={20} />
-          </Link>
 
-            <Link
-              to="/artista"
-            >
-              <img
-                src={artistPhoto}
-                alt="Henrell"
-              />
-              <div>
-                <strong>Artista 2</strong>
-                <p>Artista Mais ou Menos</p>
-              </div>
-              <FiChevronRight size={20} />
-            </Link> */}
           {artistsList.length > 0 && artistsList.map(artist => (
             <Link
               key={artist.id}

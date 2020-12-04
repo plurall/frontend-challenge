@@ -1,5 +1,3 @@
-import MD5 from 'md5'
-
 const domain = () => {
   const {
     location: { hostname },
