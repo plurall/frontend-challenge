@@ -18,7 +18,6 @@ form > input {
   flex: 1;
   height: 70px;
   padding: 0 24px;
-  border: 0;
   border-radius: 5px 0 0 5px;
   color: #3a3a3a;
   border: 2px solid #fff;
@@ -101,4 +100,22 @@ div > p {
 
 .error {
   color: red;
+}
+
+@media only screen and (max-width: 415px) {
+  form > button {
+    width: 35%;
+  }
+  form > input {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  form > button {
+    width: 35%;
+  }
+  form > input {
+    width: 65%;
+  }
 }
