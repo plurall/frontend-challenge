@@ -61,7 +61,7 @@ const Search: React.FC = () => {
     event.preventDefault();
     setinputError('');
     if (searchArtist.length < 4) {
-      setinputError('A busca precisa ter pelo menos 4 caracters.')
+      setinputError('A busca precisa ter pelo menos 4 caracteres.')
     } else {
       const artistResults = await searchAndGetArtists(searchArtist);
       setArtistsList(artistResults.data.artists.items);

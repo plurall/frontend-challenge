@@ -1,8 +1,13 @@
 {
   "name": "somos-front-end-challange",
+  "jest": {
+    "verbose": true
+  },
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@babel/preset-typescript": "^7.12.7",
+    "@testing-library/jest-dom": "^5.11.6",
     "@types/react-router-dom": "^5.1.6",
     "axios": "^0.21.0",
     "babel-polyfill": "^6.26.0",
@@ -21,19 +26,31 @@
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "2.1.0",
-    "styled-jsx": "^3.2.1"
+    "styled-jsx": "^3.2.1",
+    "ts-node": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@testing-library/react": "^11.2.2",
+    "@types/jest": "^26.0.16",
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
+    "babel-jest": "^26.6.3",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^26.6.3",
     "jsencrypt": "^3.0.0-rc.1",
     "lint-staged": "^7.0.0",
     "opn": "^5.4.0",
     "prettier": "^1.15.2",
-    "typescript": "^4.1.2"
+    "react-test-renderer": "^17.0.1",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack-dev-server": "^3.11.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -46,7 +63,7 @@
     "lint": "eslint src/",
     "precommit": "lint-staged",
     "start": "react-app-rewired start",
-    "test": "react-scripts test"
+    "test": "jest"
   },
   "browserslist": {
     "development": [
