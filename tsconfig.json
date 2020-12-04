@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": ["jest"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,6 +19,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve"
+  },
+  "typeAcquisition": {
+    "include": ["jest"]
   },
   "include": [
     "src"
