@@ -10,6 +10,7 @@ import artistPhoto from '../../assets/User_profile2.png';
 
 import { ArtistSearchData, ImageData } from '../Search';
 
+// interfaces to help with data types
 interface ArtistParams {
   id: string;
 }
@@ -44,14 +45,28 @@ interface AlbumsData {
   uri: string;
 }
 
+/**
+ * The Artist Component is responsible to show the information of the artist on screen
+ */
+
 const Artist: React.FC = () => {
+  /**
+   * These variables manage some local state used in this page:
+   * artistData: manages the data of the artists came from the api when an artist
+   * is selected in '/busca';
+   * albunsData: manages the data of the albums of the selected artist;
+   * genresData: manages the data of the music genres of the selected artist;
+   * imageData: manages the data of the images of the selected artist
+   */
   const [artistData, setArtistData] = useState<ArtistSearchData>({} as ArtistSearchData);
   const [albumsData, setAlbumsData] = useState<AlbumsData[]>([]);
   const [genresData, setGenresData] = useState<string[]>([]);
   const [imageData, setImageData] = useState<string>('');
 
+  // get the params to use it to make the api calls
   const { params } = useRouteMatch<ArtistParams>();
 
+  // useEffect used to call the functions that make the api calls
   useEffect(() => {
     searchAndGetAlbums(params).then((response: AlbumsData[]) => {
       setAlbumsData(response);

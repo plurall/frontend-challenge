@@ -10,6 +10,8 @@ const getToken = () => {
   return r ? r[1] : undefined
 }
 
+// Add this constant token to become easier to use the api calls in client.js
+
 export const token = getToken();
 
 const setToken = token => {

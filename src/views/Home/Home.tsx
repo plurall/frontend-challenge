@@ -6,6 +6,8 @@ import SubHeader from '../../components/SubHeader'
 import styles from './Home.module.css'
 
 const Home: React.FC = () => {
+
+  // useEffect used to remove the data from artists in local storage
   useEffect(() => {
     localStorage.removeItem('@SomosEducacaoTesteFront: Artists');
   }, []);

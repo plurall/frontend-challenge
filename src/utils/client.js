@@ -1,12 +1,24 @@
 import axios from 'axios';
 import { token } from './token';
 
+/**
+ * client.js was totally modified to be modern using 'axios' to make the api calls.
+ *
+ * const api creates the connection with the baseURL, and through it the other calls
+ * can be made
+ */
+
 const api = axios.create({
   baseURL: 'https://api.spotify.com/v1/',
   headers: {
     Authorization: `Bearer ${token}`
   }
 });
+
+/**
+ * searchAndGetArtists() is a function to make the api call to get information about
+ * artists.
+ */
 
 export async function searchAndGetArtists (searchArtist) {
   console.log('Entrei na função pra fazer a chamada');
@@ -19,6 +31,11 @@ export async function searchAndGetArtists (searchArtist) {
   return result;
 }
 
+/**
+ * searchAndGetAlbums() is a function to make the api call to get information about
+ * albums from an artist, based in the id in url, gotten by params.
+ */
+
 export async function searchAndGetAlbums (params) {
   const result = await api.get(`artists/${params.id}/albums`).then(response => {
     const albums = response.data.items;
@@ -30,24 +47,14 @@ export async function searchAndGetAlbums (params) {
   return result;
 }
 
+/**
+ * getArtistById() is a function to make the api call to get information about
+ * an artist, based in the id in url, , gotten by params.
+ */
+
 export async function getArtistById (params) {
   const result = await api.get(`artists/${params.id}`).then(response => {
     return response;
   });
   return result;
 }
-
-
-// class SomosClient {
-//   constructor() {}
-
-//   onError = error => {}
-
-//   async getArtists() {
-//     // Obs: para chamadas na api, você já tem o token salvo no Local Storage, `_sp_self_prov_accessToken` - use
-//     // ele para mandar no header das chamadas - da uma olhada no `src/utils`
-//     // retornar a lista de artistas - https://api.spotify.com/v1/artists?ids=ID_DO_ARTISTA
-//   }
-// }
-
-// export default SomosClient
