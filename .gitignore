@@ -9,3 +9,4 @@ npm-debug.log*
 TODO.md
 yarn-debug.log*
 yarn-error.log*
+.env
