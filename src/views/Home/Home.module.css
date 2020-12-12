@@ -4,3 +4,20 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.btnblock {
+  border: none;
+  background: #655AA3;
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.btnblock:hover, .btnblock:focus, .btnblock:active {
+  outline: none;
+  cursor: pointer;
+}

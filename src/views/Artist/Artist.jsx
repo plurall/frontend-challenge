@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import { Layout } from 'components'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
-import styles from './Home.module.css'
+import styles from './Artist.module.css'
 
-class Home extends React.Component {
+class Artist extends React.Component {
   state = {}
 
   client = new SomosClient()
@@ -16,17 +15,15 @@ class Home extends React.Component {
     return (
       <Layout>
         <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
+          breadcrumb={[{ text: 'Artist' }]}
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <Link className={styles.link} to='/busca'>
-            <button className={styles.btnblock}>Buscar artistas</button>
-          </Link>
+          <h1>Olá</h1>
         </div>
       </Layout>
     )
   }
 }
 
-export default Home
+export default Artist
