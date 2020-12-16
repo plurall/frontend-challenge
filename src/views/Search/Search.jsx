@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
-import { Layout } from 'components'
+import { Layout, Artist } from 'components'
 
 import styles from './Search.module.css'
 
@@ -33,17 +33,9 @@ class Search extends React.Component {
     if (this.state.artists.items) {
       this.state.artists.items.map((row) => {
         rows.push(
-          <div className={styles.artist}>
-            <h2>{row.name}</h2>
-            <p>Type: {row.type}</p>
-            <p>
-              Primary Gender: {row.genres[0]}
-            </p>
-            <p>Followers: {row.followers.total} | Popularity: {row.popularity}</p>
-            <Link className={styles.link} to={`/artist/${row.id}`}>
-              <button className={styles.btn}>Ver artista</button>
-            </Link>
-          </div>
+          <Link className={styles.link} to={`/artista/${row.id}`}>
+            <Artist artist={row}/>
+          </Link>
         );
       });
     }

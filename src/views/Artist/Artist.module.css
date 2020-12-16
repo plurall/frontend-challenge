@@ -4,3 +4,56 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.artist {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.artist h2 {
+  margin-bottom: 10px;
+  color: #655AA3;
+}
+
+.artist h2 small {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.artist span {
+  margin-right: 10px;
+  font-size: 13px;
+}
+
+h4 {
+  padding: 0 10px;
+  margin-bottom: 5px;
+  color: #655AA3;
+}
+
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.albums .album {
+  margin: 0 5px;
+  padding: 5px;
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.description {
+  padding-left: 20px;
+}
+
+.description p {
+  padding: 5px 0;
+}
+
+.tracks {
+  font-size: 12px;
+}

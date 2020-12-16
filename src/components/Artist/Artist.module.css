@@ -1,0 +1,24 @@
+
+.artist {
+  padding: 10px;
+  margin: 15px 0;
+  background: #fff;
+  border-left: 2px solid #655AA3;
+  display: flex;
+  align-items: center;
+}
+
+.artist:hover {
+  background: #655AA3;
+  border-left: 2px solid #fff;
+}
+
+.artist .inner {
+  padding-left: 20px;
+}
+
+.artist h2 {
+  padding: 15px 0;
+  text-decoration: none;
+  color: #000;
+}

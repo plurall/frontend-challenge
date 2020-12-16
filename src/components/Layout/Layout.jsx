@@ -41,8 +41,7 @@ class Layout extends Component {
               menu: {
                 items: [
                   { name: 'Início', slug: 'home', id: 0, href: '/' },
-                  { name: 'Pesquisar', slug: 'search', id: 1, href: '/busca' },
-                  { name: 'Artistas', slug: 'artist', id: 1, href: '/artista' },
+                  { name: 'Pesquisar', slug: 'search', id: 1, href: '/busca' }
                 ]
               },
             }}

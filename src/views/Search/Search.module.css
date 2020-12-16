@@ -18,27 +18,6 @@
   outline: none;
 }
 
-.artist {
-  padding: 10px;
-  margin: 15px 0;
-  background: #fff;
-}
-
-.artist h2 {
-  padding: 15px 0;
-}
-
-.artist p {
-  padding: 7px 0;
-}
-
-.artist button {
-  border: none;
-  background: #655AA3;
-  padding: 10px 15px;
-  border-radius: 50px;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 900;
+a {
+  text-decoration: none;
 }
