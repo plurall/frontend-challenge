@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
@@ -10,24 +11,41 @@ class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: '', artists: []};
-    this.client = new SomosClient()
+    this.state = {value: '', artists: {}};
+    this.client = new SomosClient();
 
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch(event) {
+  async handleSearch(event) {
     this.setState({value: event.target.value});
 
     if (this.state.value.length > 3) {
-      this.client.getArtists()
+      this.setState({artists: await this.client.getArtists(this.state.value)});
+    } else {
+      this.setState({artists: {}});
     }
   }
 
   render() {
     let rows = []
-    for(let i=0; i<5; i++){
-      rows.push(<li>Num: {i}</li>)
+
+    if (this.state.artists.items) {
+      this.state.artists.items.map((row) => {
+        rows.push(
+          <div className={styles.artist}>
+            <h2>{row.name}</h2>
+            <p>Type: {row.type}</p>
+            <p>
+              Primary Gender: {row.genres[0]}
+            </p>
+            <p>Followers: {row.followers.total} | Popularity: {row.popularity}</p>
+            <Link className={styles.link} to={`/artist/${row.id}`}>
+              <button className={styles.btn}>Ver artista</button>
+            </Link>
+          </div>
+        );
+      });
     }
 
     return (
@@ -44,9 +62,9 @@ class Search extends React.Component {
             value={this.state.value}
             onChange={this.handleSearch}
           />
-          <ul>
+          <div className={rows}>
             {rows}
-          </ul>
+          </div>
         </div>
       </Layout>
     )
