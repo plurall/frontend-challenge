@@ -5,9 +5,23 @@ class SomosClient {
 
   onError = error => {}
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtists(name) {
+    const url = `https://api.spotify.com/v1/search?q=${name}&type=artist`;
+    const access_token = getToken();
+
+    const response = await fetch(url,
+      {
+        method: 'GET',
+        headers: {
+         'Authorization': `Bearer ${access_token}`,
+         'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    const json = await response.json();
+    return json.artists;
+
   }
 }
 
