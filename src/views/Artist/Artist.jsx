@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
-import { SubHeader, Layout, ArtistDetails } from 'components'
+import { SubHeader, Layout, ArtistDetails, Button } from 'components'
 import { SomosClient } from 'utils'
+import { SEARCH } from 'routes'
 import styles from './Artist.module.css'
 
 class Artist extends Component {
@@ -55,7 +55,11 @@ class Artist extends Component {
               />
             ))
           }
-           <Link to="/busca">Voltar</Link>
+
+           <Button
+            text={'Voltar'}
+            href={SEARCH}
+          />
          </div>
 
       </Layout>

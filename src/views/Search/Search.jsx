@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { SubHeader, Layout, Card } from 'components'
+import { SubHeader, Layout, Card, Button } from 'components'
 import { SomosClient } from 'utils'
+import { ARTIST, HOME } from 'routes'
 
 import styles from './Search.module.css'
 
@@ -46,12 +47,16 @@ class Search extends Component {
           <section className={styles['c-search__result']}>
             {artists &&
               artists.items.map((artist,index) => (
-                <Link key={index}  to={`artist/${artist.id}`}>
+                <Link key={index}  to={`${ARTIST}${artist.id}`}>
                   <Card artist={artist} />
                 </Link>
               ))
             }
           </section>
+          <Button
+            text={'Home'}
+            href={HOME}
+          />
         </div>
       </Layout>
     )
