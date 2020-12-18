@@ -1,0 +1,9 @@
+.c-tag__item {
+  display: inline-block;
+  margin: 5px 10px 5px 0;
+  padding: 5px 10px;
+  border: 1px solid #863bff;
+  border-radius: 50px;
+  color: #863bff;
+  font-size: 12px;
+}
