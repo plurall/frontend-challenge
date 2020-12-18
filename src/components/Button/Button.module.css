@@ -1,0 +1,17 @@
+.c-btn {
+  background-color: #863bff;
+  border-radius: 50px;
+  padding: 18px;
+  color: #FFF;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+
+@media (min-width: 769px) {
+  .c-btn {
+    width: 320px;
+  }
+}
