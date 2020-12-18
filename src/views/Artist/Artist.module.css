@@ -1,0 +1,31 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.c-search__input {
+  border: 2px solid #E5E7EB;
+  border-radius: 6px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+  height: 56px;
+  color: #999;
+  -webkit-appearance: none;
+}
+
+.c-search__input:focus {
+  border-color: #863bff;
+  color: #555;
+  outline: none;
+
+}
+
+.c-search__result {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+  margin: 35px 0;
+}
