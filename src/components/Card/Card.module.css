@@ -1,9 +1,13 @@
 .c-artist {
   border-radius: 6px;
   border: 1px solid #e4e7eb;
-  padding: 25px;
+  padding: 25px 15px;
+  min-height: 306px;
   background-color: #FFF;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 .c-artist__title {
@@ -11,6 +15,7 @@
   font-size: 18px;
   line-height: 1.1em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .c-artist__cover {
@@ -29,4 +34,16 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.c-artist__date {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.c-artist:hover {
+  border-color: #863aff;
+  -webkit-box-shadow: 10px 10px 5px -5px rgba(228,231,235,0.67);
+  -moz-box-shadow: 10px 10px 5px -5px rgba(228,231,235,0.67);
+  box-shadow: 10px 10px 5px -5px rgba(228,231,235,0.67);
 }

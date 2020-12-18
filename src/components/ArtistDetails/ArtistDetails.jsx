@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
-import { ArtistCard, Tag } from 'components';
+import { Card, Tag } from 'components';
 
 import styles from './ArtistDetails.module.css'
 
@@ -43,7 +43,7 @@ class ArtistDetails extends Component {
           <div className={styles['c-artist__albums']}>
             {albums &&
               albums.items.map((album, index) => (
-                <ArtistCard key={index} artist={album} />
+                <Card key={index} artist={album} />
               ))
             }
           </div>
