@@ -18,29 +18,43 @@ class SomosClient {
   async getArtists(artistName) {
     const url = `https://api.spotify.com/v1/search?q=${artistName}&type=artist`;
 
-      const response = await fetch(url, this.headers).catch(function(error) {
-        // Error handling here!
-        clearToken()
-    });
+    const response = await fetch(url, this.headers);
+    if (response.status !== 200) {
+      clearToken();
+      window.location.reload();
 
+    } else {
       const json = await response.json();
       return json.artists;
+    }
   }
 
   async getArtistInfo(artistId) {
     const url = `https://api.spotify.com/v1/artists/${artistId}`;
     const response = await fetch(url, this.headers);
 
-    const json = await response.json();
-    return json;
+    if (response.status !== 200) {
+      clearToken();
+      window.location.reload();
+
+    } else {
+      const json = await response.json();
+      return json;
+    }
   }
 
   async getArtistAlbums(artistId) {
     const url = `https://api.spotify.com/v1/artists/${artistId}/albums?limit=10`;
     const response = await fetch(url, this.headers);
 
-    const json = await response.json();
-    return json;
+    if (response.status !== 200) {
+      clearToken();
+      window.location.reload();
+
+    } else {
+      const json = await response.json();
+      return json;
+    }
   }
 }
 
