@@ -1,3 +1,5 @@
 export { default as Layout } from './Layout'
 export { default as SubHeader } from './SubHeader'
+export { default as ArtistCard } from './ArtistCard'
+export { default as ArtistDetails } from './ArtistDetails'
 export { default as PrivateRoute } from './PrivateRoute'
