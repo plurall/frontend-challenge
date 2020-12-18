@@ -10,13 +10,15 @@ class Artist extends Component {
     super(props);
     this.client = new SomosClient();
     this.state = {
-      artistInfo: []
+      artistInfo: [],
+      albums: null
     }
   }
 
   componentDidMount () {
     const { id } = this.props.match.params;
     this.getArtistInfo(id)
+    this.getArtistAlbums(id)
   }
 
   async getArtistInfo(artistId) {
@@ -27,9 +29,15 @@ class Artist extends Component {
     }))
   }
 
+  async getArtistAlbums(artistId) {
+    const albums = await this.client.getArtistAlbums(artistId);
+    this.setState({albums: albums})
+
+  }
+
   render() {
     const artist = this.state.artistInfo;
-    const cover = this.state.artistCover;
+    const albums = this.state.albums;
 
     return (
       <Layout>
@@ -39,8 +47,12 @@ class Artist extends Component {
           />
          <div className={styles.wrapper}>
          {artist &&
-            artist.map(artist => (
-              <ArtistDetails key={artist.id} artist={artist}/>
+            artist.map((artist, index) => (
+              <ArtistDetails
+                key={index}
+                artist={artist}
+                albums={albums}
+              />
             ))
           }
            <Link to="/busca">Voltar</Link>
