@@ -5,6 +5,9 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
