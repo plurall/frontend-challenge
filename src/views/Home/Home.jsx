@@ -5,6 +5,7 @@ import { SomosClient } from 'utils'
 import { SEARCH } from 'routes';
 
 import styles from './Home.module.css'
+import { Router } from 'react-router-dom';
 
 class Home extends React.Component {
   state = {}
@@ -19,10 +20,10 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <Button
-            text={'Encontrar Artista'}
-            href={SEARCH}
-          />
+            <Button
+              text={'Encontrar Artista'}
+              href={SEARCH}
+            />
         </div>
       </React.Fragment>
     )

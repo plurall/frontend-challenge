@@ -55,6 +55,7 @@ class ArtistDetails extends Component {
 
 ArtistDetails.propTypes = {
   artist: PropTypes.object.isRequired,
+  albums: PropTypes.array.isRequired,
 }
 
 

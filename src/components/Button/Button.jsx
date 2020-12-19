@@ -9,8 +9,8 @@ const Button = ({ href, text }) => (
 )
 
 Button.propTypes = {
-  href: PropTypes.string,
-  text: PropTypes.string,
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 }
 
 export default Button
