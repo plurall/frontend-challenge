@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Tela Busca] deve chamar a função no onchange 1`] = `
+<Layout>
+  <SubHeader
+    breadcrumb={
+      Array [
+        Object {
+          "text": "Home / Busca",
+        },
+      ]
+    }
+    heading="Busca"
+  />
+  <div
+    className="wrapper"
+  >
+    <input
+      className="c-search__input"
+      onChange={[Function]}
+      placeholder="Busque pelo artista desejado..."
+      type="search"
+      value="The Killers"
+    />
+    <section
+      className="c-search__result"
+    />
+    <Button
+      href="/"
+      text="Home"
+    />
+  </div>
+</Layout>
+`;
+
+exports[`[Tela Busca] deve equivaler ao snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Search />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <SubHeader
+          breadcrumb={
+            Array [
+              Object {
+                "text": "Home / Busca",
+              },
+            ]
+          }
+          heading="Busca"
+        />,
+        <div
+          className="wrapper"
+        >
+          <input
+            className="c-search__input"
+            onChange={[Function]}
+            placeholder="Busque pelo artista desejado..."
+            type="search"
+            value=""
+          />
+          <section
+            className="c-search__result"
+          />
+          <Button
+            href="/"
+            text="Home"
+          />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "breadcrumb": Array [
+            Object {
+              "text": "Home / Busca",
+            },
+          ],
+          "heading": "Busca",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              className="c-search__input"
+              onChange={[Function]}
+              placeholder="Busque pelo artista desejado..."
+              type="search"
+              value=""
+            />,
+            <section
+              className="c-search__result"
+            />,
+            <Button
+              href="/"
+              text="Home"
+            />,
+          ],
+          "className": "wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "c-search__input",
+              "onChange": [Function],
+              "placeholder": "Busque pelo artista desejado...",
+              "type": "search",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": null,
+              "className": "c-search__result",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "section",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "href": "/",
+              "text": "Home",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <SubHeader
+            breadcrumb={
+              Array [
+                Object {
+                  "text": "Home / Busca",
+                },
+              ]
+            }
+            heading="Busca"
+          />,
+          <div
+            className="wrapper"
+          >
+            <input
+              className="c-search__input"
+              onChange={[Function]}
+              placeholder="Busque pelo artista desejado..."
+              type="search"
+              value=""
+            />
+            <section
+              className="c-search__result"
+            />
+            <Button
+              href="/"
+              text="Home"
+            />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "breadcrumb": Array [
+              Object {
+                "text": "Home / Busca",
+              },
+            ],
+            "heading": "Busca",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                className="c-search__input"
+                onChange={[Function]}
+                placeholder="Busque pelo artista desejado..."
+                type="search"
+                value=""
+              />,
+              <section
+                className="c-search__result"
+              />,
+              <Button
+                href="/"
+                text="Home"
+              />,
+            ],
+            "className": "wrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "c-search__input",
+                "onChange": [Function],
+                "placeholder": "Busque pelo artista desejado...",
+                "type": "search",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": null,
+                "className": "c-search__result",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "section",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "href": "/",
+                "text": "Home",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;
