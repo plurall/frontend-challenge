@@ -1,13 +1,19 @@
 import React from 'react'
+import { Router } from '@reach/router'
 
 import { Layout } from 'components'
-import { Home } from 'views'
+import { Home, Search, Artist } from 'views'
 
 import './App.module.css'
 
+
 const App = () => (
   <Layout>
-    <Home />
+    <Router>
+      <Home path="/" />
+      <Search path="busca" />
+      <Artist path="artista/:id" />
+    </Router>
   </Layout>
 )
 

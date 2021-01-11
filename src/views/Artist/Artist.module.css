@@ -1,0 +1,38 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+  line-height: 1;
+  text-align: center;
+}
+
+.wrapper .header {
+  padding: 16px;
+}
+
+.wrapper img {
+  object-fit: cover;
+  width: 340px;
+  height: 340px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.wrapper h1 {
+  margin-bottom: 14px;
+}
+
+.wrapper span {
+  font-style: italic;
+}
+
+.albumList {
+  font: 16px/14px 'Nunito', sans-serif;
+  font-weight: bolder;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

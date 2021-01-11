@@ -3,6 +3,7 @@
 }
 
 .content {
+  line-height: 1;
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
 }
 

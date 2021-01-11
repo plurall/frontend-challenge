@@ -1,0 +1,37 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  font: 16px/14px 'Nunito', sans-serif;
+  line-height: 1;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.wrapper h2{
+  margin-bottom: 20px;
+}
+
+.wrapper .input {
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.wrapper .loading svg{
+  margin-top: 30px;
+  width: 50px;
+
+  -webkit-animation:spin 0.8s linear infinite;
+  -moz-animation:spin 0.8s linear infinite;
+  animation:spin 0.8s linear infinite;
+}
+
+.wrapper .results {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

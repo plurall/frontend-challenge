@@ -1,0 +1,35 @@
+.wrapper {
+  flex: 1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 180px;
+  border-radius: 8px;
+  margin: 12px;
+  max-width: 180px;
+  text-align: center;
+}
+
+.wrapper img {
+  object-fit: cover;
+  width: 180px;
+  height: 180px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.wrapper:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.wrapper .container {
+  padding: 16px;
+}
+
+.wrapper .container .name  {
+  margin-bottom: 10px;
+}
+
+.wrapper .container .date {
+  font-size: 12px;
+  font-style: italic;
+}
