@@ -1,15 +1,27 @@
-.header {
+.contentBreadcrumb{
   background: #fff;
-  padding: 35px 0;
 }
 
-.wrapper {
+.breadcrumb {
   max-width: 1224px;
-  padding: 0 20px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0.313em 20px;
+}
+
+.breadcrumbLinks {
+  display: inline-block;
+  text-align: left;
+}
+
+.breadcrumbTitle{
+  padding: 0.625em 0;
+}
+
+.heading{
+  padding:0.625em 0;
 }
 
 .innerDiv {
@@ -17,19 +29,6 @@
   flex-direction: column;
 }
 
-.button {
-  margin-right: 15px;
-}
-
-.breadcrumb {
-  display: inline-block;
-  text-align: left;
-}
-
-.heading {
-  text-align: left;
-  padding: 0 5px;
-}
 
 @media (max-width: 1224px) {
   .header {

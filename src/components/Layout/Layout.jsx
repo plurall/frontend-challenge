@@ -35,7 +35,7 @@ class Layout extends Component {
 
     return (
       <>
-        <div className={navBar}>
+        <header className={styles.header}>
           <NavBar
             data={{
               menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
@@ -44,13 +44,13 @@ class Layout extends Component {
             service="reader"
             userToken={getToken()}
           />
-        </div>
+        </header>
 
         <div className={content}>{children}</div>
 
-        <div className={footer}>
+        <footer className={footer}>
           <Footer />
-        </div>
+        </footer>
       </>
     )
   }
