@@ -6,6 +6,7 @@
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "hookrouter": "^1.2.5",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
