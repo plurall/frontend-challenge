@@ -1,14 +1,20 @@
 import { clearToken, getToken } from 'utils'
+import axios from 'axios'
 
-class SomosClient {
-  constructor() {}
+const config = () => {
+  const token = getToken()
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
 
-  onError = error => {}
+    return config
+ }
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
-  }
-}
+ export const getArtist = async (artist) => {
+  const request = await axios(`${process.env.REACT_APP_API_URL}/search?q=${artist}&type=artist`, config())
+  
+  if ( artist !== '') return request.data
+}  
 
-export default SomosClient
