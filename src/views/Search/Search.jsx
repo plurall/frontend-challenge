@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import { getToken, getArtist } from 'utils'
+import { Loader } from 'components'
 import { SubHeader } from 'components'
+import { Error } from 'components'
 import { Input } from 'plurall-form'
 import { Card } from 'plurall-cards'
-import { Loader } from 'components'
+import { A } from 'hookrouter'
 
 import styles from './Search.module.css'
 
@@ -14,20 +16,27 @@ const Search = () => {
   const [data, setData]   = useState([])
   const [query, setQuery] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   useEffect(() => {
 
     const fetchData = async () => {
       setIsLoading(true)
-      
-      let response  = await getArtist(query)
-      const nodes   = response.artists.items.map((item) => item)
+      setIsError(false)
 
-      setData(nodes)
+      try {
+        let response  = await getArtist(query)
+        const nodes   = response.artists.items.map((item) => item)
+
+        setData(nodes)
+        console.log(response, 'get in')
+        console.log(response.artists.items.images, 'images')
+      } catch(error){
+          setIsError(true)
+      }
+      
       setIsLoading(false)
 
-      console.log(response, 'vai porra')
-      console.log(response.artists.items.images, 'images')
     }
 
     if(query !== ''){
@@ -53,7 +62,11 @@ const Search = () => {
           <div className={styles.boxCards}>
             { data.map(item => ( 
              <div className={styles.card}>
-              <h3>{item.name}</h3>
+              <h3>
+                <A href = {`/artist/${item.id}`}>
+                  {item.name}
+                </A> 
+              </h3>
               {item.images.map((item, index) => (
                 index === 1 ? <img src = {item.url} /> : ''
               ))}

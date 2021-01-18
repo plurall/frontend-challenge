@@ -2,6 +2,9 @@
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   
   font: 16px/14px 'Nunito', sans-serif;
 }

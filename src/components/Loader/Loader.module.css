@@ -3,8 +3,8 @@
   border-top: 16px solid var(--color-purple); /* Blue */
   border-radius: 50%;
   margin: 20px auto;
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   animation: spin 2s linear infinite;
 }
 
