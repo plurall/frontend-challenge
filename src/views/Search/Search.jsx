@@ -5,21 +5,26 @@ import { getToken, getArtist } from 'utils'
 import { SubHeader } from 'components'
 import { Input } from 'plurall-form'
 import { Card } from 'plurall-cards'
+import { Loader } from 'components'
 
 import styles from './Search.module.css'
 
 const Search = () => {
 
-  const [data, setData] = useState([])
+  const [data, setData]   = useState([])
   const [query, setQuery] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
 
     const fetchData = async () => {
+      setIsLoading(true)
+      
       let response  = await getArtist(query)
       const nodes   = response.artists.items.map((item) => item)
 
       setData(nodes)
+      setIsLoading(false)
 
       console.log(response, 'vai porra')
       console.log(response.artists.items.images, 'images')
@@ -43,17 +48,19 @@ const Search = () => {
           onChange={event => setQuery(event.target.value)}
         />
 
-        <div className={styles.boxCards}>
-          { data.map(item => ( 
-
-           <div className={styles.card}>
-            <h3>{item.name}</h3>
-            {item.images.map((item, index) => (
-              index === 1 ? <img src = {item.url} /> : ''
+        { isLoading ? ( <Loader /> ): (
+          
+          <div className={styles.boxCards}>
+            { data.map(item => ( 
+             <div className={styles.card}>
+              <h3>{item.name}</h3>
+              {item.images.map((item, index) => (
+                index === 1 ? <img src = {item.url} /> : ''
+              ))}
+             </div> 
             ))}
-           </div> 
-          ))}
-        </div>
+          </div>
+        )}
       </div>
     </>   
   )
