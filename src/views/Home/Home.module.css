@@ -2,5 +2,47 @@
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
   font: 16px/14px 'Nunito', sans-serif;
+}
+
+.wrapper .title{
+  font-size: 1.563em;
+  color: var(--color-gray-blue)
+}
+
+.wrapper .btnSearch {
+  margin-top: 3.125em;
+  background: var(--color-purple);
+}
+
+.wrapper .btnSearch:hover{
+  background: var(--color-purple-light);
+}
+
+
+/* MEDIAS QUERIES */
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .wrapper .title{
+    line-height: 1.1;
+  }  
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .wrapper .title{
+    line-height: 1.1;
+  }
 }

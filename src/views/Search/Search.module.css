@@ -1,0 +1,86 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.wrapper .title{
+  font-size: 1.563em;
+  color: var(--color-gray-blue)
+}
+
+.wrapper .search{
+  margin-top: 1.563em;
+}
+
+.wrapper .boxCards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2.500em;
+}
+
+.wrapper .card{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.250em 0;
+  width: 30%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #a0a3a4;
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px rgba(0,90,250,0.05), 0 4px 4px rgba(0,90,250,0.05), 0 8px 8px rgba(0,90,250,0.05), 0 16px 16px rgba(0,90,250,0.05);
+}
+
+.wrapper .card img{
+  max-width: 100%;
+  object-fit: cover;
+  width: 320px;
+  height: 320px;
+}
+
+.wrapper .card h3{
+  color: var(--color-gray-blue);
+  margin-bottom: 0.938em;
+}
+
+.wrapper .card h3 a {
+  color: var(--color-gray-blue);
+}
+
+.wrapper .card h3 a:hover{
+  color: var(--color-gray-strong);
+}
+
+/* MEDIAS QUERIES */
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .wrapper .title{
+    line-height: 1.1;
+  }  
+  .wrapper .card{
+    width: 100%;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .wrapper .card{
+    width: 33%;
+  }
+}

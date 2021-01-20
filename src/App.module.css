@@ -1,7 +1,11 @@
 :root {
   --color-dark-gray: #333333;
   --color-purple: #655ba2;
+  --color-purple-light: #766abb;
   --color-white: #f2f4f5;
+  --color-gray-blue: #a0a3a4;
+  --color-gray-light:#e2e2e2;
+  --color-gray-strong: #707475;
   --height-footer: 59px;
   --height-nav-bar: 63px;
   --padding: 20px;

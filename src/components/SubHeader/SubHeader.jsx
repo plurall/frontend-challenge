@@ -1,22 +1,15 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
+import { Breadcrumb } from 'plurall-ui'
 
 import styles from './SubHeader.module.css'
 
-const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
-  <div className={styles.header}>
-    <div className={styles.wrapper}>
-      {buttonHref && (
-        <Link href={buttonHref} className={styles.button}>
-          <ArrowButton direction="left" />
-        </Link>
-      )}
-
+const SubHeader = ({breadcrumb}) => (
+  <div className={styles.contentBreadcrumb}>
+    <div className={styles.breadcrumb}>
       <div className={styles.innerDiv}>
-        <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
-        <Heading className={styles.heading}>{heading}</Heading>
+        <Breadcrumb content={breadcrumb} className={styles.breadcrumbLinks} />
       </div>
     </div>
   </div>
@@ -30,7 +23,6 @@ SubHeader.propTypes = {
     }),
   ),
   buttonHref: PropTypes.string,
-  heading: PropTypes.string.isRequired,
 }
 
 export default SubHeader

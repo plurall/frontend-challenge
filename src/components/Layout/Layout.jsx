@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
 
-import { getToken, setToken, SomosClient } from 'utils'
+import { getToken, setToken} from 'utils'
 
 import styles from './Layout.module.css'
 
@@ -13,9 +13,9 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
   }
 
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
+  // client = new API({
+  //   accessToken: getToken(),
+  // })
 
   state = {}
 
@@ -35,7 +35,7 @@ class Layout extends Component {
 
     return (
       <>
-        <div className={navBar}>
+        <header className={styles.header}>
           <NavBar
             data={{
               menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
@@ -44,13 +44,13 @@ class Layout extends Component {
             service="reader"
             userToken={getToken()}
           />
-        </div>
+        </header>
 
         <div className={content}>{children}</div>
 
-        <div className={footer}>
+        <footer className={footer}>
           <Footer />
-        </div>
+        </footer>
       </>
     )
   }

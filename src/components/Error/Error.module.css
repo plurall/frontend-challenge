@@ -1,0 +1,10 @@
+.error{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.error h4{
+  color: #000;
+}
