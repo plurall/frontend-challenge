@@ -3,9 +3,3 @@ function formatDate(albumDate) {
 }
 
 module.exports = formatDate;
-
-// function sum(a, b) {
-//     return a + b;
-//   }
-//   module.exports = sum;
-
