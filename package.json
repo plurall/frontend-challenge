@@ -5,7 +5,9 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "jest": "23.6.0",
     "md5": "^2.2.1",
+    "moment": "^2.29.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
     "plurall-ui": "^0.3.0",
@@ -39,7 +41,7 @@
     "lint": "eslint src/",
     "precommit": "lint-staged",
     "start": "react-app-rewired start",
-    "test": "react-scripts test"
+    "test": "jest"
   },
   "browserslist": {
     "development": [

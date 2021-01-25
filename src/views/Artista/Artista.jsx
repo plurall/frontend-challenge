@@ -8,6 +8,8 @@ import NotFound from 'assets/NotFound.jpg';
 
 import Button from 'components/Button'
 
+import formatDate from 'utils/date'
+
 export default class Artista extends React.Component {
   state = {
     albums: [],
@@ -69,10 +71,6 @@ export default class Artista extends React.Component {
     }
   }
 
-  formatDate = (albumDate) => {
-    return new Date(albumDate).toLocaleDateString('pt-br');
-  }
-
   renderAlbums = () => {
     const { albums } = this.state
 
@@ -87,7 +85,7 @@ export default class Artista extends React.Component {
                   <img src={item.images ? item.images[0].url : NotFound} />
                   <div className={styles.albumCardText}>
                     <h4>{item.name}</h4>
-                    <h4>{this.formatDate(item.release_date)}</h4>
+                    <h4>{formatDate(item.release_date)}</h4>
                   </div>
                 </a>
               )
