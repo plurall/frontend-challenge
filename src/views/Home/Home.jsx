@@ -15,11 +15,6 @@ class Home extends React.Component {
 
   client = new SomosClient()
 
-  componentDidMount() {
-    console.log('this.props:', this.props)
-  }
-
-
   render() {
     return (
       <React.Fragment>

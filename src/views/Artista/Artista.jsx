@@ -37,8 +37,6 @@ export default class Artista extends React.Component {
 
       const artist = await this.client.getArtistById(id);
 
-      console.log('artist: ', artist)
-
       this.setState({ artist, error: false })
 
     } catch (error) {
@@ -56,8 +54,6 @@ export default class Artista extends React.Component {
       this.setState({ loadingArtist: true })
 
       const { items } = await this.client.getAlbums(id);
-
-      console.log('Albums: ', items)
 
       this.setState({ albums: items, error: false })
 
