@@ -1,0 +1,96 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+
+/* img {
+  width: 100%;
+  height: 100%;
+} */
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #e8e8e8;
+}
+
+.imgCard {
+  width: 100%;
+  height: 100%;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  min-width: 100%;
+  object-fit: contain;
+  background: #655aa34f;
+}
+
+.cardText {
+  padding-top: 10px;
+}
+
+.cardText h4 {
+  padding-bottom: 1px;
+  color: #5d5d5d;
+} 
+
+.cardText h1 {
+  padding-bottom: 5px;
+  background: #e8e8e8;
+} 
+
+.albumCard {
+  margin-top: 10px;
+  display: flex;
+  height: 80px;
+  flex-direction: row;
+  background: #e8e8e8;
+  min-width: 200px;
+  max-width: 30%;
+  width: 30%;
+  flex: 1 1;
+  max-width: 100%;
+  margin: 5px;
+  padding: 2px;
+
+}
+
+.albumOuter {
+  padding-top: 20px;
+}
+
+.albumContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.albumContainer h1 {
+  margin-bottom: 20px;
+}
+
+.albumContainer img {
+  border-radius: 50%;
+}
+
+.albumCardText {
+  padding-left: 10px;
+  margin: 0px;
+  color: #5d5d5d;
+}
+
+.albumCard:hover {
+  box-shadow: 1px 1px 4px black;
+  border: 1px solid #b3b3b3;
+}
+
+
+a {
+  text-decoration: none;
+}

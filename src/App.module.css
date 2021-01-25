@@ -2,6 +2,7 @@
   --color-dark-gray: #333333;
   --color-purple: #655ba2;
   --color-white: #f2f4f5;
+  --color-grey: #eeeeee;
   --height-footer: 59px;
   --height-nav-bar: 63px;
   --padding: 20px;
@@ -14,5 +15,5 @@
 }
 
 body {
-  background: var(--color-white);
+  background: var(--color-grey);
 }

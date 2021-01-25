@@ -1,14 +1,13 @@
 import React from 'react'
 
 import { Layout } from 'components'
-import { Home } from 'views'
 
 import './App.module.css'
 
-const App = () => (
-  <Layout>
-    <Home />
-  </Layout>
-)
+const App = ({ children }) => {
+  return (
+    <Layout children={children} />
+  )
+}
 
 export default App

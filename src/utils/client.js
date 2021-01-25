@@ -1,13 +1,63 @@
 import { clearToken, getToken } from 'utils'
 
 class SomosClient {
-  constructor() {}
+  constructor() { }
 
-  onError = error => {}
+  onError = error => { }
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtists(artist) {
+    const token = getToken();
+
+    try {
+      const response = await fetch(`https://api.spotify.com/v1/search?q=${artist}&type=artist`, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+
+      return await response.json();
+
+    } catch (error) {
+      console.log("Request failed successfully: ", error);
+    }
+  }
+
+
+  async getAlbums(id) {
+    const token = getToken();
+
+    try {
+      const response = await fetch(`https://api.spotify.com/v1/artists/${id}/albums`, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+
+      return await response.json();
+
+    } catch (error) {
+      console.log("Request failed successfully: ", error);
+    }
+  }
+
+  async getArtistById(id) {
+    const token = getToken();
+
+    try {
+      const response = await fetch(`https://api.spotify.com/v1/artists/${id}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+
+      return await response.json();
+
+    } catch (error) {
+      console.log("Request failed successfully: ", error);
+    }
   }
 }
 
