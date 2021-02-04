@@ -16,9 +16,8 @@ describe('ArtistIntro.jsx', () => {
     should show name, popularity, photograph and list of genres of artist.`, () => {
         const textsOnScreen = [
             'Péricles',
-            '72',
-            'pagode',
-            'pagode novo'
+            'Popularidade: 72',
+            'Generos: pagode, pagode novo',
         ]
 
         render(<ArtistIntro artist={artistMock} />)
@@ -35,6 +34,6 @@ describe('ArtistIntro.jsx', () => {
         render(<ArtistIntro />)
 
         expect(screen.getByText('O artista não foi encontrado.')).toBeVisible()
-        expect(screen.queryByTestId('artist-info')).not.toBeInTheDocument()
+        expect(screen.queryByTestId('artist-intro')).not.toBeInTheDocument()
     })
 })
