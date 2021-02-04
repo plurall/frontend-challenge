@@ -1,5 +1,8 @@
 {
   "extends": "plurall/react",
+  "env": {
+    "jest/globals": true
+  },
   "rules": {
     "react/jsx-filename-extension": [
       1,
