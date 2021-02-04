@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import styles from './ArtistIntro.module.css'
+
 export default function ArtistIntro({ artist }){
     if(!artist) return (
         <div className="artist-not-found">
@@ -9,22 +11,22 @@ export default function ArtistIntro({ artist }){
     )
 
     return(
-        <div className="artist-intro" data-testid="artist-intro">
-            <div className="avatar">
+        <div className={styles.artistIntro} data-testid="artist-intro">
+            <div className={styles.avatar}>
                 <img 
                     alt={`Foto do artista ${artist.name}`} 
                     src={artist.photograph}
-                    className="photograph"
+                    className={styles.photograph}
                 />
             </div>
-            <div className="info">
-                <span className="name">
+            <div className={styles.info}>
+                <span className={styles.name}>
                     {artist.name}
                 </span>
-                <span className="popularity">
+                <span className={styles.popularity}>
                     Popularidade: {artist.popularity}
                 </span>
-                <span className="genres">
+                <span className={styles.genres}>
                     Generos: {artist.genres.join(', ')}
                 </span>
             </div>

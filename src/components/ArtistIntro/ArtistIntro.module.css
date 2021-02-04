@@ -1,0 +1,30 @@
+.artistIntro{
+    display: flex;
+    width: 100%;
+    font: 16px/14px 'Nunito', sans-serif;
+}
+
+.photograph{
+    border-radius: 50%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.name{
+  font-weight: bold;  
+  color: #1c1c1c;
+  font-size: 25px;
+  margin: 10px 0 25px
+}
+
+.popularity, .genres{
+    font-size: 18px
+}
+
+.popularity{
+    margin-bottom: 15px;
+}
