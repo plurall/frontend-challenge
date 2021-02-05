@@ -1,3 +1,4 @@
+import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
@@ -11,18 +12,13 @@ describe('InputSearch.jsx', () => {
     const placeholder = 'Digite o nome do artista'
     const value = 'Péric'
 
-    render(InputSearch, {
-      props: {
-        action: mockFunc,
-        placeholder,
-      },
-    })
+    render(<InputSearch action={mockFunc} placeholder={placeholder} />)
 
     const input = screen.getByPlaceholderText(placeholder)
     userEvent.type(input, value)
 
     expect(mockFunc).toHaveBeenCalledTimes(2)
-    expect(mockFunc).toHaveBeenCalledWith(['Péri', value])
+    expect(mockFunc).toHaveBeenCalledWith('Péric')
   })
 
   test(`Given that the component was rendered
@@ -31,15 +27,10 @@ describe('InputSearch.jsx', () => {
     const mockFunc = jest.fn()
     const placeholder = 'Digite o nome do artista'
 
-    render(InputSearch, {
-      props: {
-        action: mockFunc,
-        placeholder,
-      },
-    })
+    render(<InputSearch action={mockFunc} placeholder={placeholder} />)
 
     const input = screen.getByPlaceholderText(placeholder)
-    userEvent.type(input, 'Pe')
+    userEvent.type(input, 'Pé')
 
     expect(mockFunc).toHaveBeenCalledTimes(0)
   })
