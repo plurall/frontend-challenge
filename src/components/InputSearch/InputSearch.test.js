@@ -10,7 +10,7 @@ describe('InputSearch.jsx', () => {
     should call action passed per prop, sending the input value as argument`, () => {
     const mockFunc = jest.fn()
     const placeholder = 'Digite o nome do artista'
-    const value = 'Péric'
+    const value = 'Péricl'
 
     render(<InputSearch action={mockFunc} placeholder={placeholder} />)
 
@@ -18,7 +18,7 @@ describe('InputSearch.jsx', () => {
     userEvent.type(input, value)
 
     expect(mockFunc).toHaveBeenCalledTimes(2)
-    expect(mockFunc).toHaveBeenCalledWith('Péric')
+    expect(mockFunc).toHaveBeenCalledWith('Péricl')
   })
 
   test(`Given that the component was rendered
