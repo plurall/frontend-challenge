@@ -15,7 +15,11 @@ export default function Album({ album }) {
   return (
     <div className={styles.album} data-testid="album">
       <div className={styles.header}>
-        <img src={album.img} alt={`Capa do album ${album.name}`} />
+        <img
+          className={styles.img}
+          src={album.img}
+          alt={`Capa do album ${album.name}`}
+        />
       </div>
       <div className={styles.body}>
         <span className={styles.name}>{album.name}</span>
