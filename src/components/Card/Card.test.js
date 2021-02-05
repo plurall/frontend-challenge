@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import Card from './Card'
 
-describe('Album.jsx', () => {
+describe('Card.jsx', () => {
   test(`Given that the component has rendered
     and received children and props alt and img,
     should render this informations`, () => {
@@ -23,8 +23,8 @@ describe('Album.jsx', () => {
   })
 
   test(`Given that the component has rendered
-	and not received the album prop,
-	should not render the album container.`, () => {
+	and not received the alt and img props,
+	should not render the card container.`, () => {
     render(<Card />)
 
     expect(screen.queryByTestId('card')).not.toBeInTheDocument()
