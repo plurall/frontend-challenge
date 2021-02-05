@@ -6,7 +6,7 @@ import InputSearch from './InputSearch'
 
 describe('InputSearch.jsx', () => {
   test(`Given that the component was rendered
-    and the user type most than 3 caracters on input,
+    and the user type most than 4 caracters on input,
     should call action passed per prop, sending the input value as argument`, () => {
     const mockFunc = jest.fn()
     const placeholder = 'Digite o nome do artista'
@@ -22,7 +22,7 @@ describe('InputSearch.jsx', () => {
   })
 
   test(`Given that the component was rendered
-  and the user type less than 3 caracters on input,
+  and the user type less than 4 caracters on input,
   should not call action passed per prop.`, () => {
     const mockFunc = jest.fn()
     const placeholder = 'Digite o nome do artista'

@@ -4,7 +4,7 @@ import React from 'react'
 export default function InputSearch({ placeholder, action }) {
   const handleInput = e => {
     const value = e.target.value
-    if (value.length > 3) {
+    if (value.length > 4) {
       action(value)
     }
   }
