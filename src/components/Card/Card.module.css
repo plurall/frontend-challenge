@@ -1,10 +1,11 @@
-.album {
+.card {
   width: 180px;
   display: flex;
   flex-direction: column;
   background-color: white;
   font: 16px/14px 'Nunito', sans-serif;
   box-shadow: 0px 6px 30px -8px rgba(0, 0, 0, 0.44);
+  border-radius: 10px;
 }
 
 .img {
@@ -15,18 +16,4 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-}
-
-.name,
-.releaseDate {
-  color: #535353;
-}
-
-.name {
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.releaseDate {
-  font-size: 12px;
 }
