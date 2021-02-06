@@ -3,17 +3,19 @@ import React from 'react'
 import { InputSearch, Card } from 'components'
 import { SomosClient } from 'utils'
 
+import { Link } from 'react-router-dom'
+
 import styles from './SearchArtist.module.css'
 
 export default function SearchArtist() {
   const [artists, setArtists] = React.useState()
 
-  const getArtists = async query => {
+  const getArtists = React.useCallback(async query => {
     const api = new SomosClient()
 
     const response = await api.getArtists(query)
     setArtists(() => response.artists.items)
-  }
+  }, [])
 
   return (
     <div className={styles.searchArtist}>
@@ -29,15 +31,19 @@ export default function SearchArtist() {
   )
 }
 
-const ArtistList = ({ artists }) => (
-  <ul className={styles.artistList}>
-    {artists.map(artist => (
-      <Card
-        img={artist.images.length > 0 ? artist.images[1].url : ''}
-        alt={`Foto do artista ${artist.name}`}
-      >
-        <span className={styles.artistName}>{artist.name}</span>
-      </Card>
-    ))}
-  </ul>
-)
+const ArtistList = ({ artists }) => {
+  return (
+    <ul className={styles.artistList}>
+      {artists.map(artist => (
+        <Link to={`/artista/${artist.id}`}>
+          <Card
+            img={artist.images.length > 0 ? artist.images[1].url : ''}
+            alt={`Foto do artista ${artist.name}`}
+          >
+            <span className={styles.artistName}>{artist.name}</span>
+          </Card>
+        </Link>
+      ))}
+    </ul>
+  )
+}
