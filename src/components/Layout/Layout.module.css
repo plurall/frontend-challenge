@@ -4,6 +4,8 @@
 
 .content {
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
+  max-width: 1224px;
+  margin: 0 auto;
 }
 
 .footer {

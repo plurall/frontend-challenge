@@ -4,6 +4,7 @@
   align-items: center;
   width: 100%;
   margin-bottom: 30px;
+  padding: 0 20px;
 }
 
 .photograph {
@@ -13,7 +14,6 @@
 .info {
   display: flex;
   flex-direction: column;
-  padding-left: 5%;
 }
 
 .name {
@@ -31,4 +31,15 @@
 
 .popularity {
   margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .artistIntro {
+    flex-direction: row;
+    padding: 20px 0 0 0;
+  }
+
+  .photograph {
+    margin-right: 50px;
+  }
 }

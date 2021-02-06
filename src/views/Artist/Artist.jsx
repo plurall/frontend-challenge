@@ -44,8 +44,8 @@ export default function Artist({ match }) {
       {albums && (
         <div className={cardStyles.list}>
           {albums.map(album => (
-            <div className={cardStyles.listItem}>
-              <Card key={album.id} img={album.images[1].url}>
+            <div className={cardStyles.listItem} key={album.id}>
+              <Card img={album.images[1].url}>
                 <span>{album.name}</span>
                 <span>{formattedReleaseDate(album.release_date)}</span>
               </Card>

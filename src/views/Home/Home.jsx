@@ -3,7 +3,6 @@ import React from 'react'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
-import styles from './Home.module.css'
 import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
@@ -18,7 +17,7 @@ class Home extends React.Component {
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
         />
-        <div className={styles.wrapper}>
+        <div>
           <Link to="/busca">Buscar artista</Link>
         </div>
       </React.Fragment>
