@@ -40,7 +40,7 @@ export default function Artist({ match }) {
       <div className={styles.artistIntro}>
         <ArtistIntro artist={artist} />
       </div>
-      <h2 className={cardStyles.listTitle}>Artistas</h2>
+      <h2 className={cardStyles.listTitle}>Albuns</h2>
       {albums && (
         <div className={cardStyles.list}>
           {albums.map(album => (

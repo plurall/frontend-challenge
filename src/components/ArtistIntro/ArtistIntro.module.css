@@ -1,11 +1,13 @@
 .artistIntro {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  font: 16px/14px 'Nunito', sans-serif;
+  margin-bottom: 30px;
 }
 
 .photograph {
-  border-radius: 50%;
+  margin: 20px;
 }
 
 .info {
@@ -24,6 +26,7 @@
 .popularity,
 .genres {
   font-size: 18px;
+  line-height: 17px;
 }
 
 .popularity {
