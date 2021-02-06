@@ -11,16 +11,18 @@ export default function Artist({ match }) {
 
   const api = React.useMemo(() => new SomosClient(), [])
   const artistId = React.useMemo(() => match.params.id, [])
+  const formattedReleaseDate = React.useCallback(release_date => {
+    const [year, month, day] = release_date.split('-')
+    return `${day}/${month}/${year}`
+  }, [])
 
   const getArtist = React.useCallback(async () => {
     const response = await api.getArtist(artistId)
-
     setArtist({ ...response, photograph: response.images[2].url })
   }, [])
 
   const getAlbums = React.useCallback(async () => {
     const response = await api.getArtistAlbums(artistId)
-
     setAlbums(response.items)
   }, [])
 
@@ -41,7 +43,8 @@ export default function Artist({ match }) {
         <div className={styles.artistAlbuns}>
           {albums.map(album => (
             <Card key={album.id} img={album.images[1].url}>
-              {album.name}
+              <span>{album.name}</span>
+              <span>{formattedReleaseDate(album.release_date)}</span>
             </Card>
           ))}
         </div>
