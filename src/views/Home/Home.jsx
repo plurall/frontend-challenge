@@ -19,7 +19,7 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <Link to="/busca-artista">Buscar artista</Link>
+          <Link to="/busca">Buscar artista</Link>
         </div>
       </React.Fragment>
     )

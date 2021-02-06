@@ -17,7 +17,7 @@ ReactDOM.render(
       <Route path="/login/callback" component={LoginCallback} />
       <Layout>
         <PrivateRoute exact path="/" component={App} />
-        <PrivateRoute exact path="/busca-artista" component={SearchArtist} />
+        <PrivateRoute exact path="/busca" component={SearchArtist} />
         <PrivateRoute exact path="/artista/:id" component={Artist} />
       </Layout>
     </Switch>
