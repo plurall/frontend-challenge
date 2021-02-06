@@ -1,0 +1,13 @@
+.searchArtist {
+  font: 16px/14px 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.title,
+.subtitle {
+  padding: 40px 0 60px;
+}
+
+.artistName {
+  color: black;
+}

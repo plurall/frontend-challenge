@@ -4,6 +4,7 @@ import { ArtistIntro, Card } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
+import cardStyles from 'components/Card/Card.module.css'
 
 export default function Artist({ match }) {
   const [artist, setArtist] = React.useState()
@@ -39,13 +40,16 @@ export default function Artist({ match }) {
       <div className={styles.artistIntro}>
         <ArtistIntro artist={artist} />
       </div>
+      <h2 className={cardStyles.listTitle}>Artistas</h2>
       {albums && (
-        <div className={styles.artistAlbuns}>
+        <div className={cardStyles.list}>
           {albums.map(album => (
-            <Card key={album.id} img={album.images[1].url}>
-              <span>{album.name}</span>
-              <span>{formattedReleaseDate(album.release_date)}</span>
-            </Card>
+            <div className={cardStyles.listItem}>
+              <Card key={album.id} img={album.images[1].url}>
+                <span>{album.name}</span>
+                <span>{formattedReleaseDate(album.release_date)}</span>
+              </Card>
+            </div>
           ))}
         </div>
       )}

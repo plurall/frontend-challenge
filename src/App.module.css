@@ -11,6 +11,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font: 16px/14px 'Nunito', sans-serif;
 }
 
 body {
