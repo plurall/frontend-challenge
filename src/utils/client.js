@@ -26,7 +26,7 @@ class SomosClient {
   }
 
   async getArtistAlbums(id) {
-    return await this.getSpotify(`artists/${id}/albums`)
+    return await this.getSpotify(`artists/${id}/albums?limit=10`)
   }
 }
 
