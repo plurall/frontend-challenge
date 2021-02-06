@@ -1,5 +1,6 @@
 export { default as Layout } from './Layout'
 export { default as SubHeader } from './SubHeader'
 export { default as PrivateRoute } from './PrivateRoute'
+export { default as InputSearch } from './InputSearch'
 export { default as ArtistIntro } from './ArtistIntro'
 export { default as Card } from './Card'

@@ -5,16 +5,20 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { LoginCallback } from 'views'
+import { LoginCallback, SearchArtist } from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
+import { Layout } from 'components'
 import registerServiceWorker from 'registerServiceWorker'
 
 ReactDOM.render(
   <Router>
     <Switch>
       <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute path="/" component={App} />
+      <Layout>
+        <PrivateRoute exact path="/" component={App} />
+        <PrivateRoute exact path="/busca-artista" component={SearchArtist} />
+      </Layout>
     </Switch>
   </Router>,
   document.getElementById('root'),
