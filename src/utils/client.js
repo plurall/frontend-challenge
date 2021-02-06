@@ -5,19 +5,28 @@ class SomosClient {
 
   onError = error => {}
 
+  async getSpotify(path) {
+    const fetchResponse = await fetch(`https://api.spotify.com/v1/${path}`, {
+      headers: new Headers({
+        Authorization: `Bearer ${getToken()}`,
+      }),
+    })
+
+    if (!fetchResponse.ok) throw Error(fetchResponse.statusText)
+
+    return await fetchResponse.json()
+  }
+
   async getArtists(query) {
-    const fetchResponse = await fetch(
-      `https://api.spotify.com/v1/search?q=${query}&type=artist`,
-      {
-        headers: new Headers({
-          Authorization: `Bearer ${getToken()}`,
-        }),
-      },
-    )
+    return await this.getSpotify(`search?q=${query}&type=artist`)
+  }
 
-    const response = await fetchResponse.json()
+  async getArtist(id) {
+    return await this.getSpotify(`artists/${id}`)
+  }
 
-    return response
+  async getArtistAlbums(id) {
+    return await this.getSpotify(`artists/${id}/albums`)
   }
 }
 
