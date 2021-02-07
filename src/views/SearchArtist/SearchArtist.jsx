@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { InputSearch, Card } from 'components'
+import { InputSearch, Card, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import { Link } from 'react-router-dom'
@@ -22,14 +22,19 @@ export default function SearchArtist() {
 
   return (
     <div className={styles.searchArtist}>
-      <h1 className={styles.title}>Busca de artistas</h1>
-      <InputSearch action={getArtists} placeholder="Digite o nome do artista" />
-      {artists.length > 0 && (
-        <>
-          <h2 className={cardStyles.listTitle}>Lista de artistas</h2>
-          <ArtistList artists={artists} />
-        </>
-      )}
+      <SubHeader buttonHref="/" heading="Busca de artistas" />
+      <div className={styles.container}>
+        <InputSearch
+          action={getArtists}
+          placeholder="Digite o nome do artista"
+        />
+        {artists.length > 0 && (
+          <>
+            <h2 className={cardStyles.listTitle}>Lista de artistas</h2>
+            <ArtistList artists={artists} />
+          </>
+        )}
+      </div>
     </div>
   )
 }

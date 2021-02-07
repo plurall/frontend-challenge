@@ -19,7 +19,7 @@
 
 .name {
   font-weight: bold;
-  color: #1c1c1c;
+  color: var(--color-purple);
   font-size: 25px;
   margin: 10px 0 25px;
   line-height: 30px;

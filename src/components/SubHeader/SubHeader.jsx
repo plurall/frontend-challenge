@@ -15,7 +15,9 @@ const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
       )}
 
       <div className={styles.innerDiv}>
-        <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
+        {breadcrumb && (
+          <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
+        )}
         <Heading className={styles.heading}>{heading}</Heading>
       </div>
     </div>

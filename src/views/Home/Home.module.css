@@ -1,1 +1,25 @@
+.buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
 
+.button {
+  color: #fff;
+  background: var(--color-green);
+  border-width: 0;
+  border-style: hidden;
+  border-radius: 20px;
+  padding: 10px 30px;
+  width: max-content;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: 0;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+.button:hover {
+  background-color: var(--color-dark-green);
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { ArtistIntro, Card } from 'components'
+import { ArtistIntro, Card, SubHeader } from 'components'
+import { ArrowButton } from 'plurall-ui'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
@@ -41,9 +42,7 @@ export default function Artist({ match }) {
 
   return (
     <div className={styles.artist}>
-      <div className={styles.goBack}>
-        <Link to="/busca">&#8592; Voltar</Link>
-      </div>
+      <SubHeader buttonHref="/busca" heading="Informações do artista" />
       {error && (
         <div className={styles.error}>O artista não foi encontrado</div>
       )}

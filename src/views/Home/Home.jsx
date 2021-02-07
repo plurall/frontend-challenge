@@ -5,6 +5,8 @@ import { SomosClient } from 'utils'
 
 import { Link } from 'react-router-dom'
 
+import styles from './Home.module.css'
+
 class Home extends React.Component {
   state = {}
 
@@ -13,12 +15,11 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
-        />
-        <div>
-          <Link to="/busca">Buscar artista</Link>
+        <SubHeader heading="Somos Front-end Challange" />
+        <div className={styles.buttons}>
+          <Link to="/busca" className={styles.button}>
+            Buscar artista
+          </Link>
         </div>
       </React.Fragment>
     )

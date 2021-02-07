@@ -3,7 +3,7 @@
 }
 
 .goBack a {
-  color: black;
+  color: var(--color-green);
   text-decoration: none;
   font-size: 20px;
   padding-left: 20px;

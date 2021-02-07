@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  font: 16px/14px 'Nunito', sans-serif;
   border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .img {
@@ -21,6 +21,7 @@
 .list {
   display: flex;
   overflow-x: scroll;
+  padding-bottom: 10px;
 }
 
 .listItem {
@@ -41,6 +42,7 @@
   font-weight: bold;
   font-size: 25px;
   text-align: center;
+  color: var(--color-purple);
 }
 
 @media only screen and (min-width: 1024px) {
