@@ -12,8 +12,6 @@ class SomosClient {
       }),
     })
 
-    if (!fetchResponse.ok) throw Error(fetchResponse.statusText)
-
     return await fetchResponse.json()
   }
 
