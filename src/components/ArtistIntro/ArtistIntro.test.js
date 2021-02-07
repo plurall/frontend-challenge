@@ -18,7 +18,7 @@ describe('ArtistIntro.jsx', () => {
     const textsOnScreen = [
       'Péricles',
       'Popularidade: 72',
-      'Generos: pagode, pagode novo',
+      'Gêneros: pagode, pagode novo',
     ]
 
     render(<ArtistIntro artist={artistMock} />)
