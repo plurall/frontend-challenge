@@ -26,4 +26,12 @@ describe('ArtistIntro.jsx', () => {
     textsOnScreen.forEach(text => expect(screen.getByText(text)).toBeVisible())
     expect(screen.getByAltText('Foto do artista Péricles')).toBeVisible()
   })
+
+  test(`Given that the component was rendered
+  and not received the artist prop,
+  not should show de artist-intro content.`, () => {
+    render(<ArtistIntro />)
+
+    expect(screen.queryByTestId('artist-intro')).not.toBeInTheDocument()
+  })
 })
