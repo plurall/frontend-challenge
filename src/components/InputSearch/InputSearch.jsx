@@ -4,10 +4,7 @@ import React from 'react'
 import styles from './InputSearch.module.css'
 
 export default function InputSearch({ placeholder, action }) {
-  const handleInput = e => {
-    const value = e.target.value
-    action(value)
-  }
+  const handleInput = React.useCallback(e => action(e.target.value), [])
 
   return (
     <input

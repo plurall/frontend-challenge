@@ -11,7 +11,7 @@ export default function ArtistIntro({ artist }) {
       <div className={styles.avatar}>
         <img
           alt={`Foto do artista ${artist.name}`}
-          src={artist.photograph}
+          src={artist.photograph ? artist.photograph : '/default-user.png'}
           className={styles.photograph}
         />
       </div>

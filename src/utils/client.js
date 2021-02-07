@@ -1,10 +1,6 @@
-import { clearToken, getToken } from 'utils'
+import { getToken } from 'utils'
 
 class SomosClient {
-  constructor() {}
-
-  onError = error => {}
-
   async getSpotify(path) {
     const fetchResponse = await fetch(`https://api.spotify.com/v1/${path}`, {
       headers: new Headers({
