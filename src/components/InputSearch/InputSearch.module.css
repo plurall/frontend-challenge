@@ -1,9 +1,14 @@
 .inputSearch {
-  width: 250px;
-  height: 40px;
-  border: 1px solid rgb(31, 31, 31);
-  outline: none;
-  padding-left: 10px;
-  background-color: transparent;
-  border-radius: 5px;
+  width: 275px;
+  height: 50px;
+  padding-left: 15px;
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .inputSearch {
+    width: 400px;
+  }
 }

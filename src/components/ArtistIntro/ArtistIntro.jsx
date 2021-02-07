@@ -22,7 +22,7 @@ export default function ArtistIntro({ artist }) {
           Popularidade: {artist.popularity}
         </span>
         <span className={styles.genres}>
-          Generos: {artist.genres.join(', ')}
+          Gêneros: {artist.genres.join(', ')}
         </span>
       </div>
     </div>

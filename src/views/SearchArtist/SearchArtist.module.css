@@ -3,9 +3,10 @@
   text-align: center;
 }
 
-.title,
-.subtitle {
-  padding: 40px 0 60px;
+.title {
+  padding: 60px 0;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 .artistName {

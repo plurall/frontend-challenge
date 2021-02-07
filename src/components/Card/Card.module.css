@@ -36,8 +36,15 @@
 }
 
 .listTitle {
-  padding: 40px 0 60px;
+  padding: 60px 0;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .listTitle {
+    text-align: left;
+    padding: 60px 0 40px 20px;
+  }
 }
