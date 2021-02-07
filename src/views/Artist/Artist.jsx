@@ -9,6 +9,7 @@ import cardStyles from 'components/Card/Card.module.css'
 export default function Artist({ match }) {
   const [artist, setArtist] = React.useState()
   const [albums, setAlbums] = React.useState()
+  const [error, setError] = React.useState(false)
 
   const api = React.useMemo(() => new SomosClient(), [])
   const artistId = React.useMemo(() => match.params.id, [])
@@ -19,6 +20,8 @@ export default function Artist({ match }) {
 
   const getArtist = React.useCallback(async () => {
     const response = await api.getArtist(artistId)
+
+    if (response.error) return setError(true)
     setArtist({ ...response, photograph: response.images[2].url })
   }, [])
 
@@ -37,21 +40,26 @@ export default function Artist({ match }) {
 
   return (
     <div className={styles.artist}>
+      {error && (
+        <div className={styles.error}>O artista não foi encontrado</div>
+      )}
       <div className={styles.artistIntro}>
         <ArtistIntro artist={artist} />
       </div>
-      <h2 className={cardStyles.listTitle}>Albuns</h2>
       {albums && (
-        <div className={cardStyles.list}>
-          {albums.map(album => (
-            <div className={cardStyles.listItem} key={album.id}>
-              <Card img={album.images[1].url}>
-                <span>{album.name}</span>
-                <span>{formattedReleaseDate(album.release_date)}</span>
-              </Card>
-            </div>
-          ))}
-        </div>
+        <>
+          <h2 className={cardStyles.listTitle}>Albuns</h2>
+          <div className={cardStyles.list}>
+            {albums.map(album => (
+              <div className={cardStyles.listItem} key={album.id}>
+                <Card img={album.images[1].url}>
+                  <span>{album.name}</span>
+                  <span>{formattedReleaseDate(album.release_date)}</span>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   )

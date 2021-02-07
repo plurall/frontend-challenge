@@ -4,8 +4,7 @@ import React from 'react'
 import styles from './ArtistIntro.module.css'
 
 export default function ArtistIntro({ artist }) {
-  if (!artist)
-    return <div className="artist-not-found">O artista não foi encontrado.</div>
+  if (!artist) return <></>
 
   return (
     <div className={styles.artistIntro} data-testid="artist-intro">

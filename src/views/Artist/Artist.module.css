@@ -1,0 +1,16 @@
+.artist {
+}
+
+.error {
+  text-align: center;
+  padding-top: 60px;
+  font-size: 20px;
+  color: rgb(63, 63, 63);
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .error {
+    font-size: 30px;
+  }
+}
