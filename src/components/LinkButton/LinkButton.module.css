@@ -1,0 +1,9 @@
+.linkButton {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    padding: 1em 2em 1em;
+    border-radius: 3px;
+    margin-top: 25px;
+    display: inline-block;
+    text-decoration: none;
+  }

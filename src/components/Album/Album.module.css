@@ -1,0 +1,59 @@
+.card {
+    /* Aplica sombra pra fazer o efeito de card */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+    /*margin: 10px;*/
+    margin-bottom: 15px;
+}
+
+img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.semFoto {
+    text-align: center;
+    min-height: 203px;
+}
+
+.cardTitle {
+    font-size: 1em;
+    margin-bottom: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark-gray);
+}
+
+.cardText {
+    margin-top: 5px;
+}
+
+/* no mouse-over, escurecer ainda mais a sombra */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Espaçamento dentro do card */
+.container {
+    padding: 2px 16px;
+} 
+
+.container .lancamento {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .card {
+        width: 70%;
+        margin: 20px auto;
+        /* margin: 0 auto; */
+    }
+    img {
+        max-height: 100%;
+    }
+}
