@@ -17,12 +17,9 @@
 }
 
 .inputSearch:focus {
-  -webkit-box-shadow: none;
   box-shadow: none;
   background-color: #fffbea;
-  -o-border-image: initial;
   border-image: initial;
-  -webkit-transition: 0.55s;
   transition: 0.55s;
   border: 2px solid #f3d661;
 }
