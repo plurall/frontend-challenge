@@ -5,6 +5,7 @@ import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
 import cardStyles from 'components/Card/Card.module.css'
+import { Link } from 'react-router-dom'
 
 export default function Artist({ match }) {
   const [artist, setArtist] = React.useState()
@@ -40,6 +41,9 @@ export default function Artist({ match }) {
 
   return (
     <div className={styles.artist}>
+      <div className={styles.goBack}>
+        <Link to="/busca">&#8592; Voltar</Link>
+      </div>
       {error && (
         <div className={styles.error}>O artista não foi encontrado</div>
       )}
@@ -53,7 +57,7 @@ export default function Artist({ match }) {
             {albums.map(album => (
               <div className={cardStyles.listItem} key={album.id}>
                 <Card img={album.images[1].url}>
-                  <span>{album.name}</span>
+                  <span className={styles.name}>{album.name}</span>
                   <span>{formattedReleaseDate(album.release_date)}</span>
                 </Card>
               </div>

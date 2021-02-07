@@ -9,6 +9,7 @@
 
 .img {
   max-width: 180px;
+  max-height: 180px;
 }
 
 .body {
@@ -43,6 +44,18 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .list {
+    margin: 0 10px;
+  }
+
+  .listItem:first-child {
+    padding-left: 0px;
+  }
+
+  .listItem:last-child {
+    padding-right: 0px;
+  }
+
   .listTitle {
     text-align: left;
     padding: 60px 0 40px 20px;
