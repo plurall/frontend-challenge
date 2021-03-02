@@ -3,6 +3,7 @@
 }
 
 .content {
+  background: var(--color-dark-background);
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
 }
 

@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  width: 225px;
+  height: 250px;
+  color: white;
+}
+
+.wrapperImg{
+  width: 100%;
+  height: 80%;
+}
+
+.wrapperImg img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.wrapperImg :hover {
+  opacity: 1;
+}
+
+.info{
+  margin-top: 5px;
+  width: 100%;
+  height: 20%;
+}
+
+.title {
+  font-weight: bold;
+  width: 90%;
+  font-size: 12px;
+}
+
+.data{
+  font-size: 10px;
+  font-weight: lighter;
+  opacity: 0.5;
+}

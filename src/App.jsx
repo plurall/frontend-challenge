@@ -1,14 +1,20 @@
 import React from 'react'
-
-import { Layout } from 'components'
-import { Home } from 'views'
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Layout, PrivateRoute } from 'components'
+import { Home,  Search, Artist, LoginCallback } from 'views'
 import './App.module.css'
 
 const App = () => (
-  <Layout>
-    <Home />
-  </Layout>
+  <BrowserRouter>
+    <Switch>
+      <Layout>
+        <Route path="/login/callback" component={LoginCallback} />
+        <PrivateRoute exact path="/" component={Home} />
+        <PrivateRoute path="/busca" component={Search}/>
+        <PrivateRoute path="/artista/:id" component={Artist} />
+      </Layout>
+    </Switch>
+  </BrowserRouter>
 )
 
 export default App

@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  max-width: 1224px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+ input[type=text] {
+   margin: 15px;
+  padding: 14px;
+  font-size: 17px;
+  border: none;
+   border-radius: 20px;
+  float: left;
+   min-width: 200px;
+  width: 70%;
+  background: #f1f1f1;
+
+}
+input:focus{
+  outline: none;
+}
+
+
+

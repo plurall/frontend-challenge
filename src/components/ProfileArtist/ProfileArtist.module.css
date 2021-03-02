@@ -1,0 +1,43 @@
+.container{
+  display: flex;
+  padding: 20px 10px;
+  flex-wrap: wrap;
+  width: 91%;
+  height: auto;
+  background: linear-gradient(to right, #3c3b3f, #605c3c);
+}
+
+.wrapperAvatar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.title{
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 4em;
+  color: white;
+}
+
+.wrapperInfo{
+  display: flex;
+}
+
+.genres{
+  margin-left: 10px;
+  display: flex;
+}
+
+.genres span{
+  color: white;
+  opacity: 0.5;
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
