@@ -13,13 +13,13 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
   }
 
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
-
   state = {}
 
   componentDidMount() {}
+
+  client = new SomosClient({
+    accessToken: getToken(),
+  })
 
   handleLogout = path => {
     setToken('')
@@ -40,6 +40,7 @@ class Layout extends Component {
             data={{
               menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
             }}
+            apiUrl=""
             logout={this.handleLogout}
             service="reader"
             userToken={getToken()}

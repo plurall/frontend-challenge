@@ -4,6 +4,13 @@ import React from 'react'
 
 import { getOauthClient, getToken } from 'utils'
 
+const handleNotAuthenticated = path => {
+  const OAuth = getOauthClient(path)
+  window.location.href = OAuth.token.getUri()
+  return null
+}
+
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -20,12 +27,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 PrivateRoute.propTypes = {
   component: PropTypes.func.isRequired,
   match: PropTypes.object,
-}
-
-const handleNotAuthenticated = path => {
-  const OAuth = getOauthClient(path)
-  window.location.href = OAuth.token.getUri()
-  return null
 }
 
 export default PrivateRoute

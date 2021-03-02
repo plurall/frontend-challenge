@@ -1,12 +1,17 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { injectBabelPlugin } = require('react-app-rewired')
+const {
+  override,
+  fixBabelImports,
+  addLessLoader,
+} = require('customize-cra')
 
-module.exports = function override(config) {
-  // eslint-disable-next-line no-param-reassign
-  config = injectBabelPlugin(
-    ['styled-jsx/babel', { optimizeForSpeed: true }],
-    config,
-  )
 
-  return config
-}
+module.exports = override(
+  fixBabelImports('import', {
+    libraryName: 'antd', libraryDirectory: 'es', style: true, // change importing css to less
+  }),
+  addLessLoader({
+    javascriptEnabled: true,
+    modifyVars: { '@primary-color': '#1DA57A' },
+  }),
+)

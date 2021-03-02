@@ -8,6 +8,11 @@ import styles from './Home.module.css'
 class Home extends React.Component {
   state = {}
 
+  componentDidMount() {
+   const client = new SomosClient()
+    client.getArtists().then((result) => console.log(result))
+  }
+
   client = new SomosClient()
 
   render() {
