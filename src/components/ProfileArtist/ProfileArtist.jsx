@@ -9,12 +9,12 @@ const ProfileArtist = ({artist}) => {
   return (
       <div className={styles.container}>
           <div className={styles.wrapperAvatar}>
-              <Avatar width={'280px'} height={'280px'} images={artist.images} name={artist.name} />
+              <Avatar  width={'280px'} height={'280px'} images={artist.images} name={artist.name} />
               <span>Popularidade: {artist.popularity}</span>
               <h2 className={styles.title}>{artist.name}</h2>
-            <div className={styles.genres}>
+            <div data-testid="name" className={styles.genres}>
               {artist.genres.map(genre => (
-                <span>{genre}</span>
+                <span data-testid="genres" key={genre}>{genre}</span>
               ))}
             </div>
           </div>

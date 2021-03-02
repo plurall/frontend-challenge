@@ -3,11 +3,12 @@ import {  format } from 'date-fns'
 import Conditional from '../Conditional'
 import styles from './Album.module.css'
 
-const formatedData = (data) => {
-  return format(new Date(data), 'dd/MM/yyyy')
-}
-
 const Album = ({albums}) => {
+
+  const formatedData = (data) => {
+    return format(new Date(data), 'dd/MM/yyyy')
+  }
+
   return (
     <section about={"albums artista"}>
       <div className={styles.container}>

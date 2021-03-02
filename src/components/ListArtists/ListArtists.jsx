@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Conditional from '../Conditional'
-
-import styles from './ListArtists.module.css'
 import Avatar from '../Avatar'
+import styles from './ListArtists.module.css'
+
 
 const ListArtists = ({ artists, fetch }) => {
   return (
