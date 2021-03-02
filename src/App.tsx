@@ -1,14 +1,16 @@
 import React from 'react'
 
-import { Layout } from './components'
-import { Home } from '../src/views'
-
 import './App.module.css'
 
-const App = () => (
-  <Layout>
-    <Home />
-  </Layout>
-)
+import { BrowserRouter } from 'react-router-dom'
+import Routes from './routes'
+
+function App () {
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  )
+}
 
 export default App

@@ -1,23 +1,20 @@
-import React, { useEffect } from 'react'
-import { SubHeader } from '../../components'
+import React from 'react'
+import { Layout } from '../../components'
 import * as S from './styles'
-import { getArtists } from '../../utils'
+import logo from '../../assets/imgs/logo.png'
 
 const Index = () => {
-  useEffect(() => {
-    getArtists().then((result) => console.log(result))
-  }, [])
-
   return (
-      <React.Fragment>
-        <SubHeader
-          breadcrumb={[{ text: 'Index' }]}
-          heading="Somos Front-end Challange"
-        />
+      <Layout>
         <S.Wrapper>
-          <h1>Hi</h1>
+          <S.Content>
+            <S.Logo src={logo} alt={'Logo do Spotify'}/>
+            <div>
+              <S.SearchLink to={''} >Buscar Artistas</S.SearchLink>
+            </div>
+          </S.Content>
         </S.Wrapper>
-      </React.Fragment>
+      </Layout>
   )
 }
 

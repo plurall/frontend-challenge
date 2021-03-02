@@ -4,6 +4,8 @@
 
 .content {
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
