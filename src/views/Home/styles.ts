@@ -1,6 +1,8 @@
-.wrapper {
+import styled from 'styled-components'
+
+export const Wrapper = styled.div`
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
-}
+`

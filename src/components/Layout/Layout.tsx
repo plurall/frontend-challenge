@@ -6,7 +6,7 @@ import { Footer } from 'plurall-footer'
 // @ts-ignore
 import NavBar from 'plurall-header'
 
-import { getToken, setToken, SomosClient } from '../../utils'
+import { getToken, setToken } from '../../utils'
 
 import styles from './Layout.module.css'
 
@@ -18,8 +18,6 @@ class Layout extends Component {
   state: any = {}
 
   UNSAFE_componentWillMount () {}
-
-  client = new SomosClient()
 
   handleLogout = (path: any) => {
     setToken('')
