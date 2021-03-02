@@ -1,6 +1,6 @@
 const domain = () => {
   const {
-    location: { hostname },
+    location: { hostname }
   } = window
   return hostname
 }
@@ -10,7 +10,7 @@ const getToken = () => {
   return r ? r[1] : undefined
 }
 
-const setToken = token => {
+const setToken = (token: any) => {
   document.cookie = `authenticated_token=${token ||
     ''};path=/;domain=${domain()}`
 }

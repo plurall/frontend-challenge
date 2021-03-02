@@ -1,20 +1,20 @@
+import React from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import queryString from 'query-string'
-import React from 'react'
 
-import { getOauthClient, setToken } from 'utils'
+import { getOauthClient, setToken } from '../../utils'
 
 class LoginCallback extends React.Component {
   static propTypes = {
-    location: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   }
 
-  state = {}
+  state: any = {}
 
-  componentWillMount() {
+  UNSAFE_componentWillMount () {
     const oauth = getOauthClient()
-    const { location } = this.props
+    const { location }: any = this.props
     const fullPath = `${location.pathname}${location.search}${location.hash}`
 
     oauth.token.getToken(fullPath).then(({ accessToken }) => {
@@ -23,9 +23,10 @@ class LoginCallback extends React.Component {
     })
   }
 
-  render() {
+  render () {
+    const props: any = this.props
     if (this.state.redirect) {
-      const search = queryString.parse(this.props.location.search)
+      const search: any = queryString.parse(props.location.search)
       return <Redirect to={search.redirectTo || '/'} />
     }
 

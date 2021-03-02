@@ -1,34 +1,34 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
+// @ts-ignore
 import { Footer } from 'plurall-footer'
+// @ts-ignore
 import NavBar from 'plurall-header'
 
-import { getToken, setToken, SomosClient } from 'utils'
+import { getToken, setToken, SomosClient } from '../../utils'
 
 import styles from './Layout.module.css'
 
 class Layout extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired
   }
 
-  state = {}
+  state: any = {}
 
-  componentDidMount() {}
+  UNSAFE_componentWillMount () {}
 
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
+  client = new SomosClient()
 
-  handleLogout = path => {
+  handleLogout = (path: any) => {
     setToken('')
     window.location = path
   }
 
-  render() {
+  render () {
     const {
-      props: { children },
+      props: { children }
     } = this
 
     const { content, footer, 'nav-bar': navBar } = styles
@@ -38,7 +38,7 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] }
             }}
             apiUrl=""
             logout={this.handleLogout}

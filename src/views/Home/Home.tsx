@@ -1,21 +1,21 @@
 import React from 'react'
 
-import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
+import { SubHeader } from '../../components'
+import { SomosClient } from '../../utils'
 
 import styles from './Home.module.css'
 
 class Home extends React.Component {
   state = {}
 
-  componentDidMount() {
-   const client = new SomosClient()
+  componentDidMount () {
+    const client = new SomosClient()
     client.getArtists().then((result) => console.log(result))
   }
 
   client = new SomosClient()
 
-  render() {
+  render () {
     return (
       <React.Fragment>
         <SubHeader

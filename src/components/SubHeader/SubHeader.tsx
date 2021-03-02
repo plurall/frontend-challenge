@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-
+// @ts-ignore
 import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
 
 import styles from './SubHeader.module.css'
 
-const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
+const SubHeader = ({ buttonHref, breadcrumb, heading }: any) => (
   <div className={styles.header}>
     <div className={styles.wrapper}>
       {buttonHref && (
@@ -26,11 +26,11 @@ SubHeader.propTypes = {
   breadcrumb: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string.isRequired,
-      href: PropTypes.string,
-    }),
+      href: PropTypes.string
+    })
   ),
   buttonHref: PropTypes.string,
-  heading: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired
 }
 
 export default SubHeader

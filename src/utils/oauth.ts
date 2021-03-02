@@ -6,7 +6,7 @@ const getOauthClient = () =>
     authorizationUri: process.env.REACT_APP_AUTHORIZATION_URL,
     clientId: process.env.REACT_APP_CLIENT_ID,
     redirectUri: process.env.REACT_APP_CALLBACK_URL,
-    scopes: [],
+    scopes: []
   })
 
 export { getOauthClient }

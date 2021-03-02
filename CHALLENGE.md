@@ -8,7 +8,7 @@ O sistema deverá conter 3 páginas:
 - A página de busca (`/busca`).
 - A página do artista selecionado (`/artista/:id`).
 
-As chamadas para a API devem ficar restritas ao arquivo `src/utils/client.js`. Os componentes React devem apenas utilizar esse 'client'.
+As chamadas para a API devem ficar restritas ao arquivo `src/utils/client.ts`. Os componentes React devem apenas utilizar esse 'client'.
 
 # Descrição das páginas
 

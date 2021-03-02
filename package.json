@@ -6,6 +6,7 @@
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.3.3",
+    "jest": "^26.6.0",
     "md5": "^2.3.0",
     "plurall-footer": "^2.4.35",
     "plurall-header": "^10.0.2",
@@ -18,20 +19,37 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
-    "styled-jsx": "^3.4.4"
+    "styled-components": "^5.2.1",
+    "styled-jsx": "^3.4.4",
+    "typescript": "^4.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-import": "^1.13.3",
-    "customize-cra": "^1.0.0",
-    "eslint-config-plurall": "^1.7.1",
-    "eslint-plugin-prettier": "^3.3.1",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^26.0.20",
+    "@types/md5": "^2.2.1",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/styled-components": "^5.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.12.1",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "git-commit-msg-linter": "^3.0.0",
+    "husky": "^5.1.1",
+    "jest-styled-components": "^7.0.3",
     "jsencrypt": "^3.0.1",
     "less-loader": "^8.0.0",
-    "lint-staged": "^7.3.0",
+    "lint-staged": "^10.5.4",
     "opn": "^5.5.0",
-    "prettier": "^1.19.1"
+    "prettier": "2.2.1"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -40,11 +58,10 @@
     ]
   },
   "scripts": {
-    "build": "react-app-rewired build",
-    "lint": "eslint src/",
-    "precommit": "lint-staged",
-    "start": "react-app-rewired start",
-    "test": "react-scripts test"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "development": [

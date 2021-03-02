@@ -1,14 +1,13 @@
+import React from 'react'
 import 'babel-polyfill'
 import 'react-app-polyfill/ie9'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { LoginCallback } from 'views'
-import { PrivateRoute } from 'components'
-import App from 'App'
-import registerServiceWorker from 'registerServiceWorker'
+import { LoginCallback } from '../src/views'
+import { PrivateRoute } from '../src/components'
+import App from '../src/App'
 
 ReactDOM.render(
   <Router>
@@ -17,7 +16,5 @@ ReactDOM.render(
       <PrivateRoute path="/" component={App} />
     </Switch>
   </Router>,
-  document.getElementById('root'),
+  document.getElementById('root')
 )
-
-registerServiceWorker()
