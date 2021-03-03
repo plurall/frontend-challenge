@@ -13,7 +13,7 @@ interface RouterProps extends RouteProps {
   component: React.ComponentType
 }
 
-const PrivateRoute: React.FC<RouterProps> = ({ component: Component, ...rest }) => (
+const Index: React.FC<RouterProps> = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props: any) =>
@@ -28,4 +28,4 @@ const PrivateRoute: React.FC<RouterProps> = ({ component: Component, ...rest }) 
   />
 )
 
-export default PrivateRoute
+export default Index
