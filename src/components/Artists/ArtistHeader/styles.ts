@@ -21,14 +21,34 @@ export const ArtistHeader = styled.header`
     width: 160px;
     border-radius: 50%;
   }
-  ul {
-    text-align: left;
-    margin: 25px 0 0 22px;
-    li {
-      color: #fff;
-      display: inline;
-      text-transform: capitalize;
-      font-weight: bold;
+`
+
+export const ArtistHeaderTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+export const ArtistPopularity = styled.div`
+  background: #15a248;
+  padding: 5px 15px;
+  border-radius: 30px;
+  span {
+    margin: 0;
+    color: #fff
+  }
+`
+export const ArtistGenreList = styled.ul`
+  text-align: left;
+  margin: 15px 0 0 22px;
+  li {
+    color: #fff;
+    display: inline;
+    text-transform: capitalize;
+    font-weight: bold;
+    &::after {
+      content: ', ';
+    }
+    &:last-child::after {
+      content: '';
     }
   }
 `

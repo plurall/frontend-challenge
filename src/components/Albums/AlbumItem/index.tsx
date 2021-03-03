@@ -1,8 +1,8 @@
 import React from 'react'
 import * as S from './styles'
-import { Link } from 'react-router-dom'
 import defaultCover from '../../../assets/imgs/artist_default_cover.jpg'
 import { Album } from '../../../utils/types'
+import { format } from 'date-fns'
 
 type AlbumItemProps = {
   album: Album
@@ -10,10 +10,9 @@ type AlbumItemProps = {
 
 const AlbumItem = ({ album }: AlbumItemProps) => {
   return (<S.AlbumItemWrapper>
-    <Link to={`artista/${album.id}`}>
       <img src={album.images.length > 0 ? album.images[0].url : defaultCover} alt={album.name}/>
       <h3>{album.name}</h3>
-    </Link>
+      <span>{format(new Date(album.release_date), 'dd/MM/yyyy')}</span>
   </S.AlbumItemWrapper>)
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { IoIosArrowBack } from 'react-icons/io'
 import * as S from './styles'
 import logo from '../../assets/imgs/logo.png'
 import { Layout } from '../../components'
@@ -29,7 +30,12 @@ const SingleArtist = () => {
   return (<Layout>
     <S.Wrapper>
       <S.Content>
-        <S.Logo src={logo} />
+        <S.TopBar>
+          <Link to={'/busca'}>
+            <IoIosArrowBack />
+          </Link>
+          <S.Logo src={logo} />
+        </S.TopBar>
         {artist && <S.ArtistWrapper>
           <ArtistHeader artist={artist} />
           <PageSubTitle title={'Álbuns'} />

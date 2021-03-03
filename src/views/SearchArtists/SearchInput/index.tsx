@@ -1,4 +1,5 @@
 import React, { ChangeEvent, Dispatch, SetStateAction, useCallback, useEffect, useState } from 'react'
+import { FaSearch } from 'react-icons/fa'
 import { getArtists } from '../../../utils'
 import * as S from './styles'
 import { Artist } from '../../../utils/types'
@@ -32,6 +33,7 @@ const SearchInput = ({ setArtists }: SearchInputProps) => {
 
   return (
     <S.SearchWrapper>
+      <FaSearch />
       <input type={'search'} placeholder={'Busque um artista'} onChange={(e) => onChangeInputSearch(e)}/>
     </S.SearchWrapper>
   )

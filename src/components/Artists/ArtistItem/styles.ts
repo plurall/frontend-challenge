@@ -7,20 +7,39 @@ export const ArtistItemWrapper = styled.li`
     font-size: 0.8rem;
     h3 {
       color: #fff;
-      margin-top: 5px;
+      font-family: 'Roboto', sans-serif;
+      margin-top: 8px;
       max-width: 100%;
       word-wrap: break-word;
+      transition: all 0.5s;
     }
-    img {
-      max-width: 160px;
+    div {
+      transition: all 0.5s;
     }
     &:hover {
       h3 {
         color: #1fd761;
+        transition: all 0.5s;
       }
-      img {
-        border: 2px solid #1fd761;
+      div {
+        border: 3px solid #1fd761;
+        background-size: 110%;
+        background-position: 50%;
+        transition: all 0.5s;
       }
+    }
+  }
+
+  @media(max-width: 800px) {
+    flex-grow: 1;
+    div {
+      width: 100%;
+      height: 260px;
+    }
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 10px !important;
+      line-height: 1.2;
     }
   }
 `

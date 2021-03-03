@@ -3,6 +3,7 @@ import { Artist } from '../../../utils/types'
 import { Link } from 'react-router-dom'
 import * as S from './styles'
 import defaultCover from '../../../assets/imgs/artist_default_cover.jpg'
+import ArtistThumb from '../ArtistThumb'
 
 type ArtistItemProps = {
   artist: Artist
@@ -11,10 +12,12 @@ type ArtistItemProps = {
 const ArtistItem = ({ artist }: ArtistItemProps) => {
   return (<S.ArtistItemWrapper>
     <Link to={`artista/${artist.id}`}>
-      <img src={artist.images.length > 0 ? artist.images[0].url : defaultCover} alt={artist.name}/>
+      <ArtistThumb size={160}
+                   src={artist.images.length > 0 ? artist.images[0].url : defaultCover}
+                   round={false} />
       <h3>{artist.name}</h3>
     </Link>
   </S.ArtistItemWrapper>)
 }
 
-export default ArtistItem
+export default React.memo(ArtistItem)

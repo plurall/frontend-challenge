@@ -14,6 +14,18 @@ export const Wrapper = styled.div`
   min-height: 100%;
   width: 100%;
 `
+export const TopBar = styled.div`
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  a {
+    display: block;
+    margin-right: auto;
+    color: #fff;
+    font-size: 3rem;
+  }
+`
 
 export const Content = styled.div`
   text-align: center;
@@ -22,6 +34,8 @@ export const Content = styled.div`
 `
 
 export const Logo = styled.img`
+  margin-right: auto;
+  display: block;
   width: 100%;
   max-width: 60px;
 `
