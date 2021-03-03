@@ -1,17 +1,34 @@
 import api from './api'
+import { AlbumList, Artist, ArtistList } from './types'
+import { clearToken } from './token'
 
 const onError = (error: any) => {
-  console.log(error)
+  const errorMessage = error.response.data.error.message
+  if (errorMessage === 'The access token expired') {
+    clearToken()
+    window.location.href = '/'
+  }
 }
 
-export const getArtists = async () => {
+export const getArtists = async (query: string): Promise<ArtistList> => {
   try {
-    const artists = await api.get('artists/?ids=0oSGxfWSnnOXhD2fKuz2Gy%2C3dBVyJ7JuOMt4GE9607Qin')
-    console.log(artists)
+    const response = await api.get(`search?q=${query}&type=artist`)
+    return response.data.artists
+  } catch (error) {
+    console.log(error.response.data.error.message)
+    throw onError(error)
+  }
+}
+
+export const getArtist = async (id: string): Promise<{artist: Artist, albums: AlbumList} | null> => {
+  try {
+    const artistResponse = await api.get(`artists/${id}`)
+    const artist: Artist = artistResponse.data
+    const albumsResponse = await api.get(`artists/${id}/albums`)
+    const albums: AlbumList = albumsResponse.data
+    return { artist, albums }
   } catch (error) {
     onError(error)
+    return null
   }
-
-  // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-  // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
 }

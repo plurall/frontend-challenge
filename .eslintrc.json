@@ -21,6 +21,8 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "camelcase": "off",
+    "@typescript-eslint/camelcase": ["off"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",

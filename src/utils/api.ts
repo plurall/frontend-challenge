@@ -9,6 +9,4 @@ const api = axios.create({
   }
 })
 
-console.log(getToken())
-
 export default api

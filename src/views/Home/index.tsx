@@ -10,7 +10,7 @@ const Index = () => {
           <S.Content>
             <S.Logo src={logo} alt={'Logo do Spotify'}/>
             <div>
-              <S.SearchLink to={''} >Buscar Artistas</S.SearchLink>
+              <S.SearchLink to={'/busca'} >Buscar Artistas</S.SearchLink>
             </div>
           </S.Content>
         </S.Wrapper>
