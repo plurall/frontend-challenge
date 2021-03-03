@@ -29,7 +29,8 @@ export const TopBar = styled.div`
 
 export const Content = styled.div`
   text-align: center;
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
 `
 

@@ -5,6 +5,19 @@ export const ArtistHeader = styled.header`
   margin: 60px auto;
   align-items: center;
   justify-items: center;
+  img {
+    width: 160px;
+    border-radius: 50%;
+  }
+  @media(max-width: 800px) {
+    display: block;
+  }
+`
+
+export const ArtistHeaderTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+
   h2 {
     color: #fff;
     font-size: 3rem;
@@ -17,15 +30,17 @@ export const ArtistHeader = styled.header`
     margin: 10px 0 0 22px;
     text-align: left;
   }
-  img {
-    width: 160px;
-    border-radius: 50%;
-  }
-`
 
-export const ArtistHeaderTitle = styled.div`
-  display: flex;
-  justify-content: space-between;
+  @media(max-width: 800px) {
+    display: block;
+    text-align: left;
+    h2 {
+      font-size: 2.4rem;
+      line-height: 1;
+      text-align: left;
+      margin: 20px 0;
+    }
+  }
 `
 export const ArtistPopularity = styled.div`
   background: #15a248;
@@ -34,6 +49,9 @@ export const ArtistPopularity = styled.div`
   span {
     margin: 0;
     color: #fff
+  }
+  @media(max-width: 800px) {
+    display: inline-block;
   }
 `
 export const ArtistGenreList = styled.ul`
@@ -44,11 +62,16 @@ export const ArtistGenreList = styled.ul`
     display: inline;
     text-transform: capitalize;
     font-weight: bold;
+    line-height: 1.4;
     &::after {
       content: ', ';
     }
     &:last-child::after {
       content: '';
     }
+  }
+
+  @media(max-width: 800px) {
+    margin: 20px 0;
   }
 `

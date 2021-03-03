@@ -20,4 +20,15 @@ export const AlbumItemWrapper = styled.li`
   span {
     opacity: 0.7;
   }
+  @media(max-width: 800px) {
+    h3 {
+      font-size: 1.2rem;
+    }
+    img {
+      max-width: 100%;
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
 `

@@ -31,7 +31,6 @@ export const ArtistItemWrapper = styled.li`
   }
 
   @media(max-width: 800px) {
-    flex-grow: 1;
     div {
       width: 100%;
       height: 260px;
