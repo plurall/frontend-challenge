@@ -1,37 +1,30 @@
-import React from 'react'
-import { Redirect } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
+import { Redirect, useHistory } from 'react-router-dom'
 import queryString from 'query-string'
 
 import { getOauthClient, setToken } from '../../utils'
 
-class LoginCallback extends React.Component {
-  static propTypes = {
-    location: PropTypes.object.isRequired
-  }
+const LoginCallback = () => {
+  const [redirect, setRedirect] = useState(false)
+  const history = useHistory()
 
-  state: any = {}
-
-  UNSAFE_componentWillMount () {
+  useEffect(() => {
     const oauth = getOauthClient()
-    const { location }: any = this.props
+    const location = history.location
     const fullPath = `${location.pathname}${location.search}${location.hash}`
 
     oauth.token.getToken(fullPath).then(({ accessToken }) => {
       setToken(accessToken)
-      this.setState({ redirect: true })
+      setRedirect(true)
     })
+  }, [history])
+
+  if (redirect) {
+    const search: any = queryString.parse(history.location.search)
+    return <Redirect to={search.redirectTo || '/'} />
   }
 
-  render () {
-    const props: any = this.props
-    if (this.state.redirect) {
-      const search: any = queryString.parse(props.location.search)
-      return <Redirect to={search.redirectTo || '/'} />
-    }
-
-    return <div>Você tem que estar logado para acessar esta página</div>
-  }
+  return <div>Você tem que estar logado para acessar esta página</div>
 }
 
 export default LoginCallback

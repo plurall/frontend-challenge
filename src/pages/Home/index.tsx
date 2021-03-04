@@ -3,7 +3,7 @@ import { Layout } from '../../components'
 import * as S from './styles'
 import logo from '../../assets/imgs/logo.png'
 
-const Index = () => {
+const Home = () => {
   return (
       <Layout>
         <S.Wrapper>
@@ -18,4 +18,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Home

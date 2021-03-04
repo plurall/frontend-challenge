@@ -7,7 +7,6 @@
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.3.3",
     "date-fns": "^2.18.0",
-    "jest": "^26.6.0",
     "md5": "^2.3.0",
     "plurall-footer": "^2.4.35",
     "plurall-header": "^10.0.2",
@@ -26,6 +25,11 @@
     "typescript": "^4.0.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
     "@types/axios": "^0.14.0",
     "@types/jest": "^26.0.20",
     "@types/md5": "^2.2.1",
@@ -47,6 +51,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "git-commit-msg-linter": "^3.0.0",
     "husky": "^5.1.1",
+    "jest": "26.6.0",
     "jest-styled-components": "^7.0.3",
     "jsencrypt": "^3.0.1",
     "less-loader": "^8.0.0",
@@ -63,7 +68,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "browserslist": {
