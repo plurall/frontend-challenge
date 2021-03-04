@@ -9,11 +9,18 @@ import { Album, Artist } from '../../utils/types'
 import ArtistHeader from '../../components/Artists/ArtistHeader'
 import AlbumList from '../../components/Albums/AlbumList'
 import PageSubTitle from '../../components/common/PageSubTitle'
+import { useTransition, animated } from 'react-spring'
 
 const SingleArtist = () => {
   const [artist, setArtist] = useState<Artist>()
   const [albums, setAlbums] = useState<Album[]>([])
   const history = useHistory()
+
+  const transitions = useTransition(!!artist, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  })
 
   useEffect(() => {
     const arrPathNames = history.location.pathname.split('/')
@@ -36,11 +43,13 @@ const SingleArtist = () => {
           </Link>
           <S.Logo src={logo} />
         </S.TopBar>
-        {artist && <S.ArtistWrapper>
-          <ArtistHeader artist={artist} />
-          <PageSubTitle title={'Álbuns'} />
-          <AlbumList albums={albums} />
-        </S.ArtistWrapper>}
+        {transitions.map(({ item, key, props }) =>
+          (item && !!artist) && <animated.div style={props}><S.ArtistWrapper>
+              <ArtistHeader artist={artist} />
+              <PageSubTitle title={'Álbuns'} />
+              <AlbumList albums={albums} />
+            </S.ArtistWrapper></animated.div>
+        )}
       </S.Content>
     </S.Wrapper>
   </Layout>)

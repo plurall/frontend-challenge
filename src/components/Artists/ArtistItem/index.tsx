@@ -11,7 +11,7 @@ type ArtistItemProps = {
 
 const ArtistItem = ({ artist }: ArtistItemProps) => {
   return (<S.ArtistItemWrapper>
-    <Link to={`artista/${artist.id}`}>
+    <Link to={`/artista/${artist.id}`}>
       <ArtistThumb size={160}
                    src={artist.images.length > 0 ? artist.images[0].url : defaultCover}
                    round={false} />
