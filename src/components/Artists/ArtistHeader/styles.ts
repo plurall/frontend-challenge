@@ -11,6 +11,7 @@ export const ArtistHeader = styled.header`
   }
   @media(max-width: 800px) {
     display: block;
+    margin: 30px auto;
   }
 `
 

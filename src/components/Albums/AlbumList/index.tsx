@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
-import { Album } from '../../../utils/types'
-import AlbumItem from '../AlbumItem'
+import { Album } from 'utils/types'
+import { AlbumItem } from 'components'
 
 type AlbumListProps = {
   albums: Album[]

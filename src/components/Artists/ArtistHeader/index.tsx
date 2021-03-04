@@ -1,9 +1,9 @@
 import React from 'react'
-import * as S from './styles'
 import { FaStar } from 'react-icons/fa'
-import defaultCover from '../../../assets/imgs/artist_default_cover.jpg'
-import { Artist } from '../../../utils/types'
-import ArtistThumb from '../ArtistThumb'
+import * as S from './styles'
+import defaultCover from 'assets/imgs/artist_default_cover.jpg'
+import { Artist } from 'utils/types'
+import { ArtistThumb } from 'components'
 
 type ArtistHeaderProps = {
   artist: Artist

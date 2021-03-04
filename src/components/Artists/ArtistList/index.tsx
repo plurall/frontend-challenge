@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTransition, animated } from 'react-spring'
-import { Artist } from '../../../utils/types'
-import ArtistItem from '../ArtistItem'
+import { Artist } from 'utils/types'
+import { ArtistItem } from 'components'
 import * as S from './styles'
 
 type ArtistListProps = {
@@ -10,9 +10,9 @@ type ArtistListProps = {
 
 const ArtistList = ({ artists }: ArtistListProps) => {
   const transitions = useTransition(artists, item => item.id, {
-    from: { position: 'absolute', opacity: 0, flex: 0 },
-    enter: { position: 'relative', opacity: 1, flex: 0 },
-    leave: { position: 'absolute', opacity: 0, flex: 0 }
+    from: { opacity: 0, flex: 0 },
+    enter: { opacity: 1, flex: 0 },
+    leave: { opacity: 0, flex: 0 }
   })
 
   return (<S.ListArtistsWrapper>

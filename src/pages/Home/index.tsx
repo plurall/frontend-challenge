@@ -1,7 +1,7 @@
 import React from 'react'
-import { Layout } from '../../components'
+import { Layout } from 'components'
 import * as S from './styles'
-import logo from '../../assets/imgs/logo.png'
+import logo from 'assets/imgs/logo.png'
 
 const Home = () => {
   return (

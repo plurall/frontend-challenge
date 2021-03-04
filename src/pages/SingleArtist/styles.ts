@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Roboto', sans-serif;
@@ -35,10 +35,20 @@ export const Content = styled.div`
 `
 
 export const Logo = styled.img`
-  margin-right: auto;
+  margin: 0 auto 0 -42px;
   display: block;
   width: 100%;
   max-width: 60px;
+
+  @media(max-width: 800px) {
+    margin: 0;
+    max-width: 45px;
+  }
 `
+
+export const Loading = styled.img`
+  margin-top: 120px;
+`
+
 export const ArtistWrapper = styled.div`
 `

@@ -1,7 +1,7 @@
 import React from 'react'
+import styles from './SubHeader.module.css'
 // @ts-ignore
 import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
-import styles from './SubHeader.module.css'
 
 type SubHeaderTypes = {
   buttonHref: string
@@ -20,7 +20,6 @@ const SubHeader = ({ buttonHref, breadcrumb, heading }: SubHeaderTypes) => (
           <ArrowButton direction="left" />
         </Link>
       )}
-
       <div className={styles.innerDiv}>
         <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
         <Heading className={styles.heading}>{heading}</Heading>

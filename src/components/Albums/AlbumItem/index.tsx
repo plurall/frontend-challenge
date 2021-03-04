@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './styles'
-import defaultCover from '../../../assets/imgs/artist_default_cover.jpg'
-import { Album } from '../../../utils/types'
+import defaultCover from 'assets/imgs/artist_default_cover.jpg'
+import { Album } from 'utils/types'
 import { format } from 'date-fns'
 
 type AlbumItemProps = {

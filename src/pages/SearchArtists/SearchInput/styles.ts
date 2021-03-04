@@ -16,7 +16,7 @@ export const SearchWrapper = styled.div`
     height: 45px;
     width: 100%;
     &:focus {
-      border: 2px solid #15a248;
+      box-shadow: 0px 0px 10px 1px rgb(30 215 97 / 70%);
     }
   }
   svg {

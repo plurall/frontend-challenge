@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect, useHistory } from 'react-router-dom'
 import queryString from 'query-string'
-
-import { getOauthClient, setToken } from '../../utils'
+import { getOauthClient, setToken } from 'utils'
 
 const LoginCallback = () => {
   const [redirect, setRedirect] = useState(false)

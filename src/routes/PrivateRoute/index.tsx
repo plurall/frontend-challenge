@@ -3,7 +3,8 @@ import React from 'react'
 
 import { getOauthClient, getToken } from '../../utils'
 
-const handleNotAuthenticated = (path: any) => {
+const handleNotAuthenticated = () => {
+  console.log('handleNotAuthenticated')
   const OAuth = getOauthClient()
   window.location.href = OAuth.token.getUri()
   return null
@@ -22,7 +23,7 @@ const Index: React.FC<RouterProps> = ({ component: Component, ...rest }) => (
         <Component {...props} />
           )
         : (
-            handleNotAuthenticated(props.match.path)
+            handleNotAuthenticated()
           )
     }
   />

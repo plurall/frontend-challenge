@@ -1,9 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Home, LoginCallback } from '../pages'
+import { Home, LoginCallback, SearchArtists, SingleArtist } from 'pages'
 import PrivateRouter from './PrivateRoute'
-import SearchArtists from '../pages/SearchArtists'
-import SingleArtist from '../pages/SingleArtist'
 
 const Routes = () => {
   return (

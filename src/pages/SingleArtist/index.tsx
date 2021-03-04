@@ -3,13 +3,11 @@ import { Link, useHistory } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 import * as S from './styles'
 import logo from '../../assets/imgs/logo.png'
-import { Layout } from '../../components'
-import { getArtist } from '../../utils'
-import { Album, Artist } from '../../utils/types'
-import ArtistHeader from '../../components/Artists/ArtistHeader'
-import AlbumList from '../../components/Albums/AlbumList'
-import PageSubTitle from '../../components/common/PageSubTitle'
+import { Layout, ArtistHeader, AlbumList, PageSubTitle } from 'components'
+import { getArtist } from 'utils'
+import { Album, Artist } from 'utils/types'
 import { useTransition, animated } from 'react-spring'
+import loading from 'assets/imgs/loading.gif'
 
 const SingleArtist = () => {
   const [artist, setArtist] = useState<Artist>()
@@ -43,6 +41,7 @@ const SingleArtist = () => {
           </Link>
           <S.Logo src={logo} />
         </S.TopBar>
+        {!artist && <S.Loading src={loading} alt={'Loading'} width={60} />}
         {transitions.map(({ item, key, props }) =>
           (item && !!artist) && <animated.div style={props}><S.ArtistWrapper>
               <ArtistHeader artist={artist} />
