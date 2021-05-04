@@ -2,10 +2,6 @@ import { clearToken, getToken } from 'utils'
 import axios from './axios-instance'
 
 class SomosClient {
-  constructor() {}
-
-  onError = error => {}
-
   async getArtists(name) {
     try {
       const result = await axios({

@@ -1,13 +1,21 @@
 import React from 'react'
 
-import { Layout } from 'components'
-import { Home } from 'views'
+import { Layout, PrivateRoute } from 'components'
+import { Artist, Home, LoginCallback, Search } from 'views'
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.module.css'
 
 const App = () => (
   <Layout>
-    <Home />
+    <Router>
+      <Switch>
+        <PrivateRoute path="/artista/:id" component={Artist} />
+        <PrivateRoute path="/busca" component={Search} />
+        <Route path="/login/callback" component={LoginCallback} />
+        <PrivateRoute path="/" component={Home} />
+      </Switch>
+    </Router>
   </Layout>
 )
 
