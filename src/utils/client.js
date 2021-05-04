@@ -8,8 +8,7 @@ class SomosClient {
         method: 'GET',
         url: `/search?q=name:${name}&type=artist`,
       })
-
-      console.log(result.data.artists)
+      return result.data;
     } catch (error) {
       console.log(error)
     }
@@ -21,8 +20,7 @@ class SomosClient {
         method: 'GET',
         url: `/artists/${id}`,
       })
-
-      console.log(result.data)
+      return result.data;
     } catch (error) {
       console.log(error)
     }
