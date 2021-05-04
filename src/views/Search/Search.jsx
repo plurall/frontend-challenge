@@ -7,6 +7,7 @@ import { Button, SearchBox } from 'plurall-ui'
 import styles from './Search.module.css'
 import TextBox from 'plurall-ui/dist/TextBox/TextBox'
 import { getOffsetFromURL } from 'utils/string'
+import { Link } from 'react-router-dom'
 
 const client = new SomosClient()
 
@@ -73,14 +74,16 @@ const Search = () => {
                 : 'https://www.translationvalley.com/wp-content/uploads/2020/03/no-iamge-placeholder.jpg'
 
             return (
-              <div
-                key={item.id}
-                className={styles.artistItem}
-                onClick={() => alert(item.name)}
-              >
-                <img src={imageUrl} alt={item.name} className={styles.image} />
-                <p>{item.name}</p>
-              </div>
+              <Link to={`/artista/${item.id}`}>
+                <div key={item.id} className={styles.artistItem}>
+                  <img
+                    src={imageUrl}
+                    alt={item.name}
+                    className={styles.image}
+                  />
+                  <p>{item.name}</p>
+                </div>
+              </Link>
             )
           })}
         </div>
@@ -93,6 +96,7 @@ const Search = () => {
         >
           Anterior
         </Button>
+
         <Button
           disabled={pagination.next == null || loading}
           onClick={() => {
