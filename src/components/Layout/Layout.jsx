@@ -13,9 +13,13 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
   }
 
-  state = {}
+  state = {
+    token: null,
+  }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({ token: getToken() })
+  }
 
   handleLogout = path => {
     setToken('')
@@ -29,12 +33,20 @@ class Layout extends Component {
 
     const { content, footer, 'nav-bar': navBar } = styles
 
+    const items = [
+      { name: 'Início', slug: 'inicio', id: 0, href: '/' },
+      { name: 'Busca', slug: 'busca', id: 1, href: 'busca' },
+      { name: 'Sair', slug: 'sair', id: 2, link_url: '/' },
+    ]
+    
     return (
       <>
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+              menu: {
+                items,
+              },
             }}
             logout={this.handleLogout}
             service="reader"

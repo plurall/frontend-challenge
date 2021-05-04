@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import queryString from 'query-string'
 import React from 'react'
 
-import { getOauthClient, setToken } from 'utils'
+import { getOauthClient, getToken, setToken } from 'utils'
 
 class LoginCallback extends React.Component {
   static propTypes = {
@@ -26,7 +26,7 @@ class LoginCallback extends React.Component {
   render() {
     if (this.state.redirect) {
       const search = queryString.parse(this.props.location.search)
-      return <Redirect to={search.redirectTo || '/'} />
+      return <Redirect push to={search.redirectTo || '/'} />
     }
 
     return <div>Você tem que estar logado para acessar esta página</div>

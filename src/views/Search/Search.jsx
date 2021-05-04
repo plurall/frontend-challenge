@@ -1,6 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
-import { ArtistList, CustomTextBox, SubHeader } from 'components'
+import {
+  ArtistList,
+  CustomTextBox,
+  PaginationButtons,
+  SubHeader,
+} from 'components'
 import { SomosClient } from 'utils'
 import { Button } from 'plurall-ui'
 
@@ -28,8 +33,9 @@ const Search = () => {
           setArtists([])
           const data = await client.getArtists(currentSearch, offset)
 
-          if(data.artists.items.length === 0)
-            setError("Artista não encontrado")
+          if (data.artists.items.length === 0) {
+            setError('Não foi encontrado nenhum artista :(')
+          }
 
           console.log(data)
           console.log(data.artists.items)
@@ -64,22 +70,21 @@ const Search = () => {
     <React.Fragment>
       <SubHeader breadcrumb={[{ text: 'Busca' }]} heading="Procurar artistas" />
       <div className={styles.wrapper}>
-        <CustomTextBox disabled={loading} setCurrentQuery={setCurrentSearch} errorMessage={error} />
+        <CustomTextBox
+          disabled={loading}
+          setCurrentQuery={setCurrentSearch}
+          errorMessage={error}
+        />
         {loading ? <p>loading</p> : <ArtistList artists={artists} />}
-       
-        {/* Componentizar os botoes */}
-        <Button
-          disabled={pagination.previous == null || loading}
-          onClick={() => onButtonClick(pagination.previous)}
-        >
-          Anterior
-        </Button>
-        <Button
-          disabled={pagination.next == null || loading}
-          onClick={() => onButtonClick(pagination.next)}
-        >
-          Próxima
-        </Button>
+
+        <PaginationButtons
+          prevDisabled={pagination.previous == null || loading}
+          nextDisabled={pagination.next == null || loading}
+          onClick={onButtonClick}
+          prev={pagination.previous}
+          next={pagination.next}
+        />
+
       </div>
     </React.Fragment>
   )
