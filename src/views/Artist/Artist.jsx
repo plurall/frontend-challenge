@@ -1,6 +1,12 @@
 import React from 'react'
 
-import { AlbumList, ArtistDescription, Spinner, SubHeader } from 'components'
+import {
+  AlbumList,
+  ArtistDescription,
+  DataFetchTemplate,
+  Spinner,
+  SubHeader,
+} from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
@@ -55,45 +61,7 @@ class Search extends React.Component {
   render() {
     const isLoading = this.state.loadingArtist || this.state.loadingAlbum
     const hasError = this.state.errorAlbums || this.state.errorArtist
-
-    let artistPage = (
-      <>
-        {this.state.artist != null ? (
-          <ArtistDescription
-            artist={this.state.artist}
-            className={styles.margin}
-          />
-        ) : null}
-
-        <div>
-          <h1 className={styles.margin}>Albums</h1>
-          {this.state.albums && <AlbumList data={this.state.albums} />}
-        </div>
-      </>
-    )
-
-    if (isLoading) {
-      artistPage = (
-        <div className={styles.feedbackContainer}>
-          <Spinner />
-        </div>
-      )
-    }
-
-    if (hasError) {
-      artistPage = (
-        <div className={styles.feedbackContainer}>
-          <h2 className={styles.margin}>Erro ao carregar página</h2>
-          <Button
-            onClick={() => {
-              window.location = '/busca'
-            }}
-          >
-            Ir para busca
-          </Button>
-        </div>
-      )
-    }
+    const data = this.state.albums && this.state.artist
 
     return (
       <React.Fragment>
@@ -101,7 +69,19 @@ class Search extends React.Component {
           breadcrumb={[{ text: 'Artista' }]}
           heading="Dados do artista"
         />
-        {artistPage}
+        <DataFetchTemplate
+          data={data}
+          isLoading={isLoading}
+          hasError={hasError}
+        >
+          <ArtistDescription
+            artist={this.state.artist}
+            className={styles.margin}
+          />
+
+          <h1 className={styles.margin}>Albums</h1>
+          <AlbumList data={this.state.albums} />
+        </DataFetchTemplate>
       </React.Fragment>
     )
   }

@@ -1,0 +1,12 @@
+.feedbackContainer {
+  width: '100%';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+}
+
+.margin {
+  margin-bottom: 20px;
+}
