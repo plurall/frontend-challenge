@@ -1,10 +1,16 @@
-import TextBox from 'plurall-ui/dist/TextBox/TextBox'
+import { TextBox, Alert } from 'plurall-ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
 import styles from './CustomTextBox.module.css'
 
-const CustomTextBox = ({ disabled, className, style, setCurrentQuery }) => {
+const CustomTextBox = ({
+  disabled,
+  className,
+  style,
+  setCurrentQuery,
+  errorMessage,
+}) => {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
@@ -17,13 +23,20 @@ const CustomTextBox = ({ disabled, className, style, setCurrentQuery }) => {
   }, [query])
 
   return (
-    <TextBox
-      className={className}
-      onChange={e => setQuery(e)}
-      value={query}
-      disabled={disabled}
-      style={style}
-    />
+    <>
+      <TextBox
+        className={className}
+        onChange={e => setQuery(e)}
+        value={query}
+        disabled={disabled}
+        style={style}
+      />
+      {errorMessage != null && (
+        <Alert  name="Error" type="error" dismissible={false}>
+          {errorMessage}
+        </Alert>
+      )}
+    </>
   )
 }
 
@@ -32,6 +45,7 @@ CustomTextBox.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   setCurrentQuery: PropTypes.func,
+  errorMessage: PropTypes.string,
 }
 
 export default CustomTextBox

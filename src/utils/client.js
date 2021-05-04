@@ -2,12 +2,14 @@ import { clearToken, getToken } from 'utils'
 import axios from './axios-instance'
 
 class SomosClient {
-
-  onError = (res) => {
-    if(res.status === 401){
-      clearToken();
+  onError = res => {
+    if (res.status === 401) {
+      clearToken()
+      window.location = '/'
+      return
     }
-    return "Error";
+
+    return 'Error'
   }
 
   async getArtists(name, offset = 0) {
@@ -17,7 +19,7 @@ class SomosClient {
       )
       return result.data
     } catch (error) {
-      throw(this.onError(error.response))
+      throw this.onError(error.response)
     }
   }
 
@@ -26,7 +28,7 @@ class SomosClient {
       const result = await axios.get(`/artists/${id}/albums?limit=10`)
       return result.data
     } catch (error) {
-      throw(this.onError(error.response))
+      throw this.onError(error.response)
     }
   }
 
@@ -35,7 +37,7 @@ class SomosClient {
       const result = await axios.get(`/artists/${id}`)
       return result.data
     } catch (error) {
-      throw(this.onError(error.response))
+      throw this.onError(error.response)
     }
   }
 }

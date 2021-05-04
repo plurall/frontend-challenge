@@ -27,6 +27,10 @@ const Search = () => {
           setError(null)
           setArtists([])
           const data = await client.getArtists(currentSearch, offset)
+
+          if(data.artists.items.length === 0)
+            setError("Artista não encontrado")
+
           console.log(data)
           console.log(data.artists.items)
           setPagination({
@@ -60,10 +64,10 @@ const Search = () => {
     <React.Fragment>
       <SubHeader breadcrumb={[{ text: 'Busca' }]} heading="Procurar artistas" />
       <div className={styles.wrapper}>
-        <CustomTextBox disabled={loading} setCurrentQuery={setCurrentSearch} />
-        {/** colocar um alerta aqui */}
-        {loading && <p>loading</p>}
-        <ArtistList artists={artists} />
+        <CustomTextBox disabled={loading} setCurrentQuery={setCurrentSearch} errorMessage={error} />
+        {loading ? <p>loading</p> : <ArtistList artists={artists} />}
+       
+        {/* Componentizar os botoes */}
         <Button
           disabled={pagination.previous == null || loading}
           onClick={() => onButtonClick(pagination.previous)}
