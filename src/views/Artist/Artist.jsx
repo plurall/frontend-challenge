@@ -4,6 +4,7 @@ import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
+import { dateConvert } from 'utils/date'
 
 class Search extends React.Component {
   state = {
@@ -74,7 +75,7 @@ class Search extends React.Component {
               return (
                 <div>
                   <p>{album.name}</p>
-                  <p>{album.release_date}</p>
+                  <p>{dateConvert(album.release_date)}</p>
                   <img
                     src={imageUrl}
                     alt={album.name}
