@@ -8,33 +8,48 @@ import { dateConvert } from 'utils/date'
 
 class Search extends React.Component {
   state = {
-    loading: false,
+    loadingArtist: false,
     loadingAlbums: false,
     albums: null,
     artist: null,
+    errorArtist: null,
+    errorAlbums: null,
   }
 
   client = new SomosClient()
 
-  componentDidMount() {
-    // mover pra classe
-    const getArtist = async () => {
-      const id = this.props.match.params.id
-      this.setState({ loading: true })
+  getArtist = async id => {
+    try {
+      this.setState({ loadingArtist: true, errorArtist: null })
       const data = await this.client.getArtist(id)
-      this.setState({ loading: false, artist: data })
+      this.setState({ loadingArtist: false, artist: data, errorArtist: null })
       console.log(data)
+    } catch (error) {
+      console.log(error)
+      this.setState({ loadingArtist: false, artist: null, errorArtist: error })
     }
+  }
 
-    const getAlbums = async () => {
-      const id = this.props.match.params.id
-      this.setState({ loadingAlbums: true })
+  getAlbums = async id => {
+    try {
+      this.setState({ loadingAlbums: true, errorAlbums: null })
       const data = await this.client.getArtistAlbums(id)
-      this.setState({ loadingAlbums: false, albums: data.items })
+      this.setState({
+        loadingAlbums: false,
+        albums: data.items,
+        errorAlbums: null,
+      })
       console.log(data)
+    } catch (error) {
+      console.log(error)
+      this.setState({ loadingAlbums: false, albums: null, errorAlbums: error })
     }
-    getArtist()
-    getAlbums()
+  }
+
+  componentDidMount() {
+    const id = this.props.match.params.id
+    this.getArtist(id)
+    this.getAlbums(id)
   }
 
   render() {
@@ -50,7 +65,7 @@ class Search extends React.Component {
     return (
       <React.Fragment>
         <SubHeader breadcrumb={[{ text: 'Home' }]} heading="Artist" />
-        {this.state.loading && <div>loading</div>}
+        {this.state.loadingArtist && <div>loading</div>}
         {this.state.loadingAlbums && <div>loadingAlbums</div>}
 
         {this.state.artist != null ? (
@@ -73,7 +88,7 @@ class Search extends React.Component {
                   : 'https://www.translationvalley.com/wp-content/uploads/2020/03/no-iamge-placeholder.jpg'
 
               return (
-                <div>
+                <div key={album.id}>
                   <p>{album.name}</p>
                   <p>{dateConvert(album.release_date)}</p>
                   <img

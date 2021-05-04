@@ -5,16 +5,3 @@
   font: 16px/14px 'Nunito', sans-serif;
 }
 
-.image {
-  width: 64px;
-  height: 64px;
-  margin-right: 10px;
-}
-
-.artistItem {
-  display: flex;
-  flex-direction: row;
-  width: '100%';
-  height: '64px';
-  align-items: center;
-}

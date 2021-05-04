@@ -1,0 +1,13 @@
+.image {
+  width: 64px;
+  height: 64px;
+  margin-right: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  width: '100%';
+  height: '64px';
+  align-items: center;
+}

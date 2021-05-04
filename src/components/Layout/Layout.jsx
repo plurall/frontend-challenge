@@ -13,10 +13,6 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
   }
 
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
-
   state = {}
 
   componentDidMount() {}
