@@ -2,13 +2,25 @@ import { clearToken, getToken } from 'utils'
 import axios from './axios-instance'
 
 class SomosClient {
-  async getArtists(name, offset=0) {
+  async getArtists(name, offset = 0) {
     try {
       const result = await axios({
         method: 'GET',
         url: `/search?q=name:${name}&type=artist&offset=${offset}`,
       })
-      return result.data;
+      return result.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async getArtistAlbums(id) {
+    try {
+      const result = await axios({
+        method: 'GET',
+        url: `/artists/${id}/albums?limit=10`,
+      })
+      return result.data
     } catch (error) {
       console.log(error)
     }
@@ -20,7 +32,7 @@ class SomosClient {
         method: 'GET',
         url: `/artists/${id}`,
       })
-      return result.data;
+      return result.data
     } catch (error) {
       console.log(error)
     }
