@@ -2,11 +2,11 @@ import { clearToken, getToken } from 'utils'
 import axios from './axios-instance'
 
 class SomosClient {
-  async getArtists(name) {
+  async getArtists(name, offset=0) {
     try {
       const result = await axios({
         method: 'GET',
-        url: `/search?q=name:${name}&type=artist`,
+        url: `/search?q=name:${name}&type=artist&offset=${offset}`,
       })
       return result.data;
     } catch (error) {
