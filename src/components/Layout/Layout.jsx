@@ -35,10 +35,10 @@ class Layout extends Component {
 
     const items = [
       { name: 'Início', slug: 'inicio', id: 0, href: '/' },
-      { name: 'Busca', slug: 'busca', id: 1, href: 'busca' },
+      { name: 'Busca', slug: 'busca', id: 1, href: '/busca' },
       { name: 'Sair', slug: 'sair', id: 2, link_url: '/' },
     ]
-    
+
     return (
       <>
         <div className={navBar}>

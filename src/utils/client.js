@@ -15,7 +15,7 @@ class SomosClient {
   async getArtists(name, offset = 0) {
     try {
       const result = await axios(
-        `/search?q=name:${name}&type=artist&offset=${offset}`,
+        `/search?q=${name}&type=artist&offset=${offset}`,
       )
       return result.data
     } catch (error) {

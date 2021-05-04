@@ -5,7 +5,15 @@
   font: 16px/14px 'Nunito', sans-serif;
 }
 
-.image{
-  width: 64px;
-  height: 64px;
+.margin {
+  margin-bottom: 20px;
+}
+
+.feedbackContainer{
+  width: '100%';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
 }

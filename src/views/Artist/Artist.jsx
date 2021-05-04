@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { SubHeader } from 'components'
+import { AlbumList, ArtistDescription, Spinner, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
-import { dateConvert } from 'utils/date'
+import { Button } from 'plurall-ui'
 
 class Search extends React.Component {
   state = {
@@ -53,54 +53,55 @@ class Search extends React.Component {
   }
 
   render() {
-    const { name, popularity, images, genres } = this.state.artist
-      ? this.state.artist
-      : {}
+    const isLoading = this.state.loadingArtist || this.state.loadingAlbum
+    const hasError = this.state.errorAlbums || this.state.errorArtist
 
-    let imageUrl =
-      'https://www.translationvalley.com/wp-content/uploads/2020/03/no-iamge-placeholder.jpg'
+    let artistPage = (
+      <>
+        {this.state.artist != null ? (
+          <ArtistDescription
+            artist={this.state.artist}
+            className={styles.margin}
+          />
+        ) : null}
 
-    if (images != null) if (images.length > 0) imageUrl = images[0].url
+        <div>
+          <h1 className={styles.margin}>Albums</h1>
+          {this.state.albums && <AlbumList data={this.state.albums} />}
+        </div>
+      </>
+    )
+
+    if (isLoading) {
+      artistPage = (
+        <div className={styles.feedbackContainer}>
+          <Spinner />
+        </div>
+      )
+    }
+
+    if (hasError) {
+      artistPage = (
+        <div className={styles.feedbackContainer}>
+          <h2 className={styles.margin}>Erro ao carregar página</h2>
+          <Button
+            onClick={() => {
+              window.location = '/busca'
+            }}
+          >
+            Ir para busca
+          </Button>
+        </div>
+      )
+    }
 
     return (
       <React.Fragment>
-        <SubHeader breadcrumb={[{ text: 'Home' }]} heading="Artist" />
-        {this.state.loadingArtist && <div>loading</div>}
-        {this.state.loadingAlbums && <div>loadingAlbums</div>}
-
-        {this.state.artist != null ? (
-          <div>
-            <p>{name}</p>
-            <p>{popularity}</p>
-            <img src={imageUrl} alt={name} className={styles.image} />
-            {genres.map(genre => (
-              <p key={genre}>{genre}</p>
-            ))}
-          </div>
-        ) : null}
-
-        {this.state.albums != null ? (
-          <div>
-            {this.state.albums.map(album => {
-              const imageUrl =
-                album.images.length > 0
-                  ? album.images[0].url
-                  : 'https://www.translationvalley.com/wp-content/uploads/2020/03/no-iamge-placeholder.jpg'
-
-              return (
-                <div key={album.id}>
-                  <p>{album.name}</p>
-                  <p>{dateConvert(album.release_date)}</p>
-                  <img
-                    src={imageUrl}
-                    alt={album.name}
-                    className={styles.image}
-                  />
-                </div>
-              )
-            })}
-          </div>
-        ) : null}
+        <SubHeader
+          breadcrumb={[{ text: 'Artista' }]}
+          heading="Dados do artista"
+        />
+        {artistPage}
       </React.Fragment>
     )
   }
