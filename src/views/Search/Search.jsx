@@ -4,6 +4,7 @@ import {
   ArtistList,
   CustomTextBox,
   PaginationButtons,
+  Spinner,
   SubHeader,
 } from 'components'
 import { SomosClient } from 'utils'
@@ -69,23 +70,28 @@ const Search = () => {
   return (
     <React.Fragment>
       <SubHeader breadcrumb={[{ text: 'Busca' }]} heading="Procurar artistas" />
-      <div className={styles.wrapper}>        
+      <div className={styles.wrapper}>
         <CustomTextBox
-          placeholder={'Digite o nome do artista...'}
+          placeholder="Digite o nome do artista..."
           disabled={loading}
           setCurrentQuery={setCurrentSearch}
           errorMessage={error}
         />
-        {loading ? <p>loading</p> : <ArtistList artists={artists} />}
 
-        {artists.length > 0 && <PaginationButtons
-          prevDisabled={pagination.previous == null || loading}
-          nextDisabled={pagination.next == null || loading}
-          onClick={onButtonClick}
-          prev={pagination.previous}
-          next={pagination.next}
-        />}
+        <div className={styles.margin}>
+          {loading ? <Spinner /> : <ArtistList artists={artists} />}
+        </div>
 
+        {artists.length > 0 &&
+          (pagination.previous != null || pagination.next != null) && (
+            <PaginationButtons
+              prevDisabled={pagination.previous == null || loading}
+              nextDisabled={pagination.next == null || loading}
+              onClick={onButtonClick}
+              prev={pagination.previous}
+              next={pagination.next}
+            />
+          )}
       </div>
     </React.Fragment>
   )

@@ -11,7 +11,7 @@ const PaginationButtons = ({
   prev,
   next,
 }) => (
-  <div>
+  <div className={styles.main}>
     <Button disabled={prevDisabled} onClick={() => onClick(prev)}>
       Anterior
     </Button>

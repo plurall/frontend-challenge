@@ -23,7 +23,7 @@ const ArtistDescription = ({ artist, className }) => {
       <div className={styles.description}>
         <h1 className={styles.marginBottom2}>{name}</h1>
         <p>Popularidade: {popularity}</p>
-        <p>Gêneros: {genres.join(', ')}</p>
+        {artist.genres.length > 0 && <p>Gêneros: {genres.join(', ')}</p>}
       </div>
     </div>
   )

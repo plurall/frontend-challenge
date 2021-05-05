@@ -11,11 +11,9 @@ const ArtistItem = ({ item }) => {
       : 'https://www.translationvalley.com/wp-content/uploads/2020/03/no-iamge-placeholder.jpg'
 
   return (
-    <Link to={`/artista/${item.id}`} key={item.id}>
-      <div className={styles.item}>
+    <Link to={`/artista/${item.id}`} key={item.id} className={styles.item}>
         <img src={imageUrl} alt={item.name} className={styles.image} />
         <p>{item.name}</p>
-      </div>
     </Link>
   )
 }
