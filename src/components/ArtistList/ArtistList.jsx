@@ -2,8 +2,6 @@ import ArtistItem from 'components/ArtistItem/ArtistItem'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import styles from './ArtistList.module.css'
-
 const ArtistList = ({ artists }) => {
   const listComponent = artists.map(item => (
     <ArtistItem item={item} key={item.id} />

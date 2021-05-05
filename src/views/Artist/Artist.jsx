@@ -4,13 +4,11 @@ import {
   AlbumList,
   ArtistDescription,
   DataFetchTemplate,
-  Spinner,
   SubHeader,
 } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Artist.module.css'
-import { Button } from 'plurall-ui'
 
 class Search extends React.Component {
   state = {

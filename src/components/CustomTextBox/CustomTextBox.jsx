@@ -2,8 +2,6 @@ import { TextBox, Alert } from 'plurall-ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
-import styles from './CustomTextBox.module.css'
-
 const CustomTextBox = ({
   disabled,
   className,

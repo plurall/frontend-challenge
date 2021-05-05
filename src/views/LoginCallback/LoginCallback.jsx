@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import queryString from 'query-string'
 import React from 'react'
 
-import { getOauthClient, getToken, setToken } from 'utils'
+import { getOauthClient, setToken } from 'utils'
 
 class LoginCallback extends React.Component {
   static propTypes = {
