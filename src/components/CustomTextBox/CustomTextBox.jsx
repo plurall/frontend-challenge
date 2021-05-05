@@ -10,6 +10,7 @@ const CustomTextBox = ({
   style,
   setCurrentQuery,
   errorMessage,
+  placeholder,
 }) => {
   const [query, setQuery] = useState('')
 
@@ -30,9 +31,10 @@ const CustomTextBox = ({
         value={query}
         disabled={disabled}
         style={style}
+        placeholder={placeholder}
       />
       {errorMessage != null && (
-        <Alert  name="Error" type="error" dismissible={false}>
+        <Alert name="Error" type="error" dismissible={false}>
           {errorMessage}
         </Alert>
       )}
@@ -46,6 +48,7 @@ CustomTextBox.propTypes = {
   style: PropTypes.object,
   setCurrentQuery: PropTypes.func,
   errorMessage: PropTypes.string,
+  placeholder: PropTypes.string,
 }
 
 export default CustomTextBox

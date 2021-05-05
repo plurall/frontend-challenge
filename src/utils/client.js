@@ -1,4 +1,4 @@
-import { clearToken, getToken } from 'utils'
+import { clearToken } from 'utils'
 import axios from './axios-instance'
 
 class SomosClient {
@@ -9,7 +9,7 @@ class SomosClient {
       return
     }
 
-    return 'Error'
+    return 'Opa, deu erro :('
   }
 
   async getArtists(name, offset = 0) {

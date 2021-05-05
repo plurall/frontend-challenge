@@ -69,21 +69,22 @@ const Search = () => {
   return (
     <React.Fragment>
       <SubHeader breadcrumb={[{ text: 'Busca' }]} heading="Procurar artistas" />
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper}>        
         <CustomTextBox
+          placeholder={'Digite o nome do artista...'}
           disabled={loading}
           setCurrentQuery={setCurrentSearch}
           errorMessage={error}
         />
         {loading ? <p>loading</p> : <ArtistList artists={artists} />}
 
-        <PaginationButtons
+        {artists.length > 0 && <PaginationButtons
           prevDisabled={pagination.previous == null || loading}
           nextDisabled={pagination.next == null || loading}
           onClick={onButtonClick}
           prev={pagination.previous}
           next={pagination.next}
-        />
+        />}
 
       </div>
     </React.Fragment>

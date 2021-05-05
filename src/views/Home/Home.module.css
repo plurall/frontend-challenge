@@ -3,4 +3,9 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+  line-height: 20px;
+}
+
+.margin{
+  margin-bottom: 50px;
 }

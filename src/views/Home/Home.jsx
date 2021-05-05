@@ -22,7 +22,10 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <h1 className={styles.margin}>Olá e seja bem vindo ;)</h1>
+          <p >Esse é o portal de busca iniciante</p>
+          <p>É iniciante porque ele não sabe muita coisa rs</p>
+          <p>Clique em Busca no menu de navegação para testar as funcionalidades. Boa sorte!</p>
         </div>
       </React.Fragment>
     )
