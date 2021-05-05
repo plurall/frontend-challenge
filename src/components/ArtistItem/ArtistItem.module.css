@@ -18,7 +18,7 @@
   margin-bottom: 5px;
   align-items: center;
   background-color: white;
-  color: black;
   text-decoration: none;
+  font: 16px/14px 'Nunito', sans-serif;
+  color: black;
 }
-

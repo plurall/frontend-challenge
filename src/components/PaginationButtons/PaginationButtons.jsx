@@ -12,10 +12,10 @@ const PaginationButtons = ({
   next,
 }) => (
   <div className={styles.main}>
-    <Button disabled={prevDisabled} onClick={() => onClick(prev)}>
+    <Button id="prev" disabled={prevDisabled} onClick={() => onClick(prev)}>
       Anterior
     </Button>
-    <Button disabled={nextDisabled} onClick={() => onClick(next)}>
+    <Button id="next" disabled={nextDisabled} onClick={() => onClick(next)}>
       Próxima
     </Button>
   </div>

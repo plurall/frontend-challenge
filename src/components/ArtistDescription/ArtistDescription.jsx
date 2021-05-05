@@ -21,16 +21,16 @@ const ArtistDescription = ({ artist, className }) => {
         <img src={imageUrl} alt={name} className={styles.headerImage} />
       </div>
       <div className={styles.description}>
-        <h1 className={styles.marginBottom2}>{name}</h1>
-        <p>Popularidade: {popularity}</p>
-        {artist.genres.length > 0 && <p>Gêneros: {genres.join(', ')}</p>}
+        <h1 id="name" className={styles.marginBottom2}>{name}</h1>
+        <p id="popularity">{`Popularidade: ${popularity}`}</p>
+        {artist.genres.length > 0 && <p id="genres">{`Gêneros: ${genres.join(', ')}`}</p>}
       </div>
     </div>
   )
 }
 
 ArtistDescription.propTypes = {
-  artist: PropTypes.object.isRequired,
+  artist: PropTypes.object,
   className: PropTypes.string
 }
 

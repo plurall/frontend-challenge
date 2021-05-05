@@ -13,7 +13,7 @@ const ArtistItem = ({ item }) => {
   return (
     <Link to={`/artista/${item.id}`} key={item.id} className={styles.item}>
         <img src={imageUrl} alt={item.name} className={styles.image} />
-        <p>{item.name}</p>
+        <p className={styles.text}>{item.name}</p>
     </Link>
   )
 }

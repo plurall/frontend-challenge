@@ -8,7 +8,6 @@ import {
   SubHeader,
 } from 'components'
 import { SomosClient } from 'utils'
-import { Button } from 'plurall-ui'
 
 import styles from './Search.module.css'
 import { getOffsetFromURL } from 'utils/string'
@@ -38,8 +37,6 @@ const Search = () => {
             setError('Não foi encontrado nenhum artista :(')
           }
 
-          console.log(data)
-          console.log(data.artists.items)
           setPagination({
             previous: data.artists.previous,
             next: data.artists.next,
@@ -51,7 +48,6 @@ const Search = () => {
           setError(error)
           setArtists([])
           setPagination({ previous: null, next: null })
-          console.log(error)
         }
       }
     },

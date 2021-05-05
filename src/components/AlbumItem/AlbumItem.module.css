@@ -7,3 +7,10 @@
 .marginRight {
   margin-right: 10px;
 }
+
+.font {  
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

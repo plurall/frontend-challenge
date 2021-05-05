@@ -11,10 +11,10 @@ const AlbumItem = ({ item }) => {
       : 'https://www.translationvalley.com/wp-content/uploads/2020/03/no-iamge-placeholder.jpg'
 
   return (
-    <div key={item.id} className={styles.marginRight}>
+    <div key={item.id} className={`${styles.marginRight} ${styles.font}`}>
       <img src={imageUrl} alt={item.name} className={styles.image} />
-      <p>{item.name}</p>
-      <p>{dateConvert(item.release_date)}</p>
+      <p id="name">{item.name}</p>
+      <p id="date">{dateConvert(item.release_date)}</p>
     </div>
   )
 }

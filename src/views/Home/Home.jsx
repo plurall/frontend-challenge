@@ -10,22 +10,21 @@ class Home extends React.Component {
 
   client = new SomosClient()
 
-  componentDidMount() {
-    // this.client.searchArtists('bob');
-  }
-
   render() {
     return (
       <React.Fragment>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
+          heading="Somos Front-end Challenge"
         />
         <div className={styles.wrapper}>
           <h1 className={styles.margin}>Olá e seja bem vindo ;)</h1>
-          <p >Esse é o portal de busca iniciante</p>
+          <p>Esse é o portal de busca iniciante</p>
           <p>É iniciante porque ele não sabe muita coisa rs</p>
-          <p>Clique em Busca no menu de navegação para testar as funcionalidades. Boa sorte!</p>
+          <p>
+            Clique em Busca no menu de navegação para testar as funcionalidades.
+          </p>
+          <p>Para executar os testes unitários: npm test.</p>
         </div>
       </React.Fragment>
     )

@@ -79,7 +79,7 @@ class Search extends React.Component {
             className={styles.margin}
           />
 
-          <h1 className={styles.margin}>Albums</h1>
+          <h1 className={`${styles.margin} ${styles.font}`}>Albums</h1>
           <AlbumList data={this.state.albums} />
         </DataFetchTemplate>
       </React.Fragment>

@@ -7,13 +7,13 @@ import styles from './AlbumList.module.css'
 const AlbumList = ({ data }) => (
   <div className={styles.list}>
     {data.map(album => (
-      <AlbumItem item={album} />
+      <AlbumItem item={album} key={album.id} />
       ))}
   </div>
   )
 
 AlbumList.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.array,
 }
 
 export default AlbumList
