@@ -16,7 +16,7 @@ class SomosClient {
   }
 
   static getArtists(query) {
-    return `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=10`
+    return `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=8`
   }
 
   static searchArtists(query) {

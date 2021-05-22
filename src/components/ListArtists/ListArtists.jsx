@@ -1,20 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Button } from 'plurall-ui'
+
 import styles from './ListArtists.module.css'
 
 const ListArtists = ({ results, emptyReturn, viewArtists }) => (
   <React.Fragment>
-    {emptyReturn
-      ? 'Sem resultados na sua busca'
-      : results.map(item => (
-          <div key={item.id}>
-            <p>{item.name}</p>
-            <p>{item.id}</p>
-            <img src={item.image} alt="imagem" width="100px" />
-            <button onClick={() => viewArtists(item.id)}>VER</button>
-          </div>
-        ))}
+    <div className={styles.wrapper}>
+      {emptyReturn
+        ? 'Sem resultados na sua busca'
+        : results.map(item => (
+            <span className={styles.card} key={item.id}>
+              <img
+                src={item.image}
+                alt={`imagem de capa do artista ${item.name}`}
+              />
+              <p>{item.name}</p>
+              <Button onClick={() => viewArtists(item.id)}>VER</Button>
+            </span>
+          ))}
+    </div>
   </React.Fragment>
 )
 

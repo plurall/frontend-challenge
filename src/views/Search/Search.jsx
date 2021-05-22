@@ -10,7 +10,7 @@ import styles from './Search.module.css'
 const Search = () => {
   const [results, setResults] = useState([])
   const [emptyReturn, setEmptyReturn] = useState(false)
-  const [textSearch, setTextSearch] = useState('')
+  const [textSearch, setTextSearch] = useState('Tina Turner')
 
   const searchArtists = query => {
     // eslint-disable-next-line no-unused-expressions
