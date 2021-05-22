@@ -10,7 +10,7 @@ import styles from './Search.module.css'
 const Search = () => {
   const [results, setResults] = useState([])
   const [emptyReturn, setEmptyReturn] = useState(false)
-  const [textSearch, setTextSearch] = useState('Tina Turner')
+  const [textSearch, setTextSearch] = useState('')
 
   const searchArtists = query => {
     // eslint-disable-next-line no-unused-expressions
@@ -37,12 +37,6 @@ const Search = () => {
           console.log(err)
         },
       )
-  }
-
-  const viewArtists = id => {
-    SomosClient.searchDetailsArtists(id).then(res =>
-      console.log('searchDetailsArtists', res),
-    )
   }
 
   const loadOnChange = e => {
@@ -73,11 +67,7 @@ const Search = () => {
         <Button onClick={getSearchButton}>Buscar</Button>
       </div>
 
-      <ListArtists
-        results={results}
-        emptyReturn={emptyReturn}
-        viewArtists={viewArtists}
-      />
+      <ListArtists results={results} emptyReturn={emptyReturn} />
     </Layout>
   )
 }

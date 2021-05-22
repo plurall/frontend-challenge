@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Button } from 'plurall-ui'
+import { Link } from 'react-router-dom'
 
 import styles from './ListArtists.module.css'
 
-const ListArtists = ({ results, emptyReturn, viewArtists }) => (
+const ListArtists = ({ results, emptyReturn }) => (
   <React.Fragment>
     <div className={styles.wrapper}>
       {emptyReturn
@@ -16,8 +17,12 @@ const ListArtists = ({ results, emptyReturn, viewArtists }) => (
                 src={item.image}
                 alt={`imagem de capa do artista ${item.name}`}
               />
+
               <p>{item.name}</p>
-              <Button onClick={() => viewArtists(item.id)}>VER</Button>
+
+              <Link to={`/artista/${item.id}`}>
+                <Button>VER DETALHES</Button>
+              </Link>
             </span>
           ))}
     </div>
@@ -27,7 +32,6 @@ const ListArtists = ({ results, emptyReturn, viewArtists }) => (
 ListArtists.propTypes = {
   results: PropTypes.array.isRequired,
   emptyReturn: PropTypes.bool,
-  viewArtists: PropTypes.func.isRequired,
 }
 
 ListArtists.defaultProps = {
