@@ -1,7 +1,9 @@
 import React from 'react'
 
-import { SubHeader, SearchBar } from 'components'
+import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
+import { Link } from 'react-router-dom'
+import { Button } from 'plurall-ui'
 
 import styles from './Home.module.css'
 
@@ -18,8 +20,9 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
-          <SearchBar />
+          <Link to="/busca">
+            <Button>Página de Busca</Button>
+          </Link>
         </div>
       </React.Fragment>
     )
