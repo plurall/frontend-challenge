@@ -26,6 +26,17 @@ class SomosClient {
     ).catch(error => this.onError(error))
   }
 
+  static getDetailsArtists(id) {
+    return `https://api.spotify.com/v1/artists/${id}`
+  }
+
+  static searchDetailsArtists(id) {
+    return axios.get(
+      this.getDetailsArtists(id),
+      this.getAuthorizationHeader(),
+    ).catch(error => this.onError(error))
+  }
+
   // Reference: https://github.com/axios/axios#handling-errors
   static onError(error) {
     if (error.response) {

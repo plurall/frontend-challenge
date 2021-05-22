@@ -37,7 +37,9 @@ function SearchBar() {
   }
 
   function viewArtists(id) {
-    console.log('id Artist', id)
+    SomosClient.searchDetailsArtists(id).then(res =>
+      console.log('searchDetailsArtists', res),
+    )
   }
 
   return (
