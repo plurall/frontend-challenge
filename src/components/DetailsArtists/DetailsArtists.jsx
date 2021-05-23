@@ -9,7 +9,7 @@ const DetailsArtists = ({ resultDetailsArtist }) => {
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
-        <img src={image} alt={`imagem de capa - ${name}`} />
+        <img src={image} alt={`imagem de capa - ${name}`} loading="lazy" />
         <div className={styles.informations}>
           <h1>{name}</h1>
           <strong>Popularidade:</strong>

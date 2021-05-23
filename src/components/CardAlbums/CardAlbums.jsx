@@ -9,7 +9,11 @@ const CardAlbums = ({ resultAlbumsArtist }) => (
       <div className={styles.cardAlbums}>
         {resultAlbumsArtist.map(item => (
           <span key={item.id}>
-            <img src={item.image} alt={`imagem capa do Album ${item.name}`} />
+            <img
+              src={item.image}
+              alt={`imagem capa do Album ${item.name}`}
+              loading="lazy"
+            />
             <p>
               <strong>{item.name}</strong>
             </p>

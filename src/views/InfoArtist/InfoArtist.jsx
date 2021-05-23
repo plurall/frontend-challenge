@@ -2,12 +2,19 @@ import React, { useEffect, useState } from 'react'
 import noImage from 'assets/noImage.png'
 import { formatDate } from 'utils/formatDate'
 
-import { DetailsArtists, Layout, SubHeader, CardAlbums } from 'components'
+import {
+  DetailsArtists,
+  Layout,
+  SubHeader,
+  CardAlbums,
+  Loading,
+} from 'components'
 import { SomosClient } from 'utils'
 
 const InfoArtist = props => {
   const [resultDetailsArtist, setResultDetailsArtist] = useState({})
   const [resultAlbumsArtist, setResultAlbumsArtist] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const searchDetailsArtists = id => {
     SomosClient.searchDetailsArtists(id).then(
@@ -18,8 +25,10 @@ const InfoArtist = props => {
 
         const details = { name, popularity, image, genre }
         setResultDetailsArtist(details)
+        setLoading(false)
       },
       err => {
+        setLoading(false)
         console.log(err)
       },
     )
@@ -38,8 +47,10 @@ const InfoArtist = props => {
         })
 
         setResultAlbumsArtist(dataAlbums)
+        setLoading(false)
       },
       err => {
+        setLoading(false)
         console.log(err)
       },
     )
@@ -48,6 +59,8 @@ const InfoArtist = props => {
   useEffect(() => {
     // eslint-disable-next-line react/prop-types
     const { id } = props.match.params
+
+    setLoading(true)
 
     searchDetailsArtists(id)
     searchAlbumsArtist(id)
@@ -64,8 +77,14 @@ const InfoArtist = props => {
         buttonHref="/busca"
         heading={`Informações Artista: ${resultDetailsArtist.name} - Spotify`}
       />
-      <DetailsArtists resultDetailsArtist={resultDetailsArtist} />
-      <CardAlbums resultAlbumsArtist={resultAlbumsArtist} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <DetailsArtists resultDetailsArtist={resultDetailsArtist} />
+          <CardAlbums resultAlbumsArtist={resultAlbumsArtist} />
+        </>
+      )}
     </Layout>
   )
 }

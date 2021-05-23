@@ -16,6 +16,7 @@ const ListArtists = ({ results, emptyReturn }) => (
               <img
                 src={item.image}
                 alt={`imagem de capa do artista ${item.name}`}
+                loading="lazy"
               />
               <p>{item.name}</p>
               <span>
