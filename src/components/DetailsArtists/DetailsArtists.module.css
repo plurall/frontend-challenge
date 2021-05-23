@@ -1,8 +1,40 @@
 .wrapper {
   display: flex;
+  flex-direction: row;
   flex: 1;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   max-width: 1224px;
-  margin: 0 auto;
+  min-width: 250px;
+  padding: var(--padding);
+  color: var(--color-purple);
+  font-size: 1rem;
+}
+
+.wrapper img {
+  width: 50%;
+  min-width: 220px;
+}
+
+.informations {
+  margin-left: 35px;
+}
+
+.informations h1 {
+  padding-bottom: 25px;
+}
+
+.informations p {
+  color: var(--color-dark-gray);
+  margin: 5px 5px;
+}
+
+.informations span {
+  padding: 10px 0;
+}
+
+@media (max-width: 549px) {
+  .informations {
+    margin-left: 0px;
+  }
 }

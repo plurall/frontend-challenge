@@ -1,11 +1,11 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { DetailsArtists, Layout, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import noImage from 'assets/noImage.png'
 
 const InfoArtist = props => {
-  const [resultDetailsArtist, setResultDetailsArtist] = useState([])
+  const [resultDetailsArtist, setResultDetailsArtist] = useState({})
 
   const searchDetailsArtists = id => {
     SomosClient.searchDetailsArtists(id).then(
@@ -13,7 +13,7 @@ const InfoArtist = props => {
         setResultDetailsArtist(res.data)
         const { name, popularity, images, genres } = res.data
         const image = images.length ? images[0].url : noImage
-        const genre = genres.length ? genres : ['Sem descrição']
+        const genre = genres.length ? genres : ['Indisponível']
 
         const details = { name, popularity, image, genre }
         setResultDetailsArtist(details)

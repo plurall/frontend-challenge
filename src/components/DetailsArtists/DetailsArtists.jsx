@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './DetailsArtists.module.css'
 
@@ -8,17 +9,27 @@ const DetailsArtists = ({ resultDetailsArtist }) => {
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
-        <p>Detalhes Artista</p>
-        <p>Nome: {name}</p>
-        <p>Popularidade: {popularity}</p>
-        <img src={image} alt={`imagem de capa do artista ${name}`} />
-        <span>
-          Gêneros:
-          {genre ? genre.map(item => <p key={item}>{item}</p>) : ''}
-        </span>
+        <img src={image} alt={`imagem de capa - ${name}`} />
+        <div className={styles.informations}>
+          <h1>{name}</h1>
+          <span>
+            Popularidade:
+            {popularity ? <p>{popularity}</p> : <p>Indisponível</p>}
+            Gêneros:
+            {genre ? (
+              genre.map(item => <p key={item}>{item}</p>)
+            ) : (
+              <p>Indisponível</p>
+            )}
+          </span>
+        </div>
       </div>
     </React.Fragment>
   )
+}
+
+DetailsArtists.propTypes = {
+  resultDetailsArtist: PropTypes.object.isRequired,
 }
 
 export default DetailsArtists

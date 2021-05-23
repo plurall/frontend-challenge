@@ -61,7 +61,6 @@ const Search = () => {
           type="search"
           className={styles.inputSearch}
           onChange={e => loadOnChange(e)}
-          onBlur={e => getSearchButton(e)}
           placeholder="Buscar Artista"
         />
         <Button onClick={getSearchButton}>Buscar</Button>
