@@ -6,26 +6,3 @@
   max-width: 1224px;
   margin: 0 auto;
 }
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: #dfdfdf;
-  margin: 10px;
-  padding: var(--padding);
-  width: 120px;
-  min-width: 240px;
-}
-
-.card p {
-  text-align: center;
-  color: var(--color-purple);
-  margin: 5px;
-}
-
-.card img {
-  height: 120px;
-  object-fit: contain;
-  margin: 5px;
-}

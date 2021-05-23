@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { DetailsArtists, Layout, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
-import styles from './InfoArtist.module.css'
+import noImage from 'assets/noImage.png'
 
 const InfoArtist = props => {
-  const [idArtist, setIdArtist] = useState('')
+  const [resultDetailsArtist, setResultDetailsArtist] = useState([])
 
   const searchDetailsArtists = id => {
-    SomosClient.searchDetailsArtists(id).then(res =>
-      console.log('searchDetailsArtists', res),
+    SomosClient.searchDetailsArtists(id).then(
+      res => {
+        setResultDetailsArtist(res.data)
+        const { name, popularity, images, genres } = res.data
+        const image = images.length ? images[0].url : noImage
+        const genre = genres.length ? genres : ['Sem descrição']
+
+        const details = { name, popularity, image, genre }
+        setResultDetailsArtist(details)
+      },
+      err => {
+        console.log(err)
+      },
     )
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const { id } = props.match.params
-    setIdArtist(id)
 
     searchDetailsArtists(id)
   }, [])
@@ -25,15 +35,13 @@ const InfoArtist = props => {
       <SubHeader
         breadcrumb={[
           { text: 'Home', href: '/' },
+          { text: 'Busca', href: '/busca' },
           { text: 'Informações Artista' },
         ]}
         buttonHref="/busca"
-        heading="Informações Artista: FULANO - Spotify"
+        heading={`Informações Artista: ${resultDetailsArtist.name} - Spotify`}
       />
-      <div className={styles.wrapper}>
-        <p>Detalhes Artista</p>
-        <p>ID: {idArtist}</p>
-      </div>
+      <DetailsArtists resultDetailsArtist={resultDetailsArtist} />
     </Layout>
   )
 }

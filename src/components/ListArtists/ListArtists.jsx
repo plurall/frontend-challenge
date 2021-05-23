@@ -17,12 +17,12 @@ const ListArtists = ({ results, emptyReturn }) => (
                 src={item.image}
                 alt={`imagem de capa do artista ${item.name}`}
               />
-
               <p>{item.name}</p>
-
-              <Link to={`/artista/${item.id}`}>
-                <Button>VER DETALHES</Button>
-              </Link>
+              <span>
+                <Link to={`/artista/${item.id}`}>
+                  <Button>VER DETALHES</Button>
+                </Link>
+              </span>
             </span>
           ))}
     </div>
