@@ -3,9 +3,20 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .inputSearch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.inputSearch input {
   font-size: 16px;
   font-size: max(16px, 1em);
   font-family: inherit;
@@ -14,5 +25,15 @@
   border: 1px solid var(--input-border);
   border-radius: 4px;
   margin-right: 25px;
-  width: 50%;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .wrapper button {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .inputSearch input {
+    margin-right: 0px;
+  }
 }

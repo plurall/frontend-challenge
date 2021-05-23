@@ -56,13 +56,14 @@ const Search = () => {
         heading="Busca de artitas - Spotify"
       />
       <div className={styles.wrapper}>
-        <input
-          name="search"
-          type="search"
-          className={styles.inputSearch}
-          onChange={e => loadOnChange(e)}
-          placeholder="Buscar Artista"
-        />
+        <span className={styles.inputSearch}>
+          <input
+            name="search"
+            type="search"
+            onChange={e => loadOnChange(e)}
+            placeholder="Buscar Artista"
+          />
+        </span>
         <Button onClick={getSearchButton}>Buscar</Button>
       </div>
 

@@ -16,7 +16,7 @@ class SomosClient {
   }
 
   static getArtists(query) {
-    return `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=8`
+    return `${process.env.REACT_APP_API_URL}/search?q=${query}&type=artist&limit=8`
   }
 
   static searchArtists(query) {
@@ -27,7 +27,7 @@ class SomosClient {
   }
 
   static getDetailsArtists(id) {
-    return `https://api.spotify.com/v1/artists/${id}`
+    return `${process.env.REACT_APP_API_URL}/artists/${id}`
   }
 
   static searchDetailsArtists(id) {
@@ -38,7 +38,7 @@ class SomosClient {
   }
 
   static getAlbumsArtists(id) {
-    return `https://api.spotify.com/v1/artists/${id}/albums?limit=10`
+    return `${process.env.REACT_APP_API_URL}/artists/${id}/albums?limit=10`
   }
 
   static searchAlbumsArtist(id) {
