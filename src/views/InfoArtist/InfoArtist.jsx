@@ -17,6 +17,7 @@ const InfoArtist = props => {
   const [loading, setLoading] = useState(false)
 
   const searchDetailsArtists = id => {
+    setLoading(true)
     SomosClient.searchDetailsArtists(id).then(
       res => {
         const { name, popularity, images, genres } = res.data
@@ -35,6 +36,7 @@ const InfoArtist = props => {
   }
 
   const searchAlbumsArtist = id => {
+    setLoading(true)
     SomosClient.searchAlbumsArtist(id).then(
       res => {
         const dataAlbums = res.data.items.map(album => {
@@ -59,8 +61,6 @@ const InfoArtist = props => {
   useEffect(() => {
     // eslint-disable-next-line react/prop-types
     const { id } = props.match.params
-
-    setLoading(true)
 
     searchDetailsArtists(id)
     searchAlbumsArtist(id)
