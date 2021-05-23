@@ -1,9 +1,11 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import noImage from 'assets/noImage.png'
+import { formatDate } from 'utils/formatDate'
+
 import { DetailsArtists, Layout, SubHeader, CardAlbums } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './InfoArtist.module.css'
-import noImage from 'assets/noImage.png'
 
 const InfoArtist = props => {
   const [resultDetailsArtist, setResultDetailsArtist] = useState({})
@@ -28,12 +30,13 @@ const InfoArtist = props => {
   const searchAlbumsArtist = id => {
     SomosClient.searchAlbumsArtist(id).then(
       res => {
-        console.log('ALBUMS', res.data.items)
         const dataAlbums = res.data.items.map(album => {
           const { name, release_date, images, id } = album
           const image = images.length ? images[0].url : noImage
 
-          return { name, release_date, image, id }
+          const releaseDate = formatDate(release_date)
+
+          return { name, releaseDate, image, id }
         })
 
         setResultAlbumsArtist(dataAlbums)

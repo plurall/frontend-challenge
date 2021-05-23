@@ -8,9 +8,12 @@
 }
 
 .wrapper img {
-  border-radius: 50%;
+  border-radius: 30%;
   max-width: 260px;
   min-width: 160px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: #fff solid 5px;
 }
 
 .informations h1 {

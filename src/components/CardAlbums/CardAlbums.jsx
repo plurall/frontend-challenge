@@ -6,7 +6,6 @@ import styles from './CardAlbums.module.css'
 const CardAlbums = ({ resultAlbumsArtist }) => (
   <React.Fragment>
     <div className={styles.wrapper}>
-      <h2>Albuns</h2>
       <div className={styles.cardAlbums}>
         {resultAlbumsArtist.map(item => (
           <span key={item.id}>
@@ -14,7 +13,7 @@ const CardAlbums = ({ resultAlbumsArtist }) => (
             <p>
               <strong>{item.name}</strong>
             </p>
-            <p>Lançamento: {item.release_date}</p>
+            <p>Lançamento: {item.releaseDate}</p>
           </span>
         ))}
       </div>
@@ -22,8 +21,8 @@ const CardAlbums = ({ resultAlbumsArtist }) => (
   </React.Fragment>
 )
 
-// CardAlbums.propTypes = {
-//   resultAlbumsArtist: PropTypes.object.isRequired,
-// }
+CardAlbums.propTypes = {
+  resultAlbumsArtist: PropTypes.array.isRequired,
+}
 
 export default CardAlbums
