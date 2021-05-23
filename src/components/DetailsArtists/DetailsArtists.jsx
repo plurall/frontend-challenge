@@ -12,16 +12,14 @@ const DetailsArtists = ({ resultDetailsArtist }) => {
         <img src={image} alt={`imagem de capa - ${name}`} />
         <div className={styles.informations}>
           <h1>{name}</h1>
-          <span>
-            Popularidade:
-            {popularity ? <p>{popularity}</p> : <p>Indisponível</p>}
-            Gêneros:
-            {genre ? (
-              genre.map(item => <p key={item}>{item}</p>)
-            ) : (
-              <p>Indisponível</p>
-            )}
-          </span>
+          <strong>Popularidade:</strong>
+          {popularity ? <p> {popularity}</p> : <p>Indisponível</p>} <br />
+          <strong>Gêneros:</strong>
+          {genre ? (
+            genre.map(item => <p key={item}>- {item} </p>)
+          ) : (
+            <p>Indisponível</p>
+          )}
         </div>
       </div>
     </React.Fragment>

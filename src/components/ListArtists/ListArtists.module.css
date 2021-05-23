@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #dfdfdf;
+  background-color: #e8e8e8;
   margin: 10px;
   padding: var(--padding);
   width: 120px;

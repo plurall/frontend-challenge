@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--color-purple);
+  background-color: #e8e8e8;
+  padding: var(--padding);
+  border-top: solid 3px var(--color-purple);
+}
+
+.cardAlbums {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.cardAlbums span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: #e8e8e8 solid 2px;
+  font-size: 0.9rem;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.cardAlbums span img {
+  width: 70%;
+  border-radius: 50%;
+  padding-bottom: 10px;
+}
+
+.cardAlbums span:hover {
+  background-color: #cecece;
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}

@@ -1,12 +1,13 @@
-import React, { useLayoutEffect, useState } from 'react'
-import { DetailsArtists, Layout, SubHeader } from 'components'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import { DetailsArtists, Layout, SubHeader, CardAlbums } from 'components'
 import { SomosClient } from 'utils'
 
+import styles from './InfoArtist.module.css'
 import noImage from 'assets/noImage.png'
 
 const InfoArtist = props => {
   const [resultDetailsArtist, setResultDetailsArtist] = useState({})
-  const [resultAlbumsArtist, setResultAlbumsArtist] = useState({})
+  const [resultAlbumsArtist, setResultAlbumsArtist] = useState([])
 
   const searchDetailsArtists = id => {
     SomosClient.searchDetailsArtists(id).then(
@@ -29,11 +30,12 @@ const InfoArtist = props => {
       res => {
         console.log('ALBUMS', res.data.items)
         const dataAlbums = res.data.items.map(album => {
-          const { name, release_date, images } = album
+          const { name, release_date, images, id } = album
           const image = images.length ? images[0].url : noImage
 
-          return { name, image, release_date }
+          return { name, release_date, image, id }
         })
+
         setResultAlbumsArtist(dataAlbums)
       },
       err => {
@@ -42,14 +44,13 @@ const InfoArtist = props => {
     )
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // eslint-disable-next-line react/prop-types
     const { id } = props.match.params
 
     searchDetailsArtists(id)
     searchAlbumsArtist(id)
   }, [])
-  console.log('Albums Filtrados', resultAlbumsArtist)
 
   return (
     <Layout>
@@ -63,6 +64,7 @@ const InfoArtist = props => {
         heading={`Informações Artista: ${resultDetailsArtist.name} - Spotify`}
       />
       <DetailsArtists resultDetailsArtist={resultDetailsArtist} />
+      <CardAlbums resultAlbumsArtist={resultAlbumsArtist} />
     </Layout>
   )
 }

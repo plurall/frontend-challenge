@@ -1,40 +1,24 @@
 .wrapper {
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1224px;
-  min-width: 250px;
+  flex-direction: column;
   padding: var(--padding);
   color: var(--color-purple);
   font-size: 1rem;
+  align-items: center;
 }
 
 .wrapper img {
-  width: 50%;
-  min-width: 220px;
-}
-
-.informations {
-  margin-left: 35px;
+  border-radius: 50%;
+  max-width: 260px;
+  min-width: 160px;
 }
 
 .informations h1 {
-  padding-bottom: 25px;
+  padding: 25px;
+  font-size: 3rem;
 }
 
 .informations p {
   color: var(--color-dark-gray);
   margin: 5px 5px;
-}
-
-.informations span {
-  padding: 10px 0;
-}
-
-@media (max-width: 549px) {
-  .informations {
-    margin-left: 0px;
-  }
 }
