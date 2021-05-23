@@ -17,7 +17,6 @@ const Search = () => {
     query &&
       SomosClient.searchArtists(query).then(
         res => {
-          console.log('respostas', res)
           const artists = res.data.artists.items.map(artist => {
             const { id, name, images } = artist
             const image = images.length ? images[0].url : noImage

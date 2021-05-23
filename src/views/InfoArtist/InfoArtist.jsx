@@ -5,8 +5,6 @@ import { formatDate } from 'utils/formatDate'
 import { DetailsArtists, Layout, SubHeader, CardAlbums } from 'components'
 import { SomosClient } from 'utils'
 
-import styles from './InfoArtist.module.css'
-
 const InfoArtist = props => {
   const [resultDetailsArtist, setResultDetailsArtist] = useState({})
   const [resultAlbumsArtist, setResultAlbumsArtist] = useState([])
