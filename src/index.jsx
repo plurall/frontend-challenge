@@ -14,7 +14,7 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute path="/" component={App} />
+      <PrivateRoute exact path="/" component={App} />
     </Switch>
   </Router>,
   document.getElementById('root'),
