@@ -2,8 +2,9 @@ import React from 'react'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
+import { Link } from 'react-router-dom'
 
-import styles from './Home.module.css'
+import { StyleButtonStart, StyleHomeWrapper } from './styles'
 
 class Home extends React.Component {
   state = {}
@@ -17,9 +18,12 @@ class Home extends React.Component {
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
         />
-        <div className={styles.wrapper}>
-          <h1>Hi</h1>
-        </div>
+        <StyleHomeWrapper>
+          <h1>Hi, are you excited to begin you journey?</h1>
+          <Link to="/busca">
+            <StyleButtonStart>Lets Go!</StyleButtonStart>
+          </Link>
+        </StyleHomeWrapper>
       </React.Fragment>
     )
   }
