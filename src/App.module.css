@@ -22,12 +22,3 @@ body {
   background: var(--color-white);
   color: #444444;
 }
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
-  }
-}
