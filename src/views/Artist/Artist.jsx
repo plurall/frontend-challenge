@@ -6,7 +6,7 @@ import { SomosClient } from 'utils';
 
 import { StyleContetWrapper } from 'styles';
 import { StyleAlbumList, StyleArtistPicture, StyleArtistWrapper, StyleGenreList, StylePopularityContainer } from './styles';
-import { FaStar } from 'react-icons/fa'
+import './stars.css'
 
 import noAvatar from '../../assets/noAvatar.jpg';
 
@@ -27,7 +27,7 @@ const Artist = () => {
   // In case API request still loading, we don't want to show anything yet
   if (!artist) return null;
 
-  const { images, name, genres = [], albums = [] } = artist;
+  const { images, name, genres = [], albums = [], popularity } = artist;
 
   const imageIndex = Math.floor(Math.random() * images.length);
   const avatarUrl = images.length ? images[imageIndex].url : null;
@@ -48,11 +48,10 @@ const Artist = () => {
 
           {/* Popularity */}
           <StylePopularityContainer>
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
+            <div className="ratings">
+              <div className="empty-stars"></div>
+              <div className="full-stars" style={{ width: `${popularity}%` }}></div>
+            </div>
           </StylePopularityContainer>
 
           {/* Genres */}

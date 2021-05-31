@@ -1,28 +1,3 @@
-:root {
-  --color-dark-gray: #333333;
-  --color-purple: #655ba2;
-  --color-white: #f2f4f5;
-  --height-footer: 59px;
-  --height-nav-bar: 63px;
-  --height-sub-header: 92px;
-  --padding: 20px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-*:focus {
-  outline: none;
-}
-
-body {
-  background: var(--color-white);
-  color: #444444;
-}
-
  .ratings {
     position: relative;
     vertical-align: middle;
@@ -36,12 +11,11 @@ body {
     top: 0;
     white-space: nowrap;
     overflow: hidden;
-    color: #fde16d;
-    width: 30%;
+    color: #ffbd57;
   }
   .empty-stars:before, .full-stars:before {
     content:"\2605\2605\2605\2605\2605";
-    font-size: 25px;
+    font-size: 19pt;
   }
   /* Firefox */
   @-moz-document url-prefix() {

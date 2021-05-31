@@ -27,14 +27,14 @@ export const StyleArtistPicture = styled.img`
 
 export const StylePopularityContainer = styled.div`
   display: flex;
-  margin-top: 23px;
+  margin-top: 20px;
   margin-bottom: 13px;
   color: #e0a802;
 
   svg {
     width: 50px;
     height: 25px;
-  }
+  } 
 `;
 
 export const StyleGenreList = styled.div`
