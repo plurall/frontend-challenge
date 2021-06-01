@@ -2,19 +2,23 @@ import styled from 'styled-components';
 
 export const StyleSearchInput = styled.input`
   margin: auto;
-  min-height: 50px;
   min-width: 400px;
-  border-radius: 20px;
-  border: none;
+  border-radius: 30px;
   box-shadow: 1px 1px 6px #9a9a9a;
   font-size: 1.2rem;
-  padding: 15px 25px;
+  padding: 12.5px 25px;
   transition: 200ms ease-in;
   margin-top: ${({ haveResults }) => haveResults ? '60px' : '200px'};
   margin-bottom: ${({ haveResults }) => haveResults ? '40px' : 'auto'};
+  border: 2px solid transparent;
 
   :focus { 
-    box-shadow: 1px 1px 16px #9a9a9a;
+    border: 2px solid #655aa3;
+    background: #655aa33b;
+  }
+
+  @media (max-width: 440px) {
+    min-width: unset;
   }
 `;
 
