@@ -13,7 +13,7 @@ export const StyleContetWrapper = styled.div`
 
   h1 {
     margin: 10px;
-    position: absolute;
+    line-height: 1;
   }
 
   a {

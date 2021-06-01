@@ -38,6 +38,7 @@ const Search = () => {
         <StyleSearchInput
           onChange={handleChange}
           haveResults={artists.length && !notFound}
+          placeholder="Nome do artista"
         />
         <StyleArtistContainer>
           {/* Sort by populatity before mapping */}

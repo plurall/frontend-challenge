@@ -17,6 +17,10 @@ export const StyleSearchInput = styled.input`
     background: #655aa33b;
   }
 
+  ::placeholder {
+    opacity: 0.7;
+  }
+
   @media (max-width: 440px) {
     min-width: unset;
   }
