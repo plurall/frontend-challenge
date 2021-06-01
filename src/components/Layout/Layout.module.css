@@ -9,4 +9,5 @@
 .footer {
   background-color: var(--color-dark-gray);
   padding: var(--padding);
+  margin-top: 3px;
 }
