@@ -9,8 +9,7 @@ class SomosClient {
   onError = error => {
     const { response: { data, status } } = error;
     
-    // @TODO return error
-    console.log(data);
+    return data.error.message;
   }
 
   async getArtists(query) {

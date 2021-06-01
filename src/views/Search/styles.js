@@ -60,3 +60,8 @@ export const StyleArtistCard = styled.div`
     color: white;
   }
 `;
+
+export const StyleErrorMessage = styled.h2`
+  text-align: center;
+  color: #b85050;
+`; 
