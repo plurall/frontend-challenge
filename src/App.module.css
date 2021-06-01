@@ -23,29 +23,9 @@ body {
   color: #444444;
 }
 
- .ratings {
-    position: relative;
-    vertical-align: middle;
-    display: inline-block;
-    color: #b1b1b1;
-    overflow: hidden;
+
+@media (min-width: 1224px) {
+  :root {
+    --height-sub-header: 128px;
   }
-  .full-stars {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #fde16d;
-    width: 30%;
-  }
-  .empty-stars:before, .full-stars:before {
-    content:"\2605\2605\2605\2605\2605";
-    font-size: 25px;
-  }
-  /* Firefox */
-  @-moz-document url-prefix() {
-    .full-stars {
-      color: #ECBE24;
-    }
-  }
+}
