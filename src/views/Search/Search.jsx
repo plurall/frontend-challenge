@@ -21,7 +21,6 @@ const Search = () => {
     timeout = setTimeout(async () => {
       const { artists: { items } } = await client.getArtists(e.target.value);
       if (!items.length) setNotFound(true);
-      console.log(items);
       setArtists(items);
     }, 1000)
   }
@@ -33,7 +32,7 @@ const Search = () => {
         heading="Somos Front-end Challange"
       />
       <StyleContetWrapper>
-        <h1>Digitar o nome do artista</h1>
+        <h1>Pesquisar artista</h1>
 
         <StyleSearchInput
           onChange={handleChange}
