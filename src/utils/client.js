@@ -6,40 +6,56 @@ class SomosClient {
     this.baseURL = 'https://api.spotify.com/v1';
   }
 
-  onError = error => { }
+  onError = error => {
+    const { response: { data, status } } = error;
+    
+    // @TODO return error
+    console.log(data);
+  }
 
   async getArtists(query) {
-    const { data } = await axios.get(`${this.baseURL}/search`, {
-      headers: {
-        Authorization: `Bearer ${getToken()}`
-      },
-      params: {
-        q: query,
-        type: 'artist'
-      }
-    });
-    return data;
+    try {
+      const { data } = await axios.get(`${this.baseURL}/search`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        },
+        params: {
+          q: query,
+          type: 'artist'
+        }
+      });
+      return data;
+    } catch(err) {
+      return this.onError(err);
+    }
+   
   }
 
   async getArtist(id) {
-    let { data } = await axios.get(`${this.baseURL}/artists/${id}`, {
-      headers: {
-        Authorization: `Bearer ${getToken()}`
-      }
-    });
-    const { data: { items } } = await axios.get(`${this.baseURL}/artists/${id}/albums`, {
-      headers: {
-        Authorization: `Bearer ${getToken()}`
-      },
-      params: {
-        limit: 10
-      }
-    });
+    try {
+      let { data } = await axios.get(`${this.baseURL}/artists/${id}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      });
+      // API call to get albums from the artist
+      const { data: { items } } = await axios.get(`${this.baseURL}/artists/${id}/albums`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        },
+        params: {
+          limit: 10
+        }
+      });
 
-    // Set albums to the return object
-    data.albums = items;
+      // Set albums to the return object
+      data.albums = items;
 
-    return data;
+      return data;
+    } catch(err) {
+      this.onError(err);
+    }
+    
   }
 
 }
