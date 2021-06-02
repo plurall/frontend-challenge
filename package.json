@@ -3,8 +3,11 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "date-fns": "^2.22.1",
+    "lottie-react-web": "^2.2.2",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
@@ -16,8 +19,10 @@
     "react-app-rewired": "^1.5.2",
     "react-dom": "^16.2.0",
     "react-icons": "^4.2.0",
+    "react-indiana-drag-scroll": "^2.0.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "2.1.0",
+    "styled-components": "^5.3.0",
     "styled-jsx": "^3.2.1"
   },
   "devDependencies": {

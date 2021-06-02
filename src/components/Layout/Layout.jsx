@@ -45,7 +45,7 @@ class Layout extends Component {
                   {
                     name: 'Buscar artistas',
                     slug: 'busca',
-                    href: 'busca',
+                    href: '/busca',
                     id: 1,
                   },
                 ],

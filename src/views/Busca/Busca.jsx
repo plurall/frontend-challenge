@@ -19,7 +19,9 @@ class Busca extends React.Component {
     const searchArtists = async event => {
       const { value } = event.target
       if (value.length >= 4) {
-        const response = await this.client.getArtists(value)
+        const response = await this.client.getArtists(
+          value.normalize('NFD').replace(/[^a-zA-Z s]/g, ''),
+        )
         this.setState({
           artists: response,
         })
