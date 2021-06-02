@@ -13,6 +13,7 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
   }
 
+  // eslint-disable-next-line react/sort-comp
   client = new SomosClient({
     accessToken: getToken(),
   })
@@ -38,7 +39,17 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+              menu: {
+                items: [
+                  { name: 'Início', slug: 'account', href: '/', id: 0 },
+                  {
+                    name: 'Buscar artistas',
+                    slug: 'busca',
+                    href: 'busca',
+                    id: 1,
+                  },
+                ],
+              },
             }}
             logout={this.handleLogout}
             service="reader"
@@ -46,7 +57,12 @@ class Layout extends Component {
           />
         </div>
 
-        <div className={content}>{children}</div>
+        <div
+          className={content}
+          style={{ display: 'flex', flexDirection: 'column' }}
+        >
+          {children}
+        </div>
 
         <div className={footer}>
           <Footer />

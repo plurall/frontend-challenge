@@ -3,4 +3,33 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper h1 {
+  line-height: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 20rem;
+}
+
+.wrapper a {
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #252525;
+  padding: 1rem 2rem;
+  background-color: #bcb3f2;
+  border: 2px solid #655aa3;
+  border-radius: 10px;
+  transition: background 0.2s;
+  font-weight: 600;
+}
+
+.wrapper a:hover {
+  background-color: #a497f0;
 }

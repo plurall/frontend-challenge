@@ -1,8 +1,7 @@
-import React from 'react'
-
 import { SubHeader } from 'components'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { SomosClient } from 'utils'
-
 import styles from './Home.module.css'
 
 class Home extends React.Component {
@@ -18,7 +17,10 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <h1>
+            Clique no botão abaixo para buscar por um artista
+          </h1>
+          <Link to="/busca">Buscar artista</Link>
         </div>
       </React.Fragment>
     )
