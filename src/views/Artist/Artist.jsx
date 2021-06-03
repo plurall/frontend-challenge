@@ -9,6 +9,7 @@ import { StyleAlbumList, StyleArtistPicture, StyleArtistWrapper, StyleGenreList,
 import './stars.css'
 
 import noAvatar from '../../assets/noAvatar.jpg';
+import Album from './Album';
 
 const Artist = () => {
   const { id } = useParams();
@@ -64,21 +65,7 @@ const Artist = () => {
 
           {/* Albums */}
           <StyleAlbumList>
-            {albums.map(album => {
-              const { images, name, release_date } = album;
-              // Get album first image 
-              const imageSrc = images[0] ? images[0].url : '';
-
-              return (
-                <div className="single-album">
-                  <div className="name-date">
-                    <h3>{name}</h3>
-                    <h4>{release_date}</h4>
-                  </div>
-                  <img src={imageSrc} alt={`${name}-album-picture`} />
-                </div>
-              )
-            })}
+            {albums.map((album, i) => <Album album={album} key={i} />)}
           </StyleAlbumList>
         </StyleArtistWrapper>
       </StyleContetWrapper>
