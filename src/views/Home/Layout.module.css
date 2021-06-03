@@ -1,0 +1,87 @@
+.nav-bar {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  font-size: 30px;
+  font-weight: bolder;
+  height: 400px;
+  padding: 30px;
+  margin-bottom: 60px;
+  border-radius: 0 0 150px 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+.user-email {
+  font-size: 20px;
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+
+.user-box-btn {
+  padding: 10px 20px;
+  background-color: var(--color-green);
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: var(--color-white);
+  transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-box-btn:hover {
+  background-color: var(--color-red);
+  border-radius: 20px;
+}
+
+.loading-element {
+  border-top: 5px solid var(--color-white);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spinner 1s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 0%);
+}
+
+.transition-in {
+  animation: fade linear 0.3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(180);
+  }
+}

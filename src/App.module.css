@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap');
+
 :root {
-  --color-dark-gray: #333333;
-  --color-purple: #655ba2;
+  --color-dark: #191414;
+  --color-green: #1DB954;
   --color-white: #f2f4f5;
+  --color-red: #ff3f34;
+  --color-light-gray: #292929;
   --height-footer: 59px;
   --height-nav-bar: 63px;
   --padding: 20px;
@@ -11,8 +15,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.5px;
 }
 
 body {
-  background: var(--color-white);
+  background-color: var(--color-dark);
 }
