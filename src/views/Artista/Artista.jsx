@@ -1,12 +1,13 @@
 import { Layout } from 'components'
-import React from 'react'
-import { SomosClient } from 'utils'
-import { FaSpotify } from 'react-icons/fa'
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
-import Load from '../../components/Load'
+import React from 'react'
+import { FaSpotify } from 'react-icons/fa'
 import ScrollContainer from 'react-indiana-drag-scroll'
-import styles from './Artista.module.css'
+import { Redirect } from 'react-router-dom'
+import { clearToken, SomosClient } from 'utils'
+import Load from '../../components/Load'
+import { Container, Header, Albums, AlbumItem } from './styles'
 
 class Artista extends React.Component {
   constructor(props) {
@@ -28,6 +29,12 @@ class Artista extends React.Component {
   }
 
   render() {
+    if (!!this.state.currentArtist.error) {
+      alert('Seu token expirou. Por favor, renove-o.')
+      clearToken()
+      return <Redirect to="/" />
+    }
+
     if (Object.keys(this.state.currentArtist).length === 0) {
       return (
         <Layout>
@@ -39,11 +46,11 @@ class Artista extends React.Component {
     return (
       <React.Fragment>
         <Layout>
-          <div className={styles.container}>
-            <header className={styles.header}>
+          <Container>
+            <Header>
               <img
                 src={
-                  this.state.currentArtist.images[0]
+                  !!this.state.currentArtist.images[0]
                     ? this.state.currentArtist.images[0].url
                     : 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png'
                 }
@@ -61,7 +68,8 @@ class Artista extends React.Component {
               </main>
               <aside>
                 <p>
-                  Popularidade: <strong>{this.state.currentArtist.popularity}</strong>
+                  Popularidade:{' '}
+                  <strong>{this.state.currentArtist.popularity}</strong>
                 </p>
                 <a
                   href={this.state.currentArtist.external_urls.spotify}
@@ -72,12 +80,12 @@ class Artista extends React.Component {
                   Ver perfil
                 </a>
               </aside>
-            </header>
-            <section className={styles.albums}>
+            </Header>
+            <Albums>
               <h2>Albúms</h2>
               <ScrollContainer horizontal vertical={false}>
                 {this.state.currentArtist.albums.map(album => (
-                  <div key={album.id} className={styles.albumItem}>
+                  <AlbumItem key={album.id}>
                     <img
                       src={
                         album.images[0]
@@ -92,11 +100,11 @@ class Artista extends React.Component {
                         locale: ptBR,
                       })}
                     </p>
-                  </div>
+                  </AlbumItem>
                 ))}
               </ScrollContainer>
-            </section>
-          </div>
+            </Albums>
+          </Container>
         </Layout>
       </React.Fragment>
     )

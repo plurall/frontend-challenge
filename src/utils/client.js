@@ -39,8 +39,7 @@ class SomosClient {
           Authorization: `Bearer ${this.token}`,
           'Content-Type': 'application/json',
         }),
-      })
-        .then(responseAPI => responseAPI.json())
+      }).then(responseAPI => responseAPI.json())
 
       const albums = await fetch(
         `https://api.spotify.com/v1/artists/${id}/albums?limit=10`,

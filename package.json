@@ -3,6 +3,10 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/react-hooks": "^7.0.0",
+    "@testing-library/user-event": "^13.1.9",
     "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
@@ -45,7 +49,14 @@
     "lint": "eslint src/",
     "precommit": "lint-staged",
     "start": "react-app-rewired start",
-    "test": "react-scripts test"
+    "test": "react-scripts test --watchAll false",
+    "test:coverage": "react-scripts test --coverage --watchAll false"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/views/**/*.jsx",
+      "src/components/**/*.jsx"
+    ]
   },
   "browserslist": {
     "development": [

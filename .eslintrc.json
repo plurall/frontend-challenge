@@ -1,6 +1,8 @@
 {
   "extends": "plurall/react",
   "rules": {
+    "no-alert": "off",
+    "no-extra-boolean-cast": "off",
     "react/prop-types": "off",
     "react/jsx-filename-extension": [
       1,

@@ -8,4 +8,4 @@ export const Container = styled.div`
   div {
     height: 40vh !important;
   }
-`;
+`
