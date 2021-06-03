@@ -1,0 +1,17 @@
+.artist-album-box {
+  width: 170px;
+  margin: 3px;
+  height: 220px;
+  border: solid var(--color-light-gray) 1px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 25px;
+  justify-content: center;
+}
+
+.album-img {
+  width: 170px;
+}

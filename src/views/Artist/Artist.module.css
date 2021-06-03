@@ -1,0 +1,142 @@
+.artist-details-container {
+  height: 650px;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.artist-header-page {
+  margin: auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
+}
+
+.artist-image-header {
+  filter: grayscale(100%);
+  border-radius: 50%;
+  margin-top: 50px;
+}
+
+.artist-name {
+  font-size: 60px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.artist-albums-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 50px 50px 40px;
+}
+
+.back-btn {
+  color: var(--color-white);
+  font-size: 70px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  left: 6%;
+  top: 0%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.back-btn span {
+  font-size: 30px;
+  margin: 10px 0 0 10px;
+}
+
+.artist-album-box {
+  width: 170px;
+  margin: 3px;
+  height: 220px;
+  border: solid var(--color-light-gray) 1px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 25px;
+  justify-content: center;
+}
+
+.album-img {
+  width: 170px;
+}
+
+.especific-details {
+  width: 100%;
+  height: 40%;
+  bottom: -90%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stadistic-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.especific-details span {
+  font-size: 30px;
+}
+
+.especific-details-box {
+  height: 120px;
+  width: 120px;
+  position: relative;
+  font-size: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.especific-details-box span {
+  background-color: var(--color-green);
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 30px 30px 0px 0;
+  margin: 5px;
+}
+
+.especific-details-box:nth-of-type(2) span {
+  background-color: transparent;
+  color: var(--color-green);
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .artist-details-container {
+    height: 1200px;
+  }
+
+  .artist-image-header {
+    filter: grayscale(100%);
+    width: 300px;
+  }
+
+  .artist-album-box {
+    width: 180px;
+    margin: 3px;
+    height: 240px;
+    border: solid var(--color-light-gray) 1px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    line-height: 25px;
+  }
+
+}
