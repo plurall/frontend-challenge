@@ -6,7 +6,7 @@ const Album = ({ album }) => {
   const imageSrc = images[0] ? images[0].url : '';
 
   return (
-    <div className="single-album">
+    <div className="single-album" data-testid="album">
       <div className="name-date">
         <h3>{name}</h3>
         <h4>{release_date}</h4>
