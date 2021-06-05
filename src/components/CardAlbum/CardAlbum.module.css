@@ -1,0 +1,102 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+.imgArtist {
+  width: 15rem;
+  height: 15rem;
+}
+.contentAlbum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 15rem;
+  margin: 1rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.textContent {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: start;
+  height: 5rem;
+  padding: 5px;
+  border: 1px solid;
+}
+
+.nameArtist {
+  margin: 1rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 16px;
+  max-width: 15rem;
+  color: black;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.releaseDate {
+  font-size: 16px;
+
+  color: black;
+  font-weight: 300;
+}
+.title{
+  font-size: 24px;
+  font-weight: 600;
+  margin: 1rem;
+  border-bottom: 1px solid black;
+}
+@media (min-width: 1000px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    align-content: center;
+  }
+  .imgArtist {
+    width: 15rem;
+    height: 15rem;
+  }
+  .contentAlbum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 15rem;
+    margin: 1rem;
+  }
+  .textContent {
+    background-color: rgb(101, 90, 163);
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: start;
+    height: 5rem;
+    padding: 5px;
+  }
+
+  .nameArtist {
+    margin: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+    max-width: 15rem;
+    color: aliceblue;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .releaseDate {
+    font-size: 16px;
+
+    color: aliceblue;
+    font-weight: 300;
+  }
+}
