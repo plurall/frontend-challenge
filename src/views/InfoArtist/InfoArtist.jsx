@@ -8,8 +8,6 @@ function InfoArtist(props) {
   const [dataArtists, setDataArtists] = useState({})
   const [dataArtistsAlbum, setDataArtistsAlbum] = useState([])
 
-  console.log(dataArtists)
-  console.log(dataArtistsAlbum)
   useEffect(() => {
     const { id } = props.match.params
     getArtists(id)
