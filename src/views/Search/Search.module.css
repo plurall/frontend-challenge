@@ -1,0 +1,42 @@
+.inputText {
+  margin: 1rem;
+  width: 15rem;
+  outline: 0;
+  height: 2rem;
+  border: 1px solid rgb(101, 90, 163);
+  border-radius: 1rem;
+  background-color: rgb(101, 90, 163, 0.2);
+  padding: 1rem;
+}
+.inputText:focus {
+  color: rgb(85, 85, 85);
+
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.inputText::placeholder{
+  color: black;
+  font-size: 16px;
+}
+
+@media (min-width: 1000px) {
+  .content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .inputText {
+    padding: 1rem;
+    outline: 0;
+    margin: 1rem;
+    width: 25rem;
+    height: 2rem;
+    border: 1px solid rgb(101, 90, 163);
+    border-radius: 1rem;
+    background-color: rgb(101, 90, 163, 0.2);
+
+  }
+  .inputText::placeholder{
+    color: rgb(85, 85, 85);
+    font-size: 16px;
+  }
+}
