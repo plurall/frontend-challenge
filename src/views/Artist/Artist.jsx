@@ -4,12 +4,12 @@ import { useParams } from 'react-router';
 import { SubHeader } from 'components';
 import { SomosClient } from 'utils';
 
-import { StyleContetWrapper } from 'styles';
-import { StyleAlbumList, StyleArtistPicture, StyleArtistWrapper, StyleGenreList, StylePopularityContainer } from './styles';
+import globalStyles from 'App.module.css';
+import styles from './Artist.module.css'
 import './stars.css'
 
 import noAvatar from '../../assets/noAvatar.jpg';
-import Album from './Album';
+import Album from 'components/Album';
 
 const Artist = () => {
   const { id } = useParams();
@@ -29,9 +29,11 @@ const Artist = () => {
   if (!artist) return null;
 
   const { images, name, genres = [], albums = [], popularity } = artist;
-
+  
+  // Choose one random image to use
   const imageIndex = Math.floor(Math.random() * images.length);
   const avatarUrl = images.length ? images[imageIndex].url : null;
+  
 
   return (
     <React.Fragment>
@@ -39,37 +41,36 @@ const Artist = () => {
         breadcrumb={[{ text: 'Home' }]}
         heading="Somos Front-end Challange"
       />
-      <StyleContetWrapper>
-        <StyleArtistWrapper>
+      <div className={globalStyles.container}>
+        <div className={styles.artistWrapper}>
           {/* Picture */}
-          <StyleArtistPicture src={avatarUrl || noAvatar} />
+          <img className={styles.artistAvatar} src={avatarUrl || noAvatar} />
 
           {/* Name */}
           <h2 className="artist-name">{name}</h2>
 
           {/* Popularity */}
-          <StylePopularityContainer>
+          <div className={styles.popularityContainer}>
             <div className="ratings">
               <div className="empty-stars"></div>
               <div className="full-stars" style={{ width: `${popularity}%` }}></div>
             </div>
-          </StylePopularityContainer>
+          </div>
 
           {/* Genres */}
-          <StyleGenreList>
-            <span className="title">Gêneros</span>
-            <div className="list">
-              {genres.map((genre, i) => <span key={i} className="genre">{genre}</span>)}
+          <div className={styles.genreContainer}>
+            <span className={styles.genreTitle}>Gêneros</span>
+            <div className={styles.genreList}>
+              {genres.map((genre, i) => <span key={i} className={styles.genre}>{genre}</span>)}
             </div>
-          </StyleGenreList>
+          </div>
 
           {/* Albums */}
-          <StyleAlbumList>
+          <div className={styles.albumList}>
             {albums.map((album, i) => <Album album={album} key={i} />)}
-          </StyleAlbumList>
-        </StyleArtistWrapper>
-      </StyleContetWrapper>
-
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   )
 }

@@ -4,8 +4,10 @@ import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 import { Link } from 'react-router-dom'
 
-import { StyleButtonStart } from './styles'
-import { StyleContetWrapper } from '../../styles';
+import globalStyles from '../../App.module.css';
+import styles from './Home.module.css'
+
+import SpotifyLogo from '../../assets/Spotify_Logo_CMYK_Green.png'
 
 class Home extends React.Component {
   state = {}
@@ -19,12 +21,12 @@ class Home extends React.Component {
           breadcrumb={[{ text: 'Home' }]}
           heading="Somos Front-end Challange"
         />
-        <StyleContetWrapper>
-          <h1>Hi, are you excited to begin you journey?</h1>
-          <Link to="/busca">
-            <StyleButtonStart>Lets Go!</StyleButtonStart>
+        <div className={globalStyles.container}>
+          <img className={styles.logoSpotify} src={SpotifyLogo} />
+          <Link to="/busca" className={styles.linkButton}>
+            <button className={styles.startButton}>BUSCAR ARTISTA</button>
           </Link>
-        </StyleContetWrapper>
+        </div>
       </React.Fragment>
     )
   }

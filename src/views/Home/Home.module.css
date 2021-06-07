@@ -4,3 +4,32 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+
+.startButton {
+  padding: 20px 40px;
+  border-radius: 38px;
+  font-size: 1.5rem;
+  background: #655aa3;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 14px #777777;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease-in;
+}
+
+.startButton:hover {
+  background: #39335a;
+}
+
+.logoSpotify {
+  width: 60%;
+  height: auto;
+  max-width: 400px;
+  margin: auto;
+}
+
+.linkButton {
+  margin: auto;
+}
