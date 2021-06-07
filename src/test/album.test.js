@@ -22,7 +22,7 @@ describe('Verify if the album component and it\`s children were rendered succesf
   const [name, date] = Array.from(nameDateDiv.children);
 
   it('should render the Album component with the correct className and number of children', () => {
-    expect(albumDiv.className).toBe('single-album');
+    expect(albumDiv.className).toBe('singleAlbum');
     expect(albumDiv.children).toHaveLength(2);
   })
 

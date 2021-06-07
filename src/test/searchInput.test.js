@@ -1,41 +1,26 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Album from '../components/Album'
+import Search from '../views/Search/index'
 
-const testAlbum = {
-  name: 'Trench',
-  release_date: '2018-10-05',
-  images: [
-    {
-      url: 'test-image.jpg',
-    }
-  ]
-}
 
-describe('Verify if the album component and it\`s children were rendered succesfuly', () => {
+describe('Verify if search input was rendered successfuly', () => {
   const { getByTestId } = render(
-    <Album album={testAlbum}/>,
+    <Search />,
   )
 
-  const albumDiv = getByTestId('album');
-  const [nameDateDiv, imageEl] = Array.from(albumDiv.children);
-  const [name, date] = Array.from(nameDateDiv.children);
+  const searchContainer = getByTestId('search-container');
+  const [input, imageEl] = Array.from(searchContainer.children);
 
-  it('should render the Album component with the correct className and number of children', () => {
-    expect(albumDiv.className).toBe('single-album');
-    expect(albumDiv.children).toHaveLength(2);
+  it('should render a search container with 2 children', () => {
+    expect(searchContainer.children).toHaveLength(2);
   })
 
-  it('should display the correct album name', () => {    
-    expect(name.innerHTML).toBe(testAlbum.name);
+  it('should render input element', () => {
+    expect(input.id).toBe('main-search');
   })
 
-  it('should display the correct release date', () => {
-    expect(date.innerHTML).toBe(testAlbum.release_date);
-  })
-
-  it('should display an image with the correct alt attribute', () => {
-    expect(imageEl.getAttribute('alt')).toBe(`${testAlbum.name}-album`);
+  it('should render spotify logo', () => {    
+    expect(imageEl.getAttribute('alt')).toBe('spotify-search');
   })
 })
 
