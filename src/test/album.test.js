@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Album from '../components/Album'
+import { convertDate } from 'utils'
 
 const testAlbum = {
   name: 'Trench',
@@ -31,7 +32,7 @@ describe('Verify if the album component and it\`s children were rendered succesf
   })
 
   it('should display the correct release date', () => {
-    expect(date.innerHTML).toBe(testAlbum.release_date);
+    expect(date.innerHTML).toBe(convertDate(testAlbum.release_date));
   })
 
   it('should display an image with the correct alt attribute', () => {

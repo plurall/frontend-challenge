@@ -1,4 +1,5 @@
 import React from 'react'
+import { convertDate } from 'utils';
 
 import styles from './Album.module.css'
 
@@ -11,7 +12,7 @@ const Album = ({ album }) => {
     <div className={styles.singleAlbum} data-testid="album">
       <div className={styles.nameDate} data-testid="name-date">
         <h3>{name}</h3>
-        <h4>{release_date}</h4>
+        <h4>{convertDate(release_date)}</h4>
       </div>
       <img 
         src={imageSrc} 
