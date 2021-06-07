@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 
@@ -39,7 +39,7 @@ const Artist = () => {
         </Link>
         <div className={styles.artistWrapper}>
           {/* Picture */}
-          <img className={styles.artistAvatar} src={avatarUrl || noAvatar} />
+          <img className={styles.artistAvatar} src={avatarUrl || noAvatar} alt="artist-avatar" />
 
           {/* Name */}
           <h2 className="artist-name">{name}</h2>

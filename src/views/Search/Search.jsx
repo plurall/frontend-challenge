@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { SubHeader } from 'components'
 import ArtistCard from 'components/ArtistCard/'
@@ -16,26 +16,28 @@ const Search = () => {
     <React.Fragment>
       <SubHeader
         breadcrumb={[{ text: 'Home' }]}
-        heading="Somos Front-end Challange"
+        heading="Buscar pelo nome do artista"
       />
       <div className={globalStyles.container}>
-        <div className={styles.searchContainer}>
+        <div className={styles.searchContainer}  data-testid="search-container">
           <input 
             className={styles.searchInput + ' ' + ((artists.length || notFound || error) ? styles.withResults : '')}
             onChange={getArtists}
+            id="main-search"
             placeholder="Nome do artista"
           />
           <img 
             className={styles.logoSolo + ' ' + (loading ? styles.beat : '')} 
             src={logoImg} 
+            alt="spotify-search"
           />
         </div>
 
         <div className={styles.artistContainer}>      
-          <div className={styles.errorMessage}>
+          <span className={styles.errorContainer}>
             {error}
             {notFound && 'Sorry, we coudn\'t find the artist that you are looking for :('}
-          </div>
+          </span>
 
           {/* Sort by populatity before mapping */}
           {artists.sort(artist => artist.popularity).map(a =>

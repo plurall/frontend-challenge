@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { clearToken, getToken } from 'utils'
+import { getToken } from 'utils';
 
 class SomosClient {
   constructor() {
@@ -7,7 +7,7 @@ class SomosClient {
   }
 
   onError = error => {
-    const { response: { data, status } } = error;
+    const { response: { data } } = error;
     
     return data.error.message;
   }
@@ -53,10 +53,8 @@ class SomosClient {
       return data;
     } catch(err) {
       this.onError(err);
-    }
-    
+    } 
   }
-
 }
 
 export default SomosClient

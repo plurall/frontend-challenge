@@ -22,7 +22,7 @@ class Home extends React.Component {
           heading="Somos Front-end Challange"
         />
         <div className={globalStyles.container}>
-          <img className={styles.logoSpotify} src={SpotifyLogo} />
+          <img className={styles.logoSpotify} src={SpotifyLogo} alt="spotify-logo" />
           <Link to="/busca" className={styles.linkButton}>
             <button className={styles.startButton}>BUSCAR ARTISTA</button>
           </Link>
