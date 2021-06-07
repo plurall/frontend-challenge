@@ -1,0 +1,27 @@
+.artistCard {
+  display: flex;
+  margin-bottom: 8px;
+  font-weight: 600;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 1px #655aa3;
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+  align-items: center;
+}
+
+.artistCard:hover {
+  background: #1f1a3a;
+  color: white;
+}
+
+.artistCard span {
+  margin-left: 15px;
+}
+
+.artistCard img {
+  width: 70px;
+  margin: 8px 15px 8px auto;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 9px 1px #1f1a3a;
+}

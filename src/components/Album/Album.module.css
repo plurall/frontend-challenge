@@ -1,0 +1,25 @@
+.singleAlbum {
+  display: flex;
+  box-shadow: 1px 1px 7px #0000004d;
+  margin: 6px;
+  padding: 5px;
+  align-items: center;
+}
+
+.nameDate h3 {
+  font-size: 80%;
+}
+
+
+.nameDate h4 {
+  font-size: 70%;
+  margin-top: 5px;
+  color: grey;
+  font-weight: 400;
+}
+
+.albumImage {
+  margin-left: auto;
+  width: 60px;
+  height: 60px;
+}
