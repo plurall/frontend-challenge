@@ -3,15 +3,12 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  /* opacity: 0;
-  animation: 1s fadeIn forwards ease-in;
-  -webkit-animation: 1s fadeIn forwards ease-in; */
 }
 
 .artistAvatar {
   width: 200px;
   height: 200px;
-  box-shadow: 1px 1px 9px 1px #1f1a3a;
+  box-shadow: 1px 1px 9px 1px #1f1a3a45;
   border-radius: 50%;
   margin-bottom: 30px;
 }
@@ -71,11 +68,3 @@ span.genre {
   opacity: 0.6;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
