@@ -1,13 +1,59 @@
-import { clearToken, getToken } from 'utils'
+import axios from 'axios';
+import { getToken } from 'utils';
 
 class SomosClient {
-  constructor() {}
+  constructor() {
+    this.baseURL = 'https://api.spotify.com/v1';
+  }
 
-  onError = error => {}
+  onError = error => {
+    const { response: { data } } = error;
+    
+    return data.error.message;
+  }
 
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtists(query) {
+    try {
+      const { data } = await axios.get(`${this.baseURL}/search`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        },
+        params: {
+          q: query,
+          type: 'artist'
+        }
+      });
+      return data;
+    } catch(err) {
+      return this.onError(err);
+    }
+   
+  }
+
+  async getArtist(id) {
+    try {
+      let { data } = await axios.get(`${this.baseURL}/artists/${id}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      });
+      // API call to get albums from the artist
+      const { data: { items } } = await axios.get(`${this.baseURL}/artists/${id}/albums`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        },
+        params: {
+          limit: 10
+        }
+      });
+
+      // Set albums to the return object
+      data.albums = items;
+
+      return data;
+    } catch(err) {
+      this.onError(err);
+    } 
   }
 }
 
