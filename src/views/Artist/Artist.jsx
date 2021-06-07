@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
 
 import { SubHeader } from 'components';
+import Album from 'components/Album';
 import { SomosClient } from 'utils';
 
 import globalStyles from 'App.module.css';
@@ -9,7 +11,7 @@ import styles from './Artist.module.css'
 import './stars.css'
 
 import noAvatar from '../../assets/noAvatar.jpg';
-import Album from 'components/Album';
+import { FiArrowLeftCircle } from 'react-icons/fi'
 
 const Artist = () => {
   const { id } = useParams();
@@ -42,6 +44,9 @@ const Artist = () => {
         heading="Somos Front-end Challange"
       />
       <div className={globalStyles.container}>
+        <Link to="/busca">
+          <FiArrowLeftCircle className={styles.goBack} />
+        </Link>
         <div className={styles.artistWrapper}>
           {/* Picture */}
           <img className={styles.artistAvatar} src={avatarUrl || noAvatar} />

@@ -64,6 +64,13 @@ span.genre {
   margin-top: 10px;
 }
 
+.goBack {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  opacity: 0.6;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
