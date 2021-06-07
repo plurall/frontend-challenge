@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 
 import { SubHeader } from 'components';
 import Album from 'components/Album';
-import { SomosClient } from 'utils';
+import useGetArtist from 'hooks/useGetArtist';
 
 import globalStyles from 'App.module.css';
 import styles from './Artist.module.css'
@@ -15,18 +15,8 @@ import { FiArrowLeftCircle } from 'react-icons/fi'
 
 const Artist = () => {
   const { id } = useParams();
-  const [artist, setArtist] = useState(null);
-
-  const client = new SomosClient();
-
-  useEffect(() => {
-    async function getData() {
-      const artist = await client.getArtist(id);
-      setArtist(artist);
-    }
-    getData();
-  }, [])
-
+  const [artist] = useGetArtist(id) ;
+  
   // In case API request still loading, we don't want to show anything yet
   if (!artist) return null;
 
