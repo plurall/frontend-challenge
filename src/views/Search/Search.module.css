@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  max-width: 1224px;
+  padding: 8px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.containerSearch img {
+  width: 25%;
+}
+
+input[type=text] {
+  margin: 8px;
+  padding: 16px;
+  font-size: 17px;
+  border: none;
+  border-radius: 20px;
+  float: left;
+  min-width: 200px;
+  width: 70%;
+}
+
+input:focus{
+  outline: invert;
+}
+
+.containerCardEmpty {
+  display: flex;
+  align-items: 1;
+  justify-content: center;
+  font: 1.5rem 'Nunito', sans-serif;
+}
+
+.containerArtistList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
