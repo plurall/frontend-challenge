@@ -1,24 +1,40 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
+import logo from 'assets/plurall.jpeg'
 
 import styles from './Home.module.css'
 
 class Home extends React.Component {
   state = {}
 
-  client = new SomosClient()
-
   render() {
     return (
       <React.Fragment>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
+          heading="plürall Front-end Challenge"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <img
+            src={logo}
+            alt="Logotipo plürall"
+            aria-label="Welcome to plürall"
+            height="125px"
+            decoding="async"
+            loading="lazy"
+          />
+
+          <Link to="/search" aria-label="Link to search page">
+            <button
+              type="button"
+              aria-label="Find artist"
+              className={styles.buttonPrimary}
+            >
+              Buscar Artista
+            </button>
+          </Link>
         </div>
       </React.Fragment>
     )
