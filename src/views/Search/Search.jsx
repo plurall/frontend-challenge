@@ -72,7 +72,7 @@ const Search = () => {
             key={String(id)}
             id={id}
             name={name}
-            image={images.length > 0 ? images[images.length - 1].url : logoSpotify}
+            image={images.length > 0 ? images[0].url : logoSpotify}
             genres={genres}
           />))}
       </section>

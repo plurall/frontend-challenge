@@ -4,9 +4,9 @@
   align-items: center;
   height: auto;
   max-width: 1224px;
-  padding: 8px;
+  padding: 0.5rem;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  font: 1rem/0.875rem 'Nunito', sans-serif;
 }
 
 .containerSearch {
@@ -18,15 +18,18 @@
 }
 
 .containerSearch img {
-  width: 25%;
+  margin-right: 0.5rem;
+  width: 15%;
+  filter: drop-shadow(4px 4px 4px var(--color-dark-gray));
+  image-rendering: pixelated;
 }
 
 input[type=text] {
-  margin: 8px;
-  padding: 16px;
-  font-size: 17px;
+  margin: 0.5rem;
+  padding: 1rem;
+  font-size: 1.0625rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   float: left;
   min-width: 200px;
   width: 70%;
@@ -38,7 +41,7 @@ input:focus{
 
 .containerCardEmpty {
   display: flex;
-  align-items: 1;
+  align-items: center;
   justify-content: center;
   font: 1.5rem 'Nunito', sans-serif;
 }
@@ -48,5 +51,5 @@ input:focus{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
