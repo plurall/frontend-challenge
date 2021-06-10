@@ -1,14 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './Album.module.css'
+
 const Album = ({ image, name, releaseDate }) => (
-  <li aria-label={`Information from album ${name}`}>
-    <img
-      src={image}
-      alt={name}
-      aria-label={`Album ${name}`}
-    />
-    <h2 aria-label="Name of album">{name}</h2>
+  <li
+    className={styles.wrapper}
+    aria-label={`Information from album ${name}`}
+  >
+    <div className={styles.wrapperImg}>
+      <img
+        src={image}
+        alt={name}
+        aria-label={`Album ${name}`}
+        decoding="async"
+        loading="lazy"
+      />
+    </div>
+    <h3 aria-label="Name of album">{name}</h3>
     <span role="contentinfo" aria-label="Release date of album">
       {new Date(releaseDate).toLocaleDateString('pt-BR')}
     </span>
