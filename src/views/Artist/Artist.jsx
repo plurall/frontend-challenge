@@ -58,10 +58,12 @@ const Artist = (props) => {
             {artistInfo.images &&
               <img
                 src={artistInfo.images
-                  ? artistInfo.images[artistInfo.images.length - 1].url
+                  ? artistInfo.images[0].url
                   : logoPlural}
                 alt={artistInfo.name}
                 aria-label="Principal picture"
+                decoding="async"
+                loading="lazy"
               />
             }
             <div className={styles.contentTitle}>
@@ -69,13 +71,13 @@ const Artist = (props) => {
                 className={styles.popularity}
                 aria-label={`Its popularity is ${artistInfo.popularity || 0}`}
               >
-              Sua popularidade está em {artistInfo.popularity || 0}
+               Sua popularidade está em {artistInfo.popularity || 0}
               </p>
               <h2
                 className={styles.title}
                 aria-label={`This is your favorite artist: ${artistInfo.name}`}
               >
-              Esse é seu artista favorito: {artistInfo.name}
+               Esse é seu artista favorito: {artistInfo.name}
               </h2>
             </div>
 
@@ -84,7 +86,6 @@ const Artist = (props) => {
                 O gêneros desse artista são:
               </h3>
               <p
-                className={styles.genres}
                 aria-label="The list of music genres"
               >
                 {artistInfo.genres
@@ -94,14 +95,14 @@ const Artist = (props) => {
             </aside>
           </main>
 
-          <article style={{ backgroundColor: 'lightblue', padding: 16 }}>
+          <article className={styles.albumContainer}>
             <h2>Esse é o top {albuns.length} de albuns</h2>
             <ul>
               {albuns && albuns.map(album =>
                 (<Album
                   key={String(album.id)}
                   image={album.images
-                    ? album.images[album.images.length - 1].url
+                    ? album.images[0].url
                     : logoPlural}
                   name={album.name}
                   releaseDate={album.release_date}
