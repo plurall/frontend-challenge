@@ -21,7 +21,6 @@ class Home extends React.Component {
             src={logo}
             alt="Logotipo plürall"
             aria-label="Welcome to plürall"
-            height="125px"
             decoding="async"
             loading="lazy"
           />

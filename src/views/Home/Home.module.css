@@ -3,25 +3,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+
+  height: 65vh;
+  max-height: 500px;
   max-width: 1224px;
-  padding: 30px 20px;
+
+  padding: 1.875rem 1.25rem;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+
+  font: 1rem/0.875rem 'Nunito', sans-serif;
+}
+
+.wrapper img {
+  height: 7.8125rem;
+  filter: drop-shadow(4px 4px 4px var(--color-dark-gray));
+  image-rendering: pixelated;
 }
 
 .buttonPrimary {
-  margin: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 800;
   line-height: 1;
-  border-radius: 500px;
-  padding: 16px 48px 18px;
-  border-width: 0;
-  letter-spacing: 2px;
+
   min-width: 160px;
+  margin: 1rem;
+  padding: 1rem 3rem 1.125rem;
+
+  border-radius: 31.25rem;
+  border-width: 0;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
   white-space: normal;
-  background-color: #1ed760;
+  color: var(--color-white);
+  background-color: var(--color-purple);
+}
 
+.buttonPrimary:hover {
+  opacity: 0.8;
 }
