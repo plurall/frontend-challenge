@@ -22,6 +22,7 @@ const Card = ({ id, name, image, genres }) => (
           src={image}
           alt={name}
           aria-label={`Album of artist ${name}`}
+          decoding="async"
           loading="lazy"
         />
       </div>

@@ -3,30 +3,41 @@ a:link {
 }
 
 .cardArtist {
-  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  height: 240px;
-  padding: 15px;
+
+  width: 12.5rem;
+  height: 15rem;
+
+  margin: 0.5rem;
+  padding: 1rem;
+
   cursor: pointer;
-  background: var(--color-purple);
+  background: linear-gradient(
+    to bottom, var(--color-dark-gray), var(--color-purple)
+  );
+  opacity: 0.8;
+}
+
+.cardArtist:hover {
+  opacity: 1;
 }
 
 .artistTitle {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 800;
-  line-height: 24px;
+  line-height: 1.5rem;
   letter-spacing: normal;
   text-transform: none;
+  text-align: center;
   color: var(--color-white);
 }
 
 .artistSubTitle {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 1rem;
   letter-spacing: normal;
   text-transform: none;
   color: var(--color-white);
@@ -42,5 +53,8 @@ a:link {
 }
 
 .artistAvatar img {
-  max-width: 150px;
+  max-height: 120px;
+  max-width: 130px;
+  filter: drop-shadow(4px 4px 4px var(--color-dark-gray));
+  image-rendering: pixelated;
 }
