@@ -3,6 +3,7 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@testing-library/react": "^11.2.7",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
     "md5": "^2.2.1",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "@types/jest": "^26.0.23",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
