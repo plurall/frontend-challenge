@@ -9,12 +9,16 @@ import { LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
+import Search from 'views/Search'
+import Artist from 'views/Artist'
 
 ReactDOM.render(
   <Router>
     <Switch>
       <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute path="/" component={App} />
+      <PrivateRoute exact path="/" component={App} />
+      <PrivateRoute exact path="/busca" component={Search} />
+      <PrivateRoute exact path="/artista/:id" component={Artist} />
     </Switch>
   </Router>,
   document.getElementById('root'),
