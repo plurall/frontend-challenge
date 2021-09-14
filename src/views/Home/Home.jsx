@@ -11,12 +11,7 @@ class Home extends React.Component {
   client = new SomosClient()
 
   render() {
-    // const getArtists = async () => {
-    //   const artists = await this.client.getArtists()
-    //   console.log(artists)
-    // }
-    // getArtists()
-   
+     
     return (
       <React.Fragment>
         {/* <SubHeader

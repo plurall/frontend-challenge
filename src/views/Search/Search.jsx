@@ -1,22 +1,13 @@
+import { Input } from 'components'
 import React from 'react'
 
 // import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
+// import { SomosClient } from 'utils'
 
 // import styles from './Home.module.css'
 
 class Search extends React.Component {
-  state = {}
-
-  client = new SomosClient()
-
   render() {
-    // const getArtists = async () => {
-    //   const artists = await this.client.getArtists()
-    //   console.log(artists)
-    // }
-    // getArtists()
-
     return (
       <React.Fragment>
         {/* <SubHeader
@@ -25,6 +16,7 @@ class Search extends React.Component {
         /> */}
         <div>
           <h1>Busca</h1>
+          <Input />
         </div>
       </React.Fragment>
     )
