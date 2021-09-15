@@ -1,9 +1,8 @@
 import React from 'react'
-
-// import { SubHeader } from 'components'
+import { Sidebar } from 'components'
+import { Footer } from 'plurall-footer'
 import { SomosClient } from 'utils'
-
-// import styles from './Home.module.css'
+import styles from './Artist.module.css'
 
 class Artist extends React.Component {
   constructor(props) {
@@ -25,12 +24,12 @@ class Artist extends React.Component {
     const { match: { params: { id } } } = this.props;
     const artists = await this.client.getArtists()
     const albums = await this.client.getArtistAlbumsById(id)
-    console.log(albums.items[0])
     const artist = artists.artists.find((a) => a.id === id)
+    console.log(artist)
     this.setState({
       loading: false,
       artist,
-      albums: albums.items.slice(0, 10)
+      albums: albums.items
     })
   }
 
@@ -38,14 +37,20 @@ class Artist extends React.Component {
     // A data de lançamento do album deve estar no formato `DD/MM/AAAA`.
     return (
       <div>
+        {/* // - Foto */}
+        <div className={styles.imageBG}>
+          <img
+            src={artist.images[0].url}
+            alt={artist.name}
+            className={styles.imageBG}
+          />
+        </div>
         {/* // - Nome */}
         <p>{artist.name}</p>
         {/* // Popularidade */}
         <p>{artist.popularity}</p>
-        {/* // - Foto */}
-        <img src={artist.images[2].url} alt={artist.name} />
         {/* // - Lista de gêneros */}
-        {artist.genres.map((genre, index) => <p key={genre[index]}>{genre}</p>)}
+         {artist.genres.map((genre, index) => <p key={genre[index]}>{genre}</p>)}
         {/* // - Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento. */}
         {albums.map((album) => (
           <div key={album.name}>
@@ -62,10 +67,13 @@ class Artist extends React.Component {
     const { loading, artist, albums } = this.state;
     return (
       <React.Fragment>
-        {loading ? <p>Loading...</p> : this.detailsArtist(artist, albums)}
-        {/* <div>
-          <p>Detalhe dos artistas por id</p>
-        </div> */}
+        <div className={styles.main}>
+          <Sidebar />
+          {loading ? <p>Loading...</p> : this.detailsArtist(artist, albums)}
+        </div>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </React.Fragment>
     )
   }

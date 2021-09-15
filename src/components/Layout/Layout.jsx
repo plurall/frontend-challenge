@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-
+import { Sidebar } from 'components'
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
 
@@ -19,7 +19,7 @@ class Layout extends Component {
 
   state = {}
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   handleLogout = path => {
     setToken('')
@@ -35,19 +35,10 @@ class Layout extends Component {
 
     return (
       <>
-        <div className={navBar}>
-          <NavBar
-            data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
-            }}
-            logout={this.handleLogout}
-            service="reader"
-            userToken={getToken()}
-          />
-        </div>
-
-        <div className={content}>{children}</div>
-
+        <main className={styles.main}>
+          <Sidebar />
+          <div className={content}>{children}</div>
+        </main>
         <div className={footer}>
           <Footer />
         </div>

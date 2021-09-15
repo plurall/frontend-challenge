@@ -1,0 +1,29 @@
+body {
+  position: relative;
+}
+
+.main {
+  background-color: #292929;
+  display: flex;
+}
+
+.footer {
+  background-color: var(--color-dark-gray);
+  padding: var(--padding);
+  position: absolute;
+  width: 100%;
+}
+
+.imageBG {
+  /* /* width: 78vw; */
+  height: 28vh;
+  margin-left: auto;
+    margin-right: auto;
+    max-width: 40em;
+  border: 1px solid white;
+  padding: 0;
+  text-align: center;
+  /* background-position: 30% 45%; */
+  background-size: cover;
+    -o-background-size: cover;
+}

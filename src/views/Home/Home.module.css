@@ -1,6 +1,6 @@
 .wrapper {
   max-width: 1224px;
-  padding: 30px 20px;
+  padding: 30px 0px;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }

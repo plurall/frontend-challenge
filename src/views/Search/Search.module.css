@@ -1,1 +1,24 @@
-import React from 'react';
+.main {
+  background-color: #292929;
+  display: flex;
+  padding-right: 500px;
+}
+
+.footer {
+  background-color: var(--color-dark-gray);
+  padding: var(--padding);
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 1224px) {
+  .body {
+    padding: 17px 0;
+  }
+  .footer {
+    background-color: var(--color-dark-gray);
+    padding: var(--padding);
+    position: absolute;
+    width: 100%;
+  }
+}

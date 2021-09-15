@@ -1,22 +1,20 @@
-import { Input } from 'components'
+import { Input, Sidebar } from 'components'
 import React from 'react'
-
-// import { SubHeader } from 'components'
-// import { SomosClient } from 'utils'
-
-// import styles from './Home.module.css'
+import styles from './Search.module.css'
+import { Footer } from 'plurall-footer'
 
 class Search extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
-        /> */}
-        <div>
-          <h1>Busca</h1>
-          <Input />
+        <div className={styles.main}>
+          {/* <Sidebar /> */}
+          <div>
+            <Input />
+          </div>
+        </div>
+        <div className={styles.footer}>
+          <Footer />
         </div>
       </React.Fragment>
     )

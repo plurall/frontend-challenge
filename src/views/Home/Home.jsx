@@ -1,6 +1,5 @@
 import React from 'react'
-
-// import { SubHeader } from 'components'
+import { Sidebar } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Home.module.css'
@@ -11,15 +10,11 @@ class Home extends React.Component {
   client = new SomosClient()
 
   render() {
-     
+
     return (
       <React.Fragment>
-        {/* <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
-        /> */}
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <h1>Home</h1>
         </div>
       </React.Fragment>
     )

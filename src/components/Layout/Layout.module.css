@@ -10,3 +10,8 @@
   background-color: var(--color-dark-gray);
   padding: var(--padding);
 }
+
+.main {
+  background-color: #292929;
+  display: flex;
+}
