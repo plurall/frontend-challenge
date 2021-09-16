@@ -1,7 +1,17 @@
 .main {
   background-color: #292929;
   display: flex;
-  padding-right: 500px;
+}
+
+.title {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  position: absolute;
+  top: 100px;
+  padding-left: 20px;
+  text-shadow: 0.1em 0.1em 0.05em #292929a1;
 }
 
 .footer {
@@ -11,14 +21,23 @@
   width: 100%;
 }
 
+.image {
+  background-color: black;
+  object-fit: cover;
+  width: 85vw;
+  height: 40vh;
+  -webkit-mask-image: linear-gradient(to top, transparent 0, 5%, black 30%);
+}
+
 @media (max-width: 1224px) {
   .body {
     padding: 17px 0;
   }
   .footer {
-    background-color: var(--color-dark-gray);
-    padding: var(--padding);
     position: absolute;
     width: 100%;
+  }
+  .mainInput {
+    padding: 25px;
   }
 }

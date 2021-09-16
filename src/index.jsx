@@ -11,16 +11,19 @@ import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
 import Search from 'views/Search'
 import Artist from 'views/Artist'
+import Provider from 'context/Provider'
 
 ReactDOM.render(
-  <Router>
-    <Switch>
-      <Route path="/login/callback" component={LoginCallback} />
-      <PrivateRoute exact path="/" component={App} />
-      <PrivateRoute exact path="/busca" component={Search} />
-      <PrivateRoute exact path="/artista/:id" component={Artist} />
-    </Switch>
-  </Router>,
+  <Provider>
+    <Router>
+      <Switch>
+        <Route path="/login/callback" component={LoginCallback} />
+        <PrivateRoute exact path="/" component={App} />
+        <PrivateRoute exact path="/busca" component={Search} />
+        <PrivateRoute exact path="/artista/:id" component={Artist} />
+      </Switch>
+    </Router>
+  </Provider>,
   document.getElementById('root'),
 )
 
