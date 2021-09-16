@@ -1,20 +1,19 @@
 import { getToken } from 'utils'
 
 class SomosClient {
-   onError = error => { }
+  onError = error => { }
 
   async getArtists() {
     const token = getToken();
-    console.log(token);
     const ids = [
-      "1qIAsl3tIpnX0j4BMi0l5g",
-      "4laQz4PaKeh2Hu6QL6evVD",
-      "3Bnq7jiU506HcPjRgQ43TM",
-      "1mZbRiSVb2ExneAlDbBiiT",
-      "6mdiAmATAx73kdxrNrnlao",
-      "5eAWCfyUhZtHHtBdNk56l1",
-      "0XHiH53dHrvbwfjYM7en7I",
-      "4adpoL1QBRZW6jWjRVMB04",
+      "1qIAsl3tIpnX0j4BMi0l5g", // Forfun
+      "4laQz4PaKeh2Hu6QL6evVD", // Tribalistas
+      "3Bnq7jiU506HcPjRgQ43TM", // Miltom Nascimento
+      "1mZbRiSVb2ExneAlDbBiiT", // Lô Borges
+      "6mdiAmATAx73kdxrNrnlao", // Iron Maiden
+      "5eAWCfyUhZtHHtBdNk56l1", // System Of A Down
+      "0XHiH53dHrvbwfjYM7en7I", // Chris Cornell
+      "4adpoL1QBRZW6jWjRVMB04", // Banda Djavú
     ];
     try {
       const response = await fetch(`https://api.spotify.com/v1/artists?ids=${ids}`, {

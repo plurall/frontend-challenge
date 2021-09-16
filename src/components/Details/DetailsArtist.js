@@ -12,14 +12,14 @@ const DetailsArtist = (artist, albums) => {
           />
         </div>
         <p className={styles.name}>{artist.name}</p>
-        <p className={styles.popularity}>Populariade: {artist.popularity}</p>
+        <p className={styles.popularity}>Popularidade: {artist.popularity}</p>
         <p className={styles.followers}>{artist.followers.total} ouvintes mensais</p>
 
         <p className={styles.title}>Gêneros</p>
         <div className={styles.genres}>
           {artist.genres.map((genre, index) => <p className={styles.genre} key={genre[index]} >{genre}</p>)}
         </div>
-        <p className={styles.title}>Albums</p>
+        <p className={styles.title}>Álbums</p>
         <div className={styles.albums}>
           {albums.map((album) => (
             <div className={styles.album} key={album.name}>

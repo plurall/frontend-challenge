@@ -1,6 +1,4 @@
-import Card from 'components/Card/Card';
 import Context from 'context/Context';
-import Link from 'plurall-ui/dist/Link/Link';
 import React, { useContext } from 'react'
 import styles from './Input.module.css'
 

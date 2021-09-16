@@ -8,7 +8,6 @@ function Provider({ children }) {
   const [artistFilter, setArtistFilter] = useState([]);
   const [status, setStatus] = useState(false);
   const [name, setName] = useState('');
-  const [recent, setRecent] = useState('');
   const [loading, setLoading] = useState(true);
   const [albums, setAlbums] = useState([]);
   const [id, setId] = useState(0);
@@ -20,17 +19,10 @@ function Provider({ children }) {
     setArtists(artistas.artists)
   };
 
-  const setRecents = () => {
-    const artist = artists.filter((artist) => {
-      return artist.id === id
-    })
-    console.log(artist.name)
-  }
-
   const getAlbumArtist = async (id) => {
     const albumsFilter = await client.getArtistAlbumsById(id)
     if (albumsFilter.items.length > 9) {
-      setAlbums(albumsFilter.items.slice(0, 9))
+      setAlbums(albumsFilter.items.slice(0,9))
     } else {
       setAlbums(albumsFilter.items)
     }
@@ -63,20 +55,15 @@ function Provider({ children }) {
     getAllArtists()
   }, []);
 
-  useEffect(() => {
-    setRecents()
-  }, [])
   const context = {
     search,
     setLoading,
     getAlbumArtist,
-    setRecent,
     setId,
     id,
     artists,
     artistFilter,
     status,
-    recent,
     loading,
     albums,
   };

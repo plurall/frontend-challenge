@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from './Card.module.css'
 import Card from './Card';
 const ArtistSearchCard = (artist) => {

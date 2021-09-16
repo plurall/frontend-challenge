@@ -13,10 +13,10 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  max-height: 230px;
-  width: 350px;
-  padding: 20px;
   height: auto;
+  max-height: 230px;
+  padding: 20px;
+  width: 350px;
 }
 
 
@@ -31,11 +31,11 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  max-height: 230px;
-  width: 180px;
-  padding: 20px;
   height: auto;
   margin: 5px;
+  max-height: 230px;
+  padding: 20px;
+  width: 180px;
 }
 .cardHome:hover{
   background-color: #464343;
@@ -57,20 +57,20 @@
 }
 
 .name {
+  color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: 900;
   padding-top: 15px;
-  color: white;
 }
 
 
 .nameHome {
+  color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   font-weight: 500;
   padding-top: 15px;
-  color: white;
 }
 
 .results {
@@ -106,7 +106,7 @@
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
     padding: 10px;
-    width: 80%;
+    width: 50%;
   }
   .card {
     align-items: center;
@@ -116,6 +116,8 @@
     max-height: 210px;
     padding: 20px;
     width: 180px;
+    position: absolute;
+    top: 390px;
   }
   .imageCard {
     max-height: 150px;
@@ -136,6 +138,8 @@
     font-weight: 200;
     padding-bottom: 30px;
     padding-top: 15px;
+    position: absolute;
+    top: 330px;
   }
   .notFound {
     font-size: 18px;

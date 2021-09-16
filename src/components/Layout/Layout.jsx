@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Sidebar } from 'components'
 import { Footer } from 'plurall-footer'
-import NavBar from 'plurall-header'
+
 
 import { getToken, setToken, SomosClient } from 'utils'
 
@@ -31,7 +31,7 @@ class Layout extends Component {
       props: { children },
     } = this
 
-    const { content, footer, 'nav-bar': navBar } = styles
+    const { content, footer } = styles
 
     return (
       <>

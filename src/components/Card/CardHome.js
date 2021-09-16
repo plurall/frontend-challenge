@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './Card.module.css'
-import Link from 'plurall-ui/dist/Link/Link';
 
 const Card = (data) => {
-  console.log(data[0].image)
   return (
     <div className={styles.cardsHome}>
       {

@@ -16,9 +16,9 @@ body {
 
 .imageBG {
   background-color: black;
+  height: 40vh;
   object-fit: cover;
   width: 80vw;
-  height: 40vh;
   -webkit-mask-image: linear-gradient(to top, transparent 0, 5%, black 30%);
 }
 
@@ -27,10 +27,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 60px;
   font-weight: 700;
-  position: absolute;
-  top: 100px;
   padding-left: 20px;
+  position: absolute;
   text-shadow: 0.1em 0.1em 0.05em #292929a1;
+  top: 100px;
 }
 
 .popularity {
@@ -38,9 +38,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  padding-left: 20px;
   position: absolute;
   top: 170px;
-  padding-left: 20px;
   text-shadow: 0.1em 0.1em 0.05em #292929a1;
 }
 
@@ -49,10 +49,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  position: absolute;
-  top: 200px;
   padding-left: 20px;
+  position: absolute;
   text-shadow: 0.1em 0.1em 0.05em #292929a1;
+  top: 200px;
 }
 
 .title {
@@ -64,25 +64,24 @@ body {
 }
 
 .genres {
+  display: flex;
   justify-content: space-around;
   margin: 15px;
-  display: flex;
   width: 500px;
 }
 
 .genre {
   color: white;
   font-family: 'Montserrat', sans-serif;
-  padding: 10px;
   font-size: 15px;
   font-weight: 300;
+  padding: 10px;
 }
 
 .albums {
-  justify-content: start;
+  display: flex;
   flex-wrap: wrap;
   margin: 20px 15px;
-  display: flex;
   width: 150vh;
 }
 
@@ -95,9 +94,9 @@ body {
 .album {
   background-color: #242424;
   border-radius: 3px;
+  height: 220px;
   margin: 5px;
   width: 180px;
-  height: 220px;
 }
 
 .albumName {
@@ -109,12 +108,12 @@ body {
 }
 
 .albumDate {
-  padding-top: 5px;
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  padding-left: 8px;
   font-weight: 700;
+  padding-left: 8px;
+  padding-top: 5px;
 }
 
 .albumImage {
@@ -126,61 +125,64 @@ body {
 @media (max-width: 1224px) {
   .imageBG {
     object-fit: cover;
-    width: 90vw;
     height: 40vh;
+    width: 90vw;
     -webkit-mask-image: linear-gradient(to top, transparent 0, 5%, black 70%);
   }
   .name {
     font-size: 42px;
     font-weight: 700;
-    position: absolute;
-    top: 150px;
     padding-left: 20px;
+    position: absolute;
     text-shadow: 0.1em 0.1em 0.05em #292929a1;
+    top: 150px;
   }
   .popularity {
     font-size: 17px;
     font-weight: 400;
-    position: absolute;
-    top: 200px;
     padding-left: 20px;
+    position: absolute;
     text-shadow: 0.1em 0.1em 0.05em #292929a1;
+    top: 200px;
   }
   .followers {
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     font-weight: 400;
-    position: absolute;
-    top: 220px;
     padding-left: 20px;
+    position: absolute;
     text-shadow: 0.1em 0.1em 0.05em #292929a1;
+    top: 220px;
   }
   .title {
     font-size: 22px;
     font-weight: 600;
     padding: 5px 15px;
   }
+
   .genres {
-    flex-wrap: wrap;
-    justify-content:start;
-    margin: 15px;
     display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
     width: 200px;
-  }
+  };
+
   .albums {
+    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 20px 15px;
-    display: flex;
     width: 180px;
   }
+
   .album {
     border-radius: 3px;
+    height: 220px;
     margin: 5px;
     width: 180px;
-    height: 220px;
   }
+
   .album:hover {
     background-color: #464343;
     -webkit-transform: scale(1.1);
