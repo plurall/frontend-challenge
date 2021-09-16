@@ -1,28 +1,18 @@
-.input {
-  border: none;
-  border-radius: 15px;
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 150%;
-}
-
 .card {
-  align-items: flex-start;
+  align-items: center;
   background-color: #242424;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: auto;
-  max-height: 230px;
-  padding: 20px;
-  width: 350px;
+  height: 235px;
+  margin: 30px;
+  padding: 15px;
+  width: 200px;
 }
 
-
 .cardsHome {
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cardHome {
@@ -37,17 +27,17 @@
   padding: 20px;
   width: 180px;
 }
-.cardHome:hover{
+
+.cardHome:hover {
   background-color: #464343;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-
 .imageCard {
   border-radius: 80px;
-  max-height: 300px;
-  max-width: 100px;
+  max-height: 350px;
+  max-width: 130px;
 }
 
 .imageCardHome {
@@ -59,18 +49,18 @@
 .name {
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 900;
-  padding-top: 15px;
+  letter-spacing: -0.2px;
 }
-
 
 .nameHome {
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   font-weight: 500;
-  padding-top: 15px;
+  padding: 15px 5px;
+  margin: 5px;
 }
 
 .results {
@@ -78,8 +68,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: 400;
-  padding-bottom: 30px;
-  padding-top: 15px;
+  padding: 5px 30px;
 }
 
 .category {
@@ -95,19 +84,10 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  padding-bottom: 30px;
-  padding-top: 15px;
+  padding: 5px 30px;
 }
 
 @media (max-width: 1224px) {
-  .input {
-    border: none;
-    border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 50%;
-  }
   .card {
     align-items: center;
     display: flex;
@@ -117,7 +97,7 @@
     padding: 20px;
     width: 180px;
     position: absolute;
-    top: 390px;
+    top: 340px;
   }
   .imageCard {
     max-height: 150px;
@@ -134,17 +114,16 @@
     font-weight: 100;
   }
   .results {
-    font-size: 29px;
-    font-weight: 200;
-    padding-bottom: 30px;
-    padding-top: 15px;
+    font-size: 22px;
+    padding: 15px 20px;
     position: absolute;
-    top: 330px;
+    top: 320px;
   }
   .notFound {
     font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 30px;
-    padding-top: 15px;
+    font-weight: 400;
+    padding: 15px 20px;
+    position: absolute;
+    top: 320px;
   }
 }

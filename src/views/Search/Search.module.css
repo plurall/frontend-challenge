@@ -30,20 +30,22 @@
 }
 
 @media (max-width: 1224px) {
-
+  .main {
+    width: 100%
+  }
   .image {
     height: 40vh;
     object-fit: cover;
-    width: 85vw;
+    width: 100%;
     -webkit-mask-image: linear-gradient(to top, transparent 0, 5%, black 70%);
   }
   .title {
-    font-size: 55px;
+    font-size: 45px;
     font-weight: 700;
-    padding-left: 20px;
+    padding-left: 10px;
     position: absolute;
     text-shadow: 0.1em 0.1em 0.05em #292929a1;
-    top: 150px;
+    top: 180px;
   }
   .footer {
     position: absolute;

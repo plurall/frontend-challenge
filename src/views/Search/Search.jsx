@@ -12,7 +12,7 @@ const Search = () => {
       <div className={styles.main}>
         <Sidebar />
         <div className={styles.mainInput}>
-          <img className={styles.image} src="images/bg3.jpg" alt="bg" />
+          <img className={styles.image} src="images/bg1.jpg" alt="bg" />
           <h1 className={styles.title}>Buscar</h1>
           <Input />
           {!status || ArtistSearchCard(artist)}
