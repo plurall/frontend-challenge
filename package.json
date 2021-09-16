@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
+    "date-fns": "^2.23.0",
     "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
@@ -25,7 +26,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
     "lint-staged": "^7.0.0",
-    "opn": "^5.4.0",
+    "opn": "^5.5.0",
     "prettier": "^1.15.2"
   },
   "lint-staged": {

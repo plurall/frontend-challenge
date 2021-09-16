@@ -1,0 +1,9 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: left;
+}
+
+.grid-template-rows {
+  grid-template-rows: 1fr 2fr;
+}

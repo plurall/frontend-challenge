@@ -1,0 +1,21 @@
+.artist-sub-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: black;
+}
+
+.artist-wrapper {
+  display: grid;
+  grid-template-rows: 300px 400px;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: right;
+}
+
+.start {
+  align-content: flex-start;
+}
