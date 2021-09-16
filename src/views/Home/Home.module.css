@@ -2,7 +2,7 @@
   background-color: black;
   height: 40vh;
   object-fit: cover;
-  width: 70vw;
+  width: 87vw;
   -webkit-mask-image: linear-gradient(to top, transparent 0, 5%, black 30%);
 }
 

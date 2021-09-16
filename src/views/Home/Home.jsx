@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
-        <img className={styles.image} src="images/bg1.jpg" alt="bg" />
+        <img className={styles.image} src="images/bg2.jpg" alt="bg" />
         <h1 className={styles.title}>Início</h1>
         {CardHome(mock)} 
       </div>
