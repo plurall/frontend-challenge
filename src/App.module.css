@@ -1,7 +1,10 @@
 :root {
+  --color-green-500: #1DB954;
+  --color-black: #191414;
+  
   --color-dark-gray: #333333;
-  --color-purple: #655ba2;
   --color-white: #f2f4f5;
+
   --height-footer: 59px;
   --height-nav-bar: 63px;
   --padding: 20px;
@@ -15,4 +18,35 @@
 
 body {
   background: var(--color-white);
+}
+
+body, input, textarea, select, button {
+  font: 400 1rem "Zen Kaku Gothic Antique", sans-serif; 
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  html {
+      font-size: 93.75%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+      font-size: 87.5%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+      font-size: 81.25%;
+  }
 }
