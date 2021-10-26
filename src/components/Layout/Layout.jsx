@@ -31,25 +31,19 @@ class Layout extends Component {
       props: { children },
     } = this
 
-    const { content, footer, 'nav-bar': navBar } = styles
+    const { content, footer, header } = styles
 
     return (
       <>
-        <div className={navBar}>
-          <NavBar
-            data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
-            }}
-            logout={this.handleLogout}
-            service="reader"
-            userToken={getToken()}
-          />
-        </div>
+        <header className={header}>
+          <img src="/images/logo.svg" alt="Logo Spotify" />
+          <span>Spoti</span>Search
+        </header>
 
         <div className={content}>{children}</div>
 
         <div className={footer}>
-          <Footer />
+          🚀 Developed by <strong>Lucas Nakahara</strong>
         </div>
       </>
     )

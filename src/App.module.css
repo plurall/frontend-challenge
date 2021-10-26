@@ -5,8 +5,10 @@
   --color-dark-gray: #333333;
   --color-white: #f2f4f5;
 
-  --height-footer: 59px;
-  --height-nav-bar: 63px;
+  --content-widht: 1120px;
+
+  --height-header: 4rem;
+  --height-footer: 3rem;
   --padding: 20px;
 }
 
@@ -17,7 +19,7 @@
 }
 
 body {
-  background: var(--color-white);
+  background: var(--color-black);
 }
 
 body, input, textarea, select, button {
