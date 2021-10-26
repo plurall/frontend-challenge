@@ -1,3 +1,32 @@
-.main {
-  color: red;
+.container {
+  width: 100%;
+  text-align: center;
+  padding: 0 2rem;
+
+  color: var(--color-white);
+}
+
+.container h1 {
+  margin: 1rem 0;
+  font-size: 3rem;
+}
+
+.container input {
+  border: 0;
+  border-radius: 100px;
+
+  padding: 0.25rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  font-size: 1.5rem;
+}
+
+.artistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;
+
+  margin-top: 2rem;
+  width: 100%;
 }

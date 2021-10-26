@@ -31,6 +31,17 @@
   height: calc(100vh - var(--height-header) - var(--height-footer));
   margin: 0 auto;
   padding: 0 2rem;
+
+  overflow-y: auto;
+
+  /* esconder scrollbar */
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* esconder scrollbar, chrome, safari e opera*/
+.content::-webkit-scrollbar {
+  display: none;
 }
 
 .footer {
