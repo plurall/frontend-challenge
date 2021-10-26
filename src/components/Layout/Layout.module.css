@@ -27,12 +27,8 @@
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   max-width: var(--content-widht);
-  min-height: calc(100vh - var(--height-header) - var(--height-footer));
+  height: calc(100vh - var(--height-header) - var(--height-footer));
   margin: 0 auto;
   padding: 0 2rem;
 }
