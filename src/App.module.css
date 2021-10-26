@@ -2,7 +2,7 @@
   --color-green-500: #1DB954;
   --color-black: #191414;
   
-  --color-dark-gray: #333333;
+  --color-dark-gray: #222;
   --color-white: #f2f4f5;
 
   --content-widht: 1120px;
@@ -19,7 +19,7 @@
 }
 
 body {
-  background: var(--color-black);
+  background: linear-gradient(var(--color-dark-gray),var(--color-black));
 }
 
 body, input, textarea, select, button {

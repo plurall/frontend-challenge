@@ -3,6 +3,7 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
     "md5": "^2.2.1",

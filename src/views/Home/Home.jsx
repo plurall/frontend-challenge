@@ -1,6 +1,6 @@
 import React from 'react'
+import 'animate.css';
 
-import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Home.module.css'
@@ -11,16 +11,18 @@ class Home extends React.Component {
   client = new SomosClient()
 
   render() {
+    const { main } = styles
+
     return (
-      <React.Fragment>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
-        />
-        <div className={styles.wrapper}>
-          <h1>Hi</h1>
+      <div className={main}>
+        <h1 className={`animate__animated animate__fadeInDown`}>
+          Seus <span>artistas favoritos</span> <br /> na ponta dos seus dedos
+        </h1>
+        <div className={`animate__animated animate__fadeInDown`}>
+          <p>Quer experimentar?</p>
+          <button>Buscar agora</button>
         </div>
-      </React.Fragment>
+      </div>
     )
   }
 }

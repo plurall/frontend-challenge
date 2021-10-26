@@ -1,6 +1,40 @@
-.wrapper {
-  max-width: 1224px;
-  padding: 30px 20px;
-  margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+.main {
+  height: 100%;
+
+  color: var(--color-white);
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 5rem;
+}
+
+.main h1 span {
+  color: var(--color-green-500);
+}
+
+.main p, .main button{
+  font-size: 1.75rem;
+}
+
+.main p {
+  margin-top: 2rem;
+}
+
+.main button {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  width: 50%;
+
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-green-500);
+  border: 0;
+  border-radius: 5px;
+
+  transition: 0.2s;
+}
+
+.main button:hover {
+  filter: brightness(0.8);
 }
