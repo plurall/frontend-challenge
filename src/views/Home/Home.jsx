@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import 'animate.css';
 
 import { SomosClient } from 'utils'
@@ -20,7 +21,10 @@ class Home extends React.Component {
         </h1>
         <div className={`animate__animated animate__fadeInDown`}>
           <p>Quer experimentar?</p>
-          <button>Buscar agora</button>
+          
+          <Link to='/busca'>
+            <button>Buscar agora</button>
+          </Link>
         </div>
       </div>
     )
