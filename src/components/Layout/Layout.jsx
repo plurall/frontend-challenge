@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-
-import { Footer } from 'plurall-footer'
-import NavBar from 'plurall-header'
+import { Link } from 'react-router-dom'
 
 import { getToken, setToken, SomosClient } from 'utils'
 
