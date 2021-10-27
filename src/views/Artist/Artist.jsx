@@ -62,7 +62,7 @@ const Artist = ({ match: { params: { id } } }) => {
           </div>
         </div>
         <div className={ styles.albums } >
-          <span>Álbuns</span>
+          <p>Álbuns</p>
           <CardGrid elements={ albums } />
         </div>
       </div>

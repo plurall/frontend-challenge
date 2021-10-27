@@ -9,11 +9,12 @@
 .info {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .info img {
   width: 175px;
+  height: 175px;
   border-radius: 100%;
 }
 
@@ -32,7 +33,21 @@
   margin-bottom: 1rem;
 }
 
-.albums span {
-  font-size: 1.5rem;
+.albums p {
+  font-size: 3rem;
   font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .info {
+    flex-direction: column;
+  }
+
+  .info div {
+    margin: 0;
+  }
+
+  .info div .name {
+    text-align: center;
+  }
 }
