@@ -5,7 +5,8 @@ import styles from './Card.module.css';
 
 const Card = ({ element }) => {
   return (
-    <Link to={ element.date ? '' : `/artista/${element.id}`}>
+    
+    <Link to={ element.date ? '#' : `/artista/${element.id}`} style={ element.date ? { cursor: 'unset' } : {}}>
       <div className={` ${styles.card} animate__animated animate__fadeInUp`}>
         <div className={ styles.imgContainer }>
           <img className={ element.date ? styles.albumImg : styles.artistImg } src={element.image} alt={`${element.name} profile image`} />
