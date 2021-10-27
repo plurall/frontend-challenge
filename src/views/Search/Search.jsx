@@ -22,7 +22,7 @@ const Search = () => {
       return {
         id: artist.id,
         name: artist.name,
-        image: artistImage ? artistImage.url : '',
+        image: artistImage ? artistImage.url : 'images/default-icon.png',
       }
     })
     return newArtists
