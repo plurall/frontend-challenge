@@ -11,7 +11,7 @@ class SomosClient {
     try {
       const token = getToken();
 
-      const response = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=artist&limit=${limit}`, {
+      const response = await fetch(encodeURI(`https://api.spotify.com/v1/search?q=${query}&type=artist&limit=${limit}`), {
         headers: {
           Authorization: `Bearer ${token}`,
           'Accept': 'application/json',
