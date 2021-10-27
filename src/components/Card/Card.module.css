@@ -9,6 +9,12 @@
   white-space: nowrap;                  
   overflow: hidden;
   text-overflow: ellipsis;
+
+  transition: background-color 0.2s;
+}
+
+.card:hover {
+  background-color: var(--color-black);
 }
 
 .card .imgContainer {
