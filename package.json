@@ -22,6 +22,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "@testing-library/dom": "^8.10.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
