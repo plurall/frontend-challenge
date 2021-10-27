@@ -19,7 +19,8 @@
 }
 
 body {
-  background: linear-gradient(var(--color-dark-gray),var(--color-black));
+  /* background: linear-gradient(to top, var(--color-green-500),var(--color-black)); */
+  background: var(--color-black);
 }
 
 body, input, textarea, select, button {

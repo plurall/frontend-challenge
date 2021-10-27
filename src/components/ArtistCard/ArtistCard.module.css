@@ -1,19 +1,20 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
+  display: block;
   border-radius: 5px;
-  padding: 2rem 0;
-
   background-color: var(--color-dark-gray);
+  min-width: 0;
+  padding: 1rem 2rem;
+
+  text-align: center;
+  white-space: nowrap;                  
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card .imgContainer {
   width: 100%;
-
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .card .imgContainer img{
@@ -24,8 +25,7 @@
 }
 
 .card span {
-  margin: 1.5rem 2rem 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 @media (max-width: 720px) {
