@@ -37,7 +37,7 @@ const Artist = ({ match: { params: { id } } }) => {
       return {
         id: album.id,
         name: album.name,
-        date: album.release_date,
+        date: new Date(album.release_date).toLocaleDateString("pt-BR"),
         image: album.images[0] ? album.images[0].url : 'images/default-icon.png',
       }
     })
