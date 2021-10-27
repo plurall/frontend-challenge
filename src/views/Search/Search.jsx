@@ -17,6 +17,8 @@ const Search = () => {
   async function handleGetArtists(query, limit = 12) {
     const response = await client.getArtists(query, limit);
 
+    if(!response.artists) return;
+
     const newArtists = response.artists.items.map((artist) => {
       const artistImage = artist.images[0]
       return {
@@ -25,6 +27,7 @@ const Search = () => {
         image: artistImage ? artistImage.url : 'images/default-icon.png',
       }
     })
+
     return newArtists
   }
   
@@ -38,16 +41,16 @@ const Search = () => {
   return (
     <Layout>
       <div className={ styles.container }>
-        <div className="animate__animated animate__fadeInDown" >
-          <h1>Pesquise seu artista</h1>
-          <input type="text" onChange={handleInput}/>
+        <div  >
+          <h1 className="animate__animated animate__fadeIn">Pesquise seu artista</h1>
+          <input className="animate__animated animate__fadeInUp" type="text" onChange={handleInput}/>
         </div>
 
         <div className={ styles.artistGrid }>
           {
-            artists.map(artist => (
+            artists ? artists.map(artist => (
               <ArtistCard key={artist.id} artist={artist} />
-            ))
+            )) : ''
           }
         </div>
       </div>
