@@ -27,7 +27,6 @@
 }
 
 .content {
-  max-width: var(--content-widht);
   height: calc(100vh - var(--height-header) - var(--height-footer));
   margin: 0 auto;
   padding: 0 2rem;
