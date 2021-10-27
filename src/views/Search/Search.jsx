@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { ArtistCard, Layout } from 'components';
+import { CardGrid, Layout } from 'components';
 import styles from './Search.module.css';
 import { SomosClient } from 'utils';
 
@@ -41,18 +41,11 @@ const Search = () => {
   return (
     <Layout>
       <div className={ styles.container }>
-        <div  >
+        <div>
           <h1 className="animate__animated animate__fadeIn">Pesquise seu artista</h1>
           <input className="animate__animated animate__fadeInUp" type="text" onChange={handleInput}/>
         </div>
-
-        <div className={ styles.artistGrid }>
-          {
-            artists ? artists.map(artist => (
-              <ArtistCard key={artist.id} artist={artist} />
-            )) : ''
-          }
-        </div>
+        <CardGrid  elements={ artists }/>
       </div>
     </Layout>
   )

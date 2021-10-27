@@ -1,4 +1,5 @@
 export { default as Layout } from './Layout'
 export { default as SubHeader } from './SubHeader'
 export { default as PrivateRoute } from './PrivateRoute'
-export { default as ArtistCard } from './ArtistCard'
+export { default as CardGrid } from './CardGrid'
+export { default as Card } from './Card'
