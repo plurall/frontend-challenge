@@ -3,7 +3,7 @@
   border-radius: 5px;
   background-color: var(--color-dark-gray);
   min-width: 0;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
 
   text-align: center;
   white-space: nowrap;                  
@@ -18,8 +18,8 @@
 }
 
 .card .imgContainer img{
-  width: 175px;
-  height: 175px;
+  width: 165px;
+  height: 165px;
   border-radius: 100%;
   object-fit: cover;
 }
