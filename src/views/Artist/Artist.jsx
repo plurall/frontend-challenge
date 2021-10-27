@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 import { SomosClient } from "utils";
 import { CardGrid, Layout } from "components";

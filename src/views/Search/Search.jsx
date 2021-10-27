@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { CardGrid, Layout } from 'components';
 import styles from './Search.module.css';
 import { SomosClient } from 'utils';
 
 const Search = () => {
-  const [input, setInput] = useState('');
   const [artists, setArtists] = useState([])
   
   const client = new SomosClient();

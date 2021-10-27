@@ -43,7 +43,7 @@ class Layout extends Component {
         <div className={content}>{children}</div>
 
         <div className={footer}>
-          🚀 Developed by <strong><a href="https://github.com/nakahwra">Lucas Nakahara</a></strong>
+          <span role="img" aria-label="Rocket">🚀</span> Developed by <strong><a href="https://github.com/nakahwra">Lucas Nakahara</a></strong>
         </div>
       </>
     )
