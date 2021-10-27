@@ -10,10 +10,6 @@ const Search = () => {
   
   const client = new SomosClient();
 
-  useEffect(() => {
-    console.log(artists);
-  }, [artists])
-
   async function handleGetArtists(query, limit = 12) {
     const response = await client.getArtists(query, limit);
 

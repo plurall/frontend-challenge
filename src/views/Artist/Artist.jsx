@@ -25,13 +25,11 @@ const Artist = ({ match: { params: { id } } }) => {
       genres: fetchedArtist.genres.join(', ')
     }
     
-    console.log(newArtist);
     return newArtist
   }
 
   async function handleGetArtistAlbums(id) {
     const fetchedAlbums = await client.getArtistAlbums(id);
-    console.log(fetchedAlbums);
 
     if(!fetchedAlbums.items) return;
 
