@@ -17,15 +17,28 @@
   margin-bottom: 1.5rem;
 }
 
-.card .imgContainer img{
+.card .imgContainer .artistImg{
   width: 165px;
   height: 165px;
   border-radius: 100%;
   object-fit: cover;
 }
 
+.card .imgContainer .albumImg{
+  width: 165px;
+  height: 165px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 .card span {
   font-size: 1.4rem;
+}
+
+.card .date {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 @media (max-width: 720px) {
