@@ -54,15 +54,15 @@ const Artist = ({ match: { params: { id } } }) => {
     <Layout>
       <div className={ styles.container } >
         <div className={ styles.info } >
-          <img src={ artist.image } alt="icon" />
-          <div>
+          <img className="animate__animated animate__fadeInLeft" src={ artist.image } alt="icon" />
+          <div className="animate__animated animate__fadeInRight">
             <span className={ styles.name } >{ artist.name }</span>
             <span className={ styles.popularity } > <strong>Popularidade:</strong> { artist.popularity }</span>
             <span className={ styles.genres } > <strong>Gêneros:</strong> { artist.genres }</span>
           </div>
         </div>
         <div className={ styles.albums } >
-          <p>Álbuns</p>
+          <p className="animate__animated animate__fadeInUp">Álbuns</p>
           <CardGrid elements={ albums } />
         </div>
       </div>
