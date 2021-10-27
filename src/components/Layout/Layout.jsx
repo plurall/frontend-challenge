@@ -35,11 +35,13 @@ class Layout extends Component {
 
     return (
       <>
-        <header className={header}>
-          <img src="/images/logo.svg" alt="Logo Spotify" />
-          <span>Spoti</span>Search
-        </header>
-
+        <Link to="/">
+          <header className={header}>
+            
+              <img src="/images/logo.svg" alt="Logo Spotify" />
+              <span>Spoti</span>Search
+          </header>
+        </ Link>
         <div className={content}>{children}</div>
 
         <div className={footer}>
