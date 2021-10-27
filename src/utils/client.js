@@ -36,6 +36,10 @@ class SomosClient {
     return this.apiQuery(url)
   }
   
+  getArtistAlbums(id) {
+    const url = `https://api.spotify.com/v1/artists/${id}/albums`
+    return this.apiQuery(url)
+  }
 }
 
 export default SomosClient
