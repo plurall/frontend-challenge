@@ -1,0 +1,38 @@
+.container {
+  max-width: var(--content-widht);
+  margin: 2rem auto;
+  padding: 0 2rem;
+
+  color: var(--color-white);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.info img {
+  width: 175px;
+  border-radius: 100%;
+}
+
+.info div {
+  margin-left: 2rem;
+}
+
+.info div span {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.info div .name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.albums span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
