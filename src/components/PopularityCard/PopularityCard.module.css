@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  height: 10rem;
+  background: var(--color-vivid-blue) url(../../assets/award.svg) 97% 20% no-repeat;;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 20px;
+  border-radius: 4px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.artistName {
+  color: var(--color-full-white);
+  font: 2rem 'Nunito', sans-serif;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.artistInfo {
+  color: var(--color-full-white);
+  font: 1.5rem 'Nunito', sans-serif;
+  font-weight: bold;
+}

@@ -1,6 +1,103 @@
-.wrapper {
-  max-width: 1224px;
-  padding: 30px 20px;
-  margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+.searchButton {
+  display: block;
+  width: 100%;
+  height: 59px;
+  border-radius: 4px;
+  border: 1px solid var(--color-purple);
+  background: var(--color-purple) url(../../assets/search-white.svg) 98.5% 50% no-repeat;
+  font: 24px/18px 'Nunito', sans-serif;
+  padding: 20px 16px;
+  text-decoration: none;
+  color: var(--color-full-white);
+  transition: filter 0.5s;
 }
+
+.searchButton:hover {
+  filter: opacity(0.7);
+}
+
+.container {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.container .serviceBox {
+  position: relative;
+  width: 1fr;
+  height: 280px;
+  background: var(--color-full-white);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.container .serviceBox .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-full-white);
+  font: 5rem 'Nunito', sans-serif;
+  z-index: 2;
+  transition-delay: 0.25s;
+}
+
+.container .serviceBox:hover .icon {
+  top: 30px;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  font: 2rem 'Nunito', sans-serif;
+  transition-delay: 0s;
+}
+
+.container .serviceBox .content {
+  position: relative;
+  padding: 20px;
+  color: var(--color-dark-gray);
+  text-align: center;
+  margin-top: 100px;
+  z-index: 1;
+  font: 1rem 'Nunito', sans-serif;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.container .serviceBox:hover .content {
+  transform: scale(1);
+  transition-delay: 0s;
+}
+
+.container .serviceBox .content h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.container .serviceBox .content p {
+  line-height: 1.5em;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+

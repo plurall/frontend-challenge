@@ -1,0 +1,71 @@
+.artistImage {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.artistInfo {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  color: var(--color-purple);
+  font: 2rem 'Nunito', sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.albumsGrid {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .artistImage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .albumsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .artistImage {
+    grid-template-columns: 1fr;
+  }
+
+  .artistInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .albumsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .albumsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
