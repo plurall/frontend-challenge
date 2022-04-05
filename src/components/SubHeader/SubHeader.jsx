@@ -5,6 +5,7 @@ import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
 
 import styles from './SubHeader.module.css'
 
+
 const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
   <div className={styles.header}>
     <div className={styles.wrapper}>
@@ -17,7 +18,10 @@ const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
       <div className={styles.innerDiv}>
         <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
         <Heading className={styles.heading}>{heading}</Heading>
+
       </div>
+     
+      
     </div>
   </div>
 )

@@ -1,0 +1,19 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+/* Albuns Area */
+.albunsLabel {
+  border-top: 1px lightblue;
+  width: 100%;
+  padding: 2% 0;
+}
+
+.listAlbuns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

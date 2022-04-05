@@ -1,0 +1,37 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.searchInput {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.loader {
+  width: 100%;
+  padding-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.noResults {
+  width: 100%;
+  padding-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.listArtists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+

@@ -1,0 +1,22 @@
+.coverArtists {
+  border-radius: 15px;
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  padding-right: 5%;
+}
+
+.Artists {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.artistaLabel {
+  width: 100%;
+  padding: 1%;
+}
