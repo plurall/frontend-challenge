@@ -1,4 +1,13 @@
+
 class DateFormat {
+  /**
+   * Função que efetua o formatada da data de acordo com a localização informada.
+   * @param {*} date 
+   * Data a ser formatada
+   * @param {*} locale 
+   * Internacionalização da data padrão: pt-BR
+   * @returns 
+   */
   static format(date, locale = "pt-BR") {
     try {
       let dateToFormat = date
