@@ -12,15 +12,15 @@ class Home extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
+          heading="Desafio Front-end do Plurall"
         />
         <div className={styles.wrapper}>
-          <h1>Hi</h1>
+          <h1>Home da aplicação</h1>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }
