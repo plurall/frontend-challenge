@@ -1,0 +1,73 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 0 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.wrapper p {
+  padding: 10px;
+}
+
+.sidenav {
+  width: 100%;
+}
+
+.Imagem {
+  border-radius: 6px;
+  width: 80%;
+}
+
+.detalhes {
+  float: right;
+  width: 70%;
+
+  font: 500 20px 'Nunito', sans-serif;
+}
+
+.divImagem {
+  float: left;
+  width: 30%;
+}
+
+.star {
+  margin-top: 13px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  list-style-type: none;
+}
+
+.popularidade {
+  display: grid;
+  width: 30%;
+
+  grid-template-columns: auto auto;
+}
+
+@media (max-width: 540px) {
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+  }
+  .divImagem {
+    float: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* @media (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+} */

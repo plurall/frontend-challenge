@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import queryString from 'query-string'

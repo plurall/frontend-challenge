@@ -1,0 +1,13 @@
+.listaAlbum {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.subtitulo {
+  padding-top: 20px;
+}

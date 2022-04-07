@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { injectBabelPlugin } = require('react-app-rewired')
 

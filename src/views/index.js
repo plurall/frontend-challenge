@@ -1,2 +1,5 @@
-export { default as Home } from './Home'
+export { Home } from './Home'
+export { Busca } from './Busca'
+export { Artista } from './Artista'
+export { NotFound } from './NotFound'
 export { default as LoginCallback } from './LoginCallback'

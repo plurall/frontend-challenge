@@ -1,1 +1,2 @@
-export { default } from './Home'
+/* eslint-disable linebreak-style */
+export { default as Home } from './Home'

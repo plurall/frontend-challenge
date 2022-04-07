@@ -1,1 +1,2 @@
-export { default } from './Layout'
+/* eslint-disable linebreak-style */
+export { default as Layout } from './Layout'

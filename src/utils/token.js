@@ -1,5 +1,4 @@
-import MD5 from 'md5'
-
+/* eslint-disable linebreak-style */
 const domain = () => {
   const {
     location: { hostname },

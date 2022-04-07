@@ -1,28 +1,25 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
-
+import { Button } from 'plurall-ui'
 import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
+import { Link } from 'react-router-dom'
 
 import styles from './Home.module.css'
 
-class Home extends React.Component {
-  state = {}
-
-  client = new SomosClient()
-
-  render() {
-    return (
-      <React.Fragment>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
-        />
-        <div className={styles.wrapper}>
-          <h1>Hi</h1>
-        </div>
-      </React.Fragment>
-    )
-  }
+function Home() {
+  return (
+    <React.Fragment>
+      <SubHeader
+        breadcrumb={[{ text: 'Home' }]}
+        heading="Somos Front-end Challange"
+      />
+      <div className={styles.wrapper}>
+        <Link to="/busca">
+          <Button>Buscar agora</Button>
+        </Link>
+      </div>
+    </React.Fragment>
+  )
 }
 
 export default Home

@@ -1,1 +1,2 @@
-export { default } from './SubHeader'
+/* eslint-disable linebreak-style */
+export { default as SubHeader } from './SubHeader'
