@@ -1,11 +1,10 @@
 {
-  "name": "somos-front-end-challange",
+  "name": "plurall-front-end-challenge",
   "private": false,
   "version": "0.1.0",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
-    "md5": "^2.2.1",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
     "plurall-ui": "^0.3.0",
@@ -21,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "eslint": "5.6.0",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",

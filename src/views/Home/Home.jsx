@@ -11,7 +11,7 @@ function Home() {
     <React.Fragment>
       <SubHeader
         breadcrumb={[{ text: 'Home' }]}
-        heading="Somos Front-end Challange"
+        heading="Desafio Front-end do Plurall"
       />
       <div className={styles.wrapper}>
         <Link to="/busca">
