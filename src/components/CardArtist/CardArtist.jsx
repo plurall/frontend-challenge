@@ -1,16 +1,28 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import styles from './CardArtist.module.css'
-import CoverImage from './../CoverImage';
+import CoverImage from './../CoverImage'
 
+const CardArtist = ({ artist, artists, searchInputValue }) => (
+  <Link
+    to={{
+      pathname: `/artista/${artist.id}`,
+      artist,
+      artists,
+      searchInputValue,
+    }}
+    className={styles.cardArtist}
+  >
+    <CoverImage imageList={artist.images} />
+    <h5 className={styles.nameArtist}>{artist.name}</h5>
+  </Link>
+)
 
-function CardArtist({ artist, artists, searchInputValue }) {
-  return (
-    <Link to={{ pathname: '/artista/' + artist.id, artist: artist, artists: artists, searchInputValue: searchInputValue }} className={styles.cardArtist}>
-      <CoverImage imageList={artist.images}></CoverImage>
-      <h5 className={styles.nameArtist}>{artist.name}</h5>
-    </Link>
-  )
+CardArtist.propTypes = {
+  artist: PropTypes.object,
+  artists: PropTypes.array,
+  searchInputValue: PropTypes.string,
 }
 
-export default CardArtist;
+export default CardArtist

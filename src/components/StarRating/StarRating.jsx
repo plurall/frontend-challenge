@@ -1,18 +1,21 @@
 import React from 'react'
-import styles from './StarRating.module.css'
 import PropTypes from 'prop-types'
+import styles from './StarRating.module.css'
 
-function StarRating({ rating }) {
-    let _rating = Math.round((rating * 5) / 100);
-    return (
-        <span className={styles.starsSelected}>{String().padStart(_rating, '★')}
-            <span className={styles.starsEmpty}>{String().padStart(5 - _rating, '★')}</span>
-        </span>
-    )
+const StarRating = ({ rating }) => {
+  const ratingValue = Math.round((rating * 5) / 100)
+  return (
+    <span className={styles.starsSelected}>
+      {String().padStart(ratingValue, '★')}
+      <span className={styles.starsEmpty}>
+        {String().padStart(5 - ratingValue, '★')}
+      </span>
+    </span>
+  )
 }
 
 StarRating.propTypes = {
-    name: PropTypes.number
+  rating: PropTypes.number,
 }
 
 export default StarRating

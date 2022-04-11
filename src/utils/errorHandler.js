@@ -1,14 +1,12 @@
-import {
-  clearToken
-} from 'utils'
+import { clearToken } from 'utils'
 
 class ErrorHandler {
   static handleRequestError(error) {
     if (error.status === 401) {
-      clearToken();
+      clearToken()
       window.location = '/'
     }
   }
 }
 
-export default ErrorHandler;
+export default ErrorHandler

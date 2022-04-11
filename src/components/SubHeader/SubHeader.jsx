@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-
 import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
-
 import styles from './SubHeader.module.css'
-
 
 const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
   <div className={styles.header}>
@@ -14,14 +11,10 @@ const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
           <ArrowButton direction="left" />
         </Link>
       )}
-
       <div className={styles.innerDiv}>
         <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
         <Heading className={styles.heading}>{heading}</Heading>
-
       </div>
-     
-      
     </div>
   </div>
 )

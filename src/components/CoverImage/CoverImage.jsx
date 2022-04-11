@@ -1,21 +1,29 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './CoverImage.module.css'
-import musicCover from '../../images/musicCover.jpg';
+import musicCover from '../../images/musicCover.jpg'
 
-function getImage(imageList) {
+const getImage = imageList => {
   if (imageList !== undefined && imageList.length > 0) {
-    return imageList[imageList.length - 2].url;
-  } else {
-    return musicCover
+    return imageList[imageList.length - 2].url
   }
+  return musicCover
 }
 
-function CoverImage({imageList, customCoverClass}) {
-  return (
-    <img className={customCoverClass != undefined? customCoverClass : styles.coverImage} variant="top" src={getImage(imageList)} alt=" " />
-  )
+const CoverImage = ({ imageList, customCoverClass }) => (
+  <img
+    className={
+      customCoverClass !== undefined ? customCoverClass : styles.coverImage
+    }
+    variant="top"
+    src={getImage(imageList)}
+    alt=" "
+  />
+)
+
+CoverImage.propTypes = {
+  imageList: PropTypes.array,
+  customCoverClass: PropTypes.string,
 }
 
-
-
-export default CoverImage;
+export default CoverImage

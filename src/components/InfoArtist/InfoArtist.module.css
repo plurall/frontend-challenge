@@ -6,6 +6,13 @@
   padding-right: 5%;
 }
 
+@media screen and (max-width: 600px) {
+  .coverArtists {
+   width: 10rem;
+   height: 10rem;
+  }
+}
+
 .Artists {
   display: flex;
   flex-wrap: nowrap;
