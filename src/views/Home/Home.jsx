@@ -26,10 +26,10 @@ class Home extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <SubHeader
           breadcrumb={[{ text: 'Home' }]}
-          heading="Somos Front-end Challange"
+          heading="Desafio Front-end do Plurall"
         />
         <div className={styles.wrapper}>
           <div
@@ -66,7 +66,7 @@ class Home extends React.Component {
             </Button>
           </div>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }

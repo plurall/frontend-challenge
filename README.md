@@ -40,8 +40,8 @@ No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arq
 ### Instale as dependências e start o projeto
 
 ```shell
-npm install
-npm start
+yarn 
+yarn start
 ```
 
 Após os passos acima, você conseguirá abrir a aplicação em http://boilerplate.local.plurall.net:3000/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
@@ -74,7 +74,7 @@ REACT_APP_API_URL=https://api.spotify.com/v1
 REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 ```
 
-- Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `npm start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
+- Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
 <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" width="50%">
 
