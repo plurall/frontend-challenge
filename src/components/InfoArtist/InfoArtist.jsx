@@ -13,20 +13,20 @@ const InfoArtist = ({ artist }) => (
         customCoverClass={styles.coverArtists}
       />
     </div>
-    <div className={styles.w100}>
+    <div className={styles.artistInfo}>
       <div className={styles.artistLabel}>
-        {translate('artista.nome')}: {artist.name}
+        <b>{translate('artista.nome')}:</b> {artist.name}
       </div>
       <div className={styles.artistLabel}>
-        {translate('artista.popularidade')}:{' '}
+        <b>{translate('artista.popularidade')}:</b>{' '}
         <StarRating rating={artist.popularity} />
       </div>
       <div className={styles.artistLabel}>
-        {translate('artista.seguidores')}:{' '}
+        <b>{translate('artista.seguidores')}:</b>{' '}
         {artist.followers !== undefined ? artist.followers.total : ''}
       </div>
       <div className={styles.artistLabel}>
-        {translate('artista.lista_de_generos')}:{' '}
+        <b>{translate('artista.lista_de_generos')}:</b>{' '}
         {artist.genres !== undefined ? artist.genres.join(', ') : ''}
       </div>
     </div>

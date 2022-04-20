@@ -17,9 +17,11 @@
   padding-bottom: 2rem;
 }
 
-.languageSelector img{
+.languageSelector {
+  padding: 10px
+} img{
   cursor: pointer;
-  padding: 4px;
+  padding: 5px;
   opacity: 50%;
 }
 

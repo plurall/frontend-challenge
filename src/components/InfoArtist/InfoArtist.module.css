@@ -6,24 +6,30 @@
   padding-right: 5%;
 }
 
-@media screen and (max-width: 600px) {
-  .coverArtists {
-   width: 10rem;
-   height: 10rem;
-  }
-}
-
 .Artists {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  padding: 10px;
 }
 
-.w100 {
+.artistInfo {
   width: 100%;
 }
 
 .artistLabel {
   width: 100%;
   padding: 1%;
+}
+
+@media screen and (max-width: 600px) {
+  .coverArtists {
+    width: 100%;
+  }
+
+  .Artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 }
