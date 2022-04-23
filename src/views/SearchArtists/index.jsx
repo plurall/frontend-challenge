@@ -51,7 +51,7 @@ const SearchArtists = () => {
                   id="artistName"
                   name="artistName"
                   type="text"
-                  placeholder="Digite o nome do artista"
+                  placeholder="Digite o nome do(a) artista"
                   onChange={e => setArtistsName(e.target.value)}
                 />
                 <IoSearchCircle
@@ -81,7 +81,7 @@ const SearchArtists = () => {
                 size="130"
                 color="#18b34e"
               />
-              <p>Procure por um artista existênte!</p>
+              <p>Procure por um(a) artista existênte!</p>
             </div>
           )}
         </div>
