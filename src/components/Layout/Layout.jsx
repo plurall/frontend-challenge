@@ -1,21 +1,14 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
-
-import { getToken, setToken, SomosClient } from 'utils'
-
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { getToken, setToken } from 'utils'
 import styles from './Layout.module.css'
 
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
   }
-
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
 
   state = {}
 

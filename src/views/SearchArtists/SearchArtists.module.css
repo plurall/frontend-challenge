@@ -1,0 +1,57 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+
+  color: #fff;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 30%;
+}
+
+.inputWrapper label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.inputWrapper input {
+  width: 80%;
+  border-radius: 14px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
+  transition: 0.2s;
+}
+
+.inputWrapper .searchIcon {
+  transform: translateX(-30px) translateY(9px);
+}
+
+.artistsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.noArtists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  margin: 4rem 0;
+
+  width: 100%;
+}

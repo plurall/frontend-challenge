@@ -1,8 +1,6 @@
+import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-
-import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
-
 import styles from './SubHeader.module.css'
 
 const SubHeader = ({ buttonHref, breadcrumb, heading }) => (

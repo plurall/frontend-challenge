@@ -1,0 +1,62 @@
+.artistCard {
+  background-color: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+
+  padding: 2rem;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.4rem;
+
+  transition: 0.4s;
+}
+
+.artistCard:hover {
+  transform: translateY(-4px);
+}
+
+.artistCard .artistImage {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.4);
+}
+
+.artistCard h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.artistCard button {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  align-items: center;
+  gap: 10px;
+
+  padding: 0.4rem 2rem;
+
+  border: none;
+  background-color: var(--color-green);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  box-shadow: 0 0 13px 10px rgba(0, 0, 0, 0.4);
+
+  transition: 0.2s;
+}
+
+.artistCard .textButton {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.artistCard button:hover {
+  filter: brightness(1.2);
+}

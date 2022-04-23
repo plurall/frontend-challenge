@@ -1,6 +1,42 @@
 .wrapper {
-  max-width: 1224px;
-  padding: 30px 20px;
-  margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  max-width: 1220px;
+  height: 20rem;
+  margin: 4rem auto;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  color: #fff;
+}
+
+.button {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  align-items: center;
+  gap: 10px;
+
+  padding: 0.7rem 3rem;
+
+  border: none;
+  background-color: var(--color-green);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.textButton {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.button:hover {
+  filter: brightness(1.2);
 }

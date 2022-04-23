@@ -1,0 +1,134 @@
+.wrapper {
+  display: flex;
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+
+  color: #fff;
+}
+
+.artistDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.artistDataContainer .artistImage {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.artistDataContainer .artistInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.artistDataContainer .artistInfo .artistNameContainer {
+  background: var(--color-black);
+  color: var(--color-green);
+
+  padding: 0.6rem 1.4rem;
+
+  border-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.artistDataContainer .artistInfo .artistNameContainer p {
+  font-size: 0.8rem;
+}
+
+.artistDataContainer .artistInfo .genresContainer {
+  margin: 0.5rem;
+}
+
+.artistDataContainer .artistInfo .genresContainer h3 {
+  border-bottom: 1px solid var(--color-green);
+}
+
+.artistDataContainer .artistInfo .genresContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0.6rem 0 0.6rem 1rem;
+}
+
+.artistDataContainer .artistInfo .genresContainer ul li::before {
+  content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--color-green); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-flex; /* Needed to add space between the bullet and the text */
+  align-items: center;
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.artistAlbumsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  margin: 1rem 4rem;
+}
+
+.artistAlbumsContainer .artistAlbumsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.artistAlbumsContainer .artistAlbumsWrapper .albumCard {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.719);
+  backdrop-filter: blur(6px);
+
+  padding: 1rem;
+
+  border-radius: 10px;
+}
+
+.artistAlbumsContainer .artistAlbumsWrapper .albumCard .albumImage {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.artistAlbumsContainer .artistAlbumsWrapper .albumCard .albumDataContainer {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+
+  gap: 10px;
+}
+
+.artistAlbumsContainer .artistAlbumsWrapper .albumCard .albumDataContainer h3 {
+  font-size: 1rem;
+}
+
+.artistAlbumsContainer .artistAlbumsWrapper .albumCard .albumDataContainer p {
+  font-size: 0.8rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+}
