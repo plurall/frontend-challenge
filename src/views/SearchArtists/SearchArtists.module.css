@@ -55,3 +55,20 @@
 
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .inputWrapper {
+    width: 100%;
+  }
+
+  .artistsWrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .artistsWrapper {
+    grid-template-columns: 1fr;
+  }
+}

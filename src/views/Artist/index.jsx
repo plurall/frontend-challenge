@@ -37,12 +37,12 @@ const Artist = () => {
         breadcrumb={[{ text: 'Artist' }]}
         heading="Desafio Front-end do Plurall"
       />
-      <FadeWrapper>
-        {loading ? (
-          <div className={styles.loader}>
-            <ClipLoader color="#ffffff" size={100} />
-          </div>
-        ) : (
+      {loading ? (
+        <div className={styles.loader}>
+          <ClipLoader color="#ffffff" size={100} />
+        </div>
+      ) : (
+        <FadeWrapper>
           <main className={styles.wrapper}>
             <Link to="/search/artists" style={{ height: '20px' }}>
               <BsFillArrowLeftCircleFill size={20} color="#ffffff" />
@@ -121,8 +121,8 @@ const Artist = () => {
               </div>
             </section>
           </main>
-        )}
-      </FadeWrapper>
+        </FadeWrapper>
+      )}
     </Layout>
   )
 }

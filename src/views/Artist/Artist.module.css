@@ -26,7 +26,7 @@
 .artistDataContainer .artistInfo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 
   gap: 10px;
 }
@@ -131,4 +131,29 @@
   justify-content: center;
   align-items: center;
   height: 40rem;
+}
+
+@media (max-width: 1280px) {
+  .artistAlbumsContainer .artistAlbumsWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 816px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .artistDataContainer .artistImage {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .artistAlbumsContainer {
+    margin: 1rem 2rem;
+  }
+
+  .artistAlbumsContainer .artistAlbumsWrapper {
+    grid-template-columns: 1fr;
+  }
 }
