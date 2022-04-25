@@ -51,9 +51,10 @@ const Artist = () => {
               <div
                 className={styles.artistImage}
                 style={{
-                  backgroundImage: artist.images
-                    ? `url("${artist.images[0].url}")`
-                    : 'url("https://st3.depositphotos.com/1767687/16607/v/600/depositphotos_166074422-stock-illustration-default-avatar-profile-icon-grey.jpg")',
+                  backgroundImage:
+                    artist.images.length > 0
+                      ? `url("${artist.images[0].url}")`
+                      : 'url("https://st3.depositphotos.com/1767687/16607/v/600/depositphotos_166074422-stock-illustration-default-avatar-profile-icon-grey.jpg")',
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                 }}
