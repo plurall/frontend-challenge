@@ -19,7 +19,9 @@
 
 .languageSelector {
   padding: 10px
-} img{
+}
+
+.languageSelector img{
   cursor: pointer;
   padding: 5px;
   opacity: 50%;
