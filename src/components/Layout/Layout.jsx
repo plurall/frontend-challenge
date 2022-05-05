@@ -33,24 +33,25 @@ class Layout extends Component {
 
     const { content, footer, 'nav-bar': navBar } = styles
 
-    return (
+    return ( 
       <>
         <div className={navBar}>
-          <NavBar
-            data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
-            }}
-            logout={this.handleLogout}
-            service="reader"
-            userToken={getToken()}
+            <NavBar
+              data={{
+                menu: { items: [{ name: 'Início', slug: 'account', id: 0 }]},
+              }}
+              logout={this.handleLogout}
+              service="reader"
+              userToken={getToken()}
           />
-        </div>
+         </div>
 
         <div className={content}>{children}</div>
 
         <div className={footer}>
           <Footer />
         </div>
+
       </>
     )
   }

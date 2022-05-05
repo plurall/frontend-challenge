@@ -3,23 +3,26 @@ import React from 'react'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
+import { ArtistSearch } from 'views'
+
 import styles from './Home.module.css'
-
 class Home extends React.Component {
-  state = {}
 
-  client = new SomosClient()
+  client = new SomosClient();
 
   render() {
     return (
       <>
         <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
+          breadcrumb={[{ text: 'Pesquisa de Artista' }]}
           heading="Desafio Front-end do Plurall"
         />
         <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
+
+          <ArtistSearch/>
+
         </div>
+
       </>
     )
   }
