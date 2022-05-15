@@ -9,4 +9,6 @@
 body{
   font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-height: 100vh;
 }

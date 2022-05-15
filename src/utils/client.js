@@ -39,6 +39,19 @@ class SomosClient {
       }
     }
   }
+
+  async getArtistById(id) {
+    try {
+      const response = await api.get(`/artists/${id}`, this.header)
+      return response
+    } catch (error) {
+      console.log(error)
+      if (error.message !== "canceled" && error.response.status === 401) {
+        clearToken()
+        window.location.href = '/'
+      }
+    }
+  }
 }
 
 export default SomosClient

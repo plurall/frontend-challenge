@@ -18,6 +18,7 @@ const InputSearch = ({
   return (
     <label className={labelSearch} htmlFor={id}>
       <span className={labelSpan}>{label}</span>
+
       <DebounceInput
         id={id}
         className={inputSearch}

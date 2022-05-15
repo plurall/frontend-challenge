@@ -18,19 +18,21 @@ const PaginationController = ({
   return (
     <nav id={id} name={name} className={controllers}>
       <button
-        className={`${!pagination.prev.hasPage && buttonDisabled}`}
+        name="prev_page"
+        className={`${!pagination.prev.hasPage ? buttonDisabled : ""}`}
         onClick={debounce(buttonLeft, debounceTime)}
       >
-        <img src={arrowSvg} alt="" />
+        <img src={arrowSvg} alt="seta para esquerda" />
       </button>
 
       <span>{`${pagination.currentPage} de ${pagination.totalPages}`}</span>
 
       <button
-        className={`${!pagination.next.hasPage && buttonDisabled}`}
+        name="next_page"
+        className={`${!pagination.next.hasPage ? buttonDisabled : ""}`}
         onClick={debounce(buttonRight, debounceTime)}
       >
-        <img src={arrowSvg} alt="" />
+        <img src={arrowSvg} alt="seta para direita" />
       </button>
     </nav>
   );

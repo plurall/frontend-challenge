@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import CardArtist from 'components/CardArtist'
-import { Layout, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import {
@@ -15,6 +14,8 @@ import {
 import Loading from 'components/Loading'
 import InputSearch from 'components/InputSearch';
 import PaginationController from 'components/PaginationController';
+import { BaseRoutes } from 'routes/BaseRoutes'
+import { SubHeader } from 'components'
 
 const MIN_LENGHT_ARTIST_NAME = 4
 const INIT_CONTROLLER_PAGINATION = {
@@ -105,11 +106,11 @@ const SearchArtists = () => {
   }, [artistName])
 
   return (
-    <Layout>
+    <>
       <SubHeader
         breadcrumb={[{ text: 'Buscar Artistas' }]}
         heading="Localize seus músicos favoritos"
-        buttonHref="/"
+        buttonHref={BaseRoutes.login}
       />
       <div className={wrapper}>
         <div className={headerContainer}>
@@ -154,7 +155,7 @@ const SearchArtists = () => {
         }
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

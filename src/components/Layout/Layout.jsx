@@ -7,6 +7,7 @@ import NavBar from 'plurall-header'
 import { getToken, setToken, SomosClient } from 'utils'
 
 import styles from './Layout.module.css'
+import { BaseRoutes } from 'routes/BaseRoutes'
 
 class Layout extends Component {
   static propTypes = {
@@ -38,7 +39,11 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+              menu: { items: [
+                { name: 'Início', slug: 'account', href: BaseRoutes.login, id: 0 },
+                { name: 'Buscar', slug: 'search', href: BaseRoutes.search, id: 1 },
+                { name: 'Sair', slug: 'search', href: BaseRoutes.loginCallback, id: 2 },
+              ]},
             }}
             logout={this.handleLogout}
             service="reader"
