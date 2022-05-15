@@ -1,0 +1,60 @@
+.controllers{
+  max-height: 64px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controllers span{
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+
+.controllers button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background: #665aa480;
+  outline: none;
+  border: 2px solid #665aa430;
+  border-radius: 50%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  cursor: pointer;
+}
+
+.controllers button:hover{
+  background: #665aa4;
+}
+
+.controllers button:active{
+  filter: brightness(0.8);
+}
+
+.controllers button img{
+  width: 24px;
+  height: fit-content;
+}
+
+.controllers button:last-child img{
+  transform: rotate(180deg);
+}
+
+.controllers .button_disabled{
+  pointer-events: none;
+  background: #cccccc;
+}
+
+@media(max-width:  510px){
+  .controllers{
+    margin-bottom: 0.5rem;
+  }
+
+  .controllers button{
+    width: 32px;
+    height: 32px;
+  }
+}

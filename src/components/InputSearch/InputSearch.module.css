@@ -1,0 +1,32 @@
+.label_search{
+  display: block;
+  margin: 0 1rem 1rem 0;
+  width: fit-content;
+}
+
+.label_span{
+  display: block;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input_search{
+  width: 280px;
+  height: 42px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 2px solid #665aa470;
+  outline: none;
+}
+
+.input_search:hover, .input_search:focus{
+  border: 2px solid #665aa4;
+}
+
+@media(max-width:  510px){
+  .label_search{
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}

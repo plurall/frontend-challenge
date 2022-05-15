@@ -41,7 +41,7 @@ const Home = () => {
         heading="Desafio Front-end do Plurall"
       />
       <div className={wrapper}>
-        <div className={container}>
+        {user.name && <div className={container}>
           <img src={user.image} alt="foto do usuário" />
           <strong className={welcomoText}>Seja bem vindo</strong>
           <h1 className={userHeading}>{user.name}</h1>
@@ -49,7 +49,7 @@ const Home = () => {
           <Link className={buttonGoTo} to="/search-artists">
             Buscar artistas
           </Link>
-        </div>
+        </div>}
       </div>
     </>
   )

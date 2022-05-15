@@ -4,22 +4,17 @@ import CardArtist from 'components/CardArtist'
 import { Layout, SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
-import arrowSvg from '../../assets/icons/arrow.svg'
-
 import {
   wrapper,
   cards,
-  controllers,
   loading_container as loadingContainer,
   loading_hidden as loadingHidden,
   not_found as notFound,
-  button_disabled as buttonDisabled,
   header_container as headerContainer,
-  label_search as labelSearch,
-  label_span as labelSpan,
-  input_search as inputSearch,
 } from './SearchArtists.module.css'
 import Loading from 'components/Loading'
+import InputSearch from 'components/InputSearch';
+import PaginationController from 'components/PaginationController';
 
 const MIN_LENGHT_ARTIST_NAME = 4
 const INIT_CONTROLLER_PAGINATION = {
@@ -43,7 +38,12 @@ const SearchArtists = () => {
   const [artists, setArtists] = useState([])
   const [isLoadingArtists, setIsLoadingArtists] = useState(false)
 
-  const controllerPagination = ({ offset = 0, nextPage, prevPage, totalItems }) => {
+  const controllerPagination = ({
+    offset = 0,
+    nextPage,
+    prevPage,
+    totalItems
+  }) => {
     const LIMIT = 20
     const totalPages = Math.ceil(totalItems / LIMIT)
     const currentPage = (offset + LIMIT) / LIMIT
@@ -104,7 +104,6 @@ const SearchArtists = () => {
     }
   }, [artistName])
 
-
   return (
     <Layout>
       <SubHeader
@@ -114,37 +113,24 @@ const SearchArtists = () => {
       />
       <div className={wrapper}>
         <div className={headerContainer}>
-          <label className={labelSearch} htmlFor="searchArtist">
-            <span className={labelSpan}>Buscar</span>
-            <input
-              className={inputSearch}
-              id="searchArtist"
-              name="searchArtist"
-              value={artistName}
-              onChange={e => setArtistName(e.target.value)}
-              min={4}
-              placeholder="Digite o nome do artista"
-            />
-          </label>
+          <InputSearch
+            id="searchArtist"
+            name="searchArtist"
+            label="Buscar"
+            placeholder="Digite o nome do artista"
+            value={artistName}
+            onChange={e => setArtistName(e.target.value)}
+          />
 
           {artists.length ?
-            <nav className={controllers}>
-              <button
-                className={`${!pagination.prev.hasPage && buttonDisabled}`}
-                onClick={() => onLoadArtists(pagination.prev.prevPage)}
-              >
-                <img src={arrowSvg} alt="" />
-              </button>
-
-              <span>{`${pagination.currentPage} de ${pagination.totalPages}`}</span>
-
-              <button
-                className={`${!pagination.next.hasPage && buttonDisabled}`}
-                onClick={() => onLoadArtists(pagination.next.nextPage)}
-              >
-                <img src={arrowSvg} alt="" />
-              </button>
-            </nav>
+            <PaginationController
+              id="controller"
+              name="controller"
+              pagination={pagination}
+              debounceTime={300}
+              buttonLeft={() => onLoadArtists(pagination.prev.prevPage)}
+              buttonRight={() => onLoadArtists(pagination.next.nextPage)}
+            />
           : ""}
         </div>
 
@@ -162,7 +148,7 @@ const SearchArtists = () => {
             />
           ))
         :
-          <div className={notFound}>
+          !isLoadingArtists && <div className={notFound}>
             <h1>Artista {artistName} não encontrado.</h1>
           </div>
         }
