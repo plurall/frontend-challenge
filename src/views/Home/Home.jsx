@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
+import userDefault from "../../assets/icons/user-default.svg"
+
 import {
   wrapper,
   container,
@@ -14,11 +16,18 @@ import {
 
 const Home = () => {
   const client = new SomosClient()
-  const [username, setUsername] = useState('')
+  const [user, setUser] = useState({name: '', image: ''})
 
   const onLoadUser = async () => {
-    const response = await client.getUser()
-    setUsername(response.data.display_name)
+    try {
+      const response = await client.getUser()
+      setUser({
+        name: response.data.display_name || "",
+        image: response.data.images ? response.data.images[0].url : userDefault
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
@@ -33,8 +42,9 @@ const Home = () => {
       />
       <div className={wrapper}>
         <div className={container}>
+          <img src={user.image} alt="foto do usuário" />
           <strong className={welcomoText}>Seja bem vindo</strong>
-          <h1 className={userHeading}>{username}</h1>
+          <h1 className={userHeading}>{user.name}</h1>
 
           <Link className={buttonGoTo} to="/search-artists">
             Buscar artistas

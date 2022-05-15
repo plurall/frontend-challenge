@@ -18,6 +18,15 @@
   height: 100%;
 }
 
+.container img{
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  padding: 0.25rem;
+  background: #8f7deb;
+}
+
 .welcome_text{
   align-self: flex-start;
   font-size: 1rem;

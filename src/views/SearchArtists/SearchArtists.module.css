@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 1224px;
@@ -63,11 +64,32 @@
   background: #cccccc;
 }
 
+.loading_container{
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.loading_hidden{
+  display: none;
+}
+
 .cards{
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   max-width: fit-content;
+  margin-top: 1rem;
+}
+
+.not_found{
+  width: 100vw;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .label_search{
@@ -94,4 +116,28 @@
 
 .input_search:hover, .input_search:focus{
   border: 2px solid #665aa4;
+}
+
+@media(max-width:  510px){
+  .header_container{
+    flex-direction: column;
+  }
+
+  .label_search{
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .controllers{
+    margin-bottom: 0.5rem;
+  }
+
+  .controllers button{
+    width: 32px;
+    height: 32px;
+  }
+
+  .loading_container{
+    top: 145px
+  }
 }

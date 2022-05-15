@@ -10,13 +10,16 @@ import {
   wrapper,
   cards,
   controllers,
+  loading_container as loadingContainer,
+  loading_hidden as loadingHidden,
+  not_found as notFound,
   button_disabled as buttonDisabled,
   header_container as headerContainer,
   label_search as labelSearch,
   label_span as labelSpan,
   input_search as inputSearch,
 } from './SearchArtists.module.css'
-import { source } from 'utils/api'
+import Loading from 'components/Loading'
 
 const MIN_LENGHT_ARTIST_NAME = 4
 const INIT_CONTROLLER_PAGINATION = {
@@ -38,6 +41,7 @@ const SearchArtists = () => {
   const [lastArtistName, setlastArtistName] = useState('')
   const [pagination, setPagination] = useState(INIT_CONTROLLER_PAGINATION)
   const [artists, setArtists] = useState([])
+  const [isLoadingArtists, setIsLoadingArtists] = useState(false)
 
   const controllerPagination = ({ offset = 0, nextPage, prevPage, totalItems }) => {
     const LIMIT = 20
@@ -61,29 +65,31 @@ const SearchArtists = () => {
   }
 
   const onLoadArtists = async (queryParam) => {
+    setIsLoadingArtists(true)
     const querySanitized = queryParam && queryParam.split('/search')[1]
     const query = querySanitized || `?q=artist:${artistName || 'Skyn'}&type=artist&limit=20&offset=0`
 
     try {
       const response = await client.getArtists(query)
-      const data = response.data.artists
-      const artistsFormatted = data.items.map(item => ({
+      const artistsFormatted = response.data.artists.items.map(item => ({
         id: item.id,
         name: item.name,
-        photo: item.images[2] ? item.images[2].url : '',
+        photo: item.images.length ? item.images[0].url : '',
         url: item.href,
       }))
 
       const controllerPages = {
-        offset: data.offset,
-        nextPage: data.next,
-        prevPage: data.previous,
-        totalItems: data.total,
+        offset: response.data.artists.offset,
+        nextPage: response.data.artists.next,
+        prevPage: response.data.artists.previous,
+        totalItems: response.data.artists.total,
       }
       controllerPagination(controllerPages)
       setArtists(artistsFormatted)
     } catch (error) {
       console.log(error)
+    }finally{
+      setIsLoadingArtists(false)
     }
   }
 
@@ -116,11 +122,12 @@ const SearchArtists = () => {
               name="searchArtist"
               value={artistName}
               onChange={e => setArtistName(e.target.value)}
+              min={4}
               placeholder="Digite o nome do artista"
             />
           </label>
 
-          {pagination.currentPage &&
+          {artists.length ?
             <nav className={controllers}>
               <button
                 className={`${!pagination.prev.hasPage && buttonDisabled}`}
@@ -138,18 +145,27 @@ const SearchArtists = () => {
                 <img src={arrowSvg} alt="" />
               </button>
             </nav>
-          }
+          : ""}
+        </div>
+
+        <div className={`${loadingContainer} ${!isLoadingArtists && loadingHidden}`}>
+          <Loading/>
         </div>
 
         <div className={cards}>
-          {artists.map(item => (
+          {artists.length ? artists.map(item => (
             <CardArtist
               id={item.id}
               key={item.id}
               photo={item.photo}
               name={item.name}
             />
-          ))}
+          ))
+        :
+          <div className={notFound}>
+            <h1>Artista {artistName} não encontrado.</h1>
+          </div>
+        }
         </div>
       </div>
     </Layout>
