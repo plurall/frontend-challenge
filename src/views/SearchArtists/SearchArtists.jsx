@@ -16,6 +16,7 @@ import {
   label_span as labelSpan,
   input_search as inputSearch,
 } from './SearchArtists.module.css'
+import { source } from 'utils/api'
 
 const MIN_LENGHT_ARTIST_NAME = 4
 const INIT_CONTROLLER_PAGINATION = {
@@ -63,23 +64,27 @@ const SearchArtists = () => {
     const querySanitized = queryParam && queryParam.split('/search')[1]
     const query = querySanitized || `?q=artist:${artistName || 'Skyn'}&type=artist&limit=20&offset=0`
 
-    const response = await client.getArtists(query)
-    const data = response.data.artists
-    const artistsFormatted = data.items.map(item => ({
-      id: item.id,
-      name: item.name,
-      photo: item.images[2] ? item.images[2].url : '',
-      url: item.href,
-    }))
+    try {
+      const response = await client.getArtists(query)
+      const data = response.data.artists
+      const artistsFormatted = data.items.map(item => ({
+        id: item.id,
+        name: item.name,
+        photo: item.images[2] ? item.images[2].url : '',
+        url: item.href,
+      }))
 
-    const controllerPages = {
-      offset: data.offset,
-      nextPage: data.next,
-      prevPage: data.previous,
-      totalItems: data.total,
+      const controllerPages = {
+        offset: data.offset,
+        nextPage: data.next,
+        prevPage: data.previous,
+        totalItems: data.total,
+      }
+      controllerPagination(controllerPages)
+      setArtists(artistsFormatted)
+    } catch (error) {
+      console.log(error)
     }
-    controllerPagination(controllerPages)
-    setArtists(artistsFormatted)
   }
 
   useEffect(() => {

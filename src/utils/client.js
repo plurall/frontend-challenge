@@ -1,10 +1,11 @@
 import { clearToken, getToken } from 'utils'
-import { api } from './api'
+import { api, source } from './api'
 
 class SomosClient {
   constructor() {
     this.header = {
       'Content-Type': 'application/json',
+      cancelToken: source.token,
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
@@ -19,7 +20,7 @@ class SomosClient {
       return response
     } catch (error) {
       console.log(error)
-      if (error.response.status === 401) {
+      if (error.message !== "canceled" && error.response.status === 401) {
         clearToken()
         window.location.href = '/'
       }
@@ -32,7 +33,7 @@ class SomosClient {
       return response
     } catch (error) {
       console.log(error)
-      if (error.response.status === 401) {
+      if (error.message !== "canceled" && error.response.status === 401) {
         clearToken()
         window.location.href = '/'
       }
