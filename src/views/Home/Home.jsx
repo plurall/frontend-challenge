@@ -25,7 +25,7 @@ const Home = () => {
       const response = await client.getUser()
       setUser({
         name: response.data.display_name || "",
-        image: response.data.images ? response.data.images[0].url : userDefault
+        image: response.data.images.length ? response.data.images[0].url : userDefault
       })
     } catch (error) {
       console.log(error)
