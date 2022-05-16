@@ -41,8 +41,7 @@ class Layout extends Component {
             data={{
               menu: { items: [
                 { name: 'Início', slug: 'account', href: BaseRoutes.login, id: 0 },
-                { name: 'Buscar', slug: 'search', href: BaseRoutes.search, id: 1 },
-                { name: 'Sair', slug: 'search', href: BaseRoutes.loginCallback, id: 2 },
+                { name: 'Buscar', slug: 'search', href: BaseRoutes.search, id: 1 }
               ]},
             }}
             logout={this.handleLogout}

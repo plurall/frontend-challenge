@@ -1,0 +1,135 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 290px;
+  padding: 1rem;
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(16px);
+  background-color: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.wrapper_artist:hover{
+  transition: all 0.5s;
+  background: #00000030;
+}
+
+.link{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #7262c5;
+  border: 2px solid #ffffff40;
+  z-index: 1;
+}
+
+.link:hover{
+  filter: brightness(0.9);
+}
+
+.wrapper:hover .link{
+  transition: all 0.5s;
+  top: 55%;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.details_image{
+  width: 24px;
+  height: 24px;
+  border: 50%;
+  color: #ffffff;
+}
+
+.banner{
+  max-width: 168px;
+  width: 100%;
+  max-height: 168px;
+  height: 100%;
+  object-fit: cover;
+  background: #7262c520;
+}
+
+.image{
+  border-radius: 50%;
+}
+
+.folder{
+  border-radius: 4px;
+}
+
+.footer strong{
+  display: block;
+  max-height: 64px;
+  overflow: hidden;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.footer span{
+  display: block;
+  font-size: 12px;
+  color: #000000;
+}
+
+@media(max-width: 475px){
+  .wrapper{
+    flex-direction: row;
+    height: fit-content;
+    max-width: 375px;
+    width: 100%;
+  }
+
+  .wrapper_artist .link{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .wrapper_artist:hover .link{
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .banner{
+    max-width: 96px;
+    max-height: 96px;
+  }
+
+  .footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .footer_artist{
+    justify-content: center;
+    margin-left: 1rem;
+  }
+
+  .footer_folder{
+    justify-content: space-between;
+    margin-left: 1rem;
+  }
+
+  .footer_folder span{
+    align-self: flex-end;
+  }
+
+}
+
+

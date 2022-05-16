@@ -33,13 +33,20 @@
   align-items: center;
   flex-wrap: wrap;
   max-width: fit-content;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  gap: 2.75rem;
 }
 
 .not_found{
   width: 100vw;
   font-size: 1rem;
   text-align: center;
+}
+
+@media(max-width:  510px){
+  .cards{
+    gap: 1rem;
+  }
 }
 
 @media(max-width:  510px){

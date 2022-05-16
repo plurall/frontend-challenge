@@ -18,16 +18,18 @@
   align-items: center;
   width: 42px;
   height: 42px;
-  background: #665aa480;
+  background: #1bbc9c;
   outline: none;
-  border: 2px solid #665aa430;
+  border: 2px solid #1bbc9c;
   border-radius: 50%;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .controllers button:hover{
-  background: #665aa4;
+  background: #1bbc9c;
+  filter: brightness(0.9);
 }
 
 .controllers button:active{
@@ -45,7 +47,8 @@
 
 .controllers .button_disabled{
   pointer-events: none;
-  background: #cccccc;
+  background: #1bbc9c25;
+  border: 2px solid #1bbc9c25;
 }
 
 @media(max-width:  510px){

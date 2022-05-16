@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import CardArtist from 'components/CardArtist'
+import Card from 'components/Card'
 import { SomosClient } from 'utils'
 
 import {
@@ -141,7 +141,7 @@ const SearchArtists = () => {
 
         <div className={cards}>
           {artists.length ? artists.map(item => (
-            <CardArtist
+            <Card
               id={item.id}
               key={item.id}
               photo={item.photo}

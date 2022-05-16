@@ -4,7 +4,7 @@ import debounce from 'lodash.debounce';
 import arrowSvg from '../../assets/icons/arrow.svg'
 import {
   controllers,
-  buttonDisabled
+  button_disabled as buttonDisabled
 } from './PaginationController.module.css';
 
 const PaginationController = ({

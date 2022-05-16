@@ -52,6 +52,19 @@ class SomosClient {
       }
     }
   }
+
+  async getAlbumsByArtistId(id) {
+    try {
+      const response = await api.get(`/artists/${id}/albums?limit=10&offset=0`, this.header)
+      return response
+    } catch (error) {
+      console.log(error)
+      if (error.message !== "canceled" && error.response.status === 401) {
+        clearToken()
+        window.location.href = '/'
+      }
+    }
+  }
 }
 
 export default SomosClient
