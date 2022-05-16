@@ -1,22 +1,27 @@
+import axios from 'axios';
 import { clearToken, getToken } from 'utils'
-import { api, source } from './api'
 
 class SomosClient {
   constructor() {
+    this.source = axios.CancelToken.source();
     this.header = {
       'Content-Type': 'application/json',
-      cancelToken: source.token,
+      cancelToken: this.source.token,
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
     }
 
     this.language = navigator.language
+
+    this.api = axios.create({
+      baseURL: process.env.REACT_APP_API_URL,
+    })
   }
 
   async getUser() {
     try {
-      const response = await api.get('/me', this.header)
+      const response = await this.api.get('/me', this.header)
       return response
     } catch (error) {
       console.log(error)
@@ -29,7 +34,7 @@ class SomosClient {
 
   async getArtists(query) {
     try {
-      const response = await api.get(`/search${query}`, this.header)
+      const response = await this.api.get(`/search${query}`, this.header)
       return response
     } catch (error) {
       console.log(error)
@@ -42,7 +47,7 @@ class SomosClient {
 
   async getArtistById(id) {
     try {
-      const response = await api.get(`/artists/${id}`, this.header)
+      const response = await this.api.get(`/artists/${id}`, this.header)
       return response
     } catch (error) {
       console.log(error)
@@ -55,7 +60,7 @@ class SomosClient {
 
   async getAlbumsByArtistId(id) {
     try {
-      const response = await api.get(`/artists/${id}/albums?limit=10&offset=0`, this.header)
+      const response = await this.api.get(`/artists/${id}/albums?limit=10&offset=0`, this.header)
       return response
     } catch (error) {
       console.log(error)
