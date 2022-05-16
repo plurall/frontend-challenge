@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
@@ -39,7 +38,7 @@ const Home = () => {
   return (
     <>
       <SubHeader
-        breadcrumb={[{ text: 'Home' }]}
+        breadcrumb={[{ text: 'Home', href: "/" }]}
         heading="Desafio Front-end do Plurall"
       />
 
@@ -60,13 +59,6 @@ const Home = () => {
       </div>
     </>
   )
-}
-
-Home.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string,
-  }),
 }
 
 export default Home

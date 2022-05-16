@@ -108,7 +108,7 @@ const SearchArtists = () => {
   return (
     <>
       <SubHeader
-        breadcrumb={[{ text: 'Buscar Artistas' }]}
+        breadcrumb={[{ text: 'Buscar Artistas', href: BaseRoutes.search}]}
         heading="Localize seus músicos favoritos"
         buttonHref={BaseRoutes.login}
       />

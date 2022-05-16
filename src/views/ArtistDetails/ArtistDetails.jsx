@@ -9,7 +9,6 @@ import popularity from "../../assets/icons/popularity.svg"
 import {
   wrapper,
   folder_container as folderContainer,
-  card_album as cardAlbum,
   albums_container as albumsContainer,
   artist_container as artistContainer,
   artist_name as artistName,
@@ -30,7 +29,7 @@ const INIT_ARTIST = {
 }
 
 const ArtistDetails = (props) => {
-  const [name, setName] = useState(props.location.state.name || "")
+  const [name] = useState(props.location.state.name || "")
   const [artist, setArtist] = useState(INIT_ARTIST)
   const [albums, setAlbums] = useState([])
   const id = props.match.params.id
@@ -82,7 +81,7 @@ const ArtistDetails = (props) => {
   return (
     <>
       <SubHeader
-        breadcrumb={[{ text: 'Detalhes sobre' }]}
+        breadcrumb={[{ text: 'Detalhes sobre', href: BaseRoutes.artist.replace(":id", artist.id) }]}
         heading={name || "Seu artista favorito"}
         buttonHref={BaseRoutes.search}
       />
@@ -92,7 +91,7 @@ const ArtistDetails = (props) => {
 
             <div className={folderContainer}>
               <img src={artist.photo} alt="foto do artista" />
-              <a target="_blank" href={artist.link}>
+              <a target="_blank" href={artist.link}  rel="noopener noreferrer">
                 <img src={playMusic} alt="botão play" />
               </a>
               <span>Clique e ouça agora mesmo no Spotify</span>
