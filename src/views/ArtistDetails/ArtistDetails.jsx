@@ -129,6 +129,7 @@ const ArtistDetails = (props) => {
               photo={item.folder}
               name={item.title}
               description={item.launch}
+              type="albums"
             />
           ))}
         </div>

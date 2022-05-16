@@ -19,22 +19,23 @@ import {
   details_image as detailsImage
 } from "./Card.module.css"
 
-const Card = ({id, photo, name, description = "Artista"}) => {
+const Card = ({id, photo, name, description = "Artista", type = "artist"}) => {
+  const isArtist = type === "artist"
   return (
     <div className={`${wrapper} ${description === "Artista" ? wrapperArtist : wrapperFolder}`}>
 
-      {description === "Artista" &&
+      {isArtist ?
         <Link className={link} to={{pathname: BaseRoutes.artist.replace(":id", id), state: {name}}}>
           <img className={detailsImage} src={magnifierGlassSVG} alt="lupa" />
         </Link>
-      }
+      : ""}
 
       <img
-        className={`${banner} ${ description !== "Artista" ? folder : image}`}
+        className={`${banner} ${ isArtist ? image : folder}`}
         src={photo || userDefault} alt="foto do artista"
       />
 
-      <footer className={`${footer} ${ description === "Artista" ? footerArtist : footerFolder}`}>
+      <footer className={`${footer} ${ isArtist ? footerArtist : footerFolder}`}>
         <strong>{name}</strong>
         <span >{description}</span>
       </footer>
