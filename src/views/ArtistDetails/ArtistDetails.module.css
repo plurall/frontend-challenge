@@ -24,6 +24,7 @@
   max-height: 250px;
   height: 100%;
   overflow: hidden;
+  background: #4e449130;
 }
 
 .folder_container > img{
