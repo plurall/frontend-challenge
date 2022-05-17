@@ -2,14 +2,13 @@
 /* eslint-disable */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from "react-router-dom/Link"
 import { BaseRoutes } from 'routes/BaseRoutes'
 import magnifierGlassSVG from "../../assets/icons/magnifier-glass.svg"
 import userDefault from "../../assets/icons/user-default.svg"
+import ButtonLink from '../../components/ButtonLink'
 import {
   image,
   folder,
-  link,
   wrapper,
   banner,
   footer,
@@ -17,7 +16,6 @@ import {
   footer_folder as footerFolder,
   wrapper_artist as wrapperArtist,
   wrapper_folder as wrapperFolder,
-  details_image as detailsImage
 } from "./Card.module.css"
 
 const Card = ({
@@ -32,9 +30,15 @@ const Card = ({
     <div className={`${wrapper} ${description === "Artista" ? wrapperArtist : wrapperFolder}`}>
 
       {isArtist ?
-        <Link className={link} to={{pathname: BaseRoutes.artist.replace(":id", id), state: {name}}}>
-          <img className={detailsImage} src={magnifierGlassSVG} alt="lupa" />
-        </Link>
+        <ButtonLink
+          id={`link_${id}`}
+          name={name}
+          linkTo={BaseRoutes.artist.replace(":id", id)}
+          image={{
+            url: magnifierGlassSVG,
+            alt:"lupa"
+          }}
+        />
       : ""}
 
       <img

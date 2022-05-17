@@ -19,38 +19,10 @@
   background: #00000030;
 }
 
-.link{
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.25rem;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background-color: #7262c5;
-  border: 2px solid #ffffff40;
-  z-index: 1;
-}
-
-.link:hover{
-  filter: brightness(0.9);
-}
-
-.wrapper:hover .link{
+.wrapper:hover a{
   transition: all 0.5s;
   top: 55%;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-}
-
-.details_image{
-  width: 24px;
-  height: 24px;
-  border: 50%;
-  color: #ffffff;
 }
 
 .banner{

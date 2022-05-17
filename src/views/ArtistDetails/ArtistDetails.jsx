@@ -30,7 +30,6 @@ const INIT_ARTIST = {
 }
 
 const ArtistDetails = (props) => {
-  const [name] = useState(props.location.state.name || "")
   const [artist, setArtist] = useState(INIT_ARTIST)
   const [albums, setAlbums] = useState([])
   const id = props.match.params.id
@@ -83,7 +82,7 @@ const ArtistDetails = (props) => {
     <>
       <SubHeader
         breadcrumb={[{ text: 'Detalhes sobre', href: BaseRoutes.artist.replace(":id", artist.id) }]}
-        heading={name || "Seu artista favorito"}
+        heading={artist.name || "Seu artista favorito"}
         buttonHref={BaseRoutes.search}
       />
       <div className={wrapper}>
@@ -139,11 +138,6 @@ const ArtistDetails = (props) => {
 }
 
 ArtistDetails.propTypes = {
-  location: PropTypes.shape({
-    state: PropTypes.shape({
-      name: PropTypes.string.isRequired
-    })
-  }),
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired

@@ -5,13 +5,13 @@ import {
   button
 } from './ButtonNavigate.module.css';
 
-function ButtonNavigate({
+const ButtonNavigate = ({
   id,
   name,
   disabled = false,
   onClick,
   image
-}) {
+}) => {
   return (
     <button
       id={id}
@@ -26,8 +26,8 @@ function ButtonNavigate({
 }
 
 ButtonNavigate.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   image: PropTypes.shape({
