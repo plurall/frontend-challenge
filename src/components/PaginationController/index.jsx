@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
-import arrowSvg from '../../assets/icons/arrow.svg'
+import arrowLeftSvg from '../../assets/icons/arrow-left.svg'
+import arrowRightSvg from '../../assets/icons/arrow-right.svg'
 import {
-  controllers,
-  button_disabled as buttonDisabled
+  controllers
 } from './PaginationController.module.css';
+import ButtonNavigate from 'components/ButtonNavigate';
 
 const PaginationController = ({
   id,
@@ -18,23 +19,23 @@ const PaginationController = ({
 }) => {
   return (
     <nav id={id} name={name} className={controllers}>
-      <button
+      <ButtonNavigate
+        id="prev_page"
         name="prev_page"
-        className={`${!pagination.prev.hasPage ? buttonDisabled : ""}`}
+        disabled={!pagination.prev.hasPage}
         onClick={debounce(buttonLeft, debounceTime)}
-      >
-        <img src={arrowSvg} alt="seta para esquerda" />
-      </button>
+        image={{url: arrowLeftSvg, alt: "seta para esquerda"}}
+      />
 
       <span>{`${pagination.currentPage} de ${pagination.totalPages}`}</span>
 
-      <button
+      <ButtonNavigate
+        id="next_page"
         name="next_page"
-        className={`${!pagination.next.hasPage ? buttonDisabled : ""}`}
+        disabled={!pagination.next.hasPage}
         onClick={debounce(buttonRight, debounceTime)}
-      >
-        <img src={arrowSvg} alt="seta para direita" />
-      </button>
+        image={{url: arrowRightSvg, alt: "seta para direita"}}
+      />
     </nav>
   );
 }
