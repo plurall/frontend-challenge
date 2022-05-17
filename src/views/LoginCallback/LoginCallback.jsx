@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 import queryString from 'query-string'
 
@@ -25,6 +26,14 @@ const LoginCallback = (props) => {
   }
 
   return <div>Você tem que estar logado para acessar esta página</div>
+}
+
+LoginCallback.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    search: PropTypes.string.isRequired,
+    hash: PropTypes.string.isRequired,
+  })
 }
 
 export default LoginCallback

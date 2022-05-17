@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
@@ -40,6 +41,10 @@ const Layout = ({children}) => {
       </div>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

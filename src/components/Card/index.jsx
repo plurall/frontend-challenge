@@ -1,6 +1,7 @@
 
 /* eslint-disable */
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from "react-router-dom/Link"
 import { BaseRoutes } from 'routes/BaseRoutes'
 import magnifierGlassSVG from "../../assets/icons/magnifier-glass.svg"
@@ -19,7 +20,13 @@ import {
   details_image as detailsImage
 } from "./Card.module.css"
 
-const Card = ({id, photo, name, description = "Artista", type = "artist"}) => {
+const Card = ({
+  id,
+  photo,
+  name,
+  description = "Artista",
+  type = "artist"
+}) => {
   const isArtist = type === "artist"
   return (
     <div className={`${wrapper} ${description === "Artista" ? wrapperArtist : wrapperFolder}`}>
@@ -41,6 +48,14 @@ const Card = ({id, photo, name, description = "Artista", type = "artist"}) => {
       </footer>
     </div>
   )
+}
+
+Card.propTypes = {
+  id: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  type: PropTypes.string,
 }
 
 export default Card

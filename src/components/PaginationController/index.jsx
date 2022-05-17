@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
 import arrowSvg from '../../assets/icons/arrow.svg'
@@ -36,6 +37,26 @@ const PaginationController = ({
       </button>
     </nav>
   );
+}
+
+PaginationController.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  pagination: PropTypes.shape({
+    currentPage: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    prev: PropTypes.shape({
+      hasPage: PropTypes.bool.isRequired,
+      prevPage: PropTypes.string,
+    }),
+    next: PropTypes.shape({
+      hasPage: PropTypes.bool.isRequired,
+      nextPage: PropTypes.string,
+    })
+  }),
+  debounceTime: PropTypes.number.isRequired,
+  buttonLeft: PropTypes.func.isRequired,
+  buttonRight: PropTypes.func.isRequired,
 }
 
 export default PaginationController;

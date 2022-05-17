@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { DebounceInput } from 'react-debounce-input';
 
 import {
@@ -31,6 +32,14 @@ const InputSearch = ({
       />
     </label>
   );
+}
+
+InputSearch.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
 }
 
 export default InputSearch;

@@ -23,4 +23,15 @@ const SubHeader = ({ buttonHref, breadcrumb, heading }) => {
   )
 }
 
+SubHeader.propTypes = {
+  breadcrumb: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      href: PropTypes.string,
+    }),
+  ),
+  buttonHref: PropTypes.string,
+  heading: PropTypes.string.isRequired,
+}
+
 export default SubHeader

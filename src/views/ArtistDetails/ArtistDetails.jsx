@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import PropTypes from 'prop-types'
 import { SubHeader } from 'components';
 
 import userDefault from "../../assets/icons/user-default.svg"
@@ -135,6 +136,19 @@ const ArtistDetails = (props) => {
       </div>
     </>
   );
+}
+
+ArtistDetails.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
+  }),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  })
 }
 
 export default ArtistDetails

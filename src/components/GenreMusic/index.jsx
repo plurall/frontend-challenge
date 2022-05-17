@@ -1,6 +1,5 @@
-
-/* eslint-disable */
 import React from 'react'
+import PropTypes from 'prop-types'
 import genreMusical from "../../assets/icons/genre-musical.svg"
 
 import {
@@ -14,6 +13,10 @@ const GenreMusic = ({genre}) => {
       <span>{genre}</span>
     </div>
   )
+}
+
+GenreMusic.propTypes = {
+  genre: PropTypes.string.isRequired
 }
 
 export default GenreMusic
