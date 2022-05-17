@@ -41,7 +41,6 @@ const Home = () => {
         breadcrumb={[{ text: 'Home', href: "/" }]}
         heading="Desafio Front-end do Plurall"
       />
-
       <div className={wrapper}>
         {user.name &&
           <div className={container}>

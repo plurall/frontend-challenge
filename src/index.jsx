@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom'
 import { Layout } from 'components'
 
 import './App.module.css'
-import './styles/global.css'
 import registerServiceWorker from 'registerServiceWorker'
 import { Routes } from 'routes'
 

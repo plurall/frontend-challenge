@@ -1,9 +1,13 @@
 .nav_bar {
+  position: relative;
   background-color: var(--color-purple);
+  overflow-x: hidden;
 }
 
 .content {
+  position: relative;
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
+  overflow-x: hidden;
 }
 
 .footer {
