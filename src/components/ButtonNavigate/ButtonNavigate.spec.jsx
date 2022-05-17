@@ -7,12 +7,12 @@ import arrowLeftSvg from '../../assets/icons/arrow-left.svg'
 
 const image = {
   url: arrowLeftSvg,
-  alt: "seta para esquerda"
+  alt: "alt test"
 }
 
 describe('<ButtonNavigate>', () => {
+  const handleClick = jest.fn()
   it('Should be call function when user press click', () => {
-    const handleClick = jest.fn()
     render(<ButtonNavigate image={image} onClick={handleClick} />)
 
     const button = screen.getByRole("button")
@@ -21,7 +21,6 @@ describe('<ButtonNavigate>', () => {
   })
 
   it('Should be status enable when disabled is null', () => {
-    const handleClick = jest.fn()
     render(<ButtonNavigate image={image} onClick={handleClick} />)
 
     const button = screen.getByRole("button")
@@ -29,10 +28,17 @@ describe('<ButtonNavigate>', () => {
   })
 
   it('Should be status disabled when disabled is true', () => {
-    const handleClick = jest.fn()
     render(<ButtonNavigate image={image} onClick={handleClick} disabled/>)
 
     const button = screen.getByRole("button")
     expect(button).toBeDisabled()
+  })
+
+  it('Should be have a image with src="arrow-left.svg and alt="alt test"', () => {
+    render(<ButtonNavigate image={image} onClick={handleClick}/>)
+
+    const img = screen.getByRole("img")
+    expect(img).toHaveAttribute("src", image.url)
+    expect(img).toHaveAttribute("alt", image.alt)
   })
 })

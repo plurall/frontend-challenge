@@ -6,16 +6,17 @@ import {
   genre_container as genreContainer,
 } from "./GenreMusic.module.css"
 
-const GenreMusic = ({genre}) => {
+const GenreMusic = ({id, genre}) => {
   return (
-    <div className={genreContainer}>
-      <img src={genreMusical} alt="" />
+    <div id={id} className={genreContainer}>
+      <img src={genreMusical} alt="songs icon" />
       <span>{genre}</span>
     </div>
   )
 }
 
 GenreMusic.propTypes = {
+  id: PropTypes.string,
   genre: PropTypes.string.isRequired
 }
 
