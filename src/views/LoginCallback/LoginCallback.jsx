@@ -1,8 +1,7 @@
-import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import queryString from 'query-string'
 import React from 'react'
-
+import { Redirect } from 'react-router-dom'
 import { getOauthClient, setToken } from 'utils'
 
 class LoginCallback extends React.Component {

@@ -1,0 +1,18 @@
+button {
+  display: block;
+  margin: 60px auto;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 75px;
+  border-radius: 40px;
+  color: black;
+  border: 2px solid #655ba2;
+}
+
+@media (max-width: 600px) {
+  .button {
+    jwidth: 20%;
+    height: 75px;
+  }
+}

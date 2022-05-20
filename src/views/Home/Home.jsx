@@ -1,10 +1,7 @@
-import React from 'react'
-
 import { SubHeader } from 'components'
+import React from 'react'
 import { SomosClient } from 'utils'
-
-import styles from './Home.module.css'
-
+import HomePage from '../../components/HomePage/HomePage'
 class Home extends React.Component {
   state = {}
 
@@ -17,9 +14,8 @@ class Home extends React.Component {
           breadcrumb={[{ text: 'Home' }]}
           heading="Desafio Front-end do Plurall"
         />
-        <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
-        </div>
+
+        <HomePage />
       </>
     )
   }

@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Assistant', sans-serif;
+  color: white;
+  background-color: #121212;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1224px;
+}
+
+.listName {
+  list-style-type: upper-roman;
+  font-size: 25px;
+  padding: 60px;
+  justify-content: center;
+}
+p {
+  text-align: center;
+  margin-top: 60px;
+  line-height: 18px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 12px;
+  }
+}
+
+.name {
+  font-size: 50px;
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
+}
+.link {
+  display: flex;
+  justify-content: end;
+  background-color: white;
+  text-decoration: none;
+}
+.profileArtist {
+  margin: 0px;
+  display: flex;
+}
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+  }
+}
+
+.profileArtist {
+  text-align: center;
+  padding: 30px;
+  max-width: 600px;
+}
+@media only screen and (max-width: 600px) {
+  .profileArtist {
+    flex-direction: column;
+    font-size: 15px;
+  }
+}
+
+.info {
+  text-align: center;
+  padding: 30px;
+  max-width: 600px;
+}
+.albuns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  align-items: stretch;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 680px;
+}
+
+.albuns h2 {
+  margin: 40px 0px 20px 0px;
+  text-align: center;
+}
+@media only screen and (max-width: 1200px) {
+  .imageArtist img {
+    border-radius: 10px;
+    width: 200px;
+    word-break: break-word;
+    height: 200px;
+  }
+}
+
+.albuns .imageArtist img {
+  border-radius: 50px;
+  width: 100%;
+  height: 100px;
+}
+@media only screen and (max-width: 768px) {
+  .albuns {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .imageArtist img {
+    border-radius: 10px;
+    width: 200px;
+    word-break: break-word;
+    height: 200px;
+  }
+}
+
+@media only screen (min-width: 768px) {
+  .imageArtist img {
+    border-radius: 10px;
+    width: 100%;
+  }
+}

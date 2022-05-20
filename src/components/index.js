@@ -1,3 +1,6 @@
+export { default as AlbumTable } from './AlbumTable'
 export { default as Layout } from './Layout'
-export { default as SubHeader } from './SubHeader'
 export { default as PrivateRoute } from './PrivateRoute'
+export { default as ProfileArtist } from './ProfileArtist'
+export { default as SearchInput } from './SearchInput'
+export { default as SubHeader } from './SubHeader'
