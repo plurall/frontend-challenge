@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
+import { ArrowButton, Breadcrumb, Heading, Link, } from 'plurall-ui'
 
 import styles from './SubHeader.module.css'
 
-const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
+const SubHeader = ({ buttonHref, breadcrumb, heading, profile }) => (
   <div className={styles.header}>
     <div className={styles.wrapper}>
       {buttonHref && (
@@ -13,7 +13,11 @@ const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
           <ArrowButton direction="left" />
         </Link>
       )}
-
+      {profile && (
+        <div className={styles.profile}>
+          <img src={profile.url} alt={'a'} />
+        </div>
+      )}
       <div className={styles.innerDiv}>
         <Breadcrumb content={breadcrumb} className={styles.breadcrumb} />
         <Heading className={styles.heading}>{heading}</Heading>
