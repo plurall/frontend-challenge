@@ -19,13 +19,11 @@ class Home extends React.Component {
         />
 
         <div className={styles.wrapper}>
-          <h1>Bem Vindo ao Clone do Spotify!</h1>
-          <div>
-            <Link to='/search'>Pesquise seu Artista</Link>
+          <h1>Welcome!</h1>
+          <div className={styles.link}>
+            <Link to='/search'>Find your favorits artists</Link>
           </div>
         </div>
-
-
       </>
     )
   }

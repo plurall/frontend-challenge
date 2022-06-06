@@ -1,8 +1,13 @@
-import { clearToken, getToken } from 'utils'
-
+import { getToken } from 'utils'
 class SomosClient {
-  constructor() { }
-
+  constructor() {
+    this.header = {
+      'Content-Type': 'application/json',
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    }
+  }
   onError = error => { }
 
   async getArtists() {

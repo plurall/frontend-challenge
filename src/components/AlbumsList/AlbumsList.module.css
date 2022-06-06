@@ -1,0 +1,36 @@
+.header {
+  background: #fff;
+  padding: 35px 0;
+}
+
+.wrapper {
+  max-width: 1224px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.listContent {
+  display: flex;
+  align-items: center;
+}
+
+.albumImage img {
+  max-width: 75px;
+}
+
+.albumDescription {
+  margin-left: 10px;
+  display: grid;
+  flex-direction: column;
+}
+
+.albumDescription p:first-child {
+  font-weight: bold;
+}
+
+.albumDescription p:last-child {
+  font-size: 12px;
+}

@@ -38,16 +38,15 @@ class Layout extends Component {
         <div className={navBar}>
           <NavBar
             data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }, { name: 'Busca', slug: 'search', id: 0 }] },
+              menu: {
+                items: [{ name: 'Início', slug: 'account', id: 0 }]
+              }
             }}
             logout={this.handleLogout}
             service="reader"
-            userToken={getToken()}
-          />
+            userToken={getToken()} />
         </div>
-
         <div className={content}>{children}</div>
-
         <div className={footer}>
           <Footer />
         </div>

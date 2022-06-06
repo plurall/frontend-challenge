@@ -4,3 +4,93 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+.buttonBack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionContainer {
+  min-width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.asideContainer {
+  min-width: 170px;
+}
+
+.albumListContainer {
+  width: 100%;
+}
+
+.albumListTitle {
+  margin-bottom: 10px;
+}
+
+.profileImage {
+  max-width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.profileImage img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profileName {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileName li {
+  list-style: none;
+  text-transform: capitalize;
+}
+
+.albumList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+@media (max-width: 399px) {
+
+  .sectionContainer {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+  }
+
+  .asideContainer {
+    min-width: 100%;
+    display: flex;
+  }
+
+  .profileName {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .albumList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .albumList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+}
