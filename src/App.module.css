@@ -2,9 +2,15 @@
   --color-dark-gray: #333333;
   --color-purple: #655ba2;
   --color-white: #f2f4f5;
+  --color-border: #d7d7d7;
+  --border-radius: 6px;
   --height-footer: 59px;
   --height-nav-bar: 63px;
   --padding: 20px;
+  --column-count: 5;
+  --column-count-table: 2;
+  --column-count-mobile: 1;
+  --grid-gap: 24px;
 }
 
 * {

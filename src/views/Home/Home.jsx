@@ -1,7 +1,8 @@
 import React from 'react'
-
-import { SubHeader } from 'components'
+import { Link } from 'react-router-dom'
 import { SomosClient } from 'utils'
+import { SubHeader } from 'components'
+import { Button } from 'plurall-ui'
 
 import styles from './Home.module.css'
 
@@ -18,7 +19,9 @@ class Home extends React.Component {
           heading="Desafio Front-end do Plurall"
         />
         <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
+          <Link to="/busca">
+            <Button>Buscar agora</Button>
+          </Link>
         </div>
       </>
     )

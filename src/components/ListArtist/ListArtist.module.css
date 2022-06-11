@@ -1,0 +1,18 @@
+.list {
+  grid-gap: var(--grid-gap);
+  display: grid;
+  grid-template-columns: repeat(var(--column-count),minmax(0,1fr));
+  list-style: none;
+}
+
+@media (max-width: 1024px) {
+  .list {
+    grid-template-columns: repeat(var(--column-count-table),minmax(0,1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(var(--column-count-mobile),minmax(0,1fr));
+  }
+}

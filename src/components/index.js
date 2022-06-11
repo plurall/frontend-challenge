@@ -1,3 +1,7 @@
 export { default as Layout } from './Layout'
 export { default as SubHeader } from './SubHeader'
 export { default as PrivateRoute } from './PrivateRoute'
+export { SearchBar } from './SearchBar'
+export { ListArtist } from './ListArtist'
+export { CardArtist } from './CardArtist'
+export { ListAlbum } from './ListAlbum'

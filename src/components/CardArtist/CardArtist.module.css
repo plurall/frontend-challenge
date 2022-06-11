@@ -1,0 +1,126 @@
+.card {
+  display: flex;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  position: relative;
+  cursor: pointer;
+  background-color: var(--color-white);
+}
+.link{
+  text-decoration: none;
+  width: 100%;
+  -webkit-border-top-left-radius: var(--border-radius);
+  -webkit-border-top-right-radius: var(--border-radius);
+  -moz-border-radius-topleft: var(--border-radius);
+  -moz-border-radius-topright: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+.imagebox{
+  width: 100%;
+  height: 240px;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-size: 80rem 14rem;
+  animation: placeholderShimmer 1s linear infinite forwards;
+}
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -40rem 0;
+  }
+  100% {
+    background-position: 40rem 0;
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+  -webkit-border-top-left-radius: var(--border-radius);
+  -webkit-border-top-right-radius: var(--border-radius);
+  -moz-border-radius-topleft: var(--border-radius);
+  -moz-border-radius-topright: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  margin: 0;
+}
+
+.content{
+  padding: 1rem 0.5rem;
+}
+
+.name {
+  color: var(--color-dark-gray);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.2rem;
+  margin: 0.5rem 0;
+}
+
+.genres span{
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark-gray);
+  padding: 0.2rem 0.4rem;
+  white-space: nowrap;
+}
+
+.popularities {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.7rem 0;
+}
+
+.popularity{
+  background-color: var(--color-border);
+  width: 100%;
+  height: 10px;
+  display: inline-block;
+  border-radius: var(--border-radius);
+  padding: 0.2rem;
+  margin-left: 5px;
+  position: relative;
+}
+.popularity span{
+  height: 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-purple);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 991px) {
+  .card {
+    max-width: 100%;
+    height: auto;
+  }
+  .name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
