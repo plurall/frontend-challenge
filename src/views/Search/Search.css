@@ -1,0 +1,65 @@
+.container {
+  height: 100vh;
+  background-color: #343434;
+  overflow-y: auto;
+}
+.spotify-text {
+  font-family: 'Montserrat' !important;
+  font-size: 34px !important;
+  font-weight: bold !important;
+  margin-left: 30px !important;
+  color: #ffffff;
+}
+
+.MuiFilledInput-root {
+  border: 2px solid gray;
+  border-radius: 20px !important;
+  outline: none !important;
+  transition: 0.3s;
+}
+.MuiFilledInput-root:hover {
+  background-color: #474747 !important;
+}
+.MuiFilledInput-input {
+  margin-top: -14px !important;
+}
+.artists-container {
+  padding: 55px 15px;
+}
+.search-box {
+  max-width: 600px;
+}
+.artists-swiper {
+  width: 95%;
+  padding: 15px 0;
+}
+.swiper-box {
+  min-width: 250px;
+  min-height: 280px;
+  border-radius: 25px;
+}
+.swiper-box:hover {
+  box-shadow: 0 0 15px 1px #ffffff;
+}
+.inside-swiper {
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .search-box {
+    max-width: 80% !important;
+  }
+  .spotify-text {
+    font-size: 5vw !important;
+    margin-left: 15px !important;
+  }
+  .logo-container img {
+    width: 15% !important;
+  }
+}

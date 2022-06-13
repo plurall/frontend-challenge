@@ -3,6 +3,12 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.3",
+    "@mui/material": "^5.8.3",
+    "@testing-library/react": "12.1.2",
+    "axios": "^0.27.2",
     "babel-polyfill": "^6.26.0",
     "client-oauth2": "^4.1.0",
     "plurall-footer": "^2.4.29",
@@ -14,12 +20,14 @@
     "react-app-polyfill": "^0.1.3",
     "react-app-rewired": "^1.5.2",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "5.1.2",
     "react-scripts": "2.1.0",
-    "styled-jsx": "^3.2.1"
+    "styled-jsx": "^3.2.1",
+    "swiper": "6.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.2",
+    "@testing-library/user-event": "^14.2.0",
     "eslint": "5.6.0",
     "eslint-config-plurall": "^1.5.28",
     "eslint-plugin-prettier": "^3.0.0",

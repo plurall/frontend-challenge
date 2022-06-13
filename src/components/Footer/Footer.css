@@ -1,0 +1,17 @@
+.footer-component {
+  background-color: #222020;
+  padding: 20px 15px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.footer-component > span {
+  color: #f4f4f4;
+  font-family: 'MontSerrat';
+}
+
+@media screen and (max-width: 1200px) {
+  .footer-component {
+    display: none;
+  }
+}
