@@ -3,6 +3,9 @@ import { clearToken, getToken } from 'utils'
 
 class SomosClient {
   // eslint-disable-next-line
+  constructor() {}
+
+  // eslint-disable-next-line
   onError = error => {}
 
   // eslint-disable-next-line
