@@ -3,7 +3,7 @@ import React from 'react'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
-import styles from './Home.module.css'
+import styles from './Home.module.scss'
 
 class Home extends React.Component {
   state = {}

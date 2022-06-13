@@ -3,7 +3,7 @@ import React from 'react'
 
 import { ArrowButton, Breadcrumb, Heading, Link } from 'plurall-ui'
 
-import styles from './SubHeader.module.css'
+import styles from './SubHeader.module.scss'
 
 const SubHeader = ({ buttonHref, breadcrumb, heading }) => (
   <div className={styles.header}>
