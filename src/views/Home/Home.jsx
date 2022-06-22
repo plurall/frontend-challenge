@@ -1,26 +1,17 @@
 import React from 'react'
-
-import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
-
-import styles from './Home.module.css'
+import Header from 'views/components/Header'
+import Sidebar from 'views/components/Sidebar'
+import Content from 'views/components/Content'
 
 class Home extends React.Component {
   state = {}
-
-  client = new SomosClient()
-
   render() {
     return (
-      <>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Desafio Front-end do Plurall"
-        />
-        <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
-        </div>
-      </>
+      <div>
+        <Header />
+        <Sidebar />
+        <Content />
+      </div>
     )
   }
 }

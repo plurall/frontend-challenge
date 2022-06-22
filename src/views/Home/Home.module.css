@@ -1,6 +1,96 @@
-.wrapper {
-  max-width: 1224px;
-  padding: 30px 20px;
-  margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  background-color: #000000;
+  text-align: center;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+h4 {
+  font-weight: 700;
+}
+
+.Header {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  height: 50px;
+  padding: 0 30px;
+}
+
+.Header a {
+  color: #28d66a;
+  font-size: 0.875rem;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.Header h4 {
+  margin-right: 30px;
+  padding-right: 40px;
+}
+
+.Header img {
+  margin-right: 30px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  margin-top: 80px;
+  margin-left: 300px
+}
+
+ul {
+  list-style-type: none;
+}
+
+.Sidebar {
+  background-color: white;
+  border-right: 1px solid #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  text-align: start;
+  width: 300px;
+}
+
+.Sidebar nav {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Sidebar h4 {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 20px;
+}
+
+.Sidebar a {
+  color: #3e3e3e;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Sidebar a:hover {
+  background-color: #e1e1e1;
+  text-decoration: none;
+}
+
