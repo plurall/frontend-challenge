@@ -42,6 +42,7 @@ section{
   color: white;
   flex-direction: column;
   position: fixed;
+  padding-top: 50px;
 }
 
 a {
@@ -70,7 +71,7 @@ a :hover {
 body {
   background: #1f1f1f;
   text-align: center;
-  display: block;
+  display: inline;
   color: var(--color-white);
 }
 
@@ -103,10 +104,14 @@ h4 {
   align-items: center;
 }
 
+button {
+  max-width: 100px;
+  justify-content: center;
+  display: block;
+  align-items: center;
+}
 
-
-/* .Content {
-  color: white;
-} */
-
+label button {
+  margin-left: 20px;
+}
 

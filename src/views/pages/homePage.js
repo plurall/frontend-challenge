@@ -1,6 +1,6 @@
 import React from 'react'
 import Search from 'views/pages/search'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
 class HomePage extends React.Component {
   state = {}
@@ -12,7 +12,10 @@ class HomePage extends React.Component {
     return (
       <div>
         <h1>Home</h1>
-        <button onClick={this.handleClick}>Buscar</button>
+        <Link to="/busca" >
+          <button className="btn btn-secondary">Search</button>
+        </Link>
+
       </div>
     )
   }

@@ -6,11 +6,11 @@ class Sidebar extends React.Component {
     render() {
         return (
           <section className="Sidebar">
-            <h1>Sidebar</h1>
+            {/* <h1>Sidebar</h1> */}
             <nav className="">
-              <Link exact to="/">Home</Link>
-              <Link to="/busca" />
-              <Link to="/artista/:id" />
+              <Link exact to="/">Início</Link>
+              <Link to="/busca">Buscar</Link>
+              <Link to="/artista/:id">Artista selecionado</Link>
             </nav>
           </section>
         )

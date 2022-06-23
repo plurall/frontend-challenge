@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "dependencies": {
     "client-oauth2": "^4.3.3",
+    "history": "^5.3.0",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
     "plurall-ui": "^0.3.0",

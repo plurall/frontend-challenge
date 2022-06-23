@@ -15,8 +15,6 @@ class App extends React.Component {
       // <Layout>
       <div>
         <Home />
-        {/* <Content />
-        <Sidebar /> */}
       </div>
       // </Layout>
     )

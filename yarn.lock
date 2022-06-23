@@ -1524,7 +1524,7 @@
     "core-js-pure" "^3.20.2"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.16.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.16.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
   "integrity" "sha512-dQpEpK0O9o6lj6oPu0gRDbbnk+4LeHlNcBpspf6Olzt3GIX4P1lWF1gS+pHLDFlaJvbR6q7jCfQ08zA4QJBnmA=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.17.8.tgz"
   "version" "7.17.8"
@@ -7153,7 +7153,7 @@
   "resolved" "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   "version" "1.1.0"
 
-"history@^4.7.2", "history@^4.9.0":
+"history@^4.7.2":
   "integrity" "sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew=="
   "resolved" "https://registry.npmjs.org/history/-/history-4.10.1.tgz"
   "version" "4.10.1"
@@ -7164,6 +7164,25 @@
     "tiny-invariant" "^1.0.2"
     "tiny-warning" "^1.0.0"
     "value-equal" "^1.0.1"
+
+"history@^4.9.0":
+  "integrity" "sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew=="
+  "resolved" "https://registry.npmjs.org/history/-/history-4.10.1.tgz"
+  "version" "4.10.1"
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    "loose-envify" "^1.2.0"
+    "resolve-pathname" "^3.0.0"
+    "tiny-invariant" "^1.0.2"
+    "tiny-warning" "^1.0.0"
+    "value-equal" "^1.0.1"
+
+"history@^5.3.0":
+  "integrity" "sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ=="
+  "resolved" "https://registry.npmjs.org/history/-/history-5.3.0.tgz"
+  "version" "5.3.0"
+  dependencies:
+    "@babel/runtime" "^7.7.6"
 
 "hmac-drbg@^1.0.1":
   "integrity" "sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg=="
