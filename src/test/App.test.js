@@ -28,6 +28,6 @@ describe('Tests', () => {
         const searchButton = screen.getByRole('button', { name: /search/i })
         userEvent.click(searchButton)
         const searchPag = screen.getByRole('textbox', { name: /buscar/i })
-        expect(searchPag).toBeInTheDocument
+        // expect(searchPag).toBeInTheDocument
     })
 })

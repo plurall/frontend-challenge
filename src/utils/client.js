@@ -9,19 +9,19 @@ class SomosClient {
 
   // eslint-disable-next-line
   async getArtists(artist) {
-    const token = getToken()
     // console.log(token)
     const URL_TO_FETCH = `${process.env.REACT_APP_API_URL}/search?q=${artist}&type=artist`
 
     const response = await fetch(URL_TO_FETCH, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${getToken()}`,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
     })
-    return response
+      return response.json()
+    // return response.json()
     // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
     // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
   }

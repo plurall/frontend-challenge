@@ -1,5 +1,5 @@
 import React from 'react'
-import Search from 'views/pages/search'
+import Search from 'views/pages/Search'
 import { Route, Link } from 'react-router-dom'
 
 class HomePage extends React.Component {
