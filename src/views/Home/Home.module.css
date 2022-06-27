@@ -12,8 +12,8 @@ body {
 }
 
 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit;
+  text-decoration: inherit;
 }
 
 h4 {
@@ -60,37 +60,4 @@ ul {
   list-style-type: none;
 }
 
-.Sidebar {
-  background-color: white;
-  border-right: 1px solid #e1e1e1;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  text-align: start;
-  width: 300px;
-}
-
-.Sidebar nav {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.Sidebar h4 {
-  border-bottom: 1px solid #e1e1e1;
-  padding: 20px;
-}
-
-.Sidebar a {
-  color: #3e3e3e;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.Sidebar a:hover {
-  background-color: #e1e1e1;
-  text-decoration: none;
-}
 

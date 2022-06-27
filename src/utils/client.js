@@ -1,11 +1,9 @@
 import { getToken } from 'utils'
+import React from 'react'
 
-class SomosClient {
+class SomosClient extends React.Component {
   // eslint-disable-next-line
-  constructor() { }
-
   // eslint-disable-next-line
-  onError = error => { }
 
   // eslint-disable-next-line
   async getArtists(artist) {
@@ -20,10 +18,37 @@ class SomosClient {
         'Content-Type': 'application/json',
       },
     })
-      return response.json()
-    // return response.json()
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+    return response.json()
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  async getArtistId(id) {
+    const URL_TO_FETCH = `${process.env.REACT_APP_API_URL}/artists/${id}`
+
+    const response = await fetch(URL_TO_FETCH, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+    return response.json()
+  }
+
+ // eslint-disable-next-line class-methods-use-this
+  async getAlbumsById(id) {
+    const URL_TO_FETCH = `${process.env.REACT_APP_API_URL}/artists/${id}/albums?limit=10`
+
+    const response = await fetch(URL_TO_FETCH, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+    return response.json()
   }
 }
 

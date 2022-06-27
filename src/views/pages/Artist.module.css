@@ -1,0 +1,50 @@
+.content {
+    display: grid;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.card {
+    display: flex;
+    max-width: 200%;
+}
+
+.infos {
+    display: grid;
+    padding: 20px;
+}
+
+.albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-gap: 46px;
+    max-width: 500%;
+}
+
+.albumInfo {
+    font-size: 12px;
+    /* align-items: center; */
+    /* align-content: center; */
+}
+
+.albumName .data {
+    max-width: 100%;
+}
+
+
+.imgArtist {
+    max-width: 30%;
+    align-items: center;
+    display: inline-block;
+    border-radius: 5%;
+}
+
+
+.section {
+    padding: 30px;
+    align-content: center;
+}
+
+.img {
+    max-width: 150%;
+}

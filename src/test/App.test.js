@@ -1,33 +1,30 @@
 import React from 'react'
 import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom'
 import App from '../App'
 import renderWithRouter from './renderWithRouter'
 
-describe('Tests', () => {
+describe('Testando componente App', () => {
+    it('Verifica se contém um heading com a palavra spotify', () => {
+        renderWithRouter(<App />)
+        const spotify = screen.getByRole('heading', { name: /spotify/i })
+        expect(spotify).toBeInTheDocument()
+    })
+    it('Verifica se contém um logo', () => {
+        renderWithRouter(<App />)
+        const logo = screen.getByRole('img', { name: /spotify-logo/i })
+        expect(logo).toBeInTheDocument()
+    })
     it('Verificar se renderiza a página home', () => {
         renderWithRouter(<App />)
-        const um = screen.getByRole('heading', { level: 2 })
-        expect(um).toBeInTheDocument() // fazer assim para os outros
+        const home = screen.getByRole('heading', { name: /home/i, level: 1 })
+        expect(home).toBeInTheDocument()
     })
 
     it('Verifica se existe um botão de "Search" na página home', () => {
         renderWithRouter(<App />)
-        screen.getByRole('button', { name: /search/i })
-    })
-
-    it('Verificar se existem três links na página', () => {
-        renderWithRouter(<App />)
-        screen.getByRole('link', { name: /início/i })
-        screen.getByRole('link', { name: /Buscar/i })
-        screen.getByRole('link', { name: /artista selecionado/i })
-    })
-
-    it('Testar se ao clicar no botão search, redireciona para a página buscar', () => {
-        renderWithRouter(<App />)
-        const searchButton = screen.getByRole('button', { name: /search/i })
-        userEvent.click(searchButton)
-        const searchPag = screen.getByRole('textbox', { name: /buscar/i })
-        // expect(searchPag).toBeInTheDocument
+        const button = screen.getByRole('button', { name: /buscar/i })
+        expect(button).toBeInTheDocument()
     })
 })
+

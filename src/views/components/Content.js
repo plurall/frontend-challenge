@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Artist from 'views/pages/artist'
+import Artist from 'views/pages/Artist'
 import Search from 'views/pages/Search'
-import HomePage from 'views/pages/homePage'
+import HomePage from 'views/pages/HomePage'
 
 class Content extends React.Component {
   state = {}
@@ -10,7 +10,6 @@ class Content extends React.Component {
   render() {
     return (
       <main className="Content">
-        {/* <h1>Conteúdo</h1> */}
         <Route exact path="/" component={HomePage} />
         <Route path="/busca" component={Search} />
         <Route path="/artista/:id" component={Artist} />

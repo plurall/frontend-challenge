@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    background: var(--color-green);
+    font-size: 60px;
+    color: var(--color-white);
+    text-align: left;
+    max-width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+.brand {
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}

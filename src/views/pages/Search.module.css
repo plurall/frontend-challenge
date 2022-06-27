@@ -1,0 +1,10 @@
+.cards {
+    display: grid;
+    text-align: center;
+    flex-wrap: nowrap;
+}
+
+
+li ul{
+    display: inline-block;
+}

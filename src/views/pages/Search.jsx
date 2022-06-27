@@ -1,31 +1,40 @@
 import SearchFilter from 'components/SearchFilter/SearchFilter'
 import React, { useState } from 'react'
 import { SomosClient } from 'utils'
+import Breadcrumb from 'components/Breadcrumb/Breadcrumb'
+
+import Card from 'components/Cards/Card'
+import styles from './Search.module.css'
 
 const client = new SomosClient()
 const Search = () => {
-  const [artists, setArtists] = useState([])
-  const handleGetArtist = async name => {
+const [search, setSearch] = useState(false)
+const [artists, setArtists] = useState()
+const handleGetArtist = async name => {
     if (name.length > 4) {
       const data = await client.getArtists(name)
       setArtists(data.artists.items)
-      console.log(data)
+      setSearch(true)
     }
   }
+
+  const routes = [
+    { name: 'Home', url: '/' },
+    { name: 'Busca', url: '/busca' },
+  ]
+
   return (
     <div>
+      <Breadcrumb routes={routes} />
       <SearchFilter onChange={handleGetArtist} />
-      {artists?.length > 0 ? (
+      {artists?.length ? (
         <div>
-          <ul>
+          <ul className={styles.cards}>
             {artists?.map(artist => (
-              <li>
-                <img alt={artist.name} src={artist.images[0]?.url} />
-                {artist.name}
-              </li>
+              <Card artist={artist} />
             ))}
           </ul>
-        </div>) : (<div>Sem resultado</div>)}
+        </div>) : (search && (<div>Sem resultado</div>))}
     </div>
   )
 }

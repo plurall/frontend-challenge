@@ -1,0 +1,24 @@
+.class {
+    color: #c0c6c6;
+    display: inline-block;
+}
+
+.link {
+    text-decoration: none;
+    color: #c0c6c6;
+}
+
+a:hover {
+    color: #ffffffff;
+    font-size: large;
+}
+
+.img {
+    display: inline-block;
+    max-width: 30%;
+    padding: 10px
+}
+
+a:hover img {
+    max-width: 32%
+}

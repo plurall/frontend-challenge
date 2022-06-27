@@ -1,0 +1,32 @@
+.button {
+    display: inline;
+    width: 70px;
+    background-color: #c0c6c6;
+    color: #333;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a:hover .button {
+    background-color: #30d572;
+    color: #ffffff;
+    font-weight: bold;
+    border-color: #ffffff;
+}
+a:link {
+    text-decoration: none;
+}
+
+.link {
+    display: inline-block;
+}
+
+h1 {
+    color: #c0c6c6;
+}
+
+.titulo {
+    margin: 40px;
+}

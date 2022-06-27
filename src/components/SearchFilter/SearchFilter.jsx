@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 
 const SearchFilter = ({ onChange }) => (
   <div>
-    <h1>Search</h1>
     <label htmlFor="buscar">
-      <input id="buscar" className="" onChange={(event) => onChange(event.target.value)} type="input" placeholder="Artistas, músicas ou podcasts" />
-      <button className="btn btn-secondary btn-sm" >Buscar</button>
+      <input
+        id="buscar"
+        onChange={(event) => onChange(event.target.value)}
+        type="input"
+        placeholder="Artistas, músicas ou podcasts"
+      />
     </label>
   </div>
 )
