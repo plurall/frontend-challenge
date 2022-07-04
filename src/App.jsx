@@ -3,7 +3,7 @@ import React from 'react'
 import { Layout } from 'components'
 import { Home } from 'views'
 
-import './App.module.css'
+import './App.module.scss'
 
 const App = () => (
   <Layout>
