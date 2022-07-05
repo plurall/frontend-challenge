@@ -48,7 +48,7 @@ Após os passos acima, você conseguirá abrir a aplicação em http://boilerpla
 
 O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio, queremos que você utilize a API do Spotify para autenticação.
 
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/invalid-client.png" width="50%">
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/invalid-client.png">
 
 Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
 
@@ -78,7 +78,7 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 
 - Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/spotify.png">
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/spotify.png" width="50%">
 
 - Logue com suas credenciais, e você será redirecionado para a aplicação :facepunch: :smile: e já deve estar vendo uma página como essa abaixo.
 
