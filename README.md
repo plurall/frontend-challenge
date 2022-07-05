@@ -1,4 +1,4 @@
-<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/7aea2a2436087e4ae1d1ec595837f7ce/image.png" width="150" /> <img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/e56cb536325ee0e5d3abc645b2defc43/image.png" width="116" />
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/plurall-logo.png" width="150" /> <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/somos-logo.png" width="116" />
 
 # Front-end Challenge
 
@@ -46,7 +46,9 @@ yarn start
 
 Após os passos acima, você conseguirá abrir a aplicação em http://boilerplate.local.plurall.net:3000/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
 
-Isso quer dizer que o projeto esta funcionando. Porém, para esse desafio, queremos que você use a API do Spotify para autenticação.
+O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio, queremos que você utilize a API do Spotify para autenticação.
+
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/invalid-client.png">
 
 Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
 
@@ -61,7 +63,7 @@ Website: http://boilerplate.local.plurall.net:3000
 Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
 ```
 
-<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/0c76031294bcc5d1d66f8f49d5d5959a/image.png" width="50%">
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/redirect.png">
 
 - Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
@@ -76,11 +78,11 @@ REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
 
 - Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
-<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/a079606592710189199c70e40047c305/image.png" width="50%">
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/spotify.png">
 
 - Logue com suas credenciais, e você será redirecionado para a aplicação :facepunch: :smile: e já deve estar vendo uma página como essa abaixo.
 
-<img src="https://gitlab.com/sdk12/dms/viewer/video-player/uploads/08efbb5473901bed6407900720ce6582/image.png"  width="50%">
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/home.png">
 
 Agora voce já pode fazer o [desafio](/CHALLENGE.md).
 
