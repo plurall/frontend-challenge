@@ -2,5 +2,34 @@
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  h1 {
+    font-size: 28px;
+    color: var(--color-dark-gray);
+  }
+
+  a {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-purple-darker);
+    }
+
+    &:active {
+      background-color: var(--color-purple-lighter);
+    }
+  }
 }
