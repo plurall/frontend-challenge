@@ -1,0 +1,34 @@
+.card {
+  text-decoration: none;
+  color: var(--color-dark-gray);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &:hover img {
+    transform: scale(1.2);
+  }
+}
+
+.cardHeader {
+  overflow: hidden;
+  width: 240px;
+  height: 240px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+  }
+}
+
+.cardBody {
+  padding: 16px;
+
+  p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
