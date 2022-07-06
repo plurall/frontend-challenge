@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
 
-import { getToken, setToken, SomosClient } from 'utils'
+import { getToken, setToken } from 'utils'
 
 import styles from './Layout.module.scss'
 
@@ -16,10 +16,6 @@ class Layout extends Component {
   state = {}
 
   componentDidMount() {}
-
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
 
   handleLogout = path => {
     setToken('')

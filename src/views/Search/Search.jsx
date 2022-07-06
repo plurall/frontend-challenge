@@ -1,19 +1,32 @@
 import React, { useState, useEffect } from 'react'
 
 import { SubHeader, ArtistsList } from 'components'
-import { SomosClient } from 'utils'
+import SomosClient from 'utils/client'
 
 import styles from './Search.module.scss'
 
 const Search = () => {
-  const [client, setClient] = useState()
-
-  console.log(client)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [artists, setArtists] = useState([])
 
   useEffect(() => {
-    const newClient = new SomosClient()
-    setClient(newClient)
-  }, [])
+    async function checkNewArtists() {
+      if (searchTerm.length > 4) {
+        try {
+          const artistsList = await SomosClient.getArtists(searchTerm)
+          setArtists(artistsList)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    }
+
+    checkNewArtists()
+  }, [searchTerm])
+
+  function handleChangeSearchTerm(event) {
+    setSearchTerm(event.target.value)
+  }
 
   return (
     <>
@@ -25,12 +38,16 @@ const Search = () => {
       />
       <div className={styles.wrapper}>
         <h1>Busca de Artistas</h1>
+
         <input
           className={styles.searchInput}
           type="text"
           placeholder="Digite o nome do artista desejado"
+          value={searchTerm}
+          onChange={handleChangeSearchTerm}
         />
-        <ArtistsList />
+
+        <ArtistsList artists={artists} />
       </div>
     </>
   )

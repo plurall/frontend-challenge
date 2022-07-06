@@ -2,14 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
 
 import styles from './Home.module.scss'
 
 class Home extends React.Component {
   state = {}
-
-  client = new SomosClient()
 
   render() {
     return (
