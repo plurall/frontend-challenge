@@ -18,6 +18,7 @@
     ],
     "no-confusing-arrow": "off",
     "react/no-danger": "off",
-    "react/no-typos": "off"
+    "react/no-typos": "off",
+    "linebreak-style": "off"
   }
 }
