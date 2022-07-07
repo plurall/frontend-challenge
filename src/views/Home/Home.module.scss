@@ -7,11 +7,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 16px;
 
   h1 {
     font-size: 28px;
     color: var(--color-dark-gray);
+    text-align: center;
   }
 
   a {

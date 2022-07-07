@@ -3,5 +3,11 @@
 
   ul {
     bottom: -32px;
+
+    li {
+      @media (max-width: 768px) {
+        margin: 0;
+      }
+    }
   }
 }

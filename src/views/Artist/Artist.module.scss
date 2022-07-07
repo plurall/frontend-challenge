@@ -12,6 +12,11 @@
 .artist {
   display: flex;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .banner {
@@ -24,6 +29,11 @@
     width: 400px;
     height: 400px;
     border-radius: 50%;
+
+    @media (max-width: 1024px) {
+      width: 320px;
+      height: 320px;
+    }
   }
 }
 
@@ -41,6 +51,10 @@
     h1 {
       font-size: 28px;
       color: var(--color-dark-gray);
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
 }
@@ -51,6 +65,10 @@
   & > ul {
     list-style-position: inside;
     margin-bottom: 36px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
 
     li + li {
       margin-top: 16px;

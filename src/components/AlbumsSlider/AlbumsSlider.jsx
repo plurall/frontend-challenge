@@ -22,6 +22,22 @@ const settings = {
   slidesToScroll: 3,
   prevArrow: <CustomSliderArrow icon={<PrevArrow />} />,
   nextArrow: <CustomSliderArrow icon={<NextArrow />} />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 }
 
 const AlbumsSlider = ({ albums }) => {
