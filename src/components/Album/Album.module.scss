@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  p {
+    max-width: 160px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  small {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
