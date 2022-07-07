@@ -9,6 +9,7 @@ class HttpClient {
   async makeRequest(path, options) {
     const defaultHeaders = {
       Authorization: `Bearer ${this.accessToken}`,
+      'Content-Type': 'application/json',
     }
 
     const headers = new Headers(defaultHeaders)

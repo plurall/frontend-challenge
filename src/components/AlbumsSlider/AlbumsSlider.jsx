@@ -1,5 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
+import PropTypes from 'prop-types'
 
 import { Album } from 'components'
 /*
@@ -16,26 +17,25 @@ import styles from './AlbumsSlider.module.scss'
 
 const settings = {
   dots: true,
+  infinite: false,
   slidesToShow: 3,
-  slidesToScroll: 1,
+  slidesToScroll: 3,
   prevArrow: <CustomSliderArrow icon={<PrevArrow />} />,
   nextArrow: <CustomSliderArrow icon={<NextArrow />} />,
 }
 
-const AlbumsSlider = () => {
+const AlbumsSlider = ({ albums }) => {
   return (
     <Slider className={styles.slider} {...settings}>
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
-      <Album />
+      {albums.map((album) => (
+        <Album key={album.id} album={album} />
+      ))}
     </Slider>
   )
+}
+
+AlbumsSlider.propTypes = {
+  albums: PropTypes.arrayOf(PropTypes.shape()),
 }
 
 export default AlbumsSlider

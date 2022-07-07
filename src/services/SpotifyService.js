@@ -13,8 +13,8 @@ class SpotifyService {
     return this.httpClient.get(`/artists/${id}`)
   }
 
-  getArtistAlbum(id) {
-    return this.httpClient.get(`/artists/${id}/albums?limit=10`)
+  getArtistAlbums(id) {
+    return this.httpClient.get(`/artists/${id}/albums?include_groups=album&limit=10`)
   }
 }
 

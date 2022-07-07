@@ -1,13 +1,38 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 import { SubHeader, AlbumsSlider } from 'components'
+import { SpotifyService } from 'services'
 
 import styles from './Artist.module.scss'
 
 const Artist = () => {
+  const [artist, setArtist] = useState(null)
+  const [albums, setAlbums] = useState(null)
+  const { id } = useParams()
+
   useEffect(() => {
-    console.log('chamar artista')
-  }, [])
+    async function loadArtist() {
+      try {
+        const artistData = await SpotifyService.getArtistById(id)
+        setArtist(artistData)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    async function loadArtistAlbum() {
+      try {
+        const albumsData = await SpotifyService.getArtistAlbums(id)
+        setAlbums(albumsData.items)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    loadArtist()
+    loadArtistAlbum()
+  }, [id])
 
   return (
     <>
@@ -18,30 +43,40 @@ const Artist = () => {
         heading="Desafio Front-end do Plurall"
       />
       <div className={styles.wrapper}>
-        <div className={styles.artist}>
-          <div className={styles.banner}>
-            <img src="https://source.unsplash.com/random" alt="Banner" />
-          </div>
-          <div className={styles.bio}>
-            <header>
-              <h1>Nome do artista</h1>
-            </header>
-            <div className={styles.bioBody}>
-              <ul>
-                <li>
-                  <strong>Popularidade: </strong>62
-                </li>
-                <li>
-                  <strong>Gêneros: </strong>Rock, Pop, Sertanejo
-                </li>
-              </ul>
-              <div className={styles.albumsWrapper}>
-                <h2>Lista de Álbums</h2>
-                <AlbumsSlider />
+        {artist && (
+          <div className={styles.artist}>
+            <div className={styles.banner}>
+              <img src={artist.images[0]?.url} alt={artist.name} />
+            </div>
+            <div className={styles.bio}>
+              <header>
+                <h1>{artist.name}</h1>
+              </header>
+              <div className={styles.bioBody}>
+                <ul>
+                  <li>
+                    <strong>Popularidade: </strong>{artist.popularity}
+                  </li>
+                  <li>
+                    <strong>Gêneros: </strong>
+                    {artist.genres.map((genre, index) => (
+                      <span key={genre}>
+                        {genre}
+                        {index !== (artist.genres.length - 1) && ', '}
+                      </span>
+                  ))}
+                  </li>
+                </ul>
+                {albums && (
+                  <div className={styles.albumsWrapper}>
+                    <h2>Lista de Álbums</h2>
+                    <AlbumsSlider albums={albums} />
+                  </div>
+                )}
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   )
