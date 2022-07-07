@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { SubHeader, AlbumsSlider } from 'components'
 
 import styles from './Artist.module.scss'
 
 const Artist = () => {
+  useEffect(() => {
+    console.log('chamar artista')
+  }, [])
+
   return (
     <>
       <SubHeader

@@ -1,11 +1,11 @@
 import React from 'react'
 import Slider from 'react-slick'
 
+import { Album } from 'components'
 /*
   Por algum motivo esquisito não consegui importar o Custom Arrow direto da
   components, então tive que importar desta forma
 */
-import { Album } from 'components'
 import CustomSliderArrow from 'components/CustomSliderArrow'
 import { PrevArrow, NextArrow } from 'components/icons'
 

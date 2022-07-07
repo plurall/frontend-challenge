@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { SubHeader, ArtistsList } from 'components'
-import SomosClient from 'utils/client'
+import { SpotifyService } from 'services'
 
 import styles from './Search.module.scss'
 
@@ -13,8 +13,8 @@ const Search = () => {
     async function checkNewArtists() {
       if (searchTerm.length > 4) {
         try {
-          const artistsList = await SomosClient.getArtists(searchTerm)
-          setArtists(artistsList)
+          const search = await SpotifyService.getArtists(searchTerm)
+          setArtists(search.artists.items)
         } catch (error) {
           console.log(error)
         }
