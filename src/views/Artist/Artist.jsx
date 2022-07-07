@@ -9,6 +9,7 @@ import styles from './Artist.module.scss'
 const Artist = () => {
   const [artist, setArtist] = useState(null)
   const [albums, setAlbums] = useState(null)
+
   const { id } = useParams()
 
   useEffect(() => {
@@ -17,7 +18,8 @@ const Artist = () => {
         const artistData = await SpotifyService.getArtistById(id)
         setArtist(artistData)
       } catch (error) {
-        console.log(error)
+        // eslint-disable-next-line no-alert
+        alert(error)
       }
     }
 
@@ -26,7 +28,8 @@ const Artist = () => {
         const albumsData = await SpotifyService.getArtistAlbums(id)
         setAlbums(albumsData.items)
       } catch (error) {
-        console.log(error)
+        // eslint-disable-next-line no-alert
+        alert(error)
       }
     }
 

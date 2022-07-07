@@ -16,7 +16,8 @@ const Search = () => {
           const search = await SpotifyService.getArtists(searchTerm)
           setArtists(search.artists.items)
         } catch (error) {
-          console.log(error)
+          // eslint-disable-next-line no-alert
+          alert(error)
         }
       }
     }

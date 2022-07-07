@@ -1,14 +1,16 @@
+import { APIError } from 'errors'
 import { clearToken, getToken } from 'utils'
 
 class HttpClient {
   constructor(baseURL) {
-    this.accessToken = getToken()
     this.baseURL = baseURL
   }
 
   async makeRequest(path, options) {
+    const accessToken = getToken()
+
     const defaultHeaders = {
-      Authorization: `Bearer ${this.accessToken}`,
+      Authorization: `Bearer ${accessToken}`,
       'Content-Type': 'application/json',
     }
 
@@ -41,7 +43,7 @@ class HttpClient {
       clearToken()
     }
 
-    throw new Error(response, responseBody)
+    throw new APIError(response, responseBody)
   }
 
   get(path, options) {

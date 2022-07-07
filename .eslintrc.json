@@ -21,6 +21,7 @@
     "react/no-typos": "off",
     "linebreak-style": "off",
     "react/jsx-no-bind": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "no-empty": ["error", { "allowEmptyCatch": true }]
   }
 }

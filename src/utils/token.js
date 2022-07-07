@@ -1,7 +1,5 @@
 const domain = () => {
-  const {
-    location: { hostname },
-  } = window
+  const { hostname } = window.location
   return hostname
 }
 

@@ -5,23 +5,19 @@ import { SubHeader } from 'components'
 
 import styles from './Home.module.scss'
 
-class Home extends React.Component {
-  state = {}
-
-  render() {
-    return (
-      <>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Desafio Front-end do Plurall"
-        />
-        <div className={styles.wrapper}>
-          <h1>Bem-vindo à Busca de Artistas Spotify!</h1>
-          <Link to="/busca">Realizar nova busca</Link>
-        </div>
-      </>
-    )
-  }
+const Home = () => {
+  return (
+    <>
+      <SubHeader
+        breadcrumb={[{ text: 'Home' }]}
+        heading="Desafio Front-end do Plurall"
+      />
+      <div className={styles.wrapper}>
+        <h1>Bem-vindo à Busca de Artistas Spotify!</h1>
+        <Link to="/busca">Realizar nova busca</Link>
+      </div>
+    </>
+  )
 }
 
 export default Home
