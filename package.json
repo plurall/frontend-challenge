@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.2",
     "eslint-config-plurall": "^1.5.28",
+    "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-prettier": "^3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
     "lint-staged": "^7.0.0",

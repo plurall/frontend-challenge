@@ -1,5 +1,11 @@
 {
-  "extends": "plurall/react",
+  "extends": [
+    "plurall/react",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "jest"
+  ],
   "rules": {
     "react/jsx-filename-extension": [
       1,
