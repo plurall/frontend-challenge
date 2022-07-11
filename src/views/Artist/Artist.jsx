@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { unstable_batchedUpdates } from 'react-dom'
 import { useHistory, useParams } from 'react-router-dom'
 
-import { SubHeader, AlbumsSlider } from 'components'
+import { SubHeader, AlbumsSlider, ImagePlaceholder } from 'components'
 import { SpotifyService } from 'services'
 
 import styles from './Artist.module.scss'
@@ -15,13 +15,15 @@ const Artist = () => {
   const history = useHistory()
   const { id } = useParams()
 
+  const artistImageUrl = artist?.images[0]?.url
+
   useEffect(() => {
     async function loadArtistAndAlbum() {
       try {
         const artistData = await SpotifyService.getArtistById(id)
         const albumsData = await SpotifyService.getArtistAlbums(id)
         /* No react 18, todos os updates passaram a ser batched por padrão.
-           Logo, não há problema em forçar para prevenir re-renders      */
+           Logo, não há problema em forçar para prevenir re-renders         */
         unstable_batchedUpdates(() => {
           setArtist(artistData)
           setAlbums(albumsData.items)
@@ -48,7 +50,8 @@ const Artist = () => {
         {artist && (
           <div className={styles.artist}>
             <div className={styles.banner}>
-              <img src={artist.images[0]?.url} alt={artist.name} />
+              {artistImageUrl && <img src={artistImageUrl} alt={artist.name} />}
+              {!artistImageUrl && <ImagePlaceholder />}
             </div>
             <div className={styles.bio}>
               <header>
@@ -61,15 +64,18 @@ const Artist = () => {
                   </li>
                   <li>
                     <strong>Gêneros: </strong>
-                    {artist.genres.map((genre, index) => (
-                      <span key={genre}>
+                    {artist.genres?.map((genre, index) => (
+                      <span key={genre} className={styles.genre}>
                         {genre}
                         {index !== (artist.genres.length - 1) && ', '}
                       </span>
-                  ))}
+                    ))}
+                    {!artist.genres.length && (
+                      <span>Nenhum gênero encontrado</span>
+                    )}
                   </li>
                 </ul>
-                {albums && (
+                {!!albums.length && (
                   <div className={styles.albumsWrapper}>
                     <h2>Lista de Álbums</h2>
                     <AlbumsSlider albums={albums} />

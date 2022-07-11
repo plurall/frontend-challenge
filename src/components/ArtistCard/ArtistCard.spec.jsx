@@ -17,7 +17,13 @@ const artist = {
   ],
 }
 
-describe('Artist', () => {
+const noImageArtist = {
+  id: '0QKGmGlRGaEsmlYJ2GBRgC',
+  name: '.......X',
+  images: [],
+}
+
+describe('ArtistCard', () => {
   it('should render properly', () => {
     const { getByText } = render(
       <MemoryRouter>
@@ -28,7 +34,7 @@ describe('Artist', () => {
     expect(getByText('Queen')).toBeInTheDocument()
   })
 
-  it('renders the artist image on the screen', () => {
+  it('should render the artist image on the screen', () => {
     const { getByRole } = render(
       <MemoryRouter>
         <Artist artist={artist} />
@@ -52,5 +58,15 @@ describe('Artist', () => {
       'href',
       '/artista/1dfeR4HaWDbWqFHLkxsg1d',
     )
+  })
+
+  it('should display placeholder when artist has no image', () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Artist artist={noImageArtist} />
+      </MemoryRouter>,
+    )
+
+    expect(getByText('Imagem não encontrada')).toBeInTheDocument()
   })
 })

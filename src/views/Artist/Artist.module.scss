@@ -64,7 +64,6 @@
 
   & > ul {
     list-style-position: inside;
-    margin-bottom: 36px;
 
     @media (max-width: 768px) {
       text-align: center;
@@ -74,14 +73,16 @@
       margin-top: 16px;
     }
   }
-
-  span {
-    text-transform: capitalize;
-  }
 }
 
 .albumsWrapper {
+  margin-top: 36px;
+
   h2 {
     font-size: 20px;
   }
+}
+
+.genre {
+  text-transform: capitalize;
 }
