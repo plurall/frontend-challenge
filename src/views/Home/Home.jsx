@@ -12,10 +12,10 @@ const Home = () => {
         breadcrumb={[{ text: 'Home' }]}
         heading="Desafio Front-end do Plurall"
       />
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <h1>Bem-vindo à Busca de Artistas Spotify!</h1>
         <Link to="/busca">Realizar nova busca</Link>
-      </div>
+      </section>
     </>
   )
 }

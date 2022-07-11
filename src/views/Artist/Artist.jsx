@@ -44,7 +44,7 @@ const Artist = () => {
         ]}
         heading="Desafio Front-end do Plurall"
       />
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         {artist && (
           <div className={styles.artist}>
             <div className={styles.banner}>
@@ -79,7 +79,7 @@ const Artist = () => {
             </div>
           </div>
         )}
-      </div>
+      </section>
     </>
   )
 }

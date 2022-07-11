@@ -41,7 +41,7 @@ const Search = () => {
         ]}
         heading="Desafio Front-end do Plurall"
       />
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <h1>Busca de Artistas</h1>
 
         <input
@@ -53,7 +53,7 @@ const Search = () => {
         />
 
         <ArtistsList artists={artists} />
-      </div>
+      </section>
     </>
   )
 }
