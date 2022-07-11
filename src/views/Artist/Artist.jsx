@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+// eslint-disable-next-line camelcase
+import { unstable_batchedUpdates } from 'react-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 import { SubHeader, AlbumsSlider } from 'components'
 import { SpotifyService } from 'services'
@@ -10,32 +12,29 @@ const Artist = () => {
   const [artist, setArtist] = useState(null)
   const [albums, setAlbums] = useState(null)
 
+  const history = useHistory()
   const { id } = useParams()
 
   useEffect(() => {
-    async function loadArtist() {
+    async function loadArtistAndAlbum() {
       try {
         const artistData = await SpotifyService.getArtistById(id)
-        setArtist(artistData)
-      } catch (error) {
-        // eslint-disable-next-line no-alert
-        alert(error)
-      }
-    }
-
-    async function loadArtistAlbum() {
-      try {
         const albumsData = await SpotifyService.getArtistAlbums(id)
-        setAlbums(albumsData.items)
+        /* No react 18, todos os updates passaram a ser batched por padrão.
+           Logo, não há problema em forçar para prevenir re-renders      */
+        unstable_batchedUpdates(() => {
+          setArtist(artistData)
+          setAlbums(albumsData.items)
+        })
       } catch (error) {
         // eslint-disable-next-line no-alert
         alert(error)
+        history.push('/')
       }
     }
 
-    loadArtist()
-    loadArtistAlbum()
-  }, [id])
+    loadArtistAndAlbum()
+  }, [id, history])
 
   return (
     <>

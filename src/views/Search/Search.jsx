@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { SubHeader, ArtistsList } from 'components'
 import { SpotifyService } from 'services'
@@ -9,6 +10,8 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [artists, setArtists] = useState([])
 
+  const history = useHistory()
+
   useEffect(() => {
     async function checkNewArtists() {
       if (searchTerm.length > 4) {
@@ -18,12 +21,13 @@ const Search = () => {
         } catch (error) {
           // eslint-disable-next-line no-alert
           alert(error)
+          history.push('/')
         }
       }
     }
 
     checkNewArtists()
-  }, [searchTerm])
+  }, [searchTerm, history])
 
   function handleChangeSearchTerm(event) {
     setSearchTerm(event.target.value)
