@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { unstable_batchedUpdates } from 'react-dom'
 import { useHistory, useParams } from 'react-router-dom'
 
-import { SubHeader, AlbumsSlider, ImagePlaceholder } from 'components'
+import { SubHeader, AlbumsSlider, ImagePlaceholder, Spinner } from 'components'
 import { SpotifyService } from 'services'
 
 import styles from './Artist.module.scss'
@@ -11,6 +11,7 @@ import styles from './Artist.module.scss'
 const Artist = () => {
   const [artist, setArtist] = useState(null)
   const [albums, setAlbums] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   const history = useHistory()
   const { id } = useParams()
@@ -20,6 +21,7 @@ const Artist = () => {
   useEffect(() => {
     async function loadArtistAndAlbum() {
       try {
+        setIsLoading(true)
         const artistData = await SpotifyService.getArtistById(id)
         const albumsData = await SpotifyService.getArtistAlbums(id)
         /* No react 18, todos os updates passaram a ser batched por padrão.
@@ -32,6 +34,8 @@ const Artist = () => {
         // eslint-disable-next-line no-alert
         alert(error)
         history.push('/')
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -47,7 +51,8 @@ const Artist = () => {
         heading="Desafio Front-end do Plurall"
       />
       <section className={styles.wrapper}>
-        {artist && (
+        {isLoading && <Spinner />}
+        {(artist && !isLoading) && (
           <div className={styles.artist}>
             <div className={styles.banner}>
               {artistImageUrl && <img src={artistImageUrl} alt={artist.name} />}

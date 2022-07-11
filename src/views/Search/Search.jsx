@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { SubHeader, ArtistsList } from 'components'
+import { SubHeader, ArtistsList, Spinner } from 'components'
 import { SpotifyService } from 'services'
 
 import styles from './Search.module.scss'
@@ -9,17 +9,21 @@ import styles from './Search.module.scss'
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [artists, setArtists] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const history = useHistory()
 
   const getNewArtists = useCallback(async () => {
     try {
+      setIsLoading(true)
       const search = await SpotifyService.getArtists(searchTerm)
       setArtists(search.artists.items)
     } catch (error) {
       // eslint-disable-next-line no-alert
       alert(error)
       history.push('/')
+    } finally {
+      setIsLoading(false)
     }
   }, [searchTerm, history])
 
@@ -59,7 +63,8 @@ const Search = () => {
           </button>
         </div>
 
-        <ArtistsList artists={artists} />
+        {isLoading && <Spinner />}
+        {!isLoading && <ArtistsList artists={artists} />}
       </section>
     </>
   )
