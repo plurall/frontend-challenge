@@ -1,0 +1,32 @@
+
+Init:
+  ☐ Configurar ambiente local
+  ☐ Mapear as tarefas
+
+Tasks da Página Home:
+  ☐ Criar Link que leva para a página de busca
+
+Tasks da Página de Busca:
+  ☐ Criar a página de busca
+  ☐ Criar o componente de busca(Search)
+
+  Critérios de Aceite da Página de Busca:
+    ☐ Deve conter um campo input
+    ☐ O resultado deve aparece ao dititar acima de três caracteres
+    ☐ Implementar debounce na função de busca
+    ☐ Retorno deve mostrar na página nome e foto do artista
+    ☐ Ao clicar no artista deve ser redirecionado para a página do artista
+
+Tasks da Página do Artista:
+  ☐ Criar página do artista
+  
+  A Página do Artista Deve Conter:
+    ☐ Nome
+    ☐ Popularidade
+    ☐ Foto
+    ☐ Lista de gêneros
+    ☐ Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento
+    ☐ A data de lançamento do album deve estar no formato DD/MM/AAAA
+
+
+  
