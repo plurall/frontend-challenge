@@ -1,0 +1,153 @@
+.text-tittle {
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 61px;
+  color: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(125,122,116,1) 100%);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-search {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.button-search button{
+  width: 250px;
+  height: 70px;
+  background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(125,122,116,1) 100%);
+  border-radius: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  color: #FFFFFF;
+}
+
+.input-artist-name {
+  display: flex;
+  border: 2px solid rgba(63, 61, 86, 0.6);
+  border-radius: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 10px;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 230px;
+  height: 237px;
+  margin-top: 20px;
+  background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(125,122,116,1) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.above-the-card {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 100px;
+  background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(125,122,116,1) 100%);
+}
+
+.album-container {
+  width: 100%;
+}
+
+.picture-album {
+  box-sizing: border-box;
+  width: 100%;
+  height: 160px;
+  left: calc(50% - 200px/2 - 345px);
+  top: calc(50% - 160px/2 - 32px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.collection-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.href-name {
+  text-decoration: none;
+  width: 100%;
+  font-family: 'Roboto';
+  font-style: normal;
+  line-height: 14px;
+  color: #C5C5C5;
+}
+
+.main-album {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  background-color: black
+}
+
+.img-album {
+  display: flex;
+  justify-content: center;
+}
+
+.img-album img {
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+}
+
+.text-album {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1100px) {
+  .img-album img {
+    width: 250px;
+    margin: 20px;
+  }
+
+  .text-album p {
+    font-size: 15px;
+  }
+
+  .main-album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .above-the-card {
+    display: flex;
+    justify-content: center;
+  }
+}
