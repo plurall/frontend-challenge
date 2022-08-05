@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
@@ -18,7 +19,15 @@ class Home extends React.Component {
           heading="Desafio Front-end do Plurall"
         />
         <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
+          <h1 className="text-tittle">Pesquise seu artista favorito</h1>
+        </div>
+        <div className="button-search">
+          <Link to="/search">
+            <button
+              type="button"
+            >Pesquisar
+            </button>
+          </Link>
         </div>
       </>
     )
