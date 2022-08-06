@@ -2,9 +2,10 @@ import { getToken } from 'utils'
 import queryString from 'query-string'
 
 class SpotifyClient {
-  baseURL = process.env.REACT_APP_API_URL
-
-  token = getToken()
+  constructor({ baseURL, token } = {}) {
+    this.baseURL = baseURL || process.env.REACT_APP_API_URL
+    this.token = token || getToken()
+  }
 
   async getArtistsByName(name, options = {}) {
     const query = queryString.stringify({
@@ -43,9 +44,7 @@ class SpotifyClient {
   }
 
   getAuthHeaders() {
-    return {
-      Authorization: `Bearer ${this.token}`,
-    }
+    return { Authorization: `Bearer ${this.token}` }
   }
 
   static formatResponse = response => {
