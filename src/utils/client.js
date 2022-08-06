@@ -1,18 +1,73 @@
-// eslint-disable-next-line
-import { clearToken, getToken } from 'utils'
+import { getToken } from 'utils'
 
-class SomosClient {
-  // eslint-disable-next-line
-  constructor() {}
+class SpotifyClient {
+  baseURL = process.env.REACT_APP_API_URL
 
-  // eslint-disable-next-line
-  onError = error => {}
+  token = getToken()
 
-  // eslint-disable-next-line
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
+  async getArtistsByName(name, options = {}) {
+    const query = SpotifyClient.formatQuery({
+      ...SpotifyClient.formatOptions(options),
+      type: 'artist',
+      q: name,
+    })
+    const headers = this.getAuthHeaders()
+    const url = `${this.baseURL}/search?${query}`
+
+    const response = await fetch(url, { headers })
+    const data = await response.json()
+
+    return SpotifyClient.formatResponse(data.artists)
+  }
+
+  async getArtistById(id) {
+    const headers = this.getAuthHeaders()
+    const url = `${this.baseURL}/artists/${id}`
+
+    const response = await fetch(url, { headers })
+    const data = await response.json()
+
+    return data
+  }
+
+  async getArtistAlbums(id, options = {}) {
+    const query = SpotifyClient.formatQuery(
+      SpotifyClient.formatOptions(options),
+    )
+    const headers = this.getAuthHeaders()
+    const url = `${this.baseURL}/artists/${id}/albums?${query}`
+
+    const response = await fetch(url, { headers })
+    const data = await response.json()
+
+    return SpotifyClient.formatResponse(data)
+  }
+
+  getAuthHeaders() {
+    return {
+      Authorization: `Bearer ${this.token}`,
+    }
+  }
+
+  static formatQuery = query =>
+    Object.keys(query)
+      .map(key => `${key}=${encodeURI(query[key])}`)
+      .join('&')
+
+  static formatResponse = response => {
+    const { total, limit, offset, items } = response
+    const page = Math.round(offset / limit) + 1
+    const pages = Math.ceil(total / limit)
+
+    return { items, page, pages, limit, total }
+  }
+
+  static formatOptions = options => {
+    const limit = options.limit || 10
+    const offset = ((options.page || 1) - 1) * limit
+
+    return { limit, offset }
   }
 }
 
-export default SomosClient
+export default SpotifyClient
