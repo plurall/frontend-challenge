@@ -1,4 +1,5 @@
 import { getToken } from 'utils'
+import queryString from 'query-string'
 
 class SpotifyClient {
   baseURL = process.env.REACT_APP_API_URL
@@ -6,7 +7,7 @@ class SpotifyClient {
   token = getToken()
 
   async getArtistsByName(name, options = {}) {
-    const query = SpotifyClient.formatQuery({
+    const query = queryString.stringify({
       ...SpotifyClient.formatOptions(options),
       type: 'artist',
       q: name,
@@ -31,9 +32,7 @@ class SpotifyClient {
   }
 
   async getArtistAlbums(id, options = {}) {
-    const query = SpotifyClient.formatQuery(
-      SpotifyClient.formatOptions(options),
-    )
+    const query = queryString.stringify(SpotifyClient.formatOptions(options))
     const headers = this.getAuthHeaders()
     const url = `${this.baseURL}/artists/${id}/albums?${query}`
 
@@ -48,11 +47,6 @@ class SpotifyClient {
       Authorization: `Bearer ${this.token}`,
     }
   }
-
-  static formatQuery = query =>
-    Object.keys(query)
-      .map(key => `${key}=${encodeURI(query[key])}`)
-      .join('&')
 
   static formatResponse = response => {
     const { total, limit, offset, items } = response
