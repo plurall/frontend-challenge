@@ -1,0 +1,48 @@
+.wrapper {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+
+  & > :nth-child(2) {
+    position: absolute;
+    left: 1.75rem;
+    top: 1.25rem;
+
+    font-size: 1.5rem;
+    color: var(--color-on-search-bar);
+  }
+
+  & > :nth-child(3) {
+    position: absolute;
+    right: 1.75rem;
+    top: 1.0625rem;
+
+    font-size: 1.875rem;
+    color: var(--color-on-search-bar);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-on-search-bar-highlight);
+    }
+  }
+}
+
+.input {
+  height: 4rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: none;
+  background-color: var(--color-search-bar);
+  box-shadow: var(--shadow-search-bar);
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0 5rem;
+  color: var(--color-on-search-bar-highlight);
+
+  &::placeholder {
+    color: var(--color-on-search-bar);
+  }
+
+  &:focus {
+    outline-color: var(--color-on-search-bar-highlight);
+  }
+}
