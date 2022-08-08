@@ -1,6 +1,6 @@
 import { SpotifyClient, setToken } from 'utils'
 
-describe('Test SpotifyClient', () => {
+describe('SpotifyClient test suite', () => {
   beforeEach(async () => {
     setToken(process.env.REACT_APP_CLIENT_TEST_TOKEN)
   })

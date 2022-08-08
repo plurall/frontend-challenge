@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { removeUnnecessarySpaces } from 'utils'
 import { Layout, SearchBar, ArtistSmallCard } from 'components'
 import styles from './Artists.module.scss'
 
@@ -7,7 +8,10 @@ class Artists extends React.Component {
   state = { search: '' }
 
   handleSearchBarChange = search => {
-    this.setState({ ...this.state, search })
+    this.setState({
+      ...this.state,
+      search: removeUnnecessarySpaces(search, true),
+    })
   }
 
   render = () => (
