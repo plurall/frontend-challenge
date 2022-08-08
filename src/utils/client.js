@@ -11,7 +11,7 @@ class SpotifyClient {
     const query = queryString.stringify({
       ...SpotifyClient.formatOptions(options),
       type: 'artist',
-      q: name,
+      q: name.toLocaleLowerCase(),
     })
     const headers = this.getAuthHeaders()
     const url = `${this.baseURL}/search?${query}`

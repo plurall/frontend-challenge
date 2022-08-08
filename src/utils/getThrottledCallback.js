@@ -26,12 +26,12 @@ const getThrottledCallback = (callback, interval = 500) => {
       return
     }
 
-    if (timeoutDescriptor) return
-
-    timeoutDescriptor = setTimeout(
-      () => handleCallback(lastArgs),
-      interval - lastCallInterval,
-    )
+    if (!timeoutDescriptor) {
+      timeoutDescriptor = setTimeout(
+        () => handleCallback(lastArgs),
+        interval - lastCallInterval,
+      )
+    }
   }
 }
 
