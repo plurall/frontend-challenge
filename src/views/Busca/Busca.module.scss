@@ -1,0 +1,88 @@
+.wrapper {
+  max-width: 1224px;
+  padding: 30px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 0;
+  }
+
+  button {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #655ba2;
+    border: 2px solid transparent;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover {
+    border: 2px solid #655ba2;
+    color: #655ba2;
+    background-color: transparent;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.errorMessages {
+  margin-top: 15px;
+  color: tomato;
+}
+
+.cardItems {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    flex: 0 0 100%;
+    transition: all 0.2s ease-in-out;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    p {
+      position: absolute;
+      word-wrap: break-word;
+      color: #fff;
+      background-color: #655ba2;
+      padding: 10px 15px;
+    }
+  }
+
+  li:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+  }
+}
+
+@media only screen and(min-width: 576px) {
+  .cardItems li {
+    flex: 0 0 50%;
+  }
+}
+
+@media only screen and(min-width: 992px) {
+  .cardItems li {
+    flex: 0 0 25%;
+  }
+}

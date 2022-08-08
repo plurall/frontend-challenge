@@ -7,18 +7,17 @@ Tasks da Página Home:
   ☐ Criar Link que leva para a página de busca
 
 Tasks da Página de Busca:
-  ☐ Criar a página de busca
-  ☐ Criar o componente de busca(Search)
+  ✔ Criar a página de busca @done(22-08-08 14:44)
+  ✔ Criar o componente de busca(Search) @done(22-08-08 14:44)
 
   Critérios de Aceite da Página de Busca:
-    ☐ Deve conter um campo input
-    ☐ O resultado deve aparece ao dititar acima de três caracteres
-    ☐ Implementar debounce na função de busca
-    ☐ Retorno deve mostrar na página nome e foto do artista
-    ☐ Ao clicar no artista deve ser redirecionado para a página do artista
+    ✔ Deve conter um campo input @done(22-08-08 16:31)
+    ✔ O resultado deve aparece ao dititar acima de quatro caracteres @done(22-08-08 16:31)
+    ✔ Retorno deve mostrar na página nome e foto do artista @done(22-08-08 16:32)
+    ✔ Ao clicar no artista deve ser redirecionado para a página do artista @done(22-08-08 16:32)
 
 Tasks da Página do Artista:
-  ☐ Criar página do artista
+  ✔ Criar página do artista @done(22-08-08 16:32)
   
   A Página do Artista Deve Conter:
     ☐ Nome
