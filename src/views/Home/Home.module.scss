@@ -1,6 +1,33 @@
 .wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
   max-width: 1224px;
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+
+  h1 {
+    line-height: 32px;
+    text-align: center;
+  }
+
+  a {
+    background-color: #655aa3;
+    text-decoration: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    transition: filter 0.3s;
+    font-size: 18px;
+    font: 16px/14px 'Nunito', sans-serif;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
 }

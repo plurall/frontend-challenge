@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  max-width: 1224px;
+  padding: 30px 18px;
+  margin: 0 auto;
+  width: 100%;
+
+  h3 {
+    text-align: center;
+  }
+
+  input {
+    border: none;
+    background-color: #e4e1e1;
+    padding: 14px 16px;
+    border-radius: 8px;
+  }
+}
+
+.artistList {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  height: fit-content;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: #dbdbdb;
+  padding: 16px;
+  gap: 16px;
+  transition: transform 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .cardImage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+
+  .cardContent {
+    text-align: center;
+    color: #655aa3;
+  }
+}
