@@ -34,12 +34,13 @@
   background-color: var(--color-search-bar);
   box-shadow: var(--shadow-search-bar);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0 2.75rem;
   color: var(--color-on-search-bar-highlight);
 
   &::placeholder {
     color: var(--color-on-search-bar);
+    font-weight: 500;
   }
 
   &:focus {

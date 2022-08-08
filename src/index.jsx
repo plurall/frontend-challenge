@@ -1,13 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import { LoginCallback, Artists } from 'views'
 import { PrivateRoute } from 'components'
 import App from 'App'
 import registerServiceWorker from 'registerServiceWorker'
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'))
+
+root.render(
   <Router>
     <Switch>
       <Route path="/login/callback" component={LoginCallback} />
@@ -15,7 +17,6 @@ ReactDOM.render(
       <PrivateRoute path="/" component={App} />
     </Switch>
   </Router>,
-  document.getElementById('root'),
 )
 
 registerServiceWorker()

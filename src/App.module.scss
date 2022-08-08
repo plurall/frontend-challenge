@@ -17,12 +17,26 @@
   --color-search-bar: #fdfdff;
   --color-on-search-bar: #a0a0a0;
   --color-on-search-bar-highlight: #444444;
-  --color-surface: #c8c8c8;
+  --color-primary-surface: linear-gradient(
+    to right,
+    rgba(200, 200, 200, 0.8),
+    rgba(200, 200, 200, 0.1)
+  );
+  --color-secondary-surface: linear-gradient(
+    to right,
+    rgba(200, 200, 200, 0.5),
+    rgba(200, 200, 200, 0.1)
+  );
   --color-on-surface: #909090;
   --color-on-surface-highlight: #444444;
-  --color-default-user: #606060;
-  --color-on-default-user: #a0a0a0;
+  --color-default-picture: #606060;
+  --color-on-default-picture: #a0a0a0;
+
+  // shadows
   --shadow-search-bar: 0 0 0.75rem rgba(0, 0, 0, 0.1);
+  --shadow-artist-picture: 0 0 1.25rem rgba(0, 0, 0, 0.15);
+  --shadow-album-picture: 0 0 1rem rgba(0, 0, 0, 0.1);
+  --shadow-artist-card-hover: 0 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 * {

@@ -1,0 +1,44 @@
+.wrapper {
+  font-family: 'Roboto', sans-serif;
+  background: var(--color-secondary-surface);
+  border-radius: 0.5rem;
+  padding: 0.625rem 2rem;
+  margin-top: 2rem;
+  user-select: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'name picture'
+    'popularity picture';
+  transition-duration: 0.25s;
+
+  & > :nth-child(3) {
+    grid-area: picture;
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-artist-card-hover);
+  }
+}
+
+.name {
+  grid-area: name;
+  color: var(--color-on-surface-highlight);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.popularity {
+  grid-area: popularity;
+  color: var(--color-on-surface);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.popularityValue {
+  font-weight: 700;
+}
