@@ -4,19 +4,19 @@
 
   & > :nth-child(2) {
     position: absolute;
-    left: 1.75rem;
-    top: 1.25rem;
+    left: 1rem;
+    top: 1rem;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--color-on-search-bar);
   }
 
   & > :nth-child(3) {
     position: absolute;
-    right: 1.75rem;
-    top: 1.0625rem;
+    right: 1rem;
+    top: 0.875rem;
 
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     color: var(--color-on-search-bar);
     cursor: pointer;
 
@@ -27,15 +27,15 @@
 }
 
 .input {
-  height: 4rem;
+  height: 3rem;
   width: 100%;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   border: none;
   background-color: var(--color-search-bar);
   box-shadow: var(--shadow-search-bar);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0 5rem;
+  padding: 0 2.75rem;
   color: var(--color-on-search-bar-highlight);
 
   &::placeholder {
