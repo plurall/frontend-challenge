@@ -14,7 +14,7 @@ const SearchBar = ({ value, onChange }) => (
       placeholder="Procurar"
     />
     <HiSearch />
-    <IoMdClose title="Limpar" />
+    <IoMdClose title="Limpar" onClick={() => onChange('')} />
   </div>
 )
 
