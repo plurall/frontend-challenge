@@ -20,12 +20,12 @@ Tasks da Página do Artista:
   ✔ Criar página do artista @done(22-08-08 16:32)
   
   A Página do Artista Deve Conter:
-    ☐ Nome
-    ☐ Popularidade
-    ☐ Foto
-    ☐ Lista de gêneros
-    ☐ Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento
-    ☐ A data de lançamento do album deve estar no formato DD/MM/AAAA
+    ✔ Nome @done(22-08-08 20:53)
+    ✔ Popularidade @done(22-08-08 20:53)
+    ✔ Foto @done(22-08-08 20:53)
+    ✔ Lista de gêneros @done(22-08-08 20:53)
+    ✔ Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento @done(22-08-08 20:53)
+    ✔ A data de lançamento do album deve estar no formato DD/MM/AAAA @done(22-08-08 20:53)
 
 
   
