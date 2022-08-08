@@ -7,6 +7,7 @@
   padding: 30px 18px;
   margin: 0 auto;
   width: 100%;
+  text-align: center;
 
   h2 {
     margin-top: 12px;
@@ -31,6 +32,7 @@
       height: 100%;
       object-fit: cover;
       border-radius: 12px;
+      min-width: 120px;
     }
   }
 
@@ -42,10 +44,10 @@
 
     h1 {
       font-size: 48px;
-      line-height: 24px;
       margin: 0;
       padding: 0;
       color: #655aa3;
+      line-height: 48px;
     }
 
     p {
@@ -74,6 +76,7 @@
     flex-direction: column;
     gap: 12px;
     border-radius: 12px;
+    margin: 0 auto;
 
     .cardImage {
       width: 100%;
