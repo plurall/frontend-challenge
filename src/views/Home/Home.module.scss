@@ -16,5 +16,12 @@
     margin-top: 20px;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    border: 2px solid #655ba2;
+    color: #655ba2;
+    background-color: transparent;
   }
 }

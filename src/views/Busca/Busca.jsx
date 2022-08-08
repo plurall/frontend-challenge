@@ -41,8 +41,8 @@ class Busca extends React.Component {
       })
 
       const { getArtists } = new SomosClient()
-      const { artists } = await getArtists(`${this.state.term}`)
-      if (artists.items.length === 0) {
+      const artists = await getArtists(`${this.state.term}`)
+      if (artists.length === 0) {
         this.setState({
           msg: 'Nenhum artista encontrado',
           loading: false,
@@ -50,7 +50,7 @@ class Busca extends React.Component {
       } else {
         setTimeout(() => {
           this.setState({
-            items: artists.items,
+            items: artists,
             loading: false,
             msg: '',
           })

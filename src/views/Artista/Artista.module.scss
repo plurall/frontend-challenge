@@ -3,4 +3,150 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #655ba2;
+    border: 2px solid transparent;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    border: 2px solid #655ba2;
+    color: #655ba2;
+    background-color: transparent;
+  }
+}
+
+.grid {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+  padding-top: 15px;
+  display: grid;
+  gap: 15px;
+}
+
+.gridLeft {
+  display: grid;
+  gap: 15px;
+
+  img {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  p {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .tags {
+    margin-bottom: 15px;
+  }
+
+  .popularityTag {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: goldenrod;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .genreTag {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #655ba2;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+}
+
+.rigth {
+  position: relative;
+  width: 100%;
+
+  p {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    display: grid;
+    gap: 15px;
+    list-style: none;
+  }
+
+  ul li {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ul li p {
+    font-size: 14px;
+    font-weight: normal !important;
+  }
+
+  ul li span {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  ul li span > span {
+    font-weight: normal;
+  }
+
+  ul li img {
+    max-width: 200px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .rigth {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .gridLeft {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rigth {
+    ul li {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    ul li p {
+      font-size: 10px;
+    }
+
+    ul li span {
+      font-size: 9px;
+    }
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

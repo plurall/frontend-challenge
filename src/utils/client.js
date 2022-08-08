@@ -21,8 +21,13 @@ class SomosClient {
     )
 
     if (res.status === 200) {
+      const items = []
       const data = await res.json()
-      return data
+      data.artists.items.map(item =>
+        item.images.length !== 0 ? items.push(item) : '',
+      )
+
+      return items
     }
 
     return null
@@ -47,7 +52,9 @@ class SomosClient {
 
     if (res.status === 200) {
       const data = await res.json()
-      return data
+      if (data.image !== '') {
+        return data
+      }
     }
 
     return null
