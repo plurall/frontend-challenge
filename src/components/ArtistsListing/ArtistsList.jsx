@@ -6,17 +6,24 @@ import { ArtistSmallCard } from 'components'
 
 import styles from './ArtistsList.module.scss'
 
-const ArtistsList = ({ artists }) =>
+const ArtistsList = ({ artists, total }) =>
   !!artists.length && (
     <div className={styles.wrapper}>
-      {artists.map(artist => (
-        <ArtistSmallCard key={artist.id} artist={artist} />
-      ))}
+      <div className={styles.header}>
+        <h2 className={styles.title}>Artistas</h2>
+        <p className={styles.totalCount}>{total} artistas relacionados</p>
+      </div>
+      <ul className={styles.list}>
+        {artists.map(artist => (
+          <ArtistSmallCard key={artist.id} artist={artist} />
+        ))}
+      </ul>
     </div>
   )
 
 ArtistsList.propTypes = {
   artists: PropTypes.arrayOf(artistType).isRequired,
+  total: PropTypes.number.isRequired,
 }
 
 export default ArtistsList

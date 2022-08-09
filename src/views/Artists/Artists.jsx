@@ -25,17 +25,23 @@ class Artists extends React.Component {
     search: '',
     artists: [],
     artistNotFound: false,
+    totalArtists: 0,
   }
 
   getArtistByName = getThrottledCallback(async search => {
-    const { items } = await this.client.getArtistsByName(search)
+    const { items, total } = await this.client.getArtistsByName(search)
+
     const artists = items.map(artist => ({
       ...artist,
       image: getArtistImageByDimension(artist.images, 80, 600)?.url,
     }))
-    const artistNotFound = !artists.length
 
-    this.setState({ ...this.state, artists, artistNotFound })
+    this.setState({
+      ...this.state,
+      artists,
+      totalArtists: total,
+      artistNotFound: !artists.length,
+    })
   }, SEARCH_THROTTLE_INTERVAL_MS)
 
   getNotArtistCategory = () => {
@@ -57,6 +63,7 @@ class Artists extends React.Component {
       ...this.state,
       artistNotFound: false,
       artists: isReadyToSearch ? this.state.artists : [],
+      totalArtists: 0,
       search: formattedSearch,
     })
 
@@ -83,7 +90,10 @@ class Artists extends React.Component {
             remaining={remainingLetters}
             show={!!this.state.search && !!remainingLetters}
           />
-          <ArtistsList artists={this.state.artists} />
+          <ArtistsList
+            artists={this.state.artists}
+            total={this.state.totalArtists}
+          />
         </div>
       </Layout>
     )

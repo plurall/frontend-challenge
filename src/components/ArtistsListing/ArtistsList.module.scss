@@ -1,4 +1,28 @@
 .wrapper {
+  margin-top: 1.5rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-on-background-highlight);
+}
+
+.totalCount {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-on-background);
+}
+
+.list {
   & > :nth-child(n + 2) {
     margin-top: 1rem;
   }
