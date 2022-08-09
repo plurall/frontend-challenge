@@ -1,0 +1,16 @@
+.wrapper {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-on-background-highlight);
+  flex: 1;
+  padding: 2rem 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.songEmoji {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
