@@ -1,0 +1,19 @@
+.wrapper {
+  margin-top: 1.5rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-on-background-highlight);
+}
+
+.list {
+  & > :nth-child(n + 2) {
+    margin-top: 1rem;
+  }
+}

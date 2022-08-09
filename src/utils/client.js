@@ -19,6 +19,8 @@ class SpotifyClient {
     const response = await fetch(url, { headers })
     const data = await response.json()
 
+    if (data.error) throw new Error(data.error.message)
+
     return SpotifyClient.formatResponse(data.artists)
   }
 
@@ -28,6 +30,8 @@ class SpotifyClient {
 
     const response = await fetch(url, { headers })
     const data = await response.json()
+
+    if (data.error) throw new Error(data.error.message)
 
     return data
   }
@@ -39,6 +43,8 @@ class SpotifyClient {
 
     const response = await fetch(url, { headers })
     const data = await response.json()
+
+    if (data.error) throw new Error(data.error.message)
 
     return SpotifyClient.formatResponse(data)
   }

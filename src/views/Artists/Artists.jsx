@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {
+  clearToken,
   getArtistImageByDimension,
   getThrottledCallback,
   removeUnnecessarySpaces,
@@ -13,12 +14,16 @@ import {
   NoArtistsMessage,
   ArtistsList,
   SearchRemainingLetters,
+  LoadingArtistsList,
 } from 'components'
 
 import styles from './Artists.module.scss'
 
 const MIN_NAME_LENGTH_TO_SEARCH = 4
 const SEARCH_THROTTLE_INTERVAL_MS = 1_000
+const LOADING_ARTISTS_AMOUNT = 10
+const MIN_ARTIST_IMAGE_SIZE = 80
+const MAX_ARTIST_IMAGE_SIZE = 600
 
 class Artists extends React.Component {
   state = {
@@ -26,22 +31,33 @@ class Artists extends React.Component {
     artists: [],
     artistNotFound: false,
     totalArtists: 0,
+    isLoading: false,
   }
 
   getArtistByName = getThrottledCallback(async search => {
-    const { items, total } = await this.client.getArtistsByName(search)
+    try {
+      const { items, total } = await this.client.getArtistsByName(search)
 
-    const artists = items.map(artist => ({
-      ...artist,
-      image: getArtistImageByDimension(artist.images, 80, 600)?.url,
-    }))
+      const artists = items.map(artist => ({
+        ...artist,
+        image: getArtistImageByDimension(
+          artist.images,
+          MIN_ARTIST_IMAGE_SIZE,
+          MAX_ARTIST_IMAGE_SIZE,
+        )?.url,
+      }))
 
-    this.setState({
-      ...this.state,
-      artists,
-      totalArtists: total,
-      artistNotFound: !artists.length,
-    })
+      this.setState({
+        ...this.state,
+        artists,
+        totalArtists: total,
+        artistNotFound: !artists.length,
+        isLoading: false,
+      })
+    } catch (err) {
+      clearToken()
+      window.location.reload()
+    }
   }, SEARCH_THROTTLE_INTERVAL_MS)
 
   getNoArtistsCategory = () => {
@@ -65,6 +81,7 @@ class Artists extends React.Component {
       artists: isReadyToSearch ? this.state.artists : [],
       totalArtists: 0,
       search: formattedSearch,
+      isLoading: isReadyToSearch,
     })
 
     if (isReadyToSearch) this.getArtistByName(artistName)
@@ -95,10 +112,19 @@ class Artists extends React.Component {
           <ArtistsList
             show={
               !!this.state.artists.length &&
+              !this.state.isLoading &&
               trimmedSearch.length >= MIN_NAME_LENGTH_TO_SEARCH
             }
             artists={this.state.artists}
             total={this.state.totalArtists}
+          />
+          <LoadingArtistsList
+            show={
+              !!trimmedSearch.length &&
+              (this.state.isLoading ||
+                trimmedSearch.length < MIN_NAME_LENGTH_TO_SEARCH)
+            }
+            artistsAmount={LOADING_ARTISTS_AMOUNT}
           />
         </div>
       </Layout>

@@ -8,4 +8,6 @@ export {
   ArtistSmallCard,
   NoArtistsMessage,
   SearchRemainingLetters,
+  LoadingArtistsList,
+  LoadingArtistSmallCard,
 } from './ArtistsListing'
