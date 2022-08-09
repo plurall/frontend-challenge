@@ -4,8 +4,6 @@ import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
 import styles from './Home.module.scss'
-// eslint-disable-next-line import/first
-import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
   state = {}
@@ -18,7 +16,7 @@ class Home extends React.Component {
         <SubHeader breadcrumb={[{ text: 'Home' }]} heading="" />
         <div className={styles.wrapper}>
           <h1>Busque seu artista favorito.</h1>
-          <Link to="/busca">Ir para a busca</Link>
+          <a to="/busca">Ir para a busca</a>
         </div>
       </>
     )
