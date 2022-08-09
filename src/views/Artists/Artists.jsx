@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {
+  getArtistImageByDimension,
   getThrottledCallback,
   removeUnnecessarySpaces,
   SpotifyClient,
@@ -15,8 +16,13 @@ class Artists extends React.Component {
   state = { search: '', artists: [] }
 
   getArtistByName = getThrottledCallback(async search => {
-    const response = await this.client.getArtistsByName(search)
-    this.setState({ ...this.state, artists: response.items })
+    const { items } = await this.client.getArtistsByName(search)
+    const artists = items.map(artist => ({
+      ...artist,
+      image: getArtistImageByDimension(artist.images, 80, 600)?.url,
+    }))
+
+    this.setState({ ...this.state, artists })
   }, SEARCH_THROTTLE_INTERVAL_MS)
 
   client = new SpotifyClient()

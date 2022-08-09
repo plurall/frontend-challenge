@@ -13,7 +13,7 @@ describe('getThrottledCallback test suite', () => {
     expect(called).toBeTruthy()
   })
 
-  it('should throttle the requests in the second call and after', async () => {
+  it('should throttle the requests after the first call until the specified timeout is reached', async () => {
     let count = 0
 
     const cb = getThrottledCallback(() => {
