@@ -6,7 +6,7 @@ import { ArtistPicture } from 'components'
 import styles from './ArtistSmallCard.module.scss'
 
 const ArtistSmallCard = ({ artist }) => (
-  <Link to={`/artistas/${artist.id}`} className={styles.wrapper}>
+  <Link to={`/artista/${artist.id}`} className={styles.wrapper}>
     <h3 className={styles.name}>{artist.name}</h3>
     <p className={styles.popularity}>
       Popularidade{' '}

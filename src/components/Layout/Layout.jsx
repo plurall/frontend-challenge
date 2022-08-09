@@ -36,10 +36,10 @@ class Layout extends Component {
                 items: [
                   { name: 'Início', slug: 'account', id: 0, href: '/' },
                   {
-                    name: 'Artistas',
-                    slug: 'artistas',
+                    name: 'Busca',
+                    slug: 'search-artistas',
                     id: 1,
-                    href: '/artistas',
+                    href: '/busca',
                   },
                 ],
               },

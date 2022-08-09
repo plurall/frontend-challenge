@@ -14,7 +14,7 @@ class LoginCallback extends React.Component {
     redirect: false,
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const oauth = getOauthClient()
     const { location } = this.props
     const fullPath = `${location.pathname}${location.search}${location.hash}`
@@ -25,7 +25,7 @@ class LoginCallback extends React.Component {
     })
   }
 
-  render() {
+  render = () => {
     if (this.state.redirect) {
       const search = queryString.parse(this.props.location.search)
       return <Redirect to={search.redirectTo || '/'} />

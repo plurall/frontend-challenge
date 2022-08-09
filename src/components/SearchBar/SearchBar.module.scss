@@ -1,29 +1,6 @@
 .wrapper {
   font-family: 'Roboto', sans-serif;
   position: relative;
-
-  & > :nth-child(2) {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-
-    font-size: 1rem;
-    color: var(--color-on-search-bar);
-  }
-
-  & > :nth-child(3) {
-    position: absolute;
-    right: 1rem;
-    top: 0.875rem;
-
-    font-size: 1.25rem;
-    color: var(--color-on-search-bar);
-    cursor: pointer;
-
-    &:hover {
-      color: var(--color-on-search-bar-highlight);
-    }
-  }
 }
 
 .input {
@@ -45,5 +22,33 @@
 
   &:focus {
     outline-color: var(--color-on-search-bar-highlight);
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+
+  font-size: 1rem;
+  color: var(--color-on-search-bar);
+}
+
+.closeIcon {
+  position: absolute;
+  right: 1rem;
+  top: 0.875rem;
+
+  font-size: 1.25rem;
+  color: var(--color-on-search-bar);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-on-search-bar-highlight);
+  }
+
+  &[data-enabled='false'] {
+    pointer-events: none;
+    opacity: 0;
   }
 }

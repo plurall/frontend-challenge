@@ -11,10 +11,15 @@ const SearchBar = ({ value, onChange }) => (
       value={value}
       onChange={e => onChange(e.target.value)}
       className={styles.input}
-      placeholder="Procurar"
+      placeholder="Buscar"
     />
-    <HiSearch />
-    <IoMdClose title="Limpar" onClick={() => onChange('')} />
+    <HiSearch className={styles.searchIcon} />
+    <IoMdClose
+      className={styles.closeIcon}
+      title="Limpar"
+      data-enabled={!!value}
+      onClick={() => onChange('')}
+    />
   </div>
 )
 
