@@ -18,7 +18,7 @@ import {
   LoadingArtistsList,
 } from 'components'
 
-import styles from './Artists.module.scss'
+import styles from './SearchArtists.module.scss'
 
 const MIN_NAME_LENGTH_TO_SEARCH = 4
 const SEARCH_THROTTLE_INTERVAL_MS = 1_000
@@ -26,7 +26,7 @@ const LOADING_ARTISTS_AMOUNT = 10
 const MIN_ARTIST_IMAGE_SIZE = 80
 const MAX_ARTIST_IMAGE_SIZE = 600
 
-class Artists extends React.Component {
+class SearchArtists extends React.Component {
   state = {
     search: '',
     artists: [],
@@ -139,4 +139,4 @@ class Artists extends React.Component {
   }
 }
 
-export default Artists
+export default SearchArtists
