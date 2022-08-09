@@ -44,7 +44,7 @@ class Artists extends React.Component {
     })
   }, SEARCH_THROTTLE_INTERVAL_MS)
 
-  getNotArtistCategory = () => {
+  getNoArtistsCategory = () => {
     if (!this.state.search) return 'empty-search'
 
     if (this.state.artistNotFound) return 'not-found'
@@ -71,12 +71,14 @@ class Artists extends React.Component {
   }
 
   render = () => {
+    const trimmedSearch = this.state.search.trim()
+
     const remainingLetters = Math.max(
-      MIN_NAME_LENGTH_TO_SEARCH - this.state.search.trim().length,
+      MIN_NAME_LENGTH_TO_SEARCH - trimmedSearch.length,
       0,
     )
 
-    const noArtistCategory = this.getNotArtistCategory()
+    const noArtistCategory = this.getNoArtistsCategory()
 
     return (
       <Layout>
@@ -88,9 +90,13 @@ class Artists extends React.Component {
           <NoArtistsMessage category={noArtistCategory} />
           <SearchRemainingLetters
             remaining={remainingLetters}
-            show={!!this.state.search && !!remainingLetters}
+            show={!!trimmedSearch && !!remainingLetters}
           />
           <ArtistsList
+            show={
+              !!this.state.artists.length &&
+              trimmedSearch.length >= MIN_NAME_LENGTH_TO_SEARCH
+            }
             artists={this.state.artists}
             total={this.state.totalArtists}
           />

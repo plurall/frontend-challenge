@@ -6,8 +6,8 @@ import { ArtistSmallCard } from 'components'
 
 import styles from './ArtistsList.module.scss'
 
-const ArtistsList = ({ artists, total }) =>
-  !!artists.length && (
+const ArtistsList = ({ artists, total, show }) =>
+  show && (
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <h2 className={styles.title}>Artistas</h2>
@@ -24,6 +24,7 @@ const ArtistsList = ({ artists, total }) =>
 ArtistsList.propTypes = {
   artists: PropTypes.arrayOf(artistType).isRequired,
   total: PropTypes.number.isRequired,
+  show: PropTypes.bool.isRequired,
 }
 
 export default ArtistsList
