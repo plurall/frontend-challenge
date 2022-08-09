@@ -3,4 +3,25 @@
   padding: 30px 20px;
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
+
+  a {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #655ba2;
+    border: 2px solid transparent;
+    padding: 10px 15px;
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    border: 2px solid #655ba2;
+    color: #655ba2;
+    background-color: transparent;
+  }
 }

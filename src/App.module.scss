@@ -16,3 +16,23 @@
 body {
   background: var(--color-white);
 }
+
+h1 {
+  padding: 0 !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}

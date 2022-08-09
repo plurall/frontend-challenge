@@ -1,0 +1,31 @@
+
+Init:
+  ✔ Configurar ambiente local @done(22-08-04 13:11)
+  ✔ Mapear as tarefas @done(22-08-04 13:11)
+
+Tasks da Página Home:
+  ☐ Criar Link que leva para a página de busca
+
+Tasks da Página de Busca:
+  ✔ Criar a página de busca @done(22-08-08 14:44)
+  ✔ Criar o componente de busca(Search) @done(22-08-08 14:44)
+
+  Critérios de Aceite da Página de Busca:
+    ✔ Deve conter um campo input @done(22-08-08 16:31)
+    ✔ O resultado deve aparece ao dititar acima de quatro caracteres @done(22-08-08 16:31)
+    ✔ Retorno deve mostrar na página nome e foto do artista @done(22-08-08 16:32)
+    ✔ Ao clicar no artista deve ser redirecionado para a página do artista @done(22-08-08 16:32)
+
+Tasks da Página do Artista:
+  ✔ Criar página do artista @done(22-08-08 16:32)
+  
+  A Página do Artista Deve Conter:
+    ✔ Nome @done(22-08-08 20:53)
+    ✔ Popularidade @done(22-08-08 20:53)
+    ✔ Foto @done(22-08-08 20:53)
+    ✔ Lista de gêneros @done(22-08-08 20:53)
+    ✔ Lista de 10 albuns, contendo: Imagem, nome do album e data de lançamento @done(22-08-08 20:53)
+    ✔ A data de lançamento do album deve estar no formato DD/MM/AAAA @done(22-08-08 20:53)
+
+
+  

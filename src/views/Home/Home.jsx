@@ -13,12 +13,10 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Desafio Front-end do Plurall"
-        />
+        <SubHeader breadcrumb={[{ text: 'Home' }]} heading="" />
         <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
+          <h1>Busque seu artista favorito.</h1>
+          <a to="/busca">Ir para a busca</a>
         </div>
       </>
     )
