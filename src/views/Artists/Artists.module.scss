@@ -1,7 +1,7 @@
 @import 'shared.module.scss';
 
 .wrapper {
-  max-width: 1000px;
+  max-width: $max-page-content-width;
   margin: 0 auto;
   padding: 4rem 1rem;
   font-family: 'Roboto', sans-serif;
