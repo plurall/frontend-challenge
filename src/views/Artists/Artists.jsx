@@ -2,6 +2,7 @@ import React from 'react'
 
 import {
   clearToken,
+  ClientError,
   getArtistImageByDimension,
   getThrottledCallback,
   removeUnnecessarySpaces,
@@ -55,8 +56,9 @@ class Artists extends React.Component {
         isLoading: false,
       })
     } catch (err) {
-      clearToken()
-      window.location.reload()
+      if (err instanceof ClientError && err.status === 401) {
+        this.sendUserToSignIn()
+      }
     }
   }, SEARCH_THROTTLE_INTERVAL_MS)
 
@@ -66,6 +68,11 @@ class Artists extends React.Component {
     if (this.state.artistNotFound) return 'not-found'
 
     return ''
+  }
+
+  sendUserToSignIn = () => {
+    clearToken()
+    window.location.reload()
   }
 
   client = new SpotifyClient()

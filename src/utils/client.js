@@ -1,6 +1,14 @@
 import { getToken } from 'utils'
 import queryString from 'query-string'
 
+class ClientError extends Error {
+  constructor(status, error, message) {
+    super(message || '')
+    this.status = status
+    this.error = error || ''
+  }
+}
+
 class SpotifyClient {
   constructor({ baseURL, token } = {}) {
     this.baseURL = baseURL || process.env.REACT_APP_API_URL
@@ -19,7 +27,9 @@ class SpotifyClient {
     const response = await fetch(url, { headers })
     const data = await response.json()
 
-    if (data.error) throw new Error(data.error.message)
+    if (!response.ok) {
+      throw new ClientError(response.status, data.error, data.error.message)
+    }
 
     return SpotifyClient.formatResponse(data.artists)
   }
@@ -31,7 +41,9 @@ class SpotifyClient {
     const response = await fetch(url, { headers })
     const data = await response.json()
 
-    if (data.error) throw new Error(data.error.message)
+    if (!response.ok) {
+      throw new ClientError(response.status, data.error, data.error.message)
+    }
 
     return data
   }
@@ -44,7 +56,9 @@ class SpotifyClient {
     const response = await fetch(url, { headers })
     const data = await response.json()
 
-    if (data.error) throw new Error(data.error.message)
+    if (!response.ok) {
+      throw new ClientError(response.status, data.error, data.error.message)
+    }
 
     return SpotifyClient.formatResponse(data)
   }
@@ -69,4 +83,4 @@ class SpotifyClient {
   }
 }
 
-export default SpotifyClient
+export { SpotifyClient, ClientError }
