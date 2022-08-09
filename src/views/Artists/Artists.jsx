@@ -111,11 +111,11 @@ class Artists extends React.Component {
             value={this.state.search}
             onChange={this.handleSearchBarChange}
           />
-          <NoArtistsMessage category={noArtistCategory} />
           <SearchRemainingLetters
             remaining={remainingLetters}
             show={!!trimmedSearch && !!remainingLetters}
           />
+          <NoArtistsMessage category={noArtistCategory} />
           <ArtistsList
             show={
               !!this.state.artists.length &&
