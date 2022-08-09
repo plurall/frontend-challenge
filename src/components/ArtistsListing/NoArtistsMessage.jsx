@@ -14,10 +14,12 @@ const NoArtistsMessage = ({ category }) => {
   return (
     message && (
       <div className={styles.wrapper}>
-        {message.message}
-        <span role="img" aria-label="song icon" className={styles.songEmoji}>
-          {message.emoji}
-        </span>
+        <div className={styles.content}>
+          {message.message}
+          <span role="img" aria-label="song icon" className={styles.songEmoji}>
+            {message.emoji}
+          </span>
+        </div>
       </div>
     )
   )

@@ -1,3 +1,5 @@
+@import 'shared.module.scss';
+
 .wrapper {
   background: var(--color-secondary-surface);
   border-radius: 0.5rem;
@@ -23,20 +25,32 @@
     background-position-x: 150%;
     animation: loading 1s ease-in-out infinite;
   }
+
+  @media (max-width: $mobile-breakingpoint) {
+    padding: 0.625rem 1rem;
+  }
 }
 
 .name {
   grid-area: name;
   height: 1.5rem;
-  width: 20ch;
+  width: 16ch;
   background-color: var(--color-on-loading);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1.25rem;
+  }
 }
 
 .popularity {
   grid-area: popularity;
   height: 1.125rem;
-  width: 15ch;
+  width: 12ch;
   background-color: var(--color-on-loading);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1rem;
+  }
 }
 
 .picture {

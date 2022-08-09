@@ -1,10 +1,12 @@
+@import 'shared.module.scss';
+
 .header {
   background: #fff;
   padding: 35px 0;
 }
 
 .wrapper {
-  max-width: 1224px;
+  max-width: $max-page-width;
   padding: 0 20px;
   margin: 0 auto;
   display: flex;
@@ -31,7 +33,7 @@
   padding: 0 5px;
 }
 
-@media (max-width: 1224px) {
+@media (max-width: $max-page-width) {
   .header {
     padding: 17px 0;
   }

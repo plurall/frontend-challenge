@@ -1,3 +1,5 @@
+@import 'shared.module.scss';
+
 .wrapper {
   margin-top: 1rem;
   font-size: 1rem;
@@ -6,5 +8,10 @@
 
   &[data-show='false'] {
     opacity: 0;
+  }
+
+  @media (max-width: $mobile-breakingpoint) {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 }

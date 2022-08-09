@@ -1,3 +1,5 @@
+@import 'shared.module.scss';
+
 .wrapper {
   margin-top: 1.5rem;
 }
@@ -14,12 +16,22 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-on-background-highlight);
+
+  @media (max-width: $mobile-breakingpoint) {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
 }
 
 .totalCount {
   font-size: 1rem;
   font-weight: 600;
   color: var(--color-on-background);
+
+  @media (max-width: $mobile-breakingpoint) {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
 }
 
 .list {
