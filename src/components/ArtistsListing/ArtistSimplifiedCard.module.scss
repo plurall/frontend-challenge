@@ -17,10 +17,6 @@
     'popularity picture';
   transition-duration: 0.25s;
 
-  & > :nth-child(3) {
-    grid-area: picture;
-  }
-
   &:hover {
     box-shadow: var(--shadow-artist-card-hover);
   }

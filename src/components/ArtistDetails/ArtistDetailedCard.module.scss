@@ -1,0 +1,103 @@
+@import 'shared.module.scss';
+
+.wrapper {
+  font-family: 'Roboto', sans-serif;
+  background: var(--color-primary-surface);
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'name picture'
+    'popularity picture'
+    'genres picture';
+  transition-duration: 0.25s;
+
+  @media (max-width: $mobile-breakingpoint) {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      'picture'
+      'name'
+      'popularity'
+      'genres';
+
+    & > :last-child {
+      justify-self: center;
+    }
+  }
+}
+
+.name {
+  grid-area: name;
+  color: var(--color-on-surface-highlight);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: $mobile-breakingpoint) {
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-self: center;
+    margin-top: 0.5rem;
+  }
+}
+
+.popularity {
+  grid-area: popularity;
+  color: var(--color-on-surface);
+  font-weight: 500;
+  font-size: 1.125rem;
+  align-self: center;
+
+  @media (max-width: $mobile-breakingpoint) {
+    font-size: 1rem;
+    justify-self: center;
+  }
+}
+
+.popularityValue {
+  font-weight: 700;
+}
+
+.genreTagsContainer {
+  grid-area: genres;
+  margin-top: 0.5rem;
+
+  & > * {
+    margin: 0.5rem 0.625rem 0 0;
+  }
+
+  @media (max-width: $mobile-breakingpoint) {
+    text-align: center;
+    margin-top: 0.75rem;
+
+    & > * {
+      margin: 0.5rem 0.25rem 0;
+    }
+  }
+}
+
+.genreTag {
+  display: inline-block;
+  padding: 0.125rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  border-radius: 0.875rem;
+  font-weight: 500;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  white-space: nowrap;
+
+  @media (max-width: $mobile-breakingpoint) {
+    line-height: 1.25rem;
+    font-size: 0.75rem;
+    border-radius: 0.75rem;
+  }
+}

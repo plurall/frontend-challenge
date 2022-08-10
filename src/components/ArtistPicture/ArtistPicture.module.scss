@@ -1,16 +1,25 @@
+@import 'shared.module.scss';
+
 .wrapper {
   --size: 5rem;
 
   &[data-is-large='true'] {
-    --size: 13.75rem;
+    --size: 10rem;
   }
 
+  grid-area: picture;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   box-shadow: var(--shadow-artist-picture);
   overflow: hidden;
   position: relative;
+
+  @media (max-width: $mobile-breakingpoint) {
+    &[data-is-large='true'] {
+      --size: 8rem;
+    }
+  }
 }
 
 .defaultPicture {

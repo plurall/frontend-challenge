@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { artistType } from 'types'
-import { ArtistSmallCard } from 'components'
+import { ArtistSimplifiedCard } from 'components'
 
 import styles from './ArtistsList.module.scss'
 
@@ -15,7 +15,7 @@ const ArtistsList = ({ artists, total, show }) =>
       </div>
       <ul className={styles.list}>
         {artists.map(artist => (
-          <ArtistSmallCard key={artist.id} artist={artist} />
+          <ArtistSimplifiedCard key={artist.id} artist={artist} />
         ))}
       </ul>
     </div>

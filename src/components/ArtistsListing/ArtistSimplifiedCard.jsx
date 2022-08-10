@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 import { artistType } from 'types'
 import { ArtistPicture } from 'components'
-import styles from './ArtistSmallCard.module.scss'
+import styles from './ArtistSimplifiedCard.module.scss'
 
-const ArtistSmallCard = ({ artist }) => (
+const ArtistSimplifiedCard = ({ artist }) => (
   <Link to={`/artista/${artist.id}`} className={styles.wrapper}>
     <h3 className={styles.name}>{artist.name}</h3>
     <p className={styles.popularity}>
@@ -16,8 +16,8 @@ const ArtistSmallCard = ({ artist }) => (
   </Link>
 )
 
-ArtistSmallCard.propTypes = {
+ArtistSimplifiedCard.propTypes = {
   artist: artistType.isRequired,
 }
 
-export default ArtistSmallCard
+export default ArtistSimplifiedCard

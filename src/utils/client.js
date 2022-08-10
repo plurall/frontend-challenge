@@ -48,7 +48,7 @@ class SpotifyClient {
     return data
   }
 
-  async getArtistAlbums(id, options = {}) {
+  async getArtistAlbumsById(id, options = {}) {
     const query = queryString.stringify(SpotifyClient.formatOptions(options))
     const headers = this.getAuthHeaders()
     const url = `${this.baseURL}/artists/${id}/albums?${query}`
