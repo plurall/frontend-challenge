@@ -1,8 +1,101 @@
 @import 'shared.module.scss';
 
 .wrapper {
-  max-width: $max-page-width;
-  padding: 30px 20px;
+  max-width: $max-page-content-width;
   margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+  padding: 2rem 1rem;
+  font-family: 'Roboto', sans-serif;
+  min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
+
+  display: flex;
+
+  @media (max-width: $mobile-breakingpoint) {
+    padding: 3rem 0.5rem;
+  }
+}
+
+.content {
+  margin: auto;
+  height: 25rem;
+  width: 100%;
+  max-width: 55rem;
+
+  display: grid;
+  grid-template-columns: 1fr 18rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'image title'
+    'image button';
+  grid-gap: 1rem 4rem;
+
+  @media (max-width: $mobile-breakingpoint) {
+    display: flex;
+    flex-direction: column;
+    height: initial;
+    grid-gap: initial;
+    max-width: 35rem;
+  }
+}
+
+.contentImage {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  background-image: var(--image);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (max-width: $mobile-breakingpoint) {
+    aspect-ratio: 1.5/1;
+  }
+}
+
+.title {
+  grid-area: title;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-on-background-highlight);
+  align-self: flex-end;
+
+  @media (max-width: $mobile-breakingpoint) {
+    margin: 2rem 0;
+    text-align: center;
+  }
+}
+
+.brandImage {
+  display: inline-block;
+  height: 2.5rem;
+  aspect-ratio: 3.33/1;
+  background-image: var(--image);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transform: translateY(25%);
+}
+
+.button {
+  grid-area: button;
+  height: 3rem;
+  width: 100%;
+  align-self: center;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  cursor: pointer;
+  transition-duration: 0.2s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: brightness(1.125);
+  }
 }
