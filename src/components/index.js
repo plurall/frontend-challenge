@@ -11,6 +11,6 @@ export {
   SearchRemainingLetters,
   LoadingArtistsList,
   LoadingArtistSmallCard,
-} from './ArtistsListing'
+} from './SearchArtist'
 
-export { ArtistDetailedCard } from './ArtistDetails'
+export { ArtistDetailedCard } from './Artist'
