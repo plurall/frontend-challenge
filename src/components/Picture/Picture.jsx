@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { AiOutlineUser } from 'react-icons/ai'
 
-import styles from './ArtistPicture.module.scss'
+import styles from './Picture.module.scss'
 
-const ArtistPicture = ({ src, isLarge }) => (
-  <div className={styles.wrapper} data-is-large={!!isLarge}>
+const Picture = ({ src, type }) => (
+  <div className={styles.wrapper} data-type={type}>
     {src ? (
       <div className={styles.image} style={{ '--image': `url(${src})` }} />
     ) : (
@@ -16,9 +16,9 @@ const ArtistPicture = ({ src, isLarge }) => (
   </div>
 )
 
-ArtistPicture.propTypes = {
+Picture.propTypes = {
   src: PropTypes.string,
-  isLarge: PropTypes.bool,
+  type: PropTypes.string,
 }
 
-export default ArtistPicture
+export default Picture

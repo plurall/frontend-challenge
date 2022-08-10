@@ -7,6 +7,7 @@
   padding: 0.625rem 2rem;
   user-select: none;
   text-decoration: none;
+  transition-duration: 0.25s;
   cursor: pointer;
 
   display: grid;
@@ -15,14 +16,14 @@
   grid-template-areas:
     'name picture'
     'popularity picture';
-  transition-duration: 0.25s;
+  grid-gap: 0.5rem 0.25rem;
 
   &:hover {
     box-shadow: var(--shadow-artist-card-hover);
   }
 
   @media (max-width: $mobile-breakingpoint) {
-    padding: 0.625rem 1rem;
+    padding: 0.625rem 0.75rem;
   }
 }
 
@@ -43,7 +44,6 @@
   color: var(--color-on-surface);
   font-weight: 500;
   font-size: 1rem;
-  margin-top: 0.5rem;
 
   @media (max-width: $mobile-breakingpoint) {
     font-size: 0.875rem;

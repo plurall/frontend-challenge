@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { artistType } from 'types'
-import { ArtistPicture } from 'components'
+import { Picture } from 'components'
 import styles from './ArtistSimplifiedCard.module.scss'
 
 const ArtistSimplifiedCard = ({ artist }) => (
@@ -12,7 +12,7 @@ const ArtistSimplifiedCard = ({ artist }) => (
       Popularidade{' '}
       <strong className={styles.popularityValue}>{artist.popularity}%</strong>
     </p>
-    <ArtistPicture src={artist.image} />
+    <Picture src={artist.image} type="artist-small" />
   </Link>
 )
 

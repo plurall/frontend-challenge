@@ -3,8 +3,13 @@
 .wrapper {
   --size: 5rem;
 
-  &[data-is-large='true'] {
+  &[data-type='artist-large'] {
     --size: 10rem;
+  }
+
+  &[data-type='album-small'] {
+    --size: 6rem;
+    border-radius: 0.5rem;
   }
 
   grid-area: picture;
@@ -16,7 +21,7 @@
   position: relative;
 
   @media (max-width: $mobile-breakingpoint) {
-    &[data-is-large='true'] {
+    &[data-type='artist-large'] {
       --size: 8rem;
     }
   }

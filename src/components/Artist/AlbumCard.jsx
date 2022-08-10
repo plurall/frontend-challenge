@@ -4,7 +4,7 @@ import { BsPlayFill } from 'react-icons/bs'
 
 import { albumType } from 'types'
 import { formatDate } from 'utils'
-import { ArtistPicture } from 'components'
+import { Picture } from 'components'
 import styles from './AlbumCard.module.scss'
 
 const AlbumCard = ({ album }) => {
@@ -21,7 +21,7 @@ const AlbumCard = ({ album }) => {
       <button className={styles.button}>
         <BsPlayFill />
       </button>
-      <ArtistPicture src={album.image} />
+      <Picture src={album.image} type="album-small" />
     </Link>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { artistType } from 'types'
-import { ArtistPicture } from 'components'
+import { Picture } from 'components'
 import styles from './ArtistDetailedCard.module.scss'
 
 const ArtistDetailedCard = ({ artist }) => (
@@ -18,7 +18,7 @@ const ArtistDetailedCard = ({ artist }) => (
         </span>
       ))}
     </div>
-    <ArtistPicture src={artist.image} isLarge />
+    <Picture src={artist.image} type="artist-large" />
   </div>
 )
 
