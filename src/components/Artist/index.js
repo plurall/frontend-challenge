@@ -1,3 +1,6 @@
 export { default as ArtistDetailedCard } from './ArtistDetailedCard'
 export { default as AlbumCard } from './AlbumCard'
 export { default as AlbumsList } from './AlbumsList'
+export { default as LoadingArtistDetailedCard } from './LoadingArtistDetailedCard'
+export { default as LoadingAlbumsList } from './LoadingAlbumsList'
+export { default as LoadingAlbumCard } from './LoadingAlbumCard'

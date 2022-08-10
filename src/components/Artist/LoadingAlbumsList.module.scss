@@ -1,0 +1,30 @@
+@import 'shared.module.scss';
+
+.wrapper {
+  margin-top: 3rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  @media (max-width: $mobile-breakingpoint) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-on-background-highlight);
+
+  @media (max-width: $mobile-breakingpoint) {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.list {
+  & > :nth-child(n + 2) {
+    margin-top: 1rem;
+  }
+}

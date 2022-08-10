@@ -6,6 +6,8 @@ import {
   ArtistDetailedCard,
   Layout,
   EmptyListMessage,
+  LoadingArtistDetailedCard,
+  LoadingAlbumsList,
 } from 'components'
 import {
   clearToken,
@@ -16,6 +18,8 @@ import {
 
 import styles from './Artist.module.scss'
 
+const LOADING_ALBUMS_AMOUNT = 10
+
 class Artist extends React.Component {
   static propTypes = {
     match: PropTypes.shape({
@@ -25,7 +29,12 @@ class Artist extends React.Component {
     }),
   }
 
-  state = { artist: null, albums: [], totalAlbums: 0 }
+  state = {
+    artist: null,
+    albums: [],
+    totalAlbums: 0,
+    isLoading: true,
+  }
 
   componentDidMount = async () => {
     try {
@@ -39,15 +48,18 @@ class Artist extends React.Component {
         ...artistResponse,
         image: getArtistImageByDimension(artistResponse.images, 192, 600)?.url,
       }
-
       const albums = albumsResponse.items.map(album => ({
         ...album,
         image: getArtistImageByDimension(album.images, 80, 400)?.url,
       }))
 
-      const totalAlbums = albumsResponse.total
-
-      this.setState({ ...this.state, artist, albums, totalAlbums })
+      this.setState(state => ({
+        ...state,
+        artist,
+        albums,
+        totalAlbums: albumsResponse.total,
+        isLoading: false,
+      }))
     } catch (err) {
       if (err instanceof ClientError && err.status === 401) {
         this.sendUserToSignIn()
@@ -63,21 +75,28 @@ class Artist extends React.Component {
   }
 
   render = () => {
-    const messageCategory = this.state.albums.length ? '' : 'album-not-found'
+    const messageCategory =
+      this.state.isLoading || this.state.albums.length ? '' : 'album-not-found'
 
     return (
       <Layout>
-        {!!this.state.artist && (
-          <div className={styles.wrapper}>
-            <ArtistDetailedCard artist={this.state.artist} />
-            <EmptyListMessage category={messageCategory} />
-            <AlbumsList
-              albums={this.state.albums}
-              total={this.state.totalAlbums}
-              show={!!this.state.albums.length}
-            />
-          </div>
-        )}
+        <div className={styles.wrapper}>
+          <ArtistDetailedCard
+            artist={this.state.artist}
+            show={!!this.state.artist}
+          />
+          <EmptyListMessage category={messageCategory} />
+          <AlbumsList
+            albums={this.state.albums}
+            total={this.state.totalAlbums}
+            show={!!this.state.albums?.length}
+          />
+          <LoadingArtistDetailedCard show={this.state.isLoading} />
+          <LoadingAlbumsList
+            show={this.state.isLoading}
+            albumsAmount={LOADING_ALBUMS_AMOUNT}
+          />
+        </div>
       </Layout>
     )
   }

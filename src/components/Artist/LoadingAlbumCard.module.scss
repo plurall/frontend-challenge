@@ -1,0 +1,73 @@
+@import 'shared.module.scss';
+
+.wrapper {
+  background: var(--color-secondary-surface);
+  border-radius: 0.5rem;
+  padding: 0.625rem 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'name picture'
+    'details picture'
+    'button picture';
+  grid-gap: 0.5rem 0.25rem;
+
+  @keyframes loading {
+    to {
+      background-position-x: -50%;
+    }
+  }
+
+  & > * {
+    background-color: var(--color-on-loading);
+    background: var(--color-on-loading-effect);
+    background-size: 200% 100%;
+    background-position-x: 150%;
+    animation: loading 1s ease-in-out infinite;
+  }
+
+  @media (max-width: $mobile-breakingpoint) {
+    padding: 0.625rem 1rem;
+  }
+}
+
+.name {
+  grid-area: name;
+  height: 1.5rem;
+  width: 16ch;
+  background-color: var(--color-on-loading);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1.25rem;
+  }
+}
+
+.details {
+  margin: auto 0;
+  grid-area: details;
+  height: 1.125rem;
+  width: 12ch;
+  background-color: var(--color-on-loading);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1rem;
+  }
+}
+
+.button {
+  grid-area: button;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--color-on-loading);
+  border-radius: 50%;
+}
+
+.picture {
+  grid-area: picture;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--color-on-loading);
+  border-radius: 0.5rem;
+}

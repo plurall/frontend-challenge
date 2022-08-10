@@ -1,0 +1,99 @@
+@import 'shared.module.scss';
+
+.wrapper {
+  background: var(--color-primary-surface);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'name picture'
+    'popularity picture'
+    'genres picture';
+  grid-gap: 0.5rem;
+
+  @keyframes loading {
+    to {
+      background-position-x: -50%;
+    }
+  }
+
+  & > * {
+    background-color: var(--color-on-loading);
+    background: var(--color-on-loading-effect);
+    background-size: 200% 100%;
+    background-position-x: 150%;
+    animation: loading 1s ease-in-out infinite;
+  }
+
+  @media (max-width: $mobile-breakingpoint) {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      'picture'
+      'name'
+      'popularity'
+      'genres';
+    grid-gap: 0.5rem;
+
+    & > * {
+      justify-self: center;
+    }
+  }
+}
+
+.name {
+  grid-area: name;
+  height: 2rem;
+  width: 20ch;
+  background-color: var(--color-on-loading-highlight);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1.75rem;
+    background-color: var(--color-on-loading);
+  }
+}
+
+.popularity {
+  margin: auto 0;
+  grid-area: popularity;
+  height: 1.5rem;
+  width: 17ch;
+  background-color: var(--color-on-loading-highlight);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1.25rem;
+    background-color: var(--color-on-loading);
+  }
+}
+
+.genres {
+  grid-area: genres;
+  height: 1.625rem;
+  width: 30ch;
+  background-color: var(--color-on-loading-highlight);
+
+  @media (max-width: $mobile-breakingpoint) {
+    height: 1.5rem;
+    margin-top: 0.5rem;
+    background-color: var(--color-on-loading);
+  }
+}
+
+.picture {
+  grid-area: picture;
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--color-on-loading);
+  border-radius: 50%;
+
+  @media (max-width: $mobile-breakingpoint) {
+    width: 8rem;
+    height: 8rem;
+  }
+}
