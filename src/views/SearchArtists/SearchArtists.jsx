@@ -12,7 +12,7 @@ import {
 import {
   Layout,
   SearchBar,
-  NoArtistsMessage,
+  EmptyListMessage,
   ArtistsList,
   SearchRemainingLetters,
   LoadingArtistsList,
@@ -67,7 +67,7 @@ class SearchArtists extends React.Component {
   getNoArtistsCategory = () => {
     if (!this.state.search) return 'empty-search'
 
-    if (this.state.artistNotFound) return 'not-found'
+    if (this.state.artistNotFound) return 'artist-not-found'
 
     return ''
   }
@@ -117,7 +117,7 @@ class SearchArtists extends React.Component {
             remaining={remainingLetters}
             show={!!trimmedSearch && !!remainingLetters}
           />
-          <NoArtistsMessage category={noArtistCategory} />
+          <EmptyListMessage category={noArtistCategory} />
           <ArtistsList
             show={
               !!this.state.artists.length &&

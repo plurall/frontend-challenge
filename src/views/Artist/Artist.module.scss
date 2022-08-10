@@ -11,15 +11,6 @@
   flex-direction: column;
 
   @media (max-width: $mobile-breakingpoint) {
-    padding: 2rem 0.5rem 3rem;
-  }
-}
-
-// Temporary class (move it into its own component)
-.albumsContainer {
-  margin-top: 2rem;
-
-  & > :nth-child(n + 2) {
-    margin-top: 1rem;
+    padding: 2rem 0.5rem;
   }
 }

@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './NoArtistsMessage.module.scss'
+import styles from './EmptyListMessage.module.scss'
 
 const messagesByCategory = {
   'empty-search': { message: 'Encontre seus artistas preferidos', emoji: '🎵' },
-  'not-found': { message: 'Nenhum artista encontrado', emoji: '😞' },
+  'artist-not-found': { message: 'Nenhum artista encontrado', emoji: '😞' },
+  'album-not-found': { message: 'Nenhum álbum encontrado', emoji: '🥴' },
 }
 
-const NoArtistsMessage = ({ category }) => {
+const EmptyListMessage = ({ category }) => {
   const message = messagesByCategory[category] || null
 
   return (
@@ -25,8 +26,8 @@ const NoArtistsMessage = ({ category }) => {
   )
 }
 
-NoArtistsMessage.propTypes = {
+EmptyListMessage.propTypes = {
   category: PropTypes.string.isRequired,
 }
 
-export default NoArtistsMessage
+export default EmptyListMessage

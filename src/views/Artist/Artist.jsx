@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { AlbumsList, ArtistDetailedCard, Layout } from 'components'
+import {
+  AlbumsList,
+  ArtistDetailedCard,
+  Layout,
+  EmptyListMessage,
+} from 'components'
 import {
   clearToken,
   ClientError,
@@ -57,19 +62,25 @@ class Artist extends React.Component {
     window.location.reload()
   }
 
-  render = () => (
-    <Layout>
-      {!!this.state.artist && (
-        <div className={styles.wrapper}>
-          <ArtistDetailedCard artist={this.state.artist} />
-          <AlbumsList
-            albums={this.state.albums}
-            total={this.state.totalAlbums}
-          />
-        </div>
-      )}
-    </Layout>
-  )
+  render = () => {
+    const messageCategory = this.state.albums.length ? '' : 'album-not-found'
+
+    return (
+      <Layout>
+        {!!this.state.artist && (
+          <div className={styles.wrapper}>
+            <ArtistDetailedCard artist={this.state.artist} />
+            <EmptyListMessage category={messageCategory} />
+            <AlbumsList
+              albums={this.state.albums}
+              total={this.state.totalAlbums}
+              show={!!this.state.albums.length}
+            />
+          </div>
+        )}
+      </Layout>
+    )
+  }
 }
 
 export default Artist

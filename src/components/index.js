@@ -3,11 +3,11 @@ export { default as SubHeader } from './SubHeader'
 export { default as PrivateRoute } from './PrivateRoute'
 export { default as SearchBar } from './SearchBar'
 export { default as Picture } from './Picture'
+export { default as EmptyListMessage } from './EmptyListMessage'
 
 export {
   ArtistsList,
   ArtistSimplifiedCard,
-  NoArtistsMessage,
   SearchRemainingLetters,
   LoadingArtistsList,
   LoadingArtistSmallCard,
