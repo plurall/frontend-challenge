@@ -69,7 +69,7 @@
   grid-area: genres;
 
   & > * {
-    margin: 0 0.625rem 0 0;
+    margin: 0.5rem 0.625rem 0 0;
   }
 
   @media (max-width: $mobile-breakingpoint) {
