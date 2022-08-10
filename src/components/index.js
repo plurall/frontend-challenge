@@ -13,4 +13,4 @@ export {
   LoadingArtistSmallCard,
 } from './SearchArtists'
 
-export { ArtistDetailedCard, AlbumCard } from './Artist'
+export { ArtistDetailedCard, AlbumCard, AlbumsList } from './Artist'
