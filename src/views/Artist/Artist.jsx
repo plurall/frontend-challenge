@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { ArtistDetailedCard, Layout } from 'components'
+import { AlbumCard, ArtistDetailedCard, Layout } from 'components'
 import {
   clearToken,
   ClientError,
@@ -62,6 +62,11 @@ class Artist extends React.Component {
       {!!this.state.artist && (
         <div className={styles.wrapper}>
           <ArtistDetailedCard artist={this.state.artist} />
+          <ul className={styles.albumsContainer}>
+            {this.state.albums.map(album => (
+              <AlbumCard key={album.id} album={album} />
+            ))}
+          </ul>
         </div>
       )}
     </Layout>

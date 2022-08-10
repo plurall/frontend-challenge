@@ -1,6 +1,7 @@
 import { sleep } from 'utils'
 
-const TOLERANCE_MS = 5
+const TOLERANCE_MS =
+  parseInt(process.env.REACT_APP_TEST_SLEEP_TOLERANCE, 10) || 50
 
 describe('sleep test suite', () => {
   it('should resolve the promise in the specified interval', async () => {
@@ -20,11 +21,19 @@ describe('sleep test suite', () => {
       TOLERANCE_MS,
     )
 
-    const prevTime = Date.now()
-    const interval3 = Math.round(Math.random() * 1_000)
+    const prevTime3 = Date.now()
+    const interval3 = 500
     await sleep(interval3)
-    const sleptInterval3 = Date.now() - prevTime
+    const sleptInterval3 = Date.now() - prevTime3
     expect(Math.abs(interval3 - sleptInterval3)).toBeLessThanOrEqual(
+      TOLERANCE_MS,
+    )
+
+    const prevTime4 = Date.now()
+    const interval4 = Math.round(Math.random() * 1_000)
+    await sleep(interval4)
+    const sleptInterval4 = Date.now() - prevTime4
+    expect(Math.abs(interval4 - sleptInterval4)).toBeLessThanOrEqual(
       TOLERANCE_MS,
     )
   })
