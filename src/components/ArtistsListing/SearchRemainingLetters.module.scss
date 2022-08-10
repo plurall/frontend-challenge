@@ -3,8 +3,8 @@
 .wrapper {
   margin-top: 1rem;
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-on-background);
+  font-weight: 500;
+  color: var(--color-primary);
 
   &[data-show='false'] {
     opacity: 0;

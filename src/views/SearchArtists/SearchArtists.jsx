@@ -37,6 +37,8 @@ class SearchArtists extends React.Component {
 
   getArtistByName = getThrottledCallback(async search => {
     try {
+      this.setState(state => ({ ...state, isLoading: true }))
+
       const { items, total } = await this.client.getArtistsByName(search)
 
       const artists = items.map(artist => ({
@@ -48,13 +50,13 @@ class SearchArtists extends React.Component {
         )?.url,
       }))
 
-      this.setState({
-        ...this.state,
+      this.setState(state => ({
+        ...state,
         artists,
         totalArtists: total,
         artistNotFound: !artists.length,
         isLoading: false,
-      })
+      }))
     } catch (err) {
       if (err instanceof ClientError && err.status === 401) {
         this.sendUserToSignIn()
@@ -82,14 +84,14 @@ class SearchArtists extends React.Component {
     const artistName = formattedSearch.trim()
     const isReadyToSearch = artistName.length >= MIN_NAME_LENGTH_TO_SEARCH
 
-    this.setState({
-      ...this.state,
+    this.setState(state => ({
+      ...state,
       artistNotFound: false,
-      artists: isReadyToSearch ? this.state.artists : [],
+      artists: isReadyToSearch ? state.artists : [],
       totalArtists: 0,
       search: formattedSearch,
       isLoading: isReadyToSearch,
-    })
+    }))
 
     if (isReadyToSearch) this.getArtistByName(artistName)
   }
