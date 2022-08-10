@@ -6,20 +6,28 @@ import { AlbumCard } from 'components'
 
 import styles from './AlbumsList.module.scss'
 
-const AlbumsList = ({ albums, total, show }) =>
-  show && (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>Álbums</h2>
-        <p className={styles.totalCount}>{total} álbums relacionados</p>
+const AlbumsList = ({ albums, total, show }) => {
+  const albumsMessage =
+    total === 1 ? 'álbum relacionado' : 'álbums relacionados'
+
+  return (
+    show && (
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <h2 className={styles.title}>Álbums</h2>
+          <p className={styles.totalCount}>
+            {total} {albumsMessage}
+          </p>
+        </div>
+        <ul className={styles.list}>
+          {albums.map(album => (
+            <AlbumCard key={album.id} album={album} />
+          ))}
+        </ul>
       </div>
-      <ul className={styles.list}>
-        {albums.map(album => (
-          <AlbumCard key={album.id} album={album} />
-        ))}
-      </ul>
-    </div>
+    )
   )
+}
 
 AlbumsList.propTypes = {
   albums: PropTypes.arrayOf(albumType).isRequired,
