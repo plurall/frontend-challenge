@@ -3,8 +3,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { LoadingArtistSimplifiedCard } from 'components'
+
 import styles from './LoadingArtistsList.module.scss'
-import { LoadingArtistSmallCard } from '.'
 
 const LoadingArtistsList = ({ show, artistsAmount }) =>
   show && (
@@ -14,7 +15,7 @@ const LoadingArtistsList = ({ show, artistsAmount }) =>
       </div>
       <ul className={styles.list}>
         {[...Array(artistsAmount).keys()].map((_, i) => (
-          <LoadingArtistSmallCard key={i} />
+          <LoadingArtistSimplifiedCard key={i} />
         ))}
       </ul>
     </div>

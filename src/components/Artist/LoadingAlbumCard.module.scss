@@ -4,6 +4,8 @@
   background: var(--color-secondary-surface);
   border-radius: 0.5rem;
   padding: 0.625rem 2rem;
+  background-size: 200% 100%;
+  background-position-x: 100%;
 
   display: grid;
   grid-template-columns: 1fr auto;
@@ -37,7 +39,7 @@
   grid-area: name;
   height: 1.5rem;
   width: 16ch;
-  background-color: var(--color-on-loading);
+  background-color: var(--color-on-loading-highlight);
 
   @media (max-width: $mobile-breakingpoint) {
     height: 1.25rem;
@@ -49,7 +51,7 @@
   grid-area: details;
   height: 1.125rem;
   width: 12ch;
-  background-color: var(--color-on-loading);
+  background-color: var(--color-on-loading-highlight);
 
   @media (max-width: $mobile-breakingpoint) {
     height: 1rem;
@@ -60,7 +62,7 @@
   grid-area: button;
   height: 2rem;
   width: 2rem;
-  background-color: var(--color-on-loading);
+  background-color: var(--color-on-loading-highlight);
   border-radius: 50%;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './LoadingArtistSmallCard.module.scss'
+import styles from './LoadingArtistSimplifiedCard.module.scss'
 
 const LoadingArtistSmallCard = () => (
   <div className={styles.wrapper}>

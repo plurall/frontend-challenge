@@ -7,7 +7,6 @@
   // colors
   --color-dark-gray: #333333;
   --color-purple: #655ba2;
-  --color-white: #f2f4f5;
 
   --color-primary: #7229e6;
   --color-on-primary: #ffffff;
@@ -20,19 +19,22 @@
   --color-primary-surface: linear-gradient(
     to right,
     rgba(200, 200, 200, 0.8),
+    rgba(200, 200, 200, 0.1) 35%,
     rgba(200, 200, 200, 0.1)
   );
   --color-secondary-surface: linear-gradient(
     to right,
     rgba(200, 200, 200, 0.5),
+    rgba(200, 200, 200, 0.5) 50%,
+    rgba(200, 200, 200, 0.1) 70%,
     rgba(200, 200, 200, 0.1)
   );
-  --color-on-surface: #909090;
+  --color-on-surface: #808080;
   --color-on-surface-highlight: #444444;
   --color-default-picture: #606060;
   --color-on-default-picture: #a0a0a0;
   --color-on-loading: #d4d4d4;
-  --color-on-loading-highlight: #c0c0c0;
+  --color-on-loading-highlight: #d0d0d0;
   --color-on-loading-effect: linear-gradient(
     105deg,
     rgba(255, 255, 255, 0) 30%,
@@ -44,7 +46,6 @@
   --shadow-search-bar: 0 0 0.75rem rgba(0, 0, 0, 0.1);
   --shadow-artist-picture: 0 0 1.25rem rgba(0, 0, 0, 0.15);
   --shadow-album-picture: 0 0 1rem rgba(0, 0, 0, 0.1);
-  --shadow-artist-card-hover: 0 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -54,5 +55,5 @@
 }
 
 body {
-  background: var(--color-white);
+  background: var(--color-background);
 }

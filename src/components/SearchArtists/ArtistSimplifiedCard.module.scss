@@ -7,7 +7,9 @@
   padding: 0.625rem 2rem;
   user-select: none;
   text-decoration: none;
-  transition-duration: 0.25s;
+  transition-duration: 0.3s;
+  background-size: 200% 100%;
+  background-position-x: 100%;
   cursor: pointer;
 
   display: grid;
@@ -19,7 +21,7 @@
   grid-gap: 0.5rem 0.25rem;
 
   &:hover {
-    box-shadow: var(--shadow-artist-card-hover);
+    background-position-x: 0;
   }
 
   @media (max-width: $mobile-breakingpoint) {

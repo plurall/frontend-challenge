@@ -10,7 +10,7 @@ export {
   ArtistSimplifiedCard,
   SearchRemainingLetters,
   LoadingArtistsList,
-  LoadingArtistSmallCard,
+  LoadingArtistSimplifiedCard,
 } from './SearchArtists'
 
 export {
