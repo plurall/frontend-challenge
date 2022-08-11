@@ -1,0 +1,157 @@
+.wrapper {
+  max-width: 1200px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+.artist {
+  width: 100%;
+  padding: 40px 0 60px 0;
+
+  display: flex;
+
+  gap: 50px;
+
+  img {
+    width: 500px;
+    height: auto;
+
+    object-fit: cover;
+  }
+
+  @media (max-width: 1250px) {
+    width: fit-content;
+    margin: 0 auto;
+    
+    img {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    flex-direction: column;
+
+    img {
+      width: 500px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    gap: 25px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  @media (max-width: 500px) {
+    width: 94%;
+
+    margin: 0 auto;
+  }
+}
+
+.name {
+  font-style: 'Nunito', sans-serif;
+  font-size: 80px;
+  color: rgb(101, 90, 163);
+
+  @media (max-width: 1250px) {
+    font-size: 60px;
+  }
+  
+  @media (max-width: 500px) {
+    font-size: 35px;
+  }
+}
+
+.genres {
+  max-width: 700px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  
+  text-transform: capitalize;
+  
+  gap: 15px;
+  
+  @media (max-width: 1250px) {
+    max-width: 500px;
+  }
+}
+
+.genre {
+  width: fit-content;
+  
+  font-size: 15px;
+  color: #ffffff;
+
+  padding: 10px 20px;
+  margin-top: 10px;
+
+  background-color: #1ABC9C;
+  
+  border-radius: 30px;
+}
+
+.popularity {
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 80px;
+  
+  @media (max-width: 1250px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+}
+
+.albums {
+  width: fit-content;
+  
+  margin: 20px auto 0 auto;
+
+  padding-bottom: 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 80px;
+
+  @media (max-width: 1140px) {
+    margin: 20px auto 0 auto;
+
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+  }
+
+  @media (max-width: 710px) {
+    grid-template-columns: 1fr;
+    column-gap: 50px;
+  }
+}
+
+.album {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @media (max-width: 1140px) {
+    width: fit-content;
+  }
+}
+
+.heading {
+  margin-left: 6% !important;
+}
