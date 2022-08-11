@@ -1,0 +1,52 @@
+.wrapper {
+  max-width: 1200px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+.artists {
+  max-width: 1224px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  font: 16px/14px 'Nunito', sans-serif;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 50px;
+
+  @media (max-width: 1224px) {
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 940px) {
+    width: 90%;
+    padding: 60px 0;
+  }
+
+  @media (max-width: 790px) {
+    width: fit-content;
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 360px) {
+    width: 100%;
+  }
+}
+
+.info {
+  max-width: 362px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+
+  @media (max-width: 362px) {
+    img {
+      width: 100%;
+    }
+
+    width: 100%;
+    margin: 0 auto;
+  }
+}
