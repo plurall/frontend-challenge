@@ -36,6 +36,9 @@
     font-size: 0.875rem;
     font-weight: 500;
   }
+
+  /* Total count is presenting an inconsistent behaviour in the spotify api, so it will be omitted for now */
+  display: none;
 }
 
 .list {

@@ -13,4 +13,8 @@
   @media (max-width: $mobile-breakingpoint) {
     padding: 2rem 0.5rem 3rem;
   }
+
+  & > :last-child {
+    margin-top: 2rem;
+  }
 }

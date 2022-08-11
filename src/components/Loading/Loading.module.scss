@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  --animation-duration: 0.5s;
+  --size: 0.5rem;
+  $circles: 4;
+
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--color-on-background);
+  opacity: 0.2;
+  animation: loading var(--animation-duration) ease-in-out infinite alternate;
+  margin: calc(var(--size) * 0.75);
+
+  @keyframes loading {
+    from {
+      transform: scale(2);
+      opacity: 1;
+    }
+  }
+
+  @for $i from 2 through $circles {
+    &:nth-child(#{$i}) {
+      animation-delay: calc(
+        var(--animation-duration) * (#{$i - 1} / #{$circles})
+      );
+    }
+  }
+}

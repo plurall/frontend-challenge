@@ -7,6 +7,8 @@ import {
   getThrottledCallback,
   removeUnnecessarySpaces,
   SpotifyClient,
+  getDocumentScrollBottom,
+  removeDuplicates,
 } from 'utils'
 
 import {
@@ -16,6 +18,7 @@ import {
   ArtistsList,
   SearchRemainingLetters,
   LoadingArtistsList,
+  Loading,
 } from 'components'
 
 import styles from './SearchArtists.module.scss'
@@ -25,21 +28,38 @@ const SEARCH_THROTTLE_INTERVAL_MS = 1_000
 const LOADING_ARTISTS_AMOUNT = 10
 const MIN_ARTIST_IMAGE_SIZE = 80
 const MAX_ARTIST_IMAGE_SIZE = 600
+const SCROLL_BOTTOM_THRESHOLD = 100
+
+const getInitalState = () => ({
+  search: '',
+  page: 0,
+  pages: 0,
+  artists: [],
+  totalArtists: 0,
+  artistNotFound: false,
+  isLoading: false,
+})
 
 class SearchArtists extends React.Component {
-  state = {
-    search: '',
-    artists: [],
-    artistNotFound: false,
-    totalArtists: 0,
-    isLoading: false,
+  state = getInitalState()
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   getArtistByName = getThrottledCallback(async search => {
     try {
       this.setState(state => ({ ...state, isLoading: true }))
 
-      const { items, total } = await this.client.getArtistsByName(search)
+      const response = await this.client.getArtistsByName(search, {
+        page: this.state.search === search ? this.state.page + 1 : 1,
+      })
+
+      const { items, total, page, pages } = response
 
       const artists = items.map(artist => ({
         ...artist,
@@ -52,9 +72,14 @@ class SearchArtists extends React.Component {
 
       this.setState(state => ({
         ...state,
-        artists,
+        page,
+        pages,
+        artists: removeDuplicates(
+          page > 1 ? [...state.artists, ...artists] : artists,
+          artist => artist.id,
+        ),
         totalArtists: total,
-        artistNotFound: !artists.length,
+        artistNotFound: page === 1 && !artists.length,
         isLoading: false,
       }))
     } catch (err) {
@@ -86,14 +111,22 @@ class SearchArtists extends React.Component {
 
     this.setState(state => ({
       ...state,
-      artistNotFound: false,
-      artists: isReadyToSearch ? state.artists : [],
-      totalArtists: 0,
+      ...getInitalState(),
       search: formattedSearch,
       isLoading: isReadyToSearch,
     }))
 
     if (isReadyToSearch) this.getArtistByName(artistName)
+  }
+
+  handleScroll = async () => {
+    const reachThreshold = getDocumentScrollBottom() <= SCROLL_BOTTOM_THRESHOLD
+    const { isLoading, page, pages } = this.state
+    const hasPagesToLoad = page < pages
+
+    if (!isLoading && hasPagesToLoad && reachThreshold) {
+      await this.getArtistByName(this.state.search)
+    }
   }
 
   render = () => {
@@ -105,6 +138,16 @@ class SearchArtists extends React.Component {
     )
 
     const noArtistCategory = this.getNoArtistsCategory()
+
+    const showArtists =
+      !!this.state.artists.length &&
+      (!this.state.isLoading || this.state.page) &&
+      trimmedSearch.length >= MIN_NAME_LENGTH_TO_SEARCH
+
+    const showLoadingList =
+      !!trimmedSearch.length &&
+      !this.state.page &&
+      (this.state.isLoading || trimmedSearch.length < MIN_NAME_LENGTH_TO_SEARCH)
 
     return (
       <Layout>
@@ -119,22 +162,15 @@ class SearchArtists extends React.Component {
           />
           <EmptyListMessage category={noArtistCategory} />
           <ArtistsList
-            show={
-              !!this.state.artists.length &&
-              !this.state.isLoading &&
-              trimmedSearch.length >= MIN_NAME_LENGTH_TO_SEARCH
-            }
+            show={showArtists}
             artists={this.state.artists}
             total={this.state.totalArtists}
           />
           <LoadingArtistsList
-            show={
-              !!trimmedSearch.length &&
-              (this.state.isLoading ||
-                trimmedSearch.length < MIN_NAME_LENGTH_TO_SEARCH)
-            }
+            show={showLoadingList}
             artistsAmount={LOADING_ARTISTS_AMOUNT}
           />
+          <Loading show={!!this.state.page && this.state.isLoading} />
         </div>
       </Layout>
     )

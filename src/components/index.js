@@ -4,6 +4,7 @@ export { default as PrivateRoute } from './PrivateRoute'
 export { default as SearchBar } from './SearchBar'
 export { default as Picture } from './Picture'
 export { default as EmptyListMessage } from './EmptyListMessage'
+export { default as Loading } from './Loading'
 
 export {
   ArtistsList,
