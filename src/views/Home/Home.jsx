@@ -3,6 +3,9 @@ import React from 'react'
 import { SubHeader } from 'components'
 import { SomosClient } from 'utils'
 
+import { Link } from 'react-router-dom'
+import { Button } from 'plurall-ui'
+
 import styles from './Home.module.scss'
 
 class Home extends React.Component {
@@ -19,6 +22,12 @@ class Home extends React.Component {
         />
         <div className={styles.wrapper}>
           <h1>Home da aplicação</h1>
+        </div>
+
+        <div className={styles.wrapper}>
+          <Link to="/busca">
+            <Button>Pesquisar artista</Button>
+          </Link>
         </div>
       </>
     )
