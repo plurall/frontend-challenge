@@ -86,6 +86,8 @@ class SearchArtists extends React.Component {
       if (err instanceof ClientError && err.status === 401) {
         this.sendUserToSignIn()
       }
+
+      this.setState(state => ({ ...state, isLoading: false }))
     }
   }, SEARCH_THROTTLE_INTERVAL_MS)
 
@@ -170,7 +172,10 @@ class SearchArtists extends React.Component {
             show={showLoadingList}
             artistsAmount={LOADING_ARTISTS_AMOUNT}
           />
-          <Loading show={!!this.state.page && this.state.isLoading} />
+          <Loading
+            show={!!this.state.page && this.state.isLoading}
+            style={{ marginTop: '2rem' }}
+          />
         </div>
       </Layout>
     )

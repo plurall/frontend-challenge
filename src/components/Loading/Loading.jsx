@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import styles from './Loading.module.scss'
 
-const Loading = ({ show }) =>
+const Loading = ({ show, ...rest }) =>
   show && (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} {...rest}>
       <span className={styles.circle} />
       <span className={styles.circle} />
       <span className={styles.circle} />
