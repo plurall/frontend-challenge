@@ -25,10 +25,14 @@ describe('SpotifyClient test suite', () => {
     expect(client.token).toBe(token)
   })
 
+  // TODO: Fix this failed test (Requests are being blocked by CORS policy)
   // it('should list artists by name', async () => {
-  //   const client = new SpotifyClient()
+  //   const token = process.env.REACT_APP_CLIENT_TEST_TOKEN
+  //   const client = new SpotifyClient({ token })
 
   //   const artists = await client.getArtistsByName('Bob Dylan')
   //   expect(artists.items.length).toBeGreaterThan(0)
   // })
+
+  // TODO: test all public methods from the spotify client
 })
