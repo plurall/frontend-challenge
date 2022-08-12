@@ -1,5 +1,10 @@
 import ClientOAuth2 from 'client-oauth2'
 
+/**
+ * Get OAuth2 client instance
+ * @returns a new ClientOauth2 instance
+ */
+
 const getOauthClient = () =>
   new ClientOAuth2({
     accessTokenUri: process.env.REACT_APP_ACCESS_TOKEN_URL,

@@ -9,11 +9,22 @@ class ClientError extends Error {
   }
 }
 
+/**
+ * Client that interfaces the spotify REST api
+ */
+
 class SpotifyClient {
   constructor({ baseURL, token } = {}) {
     this.baseURL = baseURL || process.env.REACT_APP_API_URL
     this.token = token || getToken()
   }
+
+  /**
+   * Get a list of artists with aditional pagination information
+   * @param {*} name the artist name to filter the list
+   * @param {*} options pagination options (i.e. `limit` and `page`)
+   * @returns a promise of artists and pagination info
+   */
 
   async getArtistsByName(name, options = {}) {
     const query = queryString.stringify({
@@ -35,6 +46,12 @@ class SpotifyClient {
     return SpotifyClient.formatResponse(data.artists)
   }
 
+  /**
+   * Get and spotify artist by id
+   * @param {*} id spotify unique identifier
+   * @returns a artist promise
+   */
+
   async getArtistById(id) {
     const headers = this.getAuthHeaders()
     const url = `${this.baseURL}/artists/${id}`
@@ -48,6 +65,13 @@ class SpotifyClient {
 
     return data
   }
+
+  /**
+   * Get a list of artist albums with aditional pagination information
+   * @param {*} id the artist id
+   * @param {*} options pagination options (i.e. `limit` and `page`)
+   * @returns a promise of artist albums and pagination info
+   */
 
   async getArtistAlbumsById(id, options = {}) {
     const query = queryString.stringify(SpotifyClient.formatOptions(options))
