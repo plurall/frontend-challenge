@@ -40,6 +40,8 @@
   color: var(--color-on-surface-highlight);
   font-weight: 700;
   font-size: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @media (max-width: $mobile-breakingpoint) {
     font-size: 1.5rem;

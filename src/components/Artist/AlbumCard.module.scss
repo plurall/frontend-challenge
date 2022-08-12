@@ -35,6 +35,8 @@
   color: var(--color-on-surface-highlight);
   font-weight: 700;
   font-size: 1.375rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @media (max-width: $mobile-breakingpoint) {
     font-size: 1.125rem;
