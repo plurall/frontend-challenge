@@ -58,6 +58,7 @@ class Artist extends React.Component {
         ...artistResponse,
         image: getArtistImageByDimension(artistResponse.images, 192, 600)?.url,
       }
+
       const albums = albumsResponse.items.map(album => ({
         ...album,
         image: getArtistImageByDimension(album.images, 80, 400)?.url,
@@ -94,11 +95,10 @@ class Artist extends React.Component {
 
   handleScroll = async () => {
     try {
-      const reachThreshold =
-        getDocumentScrollBottom() <= SCROLL_BOTTOM_THRESHOLD
-
       const { isLoading, page, pages } = this.state
       const hasPagesToLoad = page < pages
+      const reachThreshold =
+        getDocumentScrollBottom() <= SCROLL_BOTTOM_THRESHOLD
 
       if (isLoading || !hasPagesToLoad || !reachThreshold) return
 

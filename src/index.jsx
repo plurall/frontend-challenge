@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { LoginCallback, SearchArtists, Artist, Home } from 'views'
 import { PrivateRoute } from 'components'

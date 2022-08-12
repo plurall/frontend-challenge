@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 import { Layout } from 'components'
 
-import bandImage from 'assets/spotify-logo-bw.svg'
-import contentImage from 'assets/home-art.png'
+import bandImage from 'assets/img/spotify-logo-bw.svg'
+import contentImage from 'assets/img/home-art.png'
 import styles from './Home.module.scss'
 
 class Home extends React.Component {

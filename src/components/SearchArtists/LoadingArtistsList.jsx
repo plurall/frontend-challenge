@@ -1,5 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -15,6 +13,8 @@ const LoadingArtistsList = ({ show, artistsAmount }) =>
       </div>
       <ul className={styles.list}>
         {[...Array(artistsAmount).keys()].map((_, i) => (
+          // the element identity is irrelevant for this particular component
+          // eslint-disable-next-line react/no-array-index-key
           <LoadingArtistSimplifiedCard key={i} />
         ))}
       </ul>

@@ -29,11 +29,12 @@
   grid-gap: 1rem 4rem;
 
   @media (max-width: $mobile-breakingpoint) {
+    height: initial;
+    max-width: 35rem;
+
     display: flex;
     flex-direction: column;
-    height: initial;
     grid-gap: initial;
-    max-width: 35rem;
   }
 }
 
