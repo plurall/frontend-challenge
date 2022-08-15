@@ -22,7 +22,6 @@ export default function Home() {
       const resUser = await client.getUser()
       const resArtists = await client.getArtists()
 
-      console.log(resArtists)
       setUser(resUser)
       setArtists(resArtists)
     } catch (error) {
@@ -33,7 +32,6 @@ export default function Home() {
   useEffect(() => {
     fetchData()
     // eslint-disable-next-line
-    console.log(artists)
   }, [])
 
   return (
@@ -43,10 +41,10 @@ export default function Home() {
         heading="Desafio Front-end do Plurall"
       />
       <div className={styles.wrapper}>
-        <Carousel autoPlay infiniteLoop>
+        <Carousel autoPlay infiniteLoop showThumbs={false}>
           {artists?.map(artist => (
-            <ArtistContainer>
-              <Link to="artist/1">
+            <ArtistContainer key={artist.id}>
+              <Link to={`artista/${artist.id}`}>
                 <ArtistImg src={artist.images[0].url} alt="" />
 
                 <ImgText>{artist.name}</ImgText>
@@ -62,7 +60,7 @@ export default function Home() {
 const ArtistContainer = styled.div`
   height: 30vw;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     height: 60vh;
   }
 `
@@ -72,7 +70,7 @@ const ArtistImg = styled.img`
   object-fit: contain;
   border-radius: 10px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     height: 60vh;
   }
 `
@@ -81,4 +79,7 @@ const ImgText = styled.p`
   margin-top: -55px;
   color: white;
   font-size: 30px;
+
+  font-family: sans-serif;
+  font-weight: 700;
 `

@@ -15,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/login/callback" component={LoginCallback} />
         <PrivateRoute exact path="/" component={App} />
-        <Route path="/artist/:id" component={Artist} />
+        <Route path="/artista/:id" component={Artist} />
       </Switch>
     </Router>
   </UserProvider>,
