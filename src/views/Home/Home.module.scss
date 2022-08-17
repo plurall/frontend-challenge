@@ -4,3 +4,22 @@
   margin: 0 auto;
   font: 16px/14px 'Nunito', sans-serif;
 }
+
+
+.button{
+  display: inline-block;
+  margin-left: 5rem;
+  margin-top: 2rem;
+  background-color: #1abc9c;
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 18px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+} 
