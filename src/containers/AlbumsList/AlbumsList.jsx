@@ -15,6 +15,8 @@ const AlbumsList = ({ id }) => {
 
   const { wrapper } = styles
 
+  const formatDate = useCallback(date => new Date(date).toLocaleDateString('pt-BR'))
+
   const getAlbumsData = useCallback(async () => {
     const { items: albumsData } = await getArtistAlbums(id)
 
@@ -33,10 +35,10 @@ const AlbumsList = ({ id }) => {
       {
         albums && albums.map(item => (
           <AlbumCard
-            key={item.id}
+            key={item.id + 1}
             image={(item?.images && item.images[0].url) || emptyState}
-            name={item?.name && item.name}
-            releaseDate={item.release_date && new Date(item.release_date).toLocaleDateString('en-US')}
+            name={item?.name}
+            releaseDate={item.release_date && formatDate(item.release_date)}
           />
         ))
       }

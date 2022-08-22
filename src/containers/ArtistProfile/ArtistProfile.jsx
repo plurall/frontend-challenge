@@ -9,9 +9,9 @@ import { getArtist } from 'utils'
 import styles from './ArtistProfile.module.scss'
 
 const ArtistProfile = ({ id }) => {
-  const [name, setName] = useState([])
-  const [image, setImage] = useState([])
-  const [popularity, setPopularity] = useState([])
+  const [name, setName] = useState('')
+  const [image, setImage] = useState('')
+  const [popularity, setPopularity] = useState('')
   const [genres, setGenres] = useState([])
 
   const {
