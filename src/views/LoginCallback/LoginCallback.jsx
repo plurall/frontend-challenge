@@ -1,36 +1,35 @@
+import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import queryString from 'query-string'
-import React from 'react'
 
 import { getOauthClient, setToken } from 'utils'
 
-class LoginCallback extends React.Component {
-  static propTypes = {
-    location: PropTypes.object.isRequired,
-  }
+const LoginCallback = ({ location }) => {
+  const [redirect, setRedirect] = useState()
 
-  state = {}
-
-  componentWillMount() {
+  useEffect(() => {
     const oauth = getOauthClient()
-    const { location } = this.props
     const fullPath = `${location.pathname}${location.search}${location.hash}`
 
     oauth.token.getToken(fullPath).then(({ accessToken }) => {
+      console.log(accessToken)
       setToken(accessToken)
-      this.setState({ redirect: true })
+      setRedirect(true)
     })
+  }, [])
+
+
+  if (redirect) {
+    const search = queryString.parse(this.props.location.search)
+    return (<Redirect to={search.redirectTo || '/'} />)
   }
 
-  render() {
-    if (this.state.redirect) {
-      const search = queryString.parse(this.props.location.search)
-      return <Redirect to={search.redirectTo || '/'} />
-    }
-
-    return <div>Você tem que estar logado para acessar esta página</div>
-  }
+  return (<div>Você tem que estar logado para acessar esta página</div>)
 }
 
 export default LoginCallback
+
+LoginCallback.propTypes = {
+  location: PropTypes.object.isRequired,
+}

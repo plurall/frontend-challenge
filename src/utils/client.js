@@ -1,18 +1,16 @@
-// eslint-disable-next-line
-import { clearToken, getToken } from 'utils'
+import { api } from 'services'
 
-class SomosClient {
-  // eslint-disable-next-line
-  constructor() {}
-
-  // eslint-disable-next-line
-  onError = error => {}
-
-  // eslint-disable-next-line
-  async getArtists() {
-    // Obs: para chamadas na api, você já tem o token salvo no cookie, `authenticated_token` - use ele para mandar no header das chamadas - da uma olhada no `src/utils`
-    // retornar a lista de artistas - https://developer.spotify.com/console/get-several-artists/
-  }
+export const getArtists = async name => {
+  const { data: response } = await api.get(`/search?q=${name}&type=artist`)
+  return response
 }
 
-export default SomosClient
+export const getArtist = async id => {
+  const { data: response } = await api.get(`/artists/${id}`)
+  return response
+}
+
+export const getArtistAlbums = async id => {
+  const { data: response } = await api.get(`/artists/${id}/albums?limit=10`)
+  return response
+}

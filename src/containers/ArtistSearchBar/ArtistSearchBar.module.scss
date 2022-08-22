@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(180deg,  #222222, #333333 60%);
+    // background-image: linear-gradient(180deg,  #222222, #333333);
+
+    padding: 30px 20px;
+}
+
+.input-wrapper {
+    margin-top: 30px;
+}

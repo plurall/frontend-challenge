@@ -1,28 +1,20 @@
 import React from 'react'
 
-import { SubHeader } from 'components'
-import { SomosClient } from 'utils'
+import { Layout, RedirectButton } from 'components'
 
 import styles from './Home.module.scss'
 
-class Home extends React.Component {
-  state = {}
-
-  client = new SomosClient()
-
-  render() {
-    return (
-      <>
-        <SubHeader
-          breadcrumb={[{ text: 'Home' }]}
-          heading="Desafio Front-end do Plurall"
-        />
-        <div className={styles.wrapper}>
-          <h1>Home da aplicação</h1>
-        </div>
-      </>
-    )
-  }
-}
+const Home = () => (
+  <Layout>
+    <div className={styles.backgroud_test}>
+      <div className={styles.wrapper}>
+        <h1>Descubra artistas</h1>
+      </div>
+      <div className={styles.wrapper}>
+        <RedirectButton title="Buscar artistas" goTo="/busca" />
+      </div>
+    </div>
+  </Layout>
+)
 
 export default Home

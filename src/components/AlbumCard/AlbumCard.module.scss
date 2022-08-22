@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--color-light-gray);
+  color: var(--color-white);
+  margin-top: 10px;
+}
+
+.album-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px
+}
+
+.album-title {
+  font: 16px/14px 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+.album-release-date {
+  font: 14px/12px 'Nunito', sans-serif;
+  color: #b6b6b6;
+  margin-top: 7px;
+}

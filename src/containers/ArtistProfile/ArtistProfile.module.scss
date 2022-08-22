@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  padding: 20px 15px 20px 15px;
+  background-image: linear-gradient(180deg,  #222222, #333333 60%);
+}
+
+.artist-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.info-wrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-white);
+  font: 16px/14px 'Nunito', sans-serif;
+}
+
+.popularity-text {
+  font: 14px/12px 'Nunito', sans-serif;
+  color: #b6b6b6;
+  margin-top: 10px;
+}

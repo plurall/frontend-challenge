@@ -1,59 +1,44 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
 
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
 
-import { getToken, setToken, SomosClient } from 'utils'
+import { getToken, setToken } from 'utils'
 
 import styles from './Layout.module.scss'
 
-class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  }
-
-  state = {}
-
-  componentDidMount() {}
-
-  client = new SomosClient({
-    accessToken: getToken(),
-  })
-
-  handleLogout = path => {
+const Layout = ({ children }) => {
+  const handleLogout = path => {
     setToken('')
     window.location = path
   }
+  const { content, footer, 'nav-bar': navBar } = styles
 
-  render() {
-    const {
-      props: { children },
-    } = this
+  return (
+    <>
+      <div className={navBar}>
+        <NavBar
+          data={{
+            menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+          }}
+          logout={handleLogout}
+          service="reader"
+          userToken={getToken()}
+        />
+      </div>
 
-    const { content, footer, 'nav-bar': navBar } = styles
+      <div className={content}>{children}</div>
 
-    return (
-      <>
-        <div className={navBar}>
-          <NavBar
-            data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
-            }}
-            logout={this.handleLogout}
-            service="reader"
-            userToken={getToken()}
-          />
-        </div>
-
-        <div className={content}>{children}</div>
-
-        <div className={footer}>
-          <Footer />
-        </div>
-      </>
-    )
-  }
+      <div className={footer}>
+        <Footer />
+      </div>
+    </>
+  )
 }
 
 export default Layout
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}

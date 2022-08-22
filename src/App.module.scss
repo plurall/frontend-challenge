@@ -1,5 +1,6 @@
 :root {
   --color-dark-gray: #333333;
+  --color-light-gray: #525252;
   --color-purple: #655ba2;
   --color-white: #f2f4f5;
   --height-footer: 59px;
@@ -14,5 +15,5 @@
 }
 
 body {
-  background: var(--color-white);
+  background: var(--color-dark-gray);
 }
