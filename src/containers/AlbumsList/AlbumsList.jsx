@@ -24,6 +24,7 @@ const AlbumsList = ({ id }) => {
 
   useEffect(() => {
     getAlbumsData()
+    // eslint-disable-next-line
   }, [])
 
   return (

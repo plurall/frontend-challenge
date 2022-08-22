@@ -13,10 +13,10 @@ const LoginCallback = ({ location }) => {
     const fullPath = `${location.pathname}${location.search}${location.hash}`
 
     oauth.token.getToken(fullPath).then(({ accessToken }) => {
-      console.log(accessToken)
       setToken(accessToken)
       setRedirect(true)
     })
+    // eslint-disable-next-line
   }, [])
 
 

@@ -30,7 +30,7 @@ const ArtistsList = ({ artistName = '' }) => {
     if (artistName.length >= 4) {
       getArtistsData()
     }
-    // eslint-disable-next-line
+  // eslint-disable-next-line
   }, [artistName])
 
   return (
