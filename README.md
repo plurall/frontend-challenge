@@ -23,7 +23,7 @@ Abaixo estão algumas caracteristicas que achamos importantes:
 
 ## Configurando o ambiente
 
-Você precisa ter [Node 16.13.1](https://nodejs.org/en/) instalado para conseguir rodar o desafio.
+Você precisa ter [Node 16.13.1](https://nodejs.org/en/) (ou compatível) instalado para conseguir rodar o desafio.
 
 Faça fork do projeto em sua conta pessoal e siga os passos a seguir.
 
