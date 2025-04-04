@@ -18,6 +18,12 @@
     ],
     "no-confusing-arrow": "off",
     "react/no-danger": "off",
-    "react/no-typos": "off"
+    "react/no-typos": "off",
+    "linebreak-style": "off",
+    "no-console": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "warn",
+    "react/jsx-props-no-spreading": "off"
   }
 }

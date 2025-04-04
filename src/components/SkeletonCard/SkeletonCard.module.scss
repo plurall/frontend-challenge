@@ -1,0 +1,92 @@
+@mixin skeleton-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.artistSkeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 230px;
+}
+
+.imageSkeleton {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  @include skeleton-loading;
+}
+
+.nameSkeleton {
+  width: 70%;
+  height: 16px;
+  @include skeleton-loading;
+}
+
+.albumSkeleton {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.albumImageSkeleton {
+  width: 100%;
+  aspect-ratio: 1;
+  @include skeleton-loading;
+}
+
+.albumContent {
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.titleSkeleton {
+  width: 90%;
+  height: 16px;
+  margin-bottom: 0.5rem;
+  @include skeleton-loading;
+}
+
+.dateSkeleton {
+  width: 40%;
+  height: 12px;
+  @include skeleton-loading;
+}
+
+@media (max-width: 768px) {
+  .imageSkeleton {
+    width: 140px;
+    height: 140px;
+  }
+
+  .artistSkeleton {
+    height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageSkeleton {
+    width: 110px;
+    height: 110px;
+  }
+
+  .artistSkeleton {
+    height: 160px;
+  }
+}

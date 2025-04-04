@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -10,22 +10,23 @@ const handleNotAuthenticated = path => {
   return null
 }
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRouteComponent = ({ component: Component, history, ...rest }) => (
   <Route
     {...rest}
-    render={props =>
-      getToken() ? (
-        <Component {...props} />
-      ) : (
-        handleNotAuthenticated(props.match.path)
-      )
-    }
+    render={props => getToken() ? (
+      <Component {...props} />
+        ) : (
+          handleNotAuthenticated(props.match.path)
+        )}
   />
-)
+  )
 
-PrivateRoute.propTypes = {
+PrivateRouteComponent.propTypes = {
   component: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
   match: PropTypes.object,
 }
+
+const PrivateRoute = withRouter(PrivateRouteComponent)
 
 export default PrivateRoute

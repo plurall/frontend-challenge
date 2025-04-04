@@ -15,8 +15,6 @@ class Layout extends Component {
 
   state = {}
 
-  componentDidMount() {}
-
   client = new SomosClient({
     accessToken: getToken(),
   })
@@ -37,9 +35,6 @@ class Layout extends Component {
       <>
         <div className={navBar}>
           <NavBar
-            data={{
-              menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
-            }}
             logout={this.handleLogout}
             service="reader"
             userToken={getToken()}
