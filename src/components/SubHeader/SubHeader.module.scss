@@ -1,15 +1,18 @@
 .header {
-  background: #fff;
-  padding: 35px 0;
+  width: 100%;
+  background-color: #F9F9F9;
 }
 
 .wrapper {
-  max-width: 1224px;
-  padding: 0 20px;
-  margin: 0 auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.button {
+  margin-right: 20px;
 }
 
 .innerDiv {
@@ -17,26 +20,48 @@
   flex-direction: column;
 }
 
-.button {
-  margin-right: 15px;
+.breadcrumb {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
 }
 
-.breadcrumb {
-  display: inline-block;
-  text-align: left;
+.separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+.breadcrumbLink {
+  color: #1db954;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.breadcrumbText {
+  color: #666;
 }
 
 .heading {
-  text-align: left;
-  padding: 0 5px;
+  font-size: 24px;
+  color: #333;
+  margin: 0;
 }
 
-@media (max-width: 1224px) {
-  .header {
-    padding: 17px 0;
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 10px;
   }
 
-  .wrapper {
-    padding: 0 10px;
+  .heading {
+    font-size: 20px;
   }
 }

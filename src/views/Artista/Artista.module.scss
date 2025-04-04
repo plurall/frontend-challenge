@@ -1,0 +1,490 @@
+.wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loadingContainer,
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.errorIcon {
+  margin-bottom: 1.5rem;
+}
+
+.loading,
+.error {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.errorDescription {
+  max-width: 500px;
+  margin: 0 0 2rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #1db954;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.2);
+
+  &:hover {
+    background-color: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(29, 185, 84, 0.3);
+  }
+}
+
+.artistInfo {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.imageContainer {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.artistImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.artistDetails {
+  flex: 1;
+}
+
+.artistName {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(90deg, #1db954, #169c46);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.popularityContainer {
+  margin-bottom: 2rem;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.popularityBar {
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.popularityFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1db954, #169c46);
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+.popularityValue {
+  font-weight: bold;
+}
+
+.genresContainer {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.genresList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.genreItem {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+  }
+}
+
+.spotifyArtistButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #1db954;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.2);
+
+  &:hover {
+    background-color: #1ed760;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(29, 185, 84, 0.3);
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.albumsSection {
+  margin-top: 3rem;
+}
+
+.albumsTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #1db954, #169c46);
+  }
+}
+
+.albumsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.albumCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.albumImageContainer {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.albumImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  .albumCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.albumInfo {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.albumName {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.albumDate {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.spotifyLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #1db954;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+
+  .albumCard:hover & {
+    opacity: 1;
+  }
+}
+
+.noAlbums {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.emptyStateIcon {
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+/* Skeleton loading styles */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeletonBase {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+.artistInfoSkeleton {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.imageSkeletonContainer {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imageSkeleton {
+  width: 100%;
+  height: 100%;
+  @extend .skeletonBase;
+}
+
+.detailsSkeleton {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nameSkeleton {
+  height: 40px;
+  width: 70%;
+  margin-bottom: 1.5rem;
+  @extend .skeletonBase;
+}
+
+.popularitySkeleton {
+  margin-bottom: 2rem;
+}
+
+.popularityLabelSkeleton {
+  height: 20px;
+  width: 30%;
+  margin-bottom: 0.5rem;
+  @extend .skeletonBase;
+}
+
+.popularityBarSkeleton {
+  height: 10px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  @extend .skeletonBase;
+}
+
+.genresSkeleton {
+  width: 100%;
+}
+
+.genresLabelSkeleton {
+  height: 20px;
+  width: 20%;
+  margin-bottom: 1rem;
+  @extend .skeletonBase;
+}
+
+.genresListSkeleton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.genreSkeleton {
+  height: 30px;
+  width: 80px;
+  border-radius: 20px;
+  @extend .skeletonBase;
+}
+
+.albumsSectionSkeleton {
+  margin-top: 3rem;
+}
+
+.albumsTitleSkeleton {
+  height: 30px;
+  width: 40%;
+  margin-bottom: 1.5rem;
+  @extend .skeletonBase;
+}
+
+.albumCardWrapper {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .artistInfo,
+  .artistInfoSkeleton {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer,
+  .imageSkeletonContainer {
+    width: 200px;
+    height: 200px;
+  }
+
+  .artistDetails,
+  .detailsSkeleton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .genresList,
+  .genresListSkeleton {
+    justify-content: center;
+  }
+
+  .popularityBar,
+  .popularityBarSkeleton {
+    max-width: 400px;
+    margin: 0 auto 0.5rem;
+  }
+
+  .albumsTitle,
+  .albumsTitleSkeleton {
+    text-align: center;
+
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .nameSkeleton,
+  .popularityLabelSkeleton,
+  .genresLabelSkeleton {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .spotifyArtistButton {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 1rem;
+  }
+
+  .albumsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .artistName {
+    font-size: 2rem;
+  }
+
+  .spotifyArtistButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

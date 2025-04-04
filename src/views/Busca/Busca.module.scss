@@ -1,0 +1,252 @@
+.wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.searchContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInputWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  color: #666;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.clearButton {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  &:focus {
+    border-color: #1db954;
+    box-shadow: 0 2px 12px rgba(29, 185, 84, 0.2);
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  min-height: 200px;
+}
+
+.skeletonWrapper {
+  width: 100%;
+}
+
+.artistCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 8px;
+
+  &:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 0, 0, 0.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.imageContainer {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  .artistCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.artistImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  color: #666;
+}
+
+.artistName {
+  text-align: center;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.noResults, .hint {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.typingAnimation {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #1db954;
+  margin: 0 3px;
+  animation: dotAnimation 1.4s infinite ease-in-out;
+
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes dotAnimation {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.emptyStateIcon {
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.emptyStateText {
+  font-size: 1rem;
+  color: #888;
+  max-width: 400px;
+  line-height: 1.5;
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .results {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .imageContainer {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .results {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+
+  .imageContainer {
+    width: 110px;
+    height: 110px;
+  }
+
+  .wrapper {
+    padding: 1rem;
+  }
+
+  .emptyState {
+    padding: 2rem 1rem;
+  }
+
+  .searchInput {
+    font-size: 0.9rem;
+  }
+}
