@@ -9,12 +9,14 @@
     li {
       a {
         text-decoration: none;
-        color: #333;
+        color: var(--color-white);
         font-size: 1rem;
         transition: color 0.3s;
+        padding: 10px 15px;
+        border-radius: 5px;
 
         &:hover {
-          color: #007BFF;
+          background-color: var(--color-dark-purple);
         }
       }
     }
