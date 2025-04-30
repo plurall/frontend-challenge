@@ -10,34 +10,5 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .menu {
-      ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-
-        li {
-          a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1rem;
-            transition: color 0.3s;
-
-            &:hover {
-              color: #007BFF;
-            }
-          }
-        }
-      }
-    }
   }
 }
