@@ -1,0 +1,43 @@
+.topbar {
+  width: 100%;
+  background-color: var(--color-purple);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .topbar-container {
+    max-width: 1330px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .menu {
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+
+        li {
+          a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #007BFF;
+            }
+          }
+        }
+      }
+    }
+  }
+}
