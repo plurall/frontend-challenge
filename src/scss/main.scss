@@ -1,0 +1,21 @@
+@use './cssrest.scss';
+@use './variables.scss' as *; // Importando as variáveis
+
+/*
+  ---------------------
+  GLOBAL STYLES
+  ---------------------
+*/
+
+body {
+  background-color: $color-white;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mainApp {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - $height-footer - $height-nav-bar);
+}

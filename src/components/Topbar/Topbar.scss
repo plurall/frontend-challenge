@@ -1,14 +1,21 @@
+@use '../../scss/variables.scss' as *; // Importando as variáveis
+
 .topbar {
   width: 100%;
-  background-color: var(--color-purple);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $color-dark-purple;
+  height: $height-nav-bar;
 
   .topbar-container {
+    width: 100%;
     max-width: 1330px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
   }
 }

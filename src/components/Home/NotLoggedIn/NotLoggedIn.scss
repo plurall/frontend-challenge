@@ -1,0 +1,34 @@
+@use '../../../scss/variables.scss' as *; // Importando as variáveis
+
+.not-logged-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - #{$height-footer} - #{$height-nav-bar});
+  background-color: #ccc;
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1db954; // Cor do branding do Spotify
+  }
+
+  .spotify-button {
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1db954; // Cor do branding do Spotify
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #1aa34a; // Cor mais escura para hover
+    }
+  }
+}
