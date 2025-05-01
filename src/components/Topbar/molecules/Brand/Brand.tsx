@@ -1,5 +1,5 @@
 import "./Brand.scss";
-import PlurallBrandIcon from "../../../icons/PlurallBrandIcon";
+import PlurallBrandIcon from "../../../../assets/icons/PlurallBrandIcon";
 
 const Brand = () => {
   return (

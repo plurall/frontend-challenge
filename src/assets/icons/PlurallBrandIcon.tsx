@@ -1,10 +1,10 @@
 type TProps = {
   width: string;
   height: string;
-  fill: string;
+  fill?: string;
 };
 
-const PlurallBrandIcon = ({ width, height, fill }: TProps) => {
+const PlurallBrandIcon = ({ width, height, fill="#ffffff" }: TProps) => {
   return (
     <svg
       fill="none"
