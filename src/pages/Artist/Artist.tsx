@@ -4,6 +4,8 @@ import { getArtistById, getArtistAlbums } from '../../utils/client';
 import './Artist.scss';
 import IArtist from '../../types/Spotify/Artist';
 import IAlbum from '../../types/Spotify/Album';
+import ArtistHeader from '../../components/Artist/ArtistHeader/ArtistHeader';
+import ArtistAlbum from '../../components/Artist/ArtistAlbum/ArtistAlbum';
 
 const Artist: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -44,40 +46,8 @@ const Artist: React.FC = () => {
 
   return (
     <div className="artist">
-      <div className="artist-header">
-        <img src={artist.images[0]?.url} alt={artist.name} className="artist-photo" />
-        <div className="artist-info">
-          <h1 className="artist-name">{artist.name}</h1>
-          <p className="artist-popularity">Popularidade: {artist.popularity}</p>
-          <div className="artist-genres">
-            {artist.genres.map((genre: string, index: number) => (
-              <span key={index} className="artist-genre">
-                {genre}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="artist-albums">
-        <h2>Álbuns</h2>
-        <div className="albums-list">
-          {albums.map((album: IAlbum) => (
-            <div key={album.id} className="album-card">
-              <img src={album.images[0]?.url} alt={album.name} className="album-image" />
-              <div className="album-info">
-                <p className="album-name">{album.name}</p>
-                <p className="album-release-date">
-                  {new Date(album.release_date).toLocaleDateString('pt-BR', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric',
-                  })}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ArtistHeader artist={artist} />
+      <ArtistAlbum albums={albums} />
     </div>
   );
 };
