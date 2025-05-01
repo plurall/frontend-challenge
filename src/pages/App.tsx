@@ -5,6 +5,7 @@ import Topbar from '../components/Topbar/Topbar';
 import Footer from '../components/Footer/Footer';
 import Search from './Search/Search';
 import SpotifyContextProvider from '../context/Spotify/SpotifyContextProvider';
+import Artist from './Artist/Artist';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <main className="mainApp">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/search" element={<Search />} />
+            <Route path="/busca" element={<Search />} />
+            <Route path="/artista/:id" element={<Artist />} />
           </Routes>
         </main>
 

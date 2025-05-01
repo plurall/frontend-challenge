@@ -26,7 +26,7 @@ const Navbar = () => {
       <ul>
       {isLoggedIn ? (
           <>
-            <li><Link to="/search">Buscar</Link></li>
+            <li><Link to="/busca">Buscar</Link></li>
             <li><button className="logout" onClick={handleLogout}>Sair</button></li>
           </>
         ) : null}

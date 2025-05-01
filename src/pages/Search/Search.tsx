@@ -61,7 +61,7 @@ const Search: React.FC = () => {
   , [query, artists, navigate]);
 
   const handleArtistClick = (artistId: string) => {
-    navigate(`/artist/${artistId}`);
+    navigate(`/artista/${artistId}`);
   };
 
   return (
