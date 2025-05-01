@@ -9,6 +9,11 @@ const SpotifyReducer = (state: ISpotifyContextState, action: ISpotifyContextActi
         ...state,
         token: action.payload.token,
       };
+    case actionType.SET_LOGOUT:
+      return {
+        ...state,
+        token: null,
+      };
     default:
       return state;
   }
