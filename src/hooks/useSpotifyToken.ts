@@ -5,6 +5,43 @@ import { CLIENT_ID, REDIRECT_URI, SCOPES } from '../utils/consts/spotify';
 export const useSpotifyToken = () => {
   const [token, setToken] = useState<string | null>(null);
 
+  const fetchToken = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    const storedVerifier = localStorage.getItem('code_verifier');
+
+    if (!code || !storedVerifier) {
+      console.error('Authorization code or code verifier is missing.');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          client_id: CLIENT_ID,
+          grant_type: 'authorization_code',
+          code: code,
+          redirect_uri: REDIRECT_URI,
+          code_verifier: storedVerifier,
+        }).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error fetching token: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Token:', data.access_token);
+      setToken(data.access_token);
+      localStorage.setItem('access_token', data.access_token);
+      window.history.replaceState({}, '', '/'); // Limpa o ?code da URL
+    } catch (error) {
+      console.error('Failed to fetch token:', error);
+    }
+  }
+
   /*
     * O hook useEffect é usado para verificar se o código de autorização foi retornado na URL
     * após o redirecionamento do Spotify. Se o código estiver presente, ele faz uma solicitação
@@ -12,32 +49,13 @@ export const useSpotifyToken = () => {
     * Se o token já estiver armazenado no localStorage, ele é definido no estado.
     */
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
-    const storedVerifier = localStorage.getItem('code_verifier');
-
-    if (!token && code && storedVerifier) {
-      fetch('https://accounts.spotify.com/api/token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          client_id: CLIENT_ID,
-          grant_type: 'authorization_code',
-          code,
-          redirect_uri: REDIRECT_URI,
-          code_verifier: storedVerifier,
-        }),
-      })
-        .then(res => res.json())
-        .then(data => {
-          setToken(data.access_token);
-          localStorage.setItem('access_token', data.access_token);
-          window.history.replaceState({}, '', '/'); // Limpa o ?code da URL
-        });
-    } else {
-      const existing = localStorage.getItem('access_token');
-      if (existing) setToken(existing);
+    const existingToken = localStorage.getItem('access_token');
+    if (existingToken) {
+      setToken(existingToken);
+      return;
     }
+
+    fetchToken();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
