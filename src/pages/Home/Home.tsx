@@ -1,6 +1,7 @@
 import { useSpotifyToken } from '../../hooks/useSpotifyToken';
 import { useState } from 'react';
 import { searchArtists } from '../../utils/client';
+import NotLoggedIn from '../../components/Home/NotLoggedIn/NotLoggedIn';
 
 function App() {
   const { token, login } = useSpotifyToken();
@@ -15,11 +16,10 @@ function App() {
   };
 
   return (
-    <div style={{ padding: 32 }}>
-      <h1>Spotify Artist Search</h1>
+    <>
 
       {!token ? (
-        <button onClick={login}>Login with Spotify</button>
+        <NotLoggedIn onLogin={login} />
       ) : (
         <>
           <input
@@ -41,7 +41,7 @@ function App() {
           </ul>
         </>
       )}
-    </div>
+    </>
   );
 }
 
