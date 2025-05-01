@@ -15,7 +15,7 @@ function App() {
         <main className="mainApp">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/buscar" element={<Search />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </main>
 
