@@ -9,7 +9,14 @@ const ArtistHeader = ({ artist }: IProps) => {
     <div className="artist-header">
       <img src={artist.images[0]?.url} alt={artist.name} className="artist-photo" />
       <div className="artist-info">
-        <h1 className="artist-name">{artist.name}</h1>
+        <h1 
+          className="artist-name"
+          data-testid="artist-name"
+          data-cy="artist-name"
+          aria-label="Nome do Artista"
+        >
+          {artist.name}
+        </h1>
         <p className="artist-popularity">Popularidade: {artist.popularity}</p>
         <div className="artist-genres">
           {artist.genres.map((genre: string, index: number) => (

@@ -10,7 +10,12 @@ const ArtistAlbum = ({ albums }: IProps) => {
     <h2>Álbuns</h2>
     <div className="albums-list">
       {albums.map((album: IAlbum) => (
-        <div key={album.id} className="album-card">
+        <div 
+          key={album.id} 
+          className="album-card"
+          data-testid="album-card"
+          data-cy="album-card"
+        >
           <img src={album.images[0]?.url} alt={album.name} className="album-image" />
           <div className="album-info">
             <p className="album-name">{album.name}</p>
