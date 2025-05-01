@@ -4,6 +4,7 @@ import MusicSearchIcon from "../../../assets/icons/MusicSearchIcon";
 import IArtistResponse, { IArtist } from "../../../types/Spotify/Artist";
 import { searchArtists } from "../../../utils/client";
 import { useSpotifyToken } from "../../../hooks/useSpotifyToken";
+import useLogout from "../../../hooks/useLogout";
 
 interface IProps {
   artistsResponse: IArtistResponse | null;
@@ -14,6 +15,7 @@ const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
   const navigate = useNavigate();
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const { token } = useSpotifyToken();
+  const { logout } = useLogout();
 
   const handleArtistClick = (artistId: string) => {
     navigate(`/artista/${artistId}`);
@@ -33,8 +35,9 @@ const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
         ...nextResults,
         items: [...(prev?.items || []), ...nextResults.items],
       }));
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Erro ao carregar mais artistas:", error);
+      logout();
     } finally {
       setIsLoadingMore(false);
     }
@@ -71,15 +74,17 @@ const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
         ))}
       </div>
       {artistsResponse.next && (
-        <button
-          className="load-more-button"
-          onClick={loadMore}
-          disabled={isLoadingMore}
-          data-testid="load-more-button"
-          data-cy="load-more-button"
-        >
-          {isLoadingMore ? "Carregando..." : "Carregar Mais"}
-        </button>
+        <div className="load-more-container">
+          <button
+            className="load-more-button"
+            onClick={loadMore}
+            disabled={isLoadingMore}
+            data-testid="load-more-button"
+            data-cy="load-more-button"
+          >
+            {isLoadingMore ? "Carregando..." : "Carregar Mais"}
+          </button>
+        </div>
       )}
     </div>
   );

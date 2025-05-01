@@ -3,6 +3,7 @@ import { useSpotifyToken } from "../../../hooks/useSpotifyToken";
 import { useNavigate } from "react-router-dom";
 import { searchArtists } from "../../../utils/client";
 import IArtistResponse from "../../../types/Spotify/Artist";
+import useLogout from "../../../hooks/useLogout";
 
 interface IProps {
   setArtistsResponse: React.Dispatch<React.SetStateAction<IArtistResponse | null>>;
@@ -12,6 +13,7 @@ const Searchbar = ({ setArtistsResponse }: IProps) => {
   const navigate = useNavigate();
   const { token } = useSpotifyToken();
   const [query, setQuery] = useState("");
+  const { logout } = useLogout();
 
   const [isSearching, setIsSearching] = useState(false);
 
@@ -26,26 +28,17 @@ const Searchbar = ({ setArtistsResponse }: IProps) => {
   const fetchArtists = async () => {
     try {
       if (query.length > 1 && token) {
-        try {
-          setIsSearching(true);
-          const results = await searchArtists(query, token);
-          setArtistsResponse(results);
-          // update url with query without reloading the page
-          navigate(`?query=${encodeURIComponent(query)}`, { replace: true });
-
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } catch (error: any) {
-          if (error.response?.status === 401) {
-            console.error("Token inválido ou expirado. Atualize o token.");
-          } else {
-            console.error("Erro ao buscar artistas:", error);
-          }
-        }
+        setIsSearching(true);
+        const results = await searchArtists(query, token);
+        setArtistsResponse(results);
+        // update url with query without reloading the page
+        navigate(`?query=${encodeURIComponent(query)}`, { replace: true });
       } else {
         setArtistsResponse(null);
       }
     } catch (error) {
-      console.error("Erro ao buscar artistas:", error);
+      console.error("Erro ao buscar artistas xxxx:", error);
+      logout();
     } finally {
       setIsSearching(false);
     }

@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const { logout } = useLogout();
 
-
   return (
     <nav className="menu">
       <ul>

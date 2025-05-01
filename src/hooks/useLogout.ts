@@ -11,8 +11,10 @@ const useLogout = () => {
     dispatch(setLogout(state));
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
+    console.log('Logout realizado com sucesso');
 
     setTimeout(() => {
+      console.log('Logout realizado com sucesso 2');
       navigate('/');
     }, 1500);
   };
