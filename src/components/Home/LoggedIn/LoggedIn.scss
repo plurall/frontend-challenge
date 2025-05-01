@@ -1,0 +1,32 @@
+.logged-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+
+  .logged-in-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .logged-in-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1db954; // Cor do branding do Spotify
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #1aa34a; // Cor mais escura para hover
+    }
+  }
+}
