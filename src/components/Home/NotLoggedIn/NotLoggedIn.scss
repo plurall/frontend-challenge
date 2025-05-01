@@ -7,12 +7,11 @@
   align-items: center;
   text-align: center;
   height: calc(100vh - #{$height-footer} - #{$height-nav-bar});
-  background-color: #ccc;
 
   h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #1db954; // Cor do branding do Spotify
+    color: $color-spotify;
   }
 
   .spotify-button {
@@ -21,14 +20,14 @@
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background-color: #1db954; // Cor do branding do Spotify
+    background-color: $color-spotify;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #1aa34a; // Cor mais escura para hover
+      background-color: $color-spotify-dark;
     }
   }
 }
