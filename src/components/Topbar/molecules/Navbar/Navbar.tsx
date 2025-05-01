@@ -1,13 +1,35 @@
+import { Link, useNavigate } from 'react-router-dom';
+import { useSpotifyToken } from '../../../../hooks/useSpotifyToken';
 import './Navbar.scss';
+import { useContext } from 'react';
+import SpotifyContext from '../../../../context/Spotify/SpotifyContext';
+import { setLogout } from '../../../../context/Spotify/SpotifyAction';
 
 const Navbar = () => {
+  const router = useNavigate();
+  const {isLoggedIn} = useSpotifyToken();
+  const {state, dispatch} = useContext(SpotifyContext);
+
+  const handleLogout = () => {
+    dispatch(setLogout(state));
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+
+    setTimeout(() => {
+      router('/');
+    }, 1500);
+  }
+
+
   return (
     <nav className="menu">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+      {isLoggedIn ? (
+          <>
+            <li><Link to="/search">Buscar</Link></li>
+            <li><button className="logout" onClick={handleLogout}>Sair</button></li>
+          </>
+        ) : null}
       </ul>
     </nav>
   );
