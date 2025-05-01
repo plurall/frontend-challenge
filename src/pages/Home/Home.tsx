@@ -3,11 +3,11 @@ import NotLoggedIn from '../../components/Home/NotLoggedIn/NotLoggedIn';
 import LoggedIn from '../../components/Home/LoggedIn/LoggedIn';
 
 function App() {
-  const { token, login } = useSpotifyToken();
+  const { isLoggedIn, login } = useSpotifyToken();
 
   return (
     <>
-      {!token ? (
+      {!isLoggedIn ? (
         <NotLoggedIn onLogin={login} />
       ) : (
         <LoggedIn />

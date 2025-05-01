@@ -10,13 +10,13 @@ const Search: React.FC = () => {
   const [query, setQuery] = useState('');
   const [artists, setArtists] = useState<IArtist[]>([]);
   const navigate = useNavigate();
-  const { token: storedToken } = useSpotifyToken();
+  const { token } = useSpotifyToken();
 
 
   const fetchArtists = async () => {
-    if (query.length > 1 && storedToken) {
+    if (query.length > 1 && token) {
       try {
-        const results = await searchArtists(query, storedToken);
+        const results = await searchArtists(query, token);
         setArtists(results);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
@@ -32,7 +32,7 @@ const Search: React.FC = () => {
   };
 
   useEffect(() => {
-    if(!storedToken) return;
+    if(!token) return;
     if(query.length > 4) {
       const timeoutId = setTimeout(() => {
         fetchArtists();
@@ -41,7 +41,7 @@ const Search: React.FC = () => {
       return () => clearTimeout(timeoutId);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, storedToken]);
+  }, [query, token]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

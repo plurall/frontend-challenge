@@ -4,22 +4,23 @@ import Home from './Home/Home';
 import Topbar from '../components/Topbar/Topbar';
 import Footer from '../components/Footer/Footer';
 import Search from './Search/Search';
+import SpotifyContextProvider from '../context/Spotify/SpotifyContextProvider';
 
 function App() {
   return (
-      <>
-      <Topbar />
+      <SpotifyContextProvider>
+        <Topbar />
 
-      {/* Dynamic routes */}
-      <main className="mainApp">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/buscar" element={<Search />} />
-        </Routes>
-      </main>
+        {/* Dynamic routes */}
+        <main className="mainApp">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/buscar" element={<Search />} />
+          </Routes>
+        </main>
 
-      <Footer />
-      </>
+        <Footer />
+      </SpotifyContextProvider>
   );
 }
 
