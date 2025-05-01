@@ -21,6 +21,7 @@
     }
 
     .search-button {
+      width: 100px;
       padding: 10px 20px;
       font-size: 16px;
       font-weight: bold;
@@ -33,6 +34,10 @@
 
       &:hover {
         background-color: #1aa34a; // Cor mais escura para hover
+      }
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
       }
     }
   }
