@@ -71,11 +71,22 @@ const Searchbar = ({ setArtists }: IProps) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="search-input"
+        data-testid="search-input"
+        data-cy="search-input"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            fetchArtists();
+          }
+        }
+        }
       />
       <button
         onClick={fetchArtists}
         disabled={isSearching}
         className="search-button"
+        data-testid="search-button"
+        data-cy="search-button"
+        aria-label="Buscar artistas"
       >
         {isSearching ? "..." : "Buscar"}
       </button>

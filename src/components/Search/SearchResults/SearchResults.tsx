@@ -18,6 +18,8 @@ const SearchResults = ({ artists }: IProps) => {
           <div
             key={artist.id}
             className="search-artist"
+            data-testid="search-artist"
+            data-cy="search-artist"
             onClick={() => handleArtistClick(artist.id)}
           >
             <img src={artist.images[0]?.url} alt={artist.name} className="search-artist-image" />
