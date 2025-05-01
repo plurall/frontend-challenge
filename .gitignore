@@ -26,3 +26,4 @@ dist-ssr
 
 # Remove .env files
 .env
+cypress.env.json
