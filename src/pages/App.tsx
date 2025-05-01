@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import Topbar from '../components/Topbar/Topbar';
 import Footer from '../components/Footer/Footer';
+import Search from './Search/Search';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main className="mainApp">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/buscar" element={<Search />} />
         </Routes>
       </main>
 
