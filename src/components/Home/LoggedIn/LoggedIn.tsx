@@ -6,7 +6,7 @@ const LoggedIn: React.FC = () => {
   return (
     <div className="logged-in">
       <h1 className="logged-in-title">Buscar Artista</h1>
-      <Link to="/buscar" className="logged-in-button">
+      <Link to="/search" className="logged-in-button">
         Ir para Busca
       </Link>
     </div>
