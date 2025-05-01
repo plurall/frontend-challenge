@@ -1,18 +1,46 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import IArtist from "../../../types/Spotify/Artist";
 import MusicSearchIcon from "../../../assets/icons/MusicSearchIcon";
+import IArtistResponse, { IArtist } from "../../../types/Spotify/Artist";
+import { searchArtists } from "../../../utils/client";
+import { useSpotifyToken } from "../../../hooks/useSpotifyToken";
 
 interface IProps {
-  artists: IArtist[];
+  artistsResponse: IArtistResponse | null;
+  setArtistsResponse: React.Dispatch<React.SetStateAction<IArtistResponse | null>>;
 }
 
-const SearchResults = ({ artists }: IProps) => {
+const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
   const navigate = useNavigate();
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const { token } = useSpotifyToken();
+
   const handleArtistClick = (artistId: string) => {
     navigate(`/artista/${artistId}`);
   };
 
-  if (artists.length === 0) {
+  const loadMore = async () => {
+    if (!artistsResponse?.next) return;
+
+    try {
+      setIsLoadingMore(true);
+      if(!token) {
+        console.error("Token não encontrado");
+        return;
+      }
+      const nextResults = await searchArtists("", token, artistsResponse.next);
+      setArtistsResponse((prev) => ({
+        ...nextResults,
+        items: [...(prev?.items || []), ...nextResults.items],
+      }));
+    } catch (error) {
+      console.error("Erro ao carregar mais artistas:", error);
+    } finally {
+      setIsLoadingMore(false);
+    }
+  };
+
+  if (!artistsResponse?.items || artistsResponse.items.length === 0) {
     return (
       <div className="search-no-results">
         <MusicSearchIcon width="100px" height="100px" fill="#cfcfcf" />
@@ -23,23 +51,36 @@ const SearchResults = ({ artists }: IProps) => {
   }
 
   return (
-    <div className="search-resultados">
-      {artists.map((artist: IArtist) => (
-        <div
-          key={artist.id}
-          className="search-artist"
-          data-testid="search-artist"
-          data-cy="search-artist"
-          onClick={() => handleArtistClick(artist.id)}
+    <div className="search-resultados-container">
+      <div className="search-resultados">
+        {artistsResponse.items.map((artist: IArtist) => (
+          <div
+            key={artist.id}
+            className="search-artist"
+            data-testid="search-artist"
+            data-cy="search-artist"
+            onClick={() => handleArtistClick(artist.id)}
+          >
+            <img
+              src={artist.images[0]?.url}
+              alt={artist.name}
+              className="search-artist-image"
+            />
+            <p className="search-artist-name">{artist.name}</p>
+          </div>
+        ))}
+      </div>
+      {artistsResponse.next && (
+        <button
+          className="load-more-button"
+          onClick={loadMore}
+          disabled={isLoadingMore}
+          data-testid="load-more-button"
+          data-cy="load-more-button"
         >
-          <img
-            src={artist.images[0]?.url}
-            alt={artist.name}
-            className="search-artist-image"
-          />
-          <p className="search-artist-name">{artist.name}</p>
-        </div>
-      ))}
+          {isLoadingMore ? "Carregando..." : "Carregar Mais"}
+        </button>
+      )}
     </div>
   );
 };

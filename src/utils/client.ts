@@ -1,5 +1,5 @@
 import IAlbum from "../types/Spotify/Album";
-import IArtist from "../types/Spotify/Artist";
+import IArtistResponse, { IArtist } from "../types/Spotify/Artist";
 
 const BASE_URL = 'https://api.spotify.com/v1';
 
@@ -12,14 +12,18 @@ const getHeaders = (token: string) => ({
   * Função para buscar artistas no Spotify
   * @param query - O termo de pesquisa para buscar artistas
   * @param token - O token de acesso do Spotify
-  * @returns Uma Promise do tipo IArtist[], que é uma lista de artistas encontrados
+  * @returns Uma Promise do tipo IArtistResponse, que é uma lista de artistas encontrados
   * @throws Se ocorrer um erro durante a requisição, uma mensagem de erro será exibida no console e
   * a exceção será lançada para ser tratada pelo chamador da função.
   */
-export const searchArtists = async (query: string, token: string): Promise<IArtist[]> => {
+export const searchArtists = async (
+  query: string,
+  token: string,
+  url?: string
+): Promise<IArtistResponse> => {
   try {
     const response = await fetch(
-      `${BASE_URL}/search?q=${encodeURIComponent(query)}&type=artist&limit=10`,
+      url || `${BASE_URL}/search?q=${encodeURIComponent(query)}&type=artist&limit=10`,
       {
         headers: getHeaders(token),
       }
@@ -30,9 +34,18 @@ export const searchArtists = async (query: string, token: string): Promise<IArti
     }
 
     const data = await response.json();
-    return data.artists.items as IArtist[];
+    const artistResponse: IArtistResponse = {
+      href: data.artists.href,
+      limit: data.artists.limit,
+      next: data.artists.next,
+      offset: data.artists.offset,
+      previous: data.artists.previous,
+      total: data.artists.total,
+      items: data.artists.items as IArtist[],
+    };
+    return artistResponse;
   } catch (error) {
-    console.error('Erro ao buscar artistas:', error);
+    console.error("Erro ao buscar artistas:", error);
     throw error;
   }
 };

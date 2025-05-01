@@ -1,4 +1,4 @@
-import IArtist from "../../../types/Spotify/Artist";
+import {IArtist} from "../../../types/Spotify/Artist";
 
 interface IProps {
   artist: IArtist;

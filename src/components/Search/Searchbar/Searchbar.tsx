@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSpotifyToken } from "../../../hooks/useSpotifyToken";
-import { searchArtists } from "../../../utils/client";
-import IArtist from "../../../types/Spotify/Artist";
 import { useNavigate } from "react-router-dom";
+import { searchArtists } from "../../../utils/client";
+import IArtistResponse from "../../../types/Spotify/Artist";
 
 interface IProps {
-  setArtists: React.Dispatch<React.SetStateAction<IArtist[]>>;
+  setArtistsResponse: React.Dispatch<React.SetStateAction<IArtistResponse | null>>;
 }
 
-const Searchbar = ({ setArtists }: IProps) => {
+const Searchbar = ({ setArtistsResponse }: IProps) => {
   const navigate = useNavigate();
   const { token } = useSpotifyToken();
   const [query, setQuery] = useState("");
@@ -29,7 +29,7 @@ const Searchbar = ({ setArtists }: IProps) => {
         try {
           setIsSearching(true);
           const results = await searchArtists(query, token);
-          setArtists(results);
+          setArtistsResponse(results);
           // update url with query without reloading the page
           navigate(`?query=${encodeURIComponent(query)}`, { replace: true });
 
@@ -42,7 +42,7 @@ const Searchbar = ({ setArtists }: IProps) => {
           }
         }
       } else {
-        setArtists([]);
+        setArtistsResponse(null);
       }
     } catch (error) {
       console.error("Erro ao buscar artistas:", error);

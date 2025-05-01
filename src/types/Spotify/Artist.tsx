@@ -1,10 +1,24 @@
+/*
+  * A interface IArtistResponse representa a resposta da API de busca de artistas.
+  * Inclui informações de navegação e a lista de artistas encontrados.
+  * Mais detalhes: https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artist
+  */
+export default interface IArtistResponse {
+  href: string;
+  limit: number;
+  next: string | null;
+  offset: number;
+  previous: string | null;
+  total: number;
+  items: IArtist[];
+}
 
 /*
   * A interface IArtist representa um artista do Spotify.
   * Propriedades baseadas na API do Spotify.
   * Mais detalhes: https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artist
   */
-export default interface IArtist {
+export interface IArtist {
   id: string;
   name: string;
   genres: string[];

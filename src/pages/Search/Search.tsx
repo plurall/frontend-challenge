@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './Search.scss';
-import IArtist from '../../types/Spotify/Artist';
 import Searchbar from '../../components/Search/Searchbar/Searchbar';
 import SearchResults from '../../components/Search/SearchResults/SearchResults';
+import IArtistResponse from '../../types/Spotify/Artist';
 
 
 const Search: React.FC = () => {
-  const [artists, setArtists] = useState<IArtist[]>([]);
+  const [artistsResponse, setArtistsResponse] = useState<IArtistResponse | null>(null);
   
 
   return (
     <div className="search">
-      <Searchbar setArtists={setArtists} />
-      <SearchResults artists={artists} />
+      <Searchbar setArtistsResponse={setArtistsResponse} />
+      <SearchResults artistsResponse={artistsResponse} setArtistsResponse={setArtistsResponse} />
     </div>
   );
 };
