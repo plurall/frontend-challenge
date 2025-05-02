@@ -97,3 +97,30 @@
     color: #666;
   }
 }
+
+@media (max-width: 640px) {
+  .artist-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .artist-photo {
+      width: 120px;
+      height: 120px;
+    }
+
+    .artist-info {
+      .artist-name {
+        font-size: 28px;
+      }
+
+      .artist-popularity {
+        font-size: 16px;
+      }
+
+      .artist-genres {
+        justify-content: center;
+      }
+    }
+  }
+}
