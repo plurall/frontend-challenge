@@ -1,0 +1,31 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+
+  .not-found-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .not-found-button {
+    width: 220px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1db954; // Cor do branding do Spotify
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #1aa34a; // Cor mais escura para hover
+    }
+  }
+}

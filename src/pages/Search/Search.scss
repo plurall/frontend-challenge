@@ -1,0 +1,149 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-button {
+      width: 100px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #1db954; // Cor do branding do Spotify
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #1aa34a; // Cor mais escura para hover
+      }
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .search-resultados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search-artist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .search-artist-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .search-artist-name {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+  
+  .search-no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+
+    .search-no-results-text {
+      font-size: 18px;
+      color: #666;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    svg {
+      margin-bottom: 10px;
+    }
+  }
+
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+
+  
+    .load-more-button {
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #1db954;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    
+      &:hover {
+        background-color: #1aa34a;
+      }
+    
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+
+// Responsividade para resoluções entre 320px e 480px
+@media (max-width: 480px) {
+  .search-resultados {
+    gap: 10px;
+
+    .search-artist {
+      width: 145px;
+      .search-artist-image {
+        width: 135px;
+        height: 135px;
+      }
+
+      .search-artist-name {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use '../../../scss/variables.scss' as *; // Importando as variáveis
+
+.not-logged-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - #{$height-footer} - #{$height-nav-bar});
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: $color-spotify;
+  }
+
+  .spotify-button {
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: $color-spotify;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-spotify-dark;
+    }
+  }
+}

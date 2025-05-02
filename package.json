@@ -1,58 +1,33 @@
 {
-  "name": "plurall-front-end-challenge",
-  "private": false,
-  "version": "0.1.0",
+  "name": "frontend-challenge-reactjs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "client-oauth2": "^4.3.3",
-    "plurall-footer": "^2.4.29",
-    "plurall-header": "^5",
-    "plurall-ui": "^0.3.0",
-    "prop-types": "^15.8.1",
-    "query-string": "^7.1.1",
-    "querystring-es3": "^0.2.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-router-dom": "5.1.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^2.1.4"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.5.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.2",
-    "eslint-config-plurall": "^1.5.28",
-    "eslint-plugin-prettier": "^3.0.0",
-    "jsencrypt": "^3.0.0-rc.1",
-    "lint-staged": "^7.0.0",
-    "opn": "^5.4.0",
-    "prettier": "^1.15.2",
-    "sass": "^1.53.0"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --no-semi --trailing-comma all --write",
-      "git add"
-    ]
-  },
-  "scripts": {
-    "build": "react-scripts build",
-    "lint": "eslint src/",
-    "precommit": "lint-staged",
-    "start": "react-scripts start",
-    "test": "react-scripts test"
-  },
-  "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
+    "@eslint/js": "^9.22.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cypress": "^14.3.2",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "sass-embedded": "^1.87.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.3.1"
   }
 }

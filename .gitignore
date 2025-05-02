@@ -1,11 +1,29 @@
-.DS_Store
-.env.*
-.vscode/settings.json
-/build
-/coverage
-/node_modules
-/tmp
+# Logs
+logs
+*.log
 npm-debug.log*
-TODO.md
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# Remove .env files
+.env
+cypress.env.json

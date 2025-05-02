@@ -1,0 +1,52 @@
+@use "../../../../scss/variables.scss" as *; // Importando as variáveis
+
+.menu {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      width: 70px;
+      height: $height-nav-bar;
+      
+      a {
+        text-decoration: none;
+        color: $color-white;
+        font-size: 1rem;
+        transition: color 0.3s;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+          background-color: $color-dark-purple;
+        }
+      }
+      .logout {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: $color-dark-purple;
+        color: $color-white;
+        font-size: 1rem;
+        transition: color 0.3s;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-dark-purple;
+        }
+      }
+    }
+  }
+}

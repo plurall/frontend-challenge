@@ -1,89 +1,52 @@
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/plurall-logo.png" width="150" /> <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/somos-logo.png" width="116" />
+## Somos Educação - Plurall
+### Frontend Challenge Reactjs
 
-# Front-end Challenge
+- **Detalhes do Desafio**: [CHALLENGE.md (informações do desafio)](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/CHALLENGE.mdhttp:// "CHALLENGE.md (informações do desafio)")
 
-## Objetivo
+# Sobre Esse Repositório
+### Tecnologias
+- O projeto foi desenvolvido utilizando: ReactJS + Typescript + SASS + Vite
+- O Projeto possui testes do tipo: e2e utilizando Cypress.
+- O Gerenciamento de pacotes é com o NPM. Foi utilizado: NodeJS v22.14.0 (LTS) e npm: 10.9.2
 
-Nesse desafio iremos avaliar o seu conhecimento nas tecnologias de front-end utilizadas no [Plurall](https://plurall.net) (React, JavaScript, CSS, HTML/JSX).
+Não é necessário docker ou bancos de dados. Essa aplicação é o frontend se comunicando com a API do Spotify.
 
-Você deverá implementar o desafio descrito em [`CHALLENGE.md`](/CHALLENGE.md) usando esse codebase como base.
+### Como Começar?
+1. Comece clonando o projeto. 😅
+1. Acesse o projeto e execute: `npm install`
 
-Esse projeto é um `boilerplate` baseado nos projetos do [Plurall](https://plurall.net) (produto no qual você ira trabalhar).
+3. ** === ANTES DE EXECUTAR === **
+É necessário configurar o seu arquivo `.env`. Para isso basta:
+Spotify Developer [(Acessar Aqui)](https://developer.spotify.com/ "(Acessar Aqui)") e lá obter o seu *CLIENT_ID* e o *REDIRECT_URI*. 
+**Obs.: O seu REDIRECT_URI TEM QUE SER  http://127.0.0.1:5173/**
+[![Dados para o .env](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/env-data.png?raw=true "Dados para o .env")](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/env-data.png?raw=true "Dados para o .env")
 
-## Critério de avaliação
+1. Acesse o arquivo` .env-example`, configure ele com o **CLIENT_ID** e **REDIRECT_URI**.
+1. Agora mude o nome do arquivo ` .env-example` para somente `.env`
+1. Após isso você deve executar o projeto com o comando: `npm run dev`
 
-Abaixo estão algumas caracteristicas que achamos importantes:
 
-- Organização e legibilidade do código.
-- Simplicidade.
-- Boas praticas.
-- Conhecimento de Javascript.
-- Conhecimento de React.
-- Outros.
+O projeto irá rodar por padrão em: http://127.0.0.1:5173/, então basta acessar esse endereço.
 
-## Configurando o ambiente
+### Como Executar os Testes.
 
-Você precisa ter [Node 16.13.1](https://nodejs.org/en/) (ou compatível) instalado para conseguir rodar o desafio.
+** === ANTES DE MAIS NADA === **
+É necessário você configurar as suas credenciais do Spotify no Cypress para que ele possa executar os testes automáticos e2e. Para isso basta 
 
-Faça fork do projeto em sua conta pessoal e siga os passos a seguir.
+1. Pegar a o seu **CLIENT_SECRET** no seu painel do Spotify:
+[![Spotify CLIENT_SECRET](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/cypress-data.png?raw=true "Spotify CLIENT_SECRET")](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/cypress-data.png?raw=truehttp:// "Spotify CLIENT_SECRET")
 
-### Adicione o url do Plurall no seu `/etc/hosts`.
+1. Agora abrar o arquivo: `./cypress.env-copy.json` adicione os valores de **CLIENT_SECRET**, **SPOTIFY_CLIENT_ID** e o **SPOTIFY_REDIRECT_URI**
+1. Agora mude o nome do arquivo `./cypress.env-copy.json` para `./cypress.env.json` (ou seja, remover o ***copy* ** do nome)
+1. Agora no terminal basta executar: `npx cypress open`
 
-No Mac/Linux, faça:
+Então o Cypress será excutado, talvez na primeira vez você tenha que fazer algumas confirmações em janelas de diálogos que aparecerão, mas é algo bem simples. **Recomendo deixar tudo padrão.**
 
-```shell
-echo '127.0.0.1\tboilerplate.local.plurall.net' | sudo tee -a /etc/hosts
-```
+### Vídeos (no Youtube)
 
-No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/), e adicione a linha `127.0.0.1 boilerplate.local.plurall.net` no arquivo de hosts.
+#### Aplicação
 
-### Instale as dependências e start o projeto
+[![App](https://i.ytimg.com/vi/M76dy9FnmEE/0.jpg "App")](https://www.youtube.com/watch?v=M76dy9FnmEE "App")
 
-```shell
-yarn 
-yarn start
-```
-
-Após os passos acima, você conseguirá abrir a aplicação em http://boilerplate.local.plurall.net:3000/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
-
-O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio, queremos que você utilize a API do Spotify para autenticação.
-
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/invalid-client.png">
-
-Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
-
-## Setup Spotify API
-
-- Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
-- Entrar na aplicação criada, clicar no botão `edit settings` e preencher os seguintes campos abaixo.
-- Clicar em `save`.
-
-```
-Website: http://boilerplate.local.plurall.net:3000
-Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
-```
-
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/redirect.png" width="50%">
-
-- Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
-
-```shell
-NODE_PATH=src/
-REACT_APP_ACCESS_TOKEN_URL=https://accounts.spotify.com/api/token
-REACT_APP_AUTHORIZATION_URL=https://accounts.spotify.com/authorize
-REACT_APP_CLIENT_ID=YOUR_SPOTIFY_API_CLIENT
-REACT_APP_API_URL=https://api.spotify.com/v1
-REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
-```
-
-- Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
-
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/spotify.png" width="50%">
-
-- Logue com suas credenciais, e você será redirecionado para a aplicação :facepunch: :smile: e já deve estar vendo uma página como essa abaixo.
-
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/home.png">
-
-Agora voce já pode fazer o [desafio](/CHALLENGE.md).
-
-Boa Sorte!
+#### Testes
+[![Cypress](https://i.ytimg.com/vi/X2zi1pq2mtA/0.jpg "Cypress")](https://www.youtube.com/watch?v=X2zi1pq2mtA "Cypress")
