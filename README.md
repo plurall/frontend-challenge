@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+## Somos Educação - Plurall
+### Frontend Challenge Reactjs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Detalhes do Desafio**: [CHALLENGE.md (informações do desafio)](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/CHALLENGE.mdhttp:// "CHALLENGE.md (informações do desafio)")
 
-Currently, two official plugins are available:
+# Sobre Esse Repositório
+### Tecnologias
+- O projeto foi desenvolvido utilizando: ReactJS + Typescript + SASS + Vite
+- O Projeto possui testes do tipo: e2e utilizando Cypress.
+- O Gerenciamento de pacotes é com o NPM. Foi utilizado: NodeJS v22.14.0 (LTS) e npm: 10.9.2
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Não é necessário docker ou bancos de dados. Essa aplicação é o frontend se comunicando com a API do Spotify.
 
-## Expanding the ESLint configuration
+### Como Começar?
+1. Comece clonando o projeto. 😅
+1. Acesse o projeto e execute: `npm install`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. ** === ANTES DE EXECUTAR === **
+É necessário configurar o seu arquivo `.env`. Para isso basta:
+Spotify Developer [(Acessar Aqui)](https://developer.spotify.com/ "(Acessar Aqui)") e lá obter o seu *CLIENT_ID* e o *REDIRECT_URI*. 
+**Obs.: O seu REDIRECT_URI TEM QUE SER  http://127.0.0.1:5173/**
+[![Dados para o .env](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/env-data.png?raw=true "Dados para o .env")](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/env-data.png?raw=true "Dados para o .env")
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Acesse o arquivo` .env-example`, configure ele com o **CLIENT_ID** e **REDIRECT_URI**.
+1. Agora mude o nome do arquivo ` .env-example` para somente `.env`
+1. Após isso você deve executar o projeto com o comando: `npm run dev`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+O projeto irá rodar por padrão em: http://127.0.0.1:5173/, então basta acessar esse endereço.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Como Executar os Testes.
+
+** === ANTES DE MAIS NADA === **
+É necessário você configurar as suas credenciais do Spotify no Cypress para que ele possa executar os testes automáticos e2e. Para isso basta 
+
+1. Pegar a o seu **CLIENT_SECRET** no seu painel do Spotify:
+[![Spotify CLIENT_SECRET](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/cypress-data.png?raw=true "Spotify CLIENT_SECRET")](https://github.com/franklinsales/frontend-challenge-reactjs/blob/master/docs/cypress-data.png?raw=truehttp:// "Spotify CLIENT_SECRET")
+
+1. Agora abrar o arquivo: `./cypress.env-copy.json` adicione os valores de **CLIENT_SECRET**, **SPOTIFY_CLIENT_ID** e o **SPOTIFY_REDIRECT_URI**
+1. Agora mude o nome do arquivo `./cypress.env-copy.json` para `./cypress.env.json` (ou seja, remover o ***copy* ** do nome)
+1. Agora no terminal basta executar: `npx cypress open`
+
+Então o Cypress será excutado, talvez na primeira vez você tenha que fazer algumas confirmações em janelas de diálogos que aparecerão, mas é algo bem simples. **Recomendo deixar tudo padrão.**
+
