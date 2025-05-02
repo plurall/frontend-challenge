@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getArtistById, getArtistAlbums } from '@utils/client';
 import './Artist.scss';
@@ -7,6 +7,8 @@ import IAlbum from '@/types/Spotify/Album';
 import ArtistHeader from '@components/Artist/ArtistHeader/ArtistHeader';
 import ArtistAlbum from '@components/Artist/ArtistAlbum/ArtistAlbum';
 import useLogout from '@hooks/useLogout';
+import LayoutContext from '@/context/Layout/LayoutContext';
+import { setErrorMessage } from '@/context/Layout/LayoutAction';
 
 const Artist: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,6 +16,7 @@ const Artist: React.FC = () => {
   const [albums, setAlbums] = useState<IAlbum[]>([]);
   const [loading, setLoading] = useState(true);
   const { logout } = useLogout();
+  const { state: stateLayout, dispatch: dispatchLayout } = useContext(LayoutContext);
 
   useEffect(() => {
     const fetchArtistData = async () => {
@@ -34,7 +37,8 @@ const Artist: React.FC = () => {
       setLoading(false);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
-        logout()
+        dispatchLayout(setErrorMessage(stateLayout, "Erro ao buscar informações do artista"));
+        logout();
       }
     };
 

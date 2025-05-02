@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MusicSearchIcon from "@assets/icons/MusicSearchIcon";
 import IArtistResponse, { IArtist } from "@/types/Spotify/Artist";
 import { searchArtists } from "@utils/client";
 import { useSpotifyToken } from "@hooks/useSpotifyToken";
 import useLogout from "@hooks/useLogout";
+import LayoutContext from "@/context/Layout/LayoutContext";
+import { setErrorMessage } from "@/context/Layout/LayoutAction";
 
 interface IProps {
   artistsResponse: IArtistResponse | null;
@@ -16,6 +18,7 @@ const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const { token } = useSpotifyToken();
   const { logout } = useLogout();
+  const { state: stateLayout, dispatch: dispatchLayout } = useContext(LayoutContext);
 
   const handleArtistClick = (artistId: string) => {
     navigate(`/artista/${artistId}`);
@@ -37,6 +40,7 @@ const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
       }));
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
+      dispatchLayout(setErrorMessage(stateLayout, "Erro ao buscar mais artistas"));
       logout();
     } finally {
       setIsLoadingMore(false);
