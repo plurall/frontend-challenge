@@ -127,3 +127,23 @@
     }
   }
 }
+
+
+// Responsividade para resoluções entre 320px e 480px
+@media (max-width: 480px) {
+  .search-resultados {
+    gap: 10px;
+
+    .search-artist {
+      width: 145px;
+      .search-artist-image {
+        width: 135px;
+        height: 135px;
+      }
+
+      .search-artist-name {
+        font-size: 14px;
+      }
+    }
+  }
+}
