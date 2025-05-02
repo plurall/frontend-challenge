@@ -1,5 +1,5 @@
-import ISpotifyContextAction from "../../types/Context/Spotify/SpotifyContextAction";
-import ISpotifyContextState from "../../types//Context/Spotify/SpotifyContextState";
+import ISpotifyContextAction from "@/types/Context/Spotify/SpotifyContextAction";
+import ISpotifyContextState from "@/types//Context/Spotify/SpotifyContextState";
 
 export enum actionType {
   SET_TOKEN = 'SET_TOKEN',

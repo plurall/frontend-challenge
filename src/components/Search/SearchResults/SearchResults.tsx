@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MusicSearchIcon from "../../../assets/icons/MusicSearchIcon";
-import IArtistResponse, { IArtist } from "../../../types/Spotify/Artist";
-import { searchArtists } from "../../../utils/client";
-import { useSpotifyToken } from "../../../hooks/useSpotifyToken";
-import useLogout from "../../../hooks/useLogout";
+import MusicSearchIcon from "@assets/icons/MusicSearchIcon";
+import IArtistResponse, { IArtist } from "@/types/Spotify/Artist";
+import { searchArtists } from "@utils/client";
+import { useSpotifyToken } from "@hooks/useSpotifyToken";
+import useLogout from "@hooks/useLogout";
 
 interface IProps {
   artistsResponse: IArtistResponse | null;

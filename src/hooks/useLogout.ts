@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SpotifyContext from '../context/Spotify/SpotifyContext';
-import { setLogout } from '../context/Spotify/SpotifyAction';
+import SpotifyContext from '@context/Spotify/SpotifyContext';
+import { setLogout } from '@context/Spotify/SpotifyAction';
 
 const useLogout = () => {
   const navigate = useNavigate();

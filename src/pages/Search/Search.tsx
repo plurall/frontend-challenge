@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Search.scss';
-import Searchbar from '../../components/Search/Searchbar/Searchbar';
-import SearchResults from '../../components/Search/SearchResults/SearchResults';
-import IArtistResponse from '../../types/Spotify/Artist';
+import Searchbar from '@/components/Search/Searchbar/Searchbar';
+import SearchResults from '@/components/Search/SearchResults/SearchResults';
+import IArtistResponse from '@/types/Spotify/Artist';
 
 
 const Search: React.FC = () => {

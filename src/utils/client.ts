@@ -1,5 +1,5 @@
-import IAlbum from "../types/Spotify/Album";
-import IArtistResponse, { IArtist } from "../types/Spotify/Artist";
+import IAlbum from "@/types/Spotify/Album";
+import IArtistResponse, { IArtist } from "@/types/Spotify/Artist";
 
 const BASE_URL = 'https://api.spotify.com/v1';
 

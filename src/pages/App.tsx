@@ -1,10 +1,10 @@
 // src/App.tsx
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
-import Topbar from '../components/Topbar/Topbar';
-import Footer from '../components/Footer/Footer';
+import Topbar from '@components/Topbar/Topbar';
+import Footer from '@components/Footer/Footer';
 import Search from './Search/Search';
-import SpotifyContextProvider from '../context/Spotify/SpotifyContextProvider';
+import SpotifyContextProvider from '@context/Spotify/SpotifyContextProvider';
 import Artist from './Artist/Artist';
 import NotFound from './NotFound/NotFound';
 

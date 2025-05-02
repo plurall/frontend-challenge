@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { generateCodeVerifier, generateCodeChallenge } from '../utils/auth/auth';
-import { CLIENT_ID, REDIRECT_URI, SCOPES } from '../utils/consts/spotify';
-import SpotifyContext from '../context/Spotify/SpotifyContext';
+import { generateCodeVerifier, generateCodeChallenge } from '@utils/auth/auth';
+import { CLIENT_ID, REDIRECT_URI, SCOPES } from '@utils/consts/spotify';
+import SpotifyContext from '@context/Spotify/SpotifyContext';
 
 export const useSpotifyToken = () => {
   const { state } = useContext(SpotifyContext);

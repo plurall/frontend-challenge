@@ -1,4 +1,4 @@
-import ISpotifyContextState from "../../types/Context/Spotify/SpotifyContextState";
+import ISpotifyContextState from "@/types/Context/Spotify/SpotifyContextState";
 
 const initialState: ISpotifyContextState = {
   token: null,

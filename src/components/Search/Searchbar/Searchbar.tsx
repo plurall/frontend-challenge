@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useSpotifyToken } from "../../../hooks/useSpotifyToken";
+import { useSpotifyToken } from "@hooks/useSpotifyToken";
 import { useNavigate } from "react-router-dom";
-import { searchArtists } from "../../../utils/client";
-import IArtistResponse from "../../../types/Spotify/Artist";
-import useLogout from "../../../hooks/useLogout";
+import { searchArtists } from "@utils/client";
+import IArtistResponse from "@/types/Spotify/Artist";
+import useLogout from "@hooks/useLogout";
 
 interface IProps {
   setArtistsResponse: React.Dispatch<React.SetStateAction<IArtistResponse | null>>;

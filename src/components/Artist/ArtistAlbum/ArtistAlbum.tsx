@@ -1,4 +1,4 @@
-import IAlbum from "../../../types/Spotify/Album";
+import IAlbum from "@/types/Spotify/Album";
 
 interface IProps {
   albums: IAlbum[];

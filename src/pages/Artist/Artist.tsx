@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getArtistById, getArtistAlbums } from '../../utils/client';
+import { getArtistById, getArtistAlbums } from '@utils/client';
 import './Artist.scss';
-import {IArtist} from '../../types/Spotify/Artist';
-import IAlbum from '../../types/Spotify/Album';
-import ArtistHeader from '../../components/Artist/ArtistHeader/ArtistHeader';
-import ArtistAlbum from '../../components/Artist/ArtistAlbum/ArtistAlbum';
-import useLogout from '../../hooks/useLogout';
+import {IArtist} from '@/types/Spotify/Artist';
+import IAlbum from '@/types/Spotify/Album';
+import ArtistHeader from '@components/Artist/ArtistHeader/ArtistHeader';
+import ArtistAlbum from '@components/Artist/ArtistAlbum/ArtistAlbum';
+import useLogout from '@hooks/useLogout';
 
 const Artist: React.FC = () => {
   const { id } = useParams<{ id: string }>();

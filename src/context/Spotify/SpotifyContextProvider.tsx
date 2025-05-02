@@ -3,7 +3,7 @@ import SpotifyContext from './SpotifyContext';
 import SpotifyReducer from './SpotifyReducer';
 import initialState from './SpotifyInitialState';
 import { actionType } from './SpotifyAction';
-import { CLIENT_ID, REDIRECT_URI } from '../../utils/consts/spotify';
+import { CLIENT_ID, REDIRECT_URI } from '@utils/consts/spotify';
 
 type TProps = {
   children: React.ReactNode
