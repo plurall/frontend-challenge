@@ -12,6 +12,7 @@ const getHeaders = (token: string) => ({
   * Função para buscar artistas no Spotify
   * @param query - O termo de pesquisa para buscar artistas
   * @param token - O token de acesso do Spotify
+  * @param url - (Opcional) URL personalizada para a requisição
   * @returns Uma Promise do tipo IArtistResponse, que é uma lista de artistas encontrados
   * @throws Se ocorrer um erro durante a requisição, uma mensagem de erro será exibida no console e
   * a exceção será lançada para ser tratada pelo chamador da função.
