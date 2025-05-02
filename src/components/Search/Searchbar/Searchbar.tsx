@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useSpotifyToken } from "@hooks/useSpotifyToken";
 import { useNavigate } from "react-router-dom";
 import { searchArtists } from "@utils/client";
 import IArtistResponse from "@/types/Spotify/Artist";
 import useLogout from "@hooks/useLogout";
+import LayoutContext from "@/context/Layout/LayoutContext";
+import { setErrorMessage } from "@/context/Layout/LayoutAction";
 
 interface IProps {
   setArtistsResponse: React.Dispatch<React.SetStateAction<IArtistResponse | null>>;
@@ -15,6 +17,7 @@ const Searchbar = ({ setArtistsResponse }: IProps) => {
   const [query, setQuery] = useState("");
   const { logout } = useLogout();
 
+  const {state: stateLayout, dispatch: dispatchLayout} = useContext(LayoutContext);
   const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
@@ -36,8 +39,9 @@ const Searchbar = ({ setArtistsResponse }: IProps) => {
       } else {
         setArtistsResponse(null);
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Erro ao buscar artistas xxxx:", error);
+      dispatchLayout(setErrorMessage(stateLayout, "Erro ao buscar artistas"));
       logout();
     } finally {
       setIsSearching(false);
