@@ -69,7 +69,7 @@ const SearchResults = ({ artistsResponse, setArtistsResponse }: IProps) => {
             onClick={() => handleArtistClick(artist.id)}
           >
             <img
-              src={artist.images[0]?.url}
+              src={artist.images[0]?.url ?? "/no-image.png"}
               alt={artist.name}
               className="search-artist-image"
             />

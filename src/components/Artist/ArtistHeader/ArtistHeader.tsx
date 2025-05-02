@@ -7,7 +7,11 @@ interface IProps {
 const ArtistHeader = ({ artist }: IProps) => {
   return (
     <div className="artist-header">
-      <img src={artist.images[0]?.url} alt={artist.name} className="artist-photo" />
+      <img 
+        src={artist.images[0]?.url ?? "/no-image.png"}
+        alt={artist.name} 
+        className="artist-photo" 
+      />
       <div className="artist-info">
         <h1 
           className="artist-name"

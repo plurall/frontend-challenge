@@ -16,7 +16,10 @@ const ArtistAlbum = ({ albums }: IProps) => {
           data-testid="album-card"
           data-cy="album-card"
         >
-          <img src={album.images[0]?.url} alt={album.name} className="album-image" />
+          <img 
+            src={album.images[0]?.url ?? "/no-image.png"}
+            alt={album.name} 
+            className="album-image" />
           <div className="album-info">
             <p className="album-name">{album.name}</p>
             <p className="album-release-date">
