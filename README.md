@@ -42,3 +42,11 @@ O projeto irá rodar por padrão em: http://127.0.0.1:5173/, então basta acessa
 
 Então o Cypress será excutado, talvez na primeira vez você tenha que fazer algumas confirmações em janelas de diálogos que aparecerão, mas é algo bem simples. **Recomendo deixar tudo padrão.**
 
+### Vídeos (no Youtube)
+
+#### Aplicação
+
+[![App](https://i.ytimg.com/vi/M76dy9FnmEE/0.jpg "App")](https://www.youtube.com/watch?v=M76dy9FnmEE "App")
+
+#### Testes
+[![Cypress](https://i.ytimg.com/vi/X2zi1pq2mtA/0.jpg "Cypress")](https://www.youtube.com/watch?v=X2zi1pq2mtA "Cypress")
