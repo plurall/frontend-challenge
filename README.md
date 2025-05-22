@@ -53,7 +53,7 @@ Website: http://127.0.0.1:4200/
 Redirect URIs: http://127.0.0.1:4200/login/callback
 ```
 
-OBS. 1: Não é necessário marcar nenhuma opção em `Which API/SDKs are you planning to use?` mas
+OBS. 1: Não é necessário marcar nenhuma opção em `Which API/SDKs are you planning to use?`. mas se quiser pode marcar a opção `Web API`.
 
 OBS. 2: Para Redirec URIs direcionadas para sua máquina, apenas o endereço com ip `https://127.0.0.1:PORT` é aceito pelo spotify, se quiser, saiba mais [aqui](https://developer.spotify.com/documentation/web-api/concepts/redirect_uri).
 
