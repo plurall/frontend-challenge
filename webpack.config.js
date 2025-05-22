@@ -26,12 +26,14 @@ module.exports = (env, argv) => {
     },
     devServer: {
       port: process.env.PORT,
+      host: process.env.HOST,
       allowedHosts: process.env.HOST,
       static: {
         directory: path.resolve(__dirname, 'public'),
       },
       hot: true,
       historyApiFallback: true,
+      open: true,
     },
     output: {
       path: path.resolve(__dirname, 'build'),
