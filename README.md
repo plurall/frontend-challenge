@@ -44,7 +44,8 @@ Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
 
 ## Setup Spotify API
 
-- Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
+- Logue no [Portal do desenvolvedor do Spotify](https://developer.spotify.com/)
+- Crie uma aplicação em [API do Spotify](https://developer.spotify.com/dashboard/applications).
 - Na tela da aplicação criada, preencha os seguintes campos abaixo.
 - Por fim, clique em `save`.
 
