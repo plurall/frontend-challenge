@@ -1,12 +1,12 @@
 // eslint-disable-next-line
-import { clearToken, getToken } from 'utils'
+import { clearToken, getToken } from './token'
 
 class SomosClient {
   // eslint-disable-next-line
   constructor() {}
 
   // eslint-disable-next-line
-  onError = error => {}
+  onError = (error: unknown) => {}
 
   // eslint-disable-next-line
   async getArtists() {

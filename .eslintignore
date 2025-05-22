@@ -1,0 +1,7 @@
+src/types
+src/react-app-env.d.ts
+node_modules*
+dist
+coverage
+./data
+.vscode
