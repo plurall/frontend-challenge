@@ -60,7 +60,7 @@ OBS. 2: Para Redirec URIs direcionadas para sua máquina, apenas o endereço com
 
 <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/redirect.png" width="50%">
 
-- Abra o arquivo `.env` no `root` do projeto para substituir por esse conteúdo abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
+- Abra o arquivo `.env` no `root` do projeto para substituir por completo por esse conteúdo abaixo, não esqueça de depois mudar o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
 ```shell
 PORT=4200
