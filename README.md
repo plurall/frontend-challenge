@@ -62,7 +62,7 @@ OBS. 2: Para Redirec URIs direcionadas para sua máquina, apenas o endereço com
 
 - Abra o arquivo [`.env`](./.env) na `raiz` do projeto para substituir o valor `YOUR_SPOTIFY_API_CLIENT` do `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
-- Agora você pode parar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://127.0.0.1:4200` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
+- Agora você pode parar o projeto caso esteja rodando, e rodá-lo novamente, `yarn start` e quando entrar em `http://127.0.0.1:4200` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
 <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/spotify.png" width="50%">
 
