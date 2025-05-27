@@ -14,7 +14,7 @@ const LoginCallback = () => {
 
   const location = useLocation()
   const navigate = useNavigate()
-  const { getToken, erro } = useSpotifyAuthentication()
+  const { getToken, error } = useSpotifyAuthentication()
 
   useEffect(() => {
     getToken().then(() => {
@@ -28,8 +28,8 @@ const LoginCallback = () => {
     return
   }
 
-  if (erro) {
-    return <div data-test-id='unauthenticated-message'>{erro}</div>
+  if (error) {
+    return <div data-test-id='unauthenticated-message'>{error}</div>
   }
 
   return (
