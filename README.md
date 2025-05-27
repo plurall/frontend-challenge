@@ -36,7 +36,7 @@ yarn start
 
 Após os passos acima, você conseguirá abrir a aplicação em http://127.0.0.1:4200/.
 
-O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio (como na imagem abaixo). Queremos que você utilize a API do Spotify para autenticação, veja o passo a passo a seguir.
+O `client_id` default não é válido, então você receberá uma mensagem de erro. Para esse desafio (como na imagem abaixo). Queremos que você utilize a API do Spotify para autenticação, veja o passo a passo a seguir.
 
 <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/invalid-client.png">
 
