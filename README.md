@@ -34,15 +34,15 @@ yarn
 yarn start
 ```
 
-Após os passos acima, você conseguirá abrir a aplicação em http://127.0.0.1:4200/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
+Após os passos acima, você conseguirá abrir a aplicação em http://127.0.0.1:4200/.
 
-O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio, queremos que você utilize a API do Spotify para autenticação.
+O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio (como na imagem abaixo). Queremos que você utilize a API do Spotify para autenticação, veja o passo a passo a seguir.
 
 <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/invalid-client.png">
 
-Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
-
 ## Setup Spotify API
+
+Trocar a configuração do projeto é bem simples, segue abaixo o passo a passo pra você conseguir um `client id` do Spotify.
 
 - Logue no [Portal do desenvolvedor do Spotify](https://developer.spotify.com/)
 - Crie uma aplicação em [API do Spotify](https://developer.spotify.com/dashboard/applications).
@@ -60,18 +60,7 @@ OBS. 2: Para Redirec URIs direcionadas para sua máquina, apenas o endereço com
 
 <img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/redirect.png" width="50%">
 
-- Abra o arquivo `.env` no `root` do projeto para substituir por completo por esse conteúdo abaixo, não esqueça de depois mudar o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
-
-```shell
-PORT=4200
-HOST=127.0.0.1
-REACT_APP_NODE_ENV=local
-REACT_APP_ACCESS_TOKEN_URL=https://accounts.spotify.com/api/token
-REACT_APP_AUTHORIZATION_URL=https://accounts.spotify.com/authorize
-REACT_APP_CLIENT_ID=YOUR_SPOTIFY_API_CLIENT
-REACT_APP_API_URL=https://api.spotify.com/v1
-REACT_APP_CALLBACK_URL=http://127.0.0.1:4200/login/callback
-```
+- Abra o arquivo [`.env`](./.env) na `raiz` do projeto para substituir o valor `YOUR_SPOTIFY_API_CLIENT` do `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
 - Agora você pode parar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://127.0.0.1:4200` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
 
