@@ -24,7 +24,9 @@ const Layout = ({ children }: ILayout) => {
       <div className={navBar}>
         <NavBar
           data={{
-            menu: { items: [{ name: 'Início', slug: 'account', id: 0 }] },
+            menu: {
+              items: [{ name: 'Início', slug: 'account', id: 0, href: window.location.origin }],
+            },
           }}
           logout={handleLogout}
           service='reader'
