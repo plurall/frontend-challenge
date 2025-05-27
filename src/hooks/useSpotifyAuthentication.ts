@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { setToken } from 'utils/token'
 
 export const useSpotifyAuthentication = () => {
-  const [error, setError] = useState<string>('')
+  const [error, setError] = useState('')
   /*
    * Gera um código de verificação e um desafio de código para autenticação OAuth 2.0
    * usando o PKCE (Proof Key for Code Exchange).
