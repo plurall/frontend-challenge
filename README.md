@@ -23,62 +23,48 @@ Abaixo estão algumas caracteristicas que achamos importantes:
 
 ## Configurando o ambiente
 
-Você precisa ter [Node 16.13.1](https://nodejs.org/en/) (ou compatível) instalado para conseguir rodar o desafio.
+Você precisa ter [Node 22.14.0](https://nodejs.org/en/) (ou compatível) instalado para conseguir rodar o desafio.
 
 Faça fork do projeto em sua conta pessoal e siga os passos a seguir.
-
-### Adicione o url do Plurall no seu `/etc/hosts`.
-
-No Mac/Linux, faça:
-
-```shell
-echo '127.0.0.1\tboilerplate.local.plurall.net' | sudo tee -a /etc/hosts
-```
-
-No windows, siga esse [tutorial](https://king.host/wiki/artigo/como-editar-o-arquivo-hosts-no-windows/), e adicione a linha `127.0.0.1 boilerplate.local.plurall.net` no arquivo de hosts.
 
 ### Instale as dependências e start o projeto
 
 ```shell
-yarn 
+yarn
 yarn start
 ```
 
-Após os passos acima, você conseguirá abrir a aplicação em http://boilerplate.local.plurall.net:3000/. Porém, como nossas aplicações são autenticadas com o OAuth, você será redirecionado para o SomosID (nosso serviço de autenticação).
+Após os passos acima, você conseguirá abrir a aplicação em http://127.0.0.1:4200/.
 
-O client_id default não é válido, então você receberá uma mensagem de erro. Para esse desafio, queremos que você utilize a API do Spotify para autenticação.
+O `client_id` default não é válido, então você receberá uma mensagem de erro. Para esse desafio (como na imagem abaixo). Queremos que você utilize a API do Spotify para autenticação, veja o passo a passo a seguir.
 
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/invalid-client.png">
-
-Como eles também usam OAuth, trocar a configuração do projeto é bem simples.
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/invalid-client.png">
 
 ## Setup Spotify API
 
-- Criar uma aplicação na [API do Spotify](https://developer.spotify.com/dashboard/applications).
-- Entrar na aplicação criada, clicar no botão `edit settings` e preencher os seguintes campos abaixo.
-- Clicar em `save`.
+Trocar a configuração do projeto é bem simples, segue abaixo o passo a passo pra você conseguir um `client id` do Spotify.
+
+- Logue no [Portal do desenvolvedor do Spotify](https://developer.spotify.com/)
+- Crie uma aplicação em [API do Spotify](https://developer.spotify.com/dashboard/applications).
+- Na tela da aplicação criada, preencha os seguintes campos abaixo.
+- Por fim, clique em `save`.
 
 ```
-Website: http://boilerplate.local.plurall.net:3000
-Redirect URIs: http://boilerplate.local.plurall.net:3000/login/callback
+Website: http://127.0.0.1:4200/
+Redirect URIs: http://127.0.0.1:4200/login/callback
 ```
 
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/redirect.png" width="50%">
+OBS. 1: Não é necessário marcar nenhuma opção em `Which API/SDKs are you planning to use?`. mas se quiser pode marcar a opção `Web API`.
 
-- Abrir o arquivo `.env` no `root` do projeto, substituir para esse abaixo, ps: mudando o `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
+OBS. 2: Para Redirec URIs direcionadas para sua máquina, apenas o endereço com ip `https://127.0.0.1:PORT` é aceito pelo spotify, se quiser, saiba mais [aqui](https://developer.spotify.com/documentation/web-api/concepts/redirect_uri).
 
-```shell
-NODE_PATH=src/
-REACT_APP_ACCESS_TOKEN_URL=https://accounts.spotify.com/api/token
-REACT_APP_AUTHORIZATION_URL=https://accounts.spotify.com/authorize
-REACT_APP_CLIENT_ID=YOUR_SPOTIFY_API_CLIENT
-REACT_APP_API_URL=https://api.spotify.com/v1
-REACT_APP_CALLBACK_URL=http://boilerplate.local.plurall.net:3000/login/callback
-```
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/redirect.png" width="50%">
 
-- Agora você pode stopar o projeto caso esteja rodando, e roda-lo novamente, `yarn start` e quando entrar em `http://boilerplate.local.plurall.net:3000` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
+- Abra o arquivo [`.env`](./.env) na `raiz` do projeto para substituir o valor `YOUR_SPOTIFY_API_CLIENT` do `REACT_APP_CLIENT_ID` para o `client id` gerado pelo spotify.
 
-<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/spotify.png" width="50%">
+- Agora você pode parar o projeto caso esteja rodando, e rodá-lo novamente, `yarn start` e quando entrar em `http://127.0.0.1:4200` você vai ser redirecionado para logar no Spotify, você deve estar vendo uma página como essa:
+
+<img src="https://assets.cdn.plurall.net/static/assets/images/frontend-challenge/webpack/spotify.png" width="50%">
 
 - Logue com suas credenciais, e você será redirecionado para a aplicação :facepunch: :smile: e já deve estar vendo uma página como essa abaixo.
 

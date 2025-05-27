@@ -1,5 +1,8 @@
 .nav-bar {
   background-color: var(--color-purple);
+  > div {
+    height: var(--height-nav-bar);
+  }
 }
 
 .content {
