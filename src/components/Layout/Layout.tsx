@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react'
 
 import { Footer } from 'plurall-footer'
 import NavBar from 'plurall-header'
-
 import { getToken, setToken } from 'utils'
 
 import * as styles from './Layout.module.scss'

@@ -1,0 +1,59 @@
+.artistCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 290px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.imageContainer {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #282828;
+}
+
+.artistImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artistInfo {
+  text-align: center;
+}
+
+.artistName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: #6b4ba3; // Cor roxa do Plurall
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #8a6cc6;
+  }
+}
+
+.artistType {
+  font-size: 0.875rem;
+  color: #666666;
+  margin: 0.25rem 0 0;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  opacity: 0.9;
+
+  &:hover {
+    color: #6b4ba3;
+  }
+}

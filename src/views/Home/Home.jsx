@@ -1,8 +1,7 @@
 import React from 'react'
-
-import { SubHeader } from 'components'
+import { Link } from 'react-router-dom'
+import { SubHeader, Wrapper } from 'components'
 import { SomosClient } from 'utils'
-
 import * as styles from './Home.module.scss'
 
 class Home extends React.Component {
@@ -14,9 +13,13 @@ class Home extends React.Component {
     return (
       <>
         <SubHeader breadcrumb={[{ text: 'Home' }]} heading='Desafio Front-end do Plurall' />
-        <div className={styles?.wrapper || ''}>
-          <h1>Home da aplicação</h1>
-        </div>
+        <Wrapper>
+          <div className={styles.container}>
+            <Link to='/busca' className={styles.searchButton}>
+              Buscar Artistas
+            </Link>
+          </div>
+        </Wrapper>
       </>
     )
   }

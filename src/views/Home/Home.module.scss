@@ -1,6 +1,96 @@
-.wrapper {
-  max-width: 1224px;
-  padding: 30px 20px;
-  margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.searchButton {
+  display: inline-block;
+  min-width: 200px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 40px;
+  background-color: #6750a4;
+  background-image: linear-gradient(
+    110deg,
+    transparent 33%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 67%
+  );
+  background-size: 200% 100%;
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(103, 80, 164, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s infinite ease-in-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.6s ease-out,
+      height 0.6s ease-out;
+  }
+
+  &:hover {
+    background-color: #7b61b9;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(103, 80, 164, 0.3);
+    animation: shimmer 2s infinite linear;
+
+    &::before {
+      width: 400px;
+      height: 400px;
+      opacity: 0;
+      transition: all 0.8s ease-out;
+    }
+  }
+
+  &:active {
+    background-color: #563d8f;
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 8px rgba(103, 80, 164, 0.2);
+    transition: all 0.1s ease-out;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 32px;
+    min-width: 160px;
+  }
 }
