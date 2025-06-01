@@ -57,7 +57,7 @@ export const useSpotifyAuthentication = () => {
     const params = new URLSearchParams({
       response_type: 'code',
       client_id: process.env.REACT_APP_CLIENT_ID || '',
-      scope: 'user-read-private',
+      scope: 'user-read-private user-read-email user-library-read',
       code_challenge_method: 'S256',
       code_challenge: challenge,
       redirect_uri: process.env.REACT_APP_CALLBACK_URL || '',
