@@ -6,6 +6,7 @@ import { Error, Home, LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
 import App from './App'
 import SearchArtist from 'views/SearchArtist'
+import Artist from 'views/Artist'
 
 const callbackHistory: Array<(callback: (location: any) => void) => void> = []
 window.PLURALL_CUSTOM_HISTORY = {
@@ -46,6 +47,7 @@ root.render(
         >
           <Route index element={<Home />} />
           <Route path='search' element={<SearchArtist />} />
+          <Route path='artist/:id' element={<Artist />} />
           <Route path='*' element={<Navigate to='/' replace />} />
         </Route>
       </Routes>
