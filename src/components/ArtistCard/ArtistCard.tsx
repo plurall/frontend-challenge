@@ -1,13 +1,12 @@
 import React from 'react'
 import * as styles from './ArtistCard.module.scss'
 
-type Props = {
-  id: string
+type IArtistCardProps = {
   name: string
   imageUrl?: string
 }
 
-const ArtistCard = ({ id, name, imageUrl }: Props) => {
+const ArtistCard = ({ name, imageUrl }: IArtistCardProps) => {
   return (
     <div className={styles.card}>
       <img src={imageUrl || '/placeholder.png'} alt={name} className={styles.image} />
