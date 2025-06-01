@@ -1,6 +1,47 @@
-.wrapper {
-  max-width: 1224px;
-  padding: 30px 20px;
-  margin: 0 auto;
-  font: 16px/14px 'Nunito', sans-serif;
+.homepage {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: var(--padding);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 28px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  text-decoration: none; /* para o Link */
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #17a44b; /* um verde um pouco mais escuro */
+  }
+
+  @media (max-width: var(--breakpoint-sm)) {
+    padding: 10px 20px;
+    font-size: var(--font-size-sm);
+  }
 }
