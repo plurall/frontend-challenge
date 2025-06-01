@@ -1,12 +1,12 @@
 import React from 'react'
 import { Layout } from 'components'
-import { Home } from 'views'
 
 import './App.module.scss'
+import { Outlet } from 'react-router-dom'
 
 const App = () => (
   <Layout>
-    <Home />
+    <Outlet />
   </Layout>
 )
 
