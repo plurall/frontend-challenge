@@ -1,0 +1,36 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: var(--padding);
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 6px;
+  outline-offset: 2px;
+
+  &:focus {
+    border-color: var(--color-green);
+    box-shadow: 0 0 4px var(--color-green);
+  }
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
