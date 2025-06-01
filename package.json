@@ -3,6 +3,8 @@
   "private": false,
   "version": "0.1.0",
   "dependencies": {
+    "@tanstack/react-query": "^5.79.0",
+    "@types/node": "^22.15.29",
     "history": "^5.2.0",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
