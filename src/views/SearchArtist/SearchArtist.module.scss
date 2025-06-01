@@ -1,9 +1,9 @@
 .container {
   padding: var(--padding);
-  min-height: 100vh;
+  background-color: var(--color-dark-gray);
   color: var(--color-white);
+  min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
   position: relative;
-  min-height: 200px;
 }
 
 .listResults {
