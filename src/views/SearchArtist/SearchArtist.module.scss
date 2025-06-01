@@ -1,0 +1,13 @@
+.container {
+  padding: var(--padding);
+  min-height: 100vh;
+  color: var(--color-white);
+}
+
+.listResults {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
