@@ -2,6 +2,8 @@
   padding: var(--padding);
   min-height: 100vh;
   color: var(--color-white);
+  position: relative;
+  min-height: 200px;
 }
 
 .listResults {
@@ -11,3 +13,9 @@
   margin-top: 24px;
 }
 
+.spinnerWrapper {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

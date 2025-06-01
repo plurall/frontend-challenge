@@ -44,15 +44,19 @@ const SearchArtist = () => {
   }, [])
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <SearchInput value={searchQuery} changeValue={handleChange} label='Buscar artista' />
 
-      {isLoading && <Spinner />}
+      {isLoading && (
+        <div className={styles.spinnerWrapper}>
+          <Spinner />
+        </div>
+      )}
 
       {error && <p role='alert'>Erro ao buscar artistas</p>}
 
       {searchResult?.artists && <ArtistList artists={searchResult.artists.items} />}
-    </div>
+    </section>
   )
 }
 
