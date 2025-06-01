@@ -8,25 +8,24 @@ import ArtistCard from 'components/ArtistCard/ArtistCard'
 import { useSearchArtists } from '../../apis/spotify/queries/useSearchArtists'
 import { Link } from 'react-router-dom'
 import { useDebounce } from 'hooks/useDebounce'
-
-interface Artist {
+interface IArtistProps {
   id: string
   name: string
   images: { url: string }[]
 }
 
-interface ArtistListProps {
-  artists: Artist[]
+interface IArtistListProps {
+  artists: IArtistProps[]
 }
 
-const ArtistList = React.memo(({ artists }: ArtistListProps) => {
+const ArtistList = React.memo(({ artists }: IArtistListProps) => {
   if (!artists.length) return <p>No artists found.</p>
 
   return (
     <div className={styles.listResults}>
       {artists.map(artist => (
         <Link to={`/artist/${artist.id}`} key={artist.id}>
-          <ArtistCard id={artist.id} name={artist.name} imageUrl={artist.images[0]?.url} />
+          <ArtistCard name={artist.name} imageUrl={artist.images[0]?.url} />
         </Link>
       ))}
     </div>
