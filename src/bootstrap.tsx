@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client'
 import { Error, Home, LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
 import App from './App'
-import Search from 'views/Search'
+import SearchArtist from 'views/SearchArtist'
 
 const callbackHistory: Array<(callback: (location: any) => void) => void> = []
 window.PLURALL_CUSTOM_HISTORY = {
@@ -45,7 +45,7 @@ root.render(
           }
         >
           <Route index element={<Home />} />
-          <Route path='search' element={<Search />} />
+          <Route path='search' element={<SearchArtist />} />
           <Route path='*' element={<Navigate to='/' replace />} />
         </Route>
       </Routes>
