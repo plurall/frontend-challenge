@@ -5,7 +5,7 @@ import { clearToken, getToken } from './token'
 const BASE_URL = 'https://api.spotify.com/v1'
 
 /*
-  Nao utilizei este exemplo para conseguir exemplificar a configuracao do service e uma arquitetura minima para o react query
+  Nao utilizei este exemplo para conseguir exemplificar a configuracao do service e uma arquitetura minima para o react query na pasta api
 */
 class SomosClient {
   constructor() {}
