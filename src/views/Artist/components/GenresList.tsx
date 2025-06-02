@@ -1,3 +1,4 @@
+import React from 'react'
 import * as styles from '../Artist.module.scss'
 
 export function GenresList({ genres }: { genres: string[] }) {

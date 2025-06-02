@@ -1,3 +1,4 @@
+import React from 'react'
 import { formatDate } from 'utils/formatDate'
 import * as styles from '../Artist.module.scss'
 import { Album } from 'types/artist'

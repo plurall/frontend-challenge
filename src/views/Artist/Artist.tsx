@@ -1,3 +1,4 @@
+import React from 'react'
 import { useArtistDetails } from '../../apis/spotify/queries/useArtistDetails'
 import { useParams } from 'react-router-dom'
 import * as styles from './Artist.module.scss'

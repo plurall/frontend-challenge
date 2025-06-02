@@ -1,3 +1,4 @@
+import React from 'react'
 import * as styles from '../Artist.module.scss'
 import { Artist } from 'types/artist'
 import { GenresList } from './GenresList'
