@@ -1,3 +1,8 @@
+export interface IArtistsImages {
+  url: string
+  height: number
+  width: number
+}
 export interface IArtist {
   external_urls: {
     spotify: string
@@ -9,11 +14,7 @@ export interface IArtist {
   genres: string[]
   href: string
   id: string
-  images: {
-    url: string
-    height: number
-    width: number
-  }[]
+  images: IArtistsImages[]
   name: string
   popularity: number
   type: string

@@ -1,0 +1,68 @@
+.popularityContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgb(255, 255, 255);
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(103, 80, 164, 0.1);
+  }
+}
+
+.popularityLabel {
+  color: #6750a4;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.popularityBar {
+  flex: 1;
+  height: 8px;
+  background-color: rgba(103, 80, 164, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 300px;
+  position: relative;
+}
+
+.popularityFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6750a4 0%, #7b61b9 100%);
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2s infinite;
+  }
+}
+
+.popularityValue {
+  color: #6750a4;
+  font-weight: 600;
+  min-width: 45px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .popularityContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

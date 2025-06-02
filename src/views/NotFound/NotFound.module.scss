@@ -1,0 +1,39 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+
+  h1 {
+    font-size: 6rem;
+    margin: 0;
+    color: #1db954;
+    padding-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .homeLink {
+    padding: 0.8rem 1.5rem;
+    background-color: #1db954;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #1ed760;
+    }
+  }
+}

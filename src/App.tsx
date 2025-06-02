@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from 'components'
-import { Home, Busca, Artista, Error, LoginCallback } from 'views'
+import { Home, Busca, Artista, Error, LoginCallback, NotFound } from 'views'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { PrivateRoute } from 'components'
 import './App.module.scss'
@@ -32,6 +32,7 @@ const MainContent = () => (
       <Route path='/' element={<Home />} />
       <Route path='/busca' element={<Busca />} />
       <Route path='/artista/:id' element={<Artista />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   </Layout>
 )

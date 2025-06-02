@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from '../Artista.module.scss'
+import * as styles from './Popularity.module.scss'
 
 const Popularity: React.FC<{ popularity: number }> = ({ popularity }) => {
   return (

@@ -11,16 +11,15 @@ class SomosClient {
 
   // eslint-disable-next-line
   onError = (error: unknown) => {
-    clearToken()
     if (
       error &&
       typeof error === 'object' &&
       'response' in error &&
       (error.response as { status?: number })?.status === 401
     ) {
+      clearToken()
       window.location.href = `/error?title=Não autorizado&message=Sua sessão expirou. Clique no botão abaixo para recarregar a página.&status=401`
     }
-    console.log(error)
   }
 
   // eslint-disable-next-line

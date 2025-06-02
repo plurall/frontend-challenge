@@ -1,0 +1,26 @@
+.genreList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.genreTag {
+  padding: 8px 16px;
+  background: rgba(103, 80, 164, 0.1);
+  color: #6750a4;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(103, 80, 164, 0.2);
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 768px) {
+  .genres {
+    justify-content: center;
+  }
+}

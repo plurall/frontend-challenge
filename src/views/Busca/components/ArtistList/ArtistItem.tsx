@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import * as styles from './ListaArtistas.module.scss'
+import * as styles from './ArtistItem.module.scss'
 import { IArtistaItem } from 'interfaces'
 
-const ListaArtistas: React.FC<IArtistaItem> = ({ id, name, type, imageUrl }) => {
+const ArtistItem: React.FC<IArtistaItem> = ({ id, name, type, imageUrl }) => {
   return (
     <Link to={`/artista/${id}`} className={styles.artistCard}>
       <div className={styles.imageContainer}>
@@ -17,4 +17,4 @@ const ListaArtistas: React.FC<IArtistaItem> = ({ id, name, type, imageUrl }) => 
   )
 }
 
-export default ListaArtistas
+export default ArtistItem
