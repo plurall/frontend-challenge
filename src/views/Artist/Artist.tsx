@@ -5,6 +5,8 @@ import * as styles from './Artist.module.scss'
 import Spinner from 'components/Spinner/Spinner'
 import { ArtistHeader } from './components/ArtistHeader'
 import { AlbumList } from './components/AlbumList'
+import Wrapper from 'components/Wrapper/Wrapper'
+import { BackButton } from 'components/BackButton/BackButton'
 
 export default function Artist() {
   const { id: artistId } = useParams()
@@ -16,10 +18,13 @@ export default function Artist() {
 
   return (
     <main className={styles.container}>
-      {isLoading && <Spinner />}
-      {error && <p>Erro ao carregar artista</p>}
-      <ArtistHeader artist={artist} />
-      <AlbumList albums={albums} />
+      <Wrapper>
+        <BackButton />
+        {isLoading && <Spinner />}
+        {error && <p>Erro ao carregar artista</p>}
+        <ArtistHeader artist={artist} />
+        <AlbumList albums={albums} />
+      </Wrapper>
     </main>
   )
 }

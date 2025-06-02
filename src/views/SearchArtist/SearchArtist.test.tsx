@@ -27,7 +27,11 @@ describe('<SearchArtist />', () => {
       error: null,
     } as UseSearchArtistsReturn)
 
-    render(<SearchArtist />)
+    render(
+      <MemoryRouter>
+        <SearchArtist />
+      </MemoryRouter>,
+    )
 
     const spinner = await screen.findByTestId('spinner')
     expect(spinner).toBeInTheDocument()
@@ -40,7 +44,11 @@ describe('<SearchArtist />', () => {
       error: 'API error',
     } as UseSearchArtistsReturn)
 
-    render(<SearchArtist />)
+    render(
+      <MemoryRouter>
+        <SearchArtist />
+      </MemoryRouter>,
+    )
 
     expect(screen.getByRole('alert')).toHaveTextContent('Erro ao buscar artistas')
   })
@@ -90,7 +98,11 @@ describe('<SearchArtist />', () => {
       error: null,
     } as UseSearchArtistsReturn)
 
-    render(<SearchArtist />)
+    render(
+      <MemoryRouter>
+        <SearchArtist />
+      </MemoryRouter>,
+    )
 
     expect(screen.getByText('No artists found.')).toBeInTheDocument()
   })

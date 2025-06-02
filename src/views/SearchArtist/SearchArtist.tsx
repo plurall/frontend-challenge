@@ -8,6 +8,8 @@ import ArtistCard from 'components/ArtistCard/ArtistCard'
 import { useSearchArtists } from '../../apis/spotify/queries/useSearchArtists'
 import { Link } from 'react-router-dom'
 import { useDebounce } from 'hooks/useDebounce'
+import { BackButton } from 'components/BackButton/BackButton'
+import Wrapper from 'components/Wrapper/Wrapper'
 interface IArtistProps {
   id: string
   name: string
@@ -44,17 +46,20 @@ const SearchArtist = () => {
 
   return (
     <section className={styles.container}>
-      <SearchInput value={searchQuery} changeValue={handleChange} label='Buscar artista' />
+      <Wrapper>
+        <BackButton />
+        <SearchInput value={searchQuery} changeValue={handleChange} label='Buscar artista' />
 
-      {isLoading && (
-        <div className={styles.spinnerWrapper}>
-          <Spinner />
-        </div>
-      )}
+        {isLoading && (
+          <div className={styles.spinnerWrapper}>
+            <Spinner />
+          </div>
+        )}
 
-      {error && <p role='alert'>Erro ao buscar artistas</p>}
+        {error && <p role='alert'>Erro ao buscar artistas</p>}
 
-      {searchResult?.artists && <ArtistList artists={searchResult.artists.items} />}
+        {searchResult?.artists && <ArtistList artists={searchResult.artists.items} />}
+      </Wrapper>
     </section>
   )
 }

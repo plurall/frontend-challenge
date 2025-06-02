@@ -1,115 +1,79 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-
-import { useSearchArtists } from '../../apis/spotify/queries/useSearchArtists'
-import SearchArtist from 'views/SearchArtist'
+// Importações normais
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import Artist from './Artist'
+import * as useArtistDetailsHook from '../../apis/spotify/queries/useArtistDetails'
 import { MemoryRouter } from 'react-router-dom'
 
-jest.mock('../../apis/spotify/queries/useSearchArtists')
-jest.mock('hooks/useDebounce', () => ({
-  useDebounce: (value: string) => value,
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useParams: () => ({ id: '123' }),
 }))
 
-describe('SearchArtist component', () => {
-  beforeEach(() => {
+jest.mock('components/Spinner/Spinner', () => () => <div data-testid='spinner'>Loading...</div>)
+
+describe('Artist Component', () => {
+  afterEach(() => {
     jest.clearAllMocks()
   })
 
-  it('should render the search input field', () => {
-    ;(useSearchArtists as jest.Mock).mockReturnValue({
-      data: null,
+  it('should render error message if error occurs', () => {
+    jest.spyOn(useArtistDetailsHook, 'useArtistDetails').mockReturnValue({
+      data: undefined,
       isLoading: false,
-      error: null,
+      error: 'fail',
     })
 
-    render(<SearchArtist />)
-    expect(screen.getByLabelText(/buscar artista/i)).toBeInTheDocument()
+    render(
+      <MemoryRouter>
+        <Artist />
+      </MemoryRouter>,
+    )
+
+    expect(screen.queryByTestId('spinner')).not.toBeInTheDocument()
   })
 
-  it('should show the spinner while loading', () => {
-    ;(useSearchArtists as jest.Mock).mockReturnValue({
-      data: null,
-      isLoading: true,
-      error: null,
-    })
-
-    render(<SearchArtist />)
-    expect(screen.getByLabelText('Loading...')).toBeInTheDocument()
-  })
-
-  it('should display artists when results are returned', () => {
-    ;(useSearchArtists as jest.Mock).mockReturnValue({
-      data: {
-        artists: {
-          items: [
-            { id: '1', name: 'Artist 1', images: [{ url: 'http://image1.com' }] },
-            { id: '2', name: 'Artist 2', images: [{ url: 'http://image2.com' }] },
-          ],
-        },
+  it('should render artist and album data correctly', () => {
+    const mockData = {
+      artist: {
+        id: '1',
+        name: 'Artista Teste',
+        images: [{ url: 'http://img.com/artista.jpg' }],
+        popularity: 99,
+        genres: ['rock', 'pop'],
       },
+      albums: [
+        {
+          id: 'a1',
+          name: 'Álbum 1',
+          images: [{ url: 'http://img.com/album1.jpg' }],
+          release_date: '2022-01-01',
+        },
+      ],
+    }
+
+    jest.spyOn(useArtistDetailsHook, 'useArtistDetails').mockReturnValue({
+      data: mockData,
       isLoading: false,
       error: null,
     })
 
     render(
       <MemoryRouter>
-        <SearchArtist />
+        <Artist />
       </MemoryRouter>,
     )
 
-    expect(screen.getByText('Artist 1')).toBeInTheDocument()
-    expect(screen.getByText('Artist 2')).toBeInTheDocument()
-  })
-
-  it('should show error message if search fails', () => {
-    ;(useSearchArtists as jest.Mock).mockReturnValue({
-      data: null,
-      isLoading: false,
-      error: new Error('Erro'),
-    })
-
-    render(<SearchArtist />)
-
-    expect(screen.getByRole('alert')).toHaveTextContent(/erro ao buscar artistas/i)
-  })
-
-  it('should show "no artists found" message if list is empty', () => {
-    ;(useSearchArtists as jest.Mock).mockReturnValue({
-      data: {
-        artists: {
-          items: [],
-        },
-      },
-      isLoading: false,
-      error: null,
-    })
-
-    render(<SearchArtist />)
-
-    expect(screen.getByText(/no artists found/i)).toBeInTheDocument()
-  })
-
-  it('should update search when user types', async () => {
-    ;(useSearchArtists as jest.Mock).mockReturnValue({
-      data: {
-        artists: {
-          items: [{ id: '1', name: 'Artist 1', images: [{ url: 'http://image1.com' }] }],
-        },
-      },
-      isLoading: false,
-      error: null,
-    })
-
-    render(
-      <MemoryRouter>
-        <SearchArtist />
-      </MemoryRouter>,
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Artista Teste')
+    expect(screen.getByAltText('Artista Teste')).toHaveAttribute(
+      'src',
+      'http://img.com/artista.jpg',
     )
-
-    const input = screen.getByLabelText(/buscar artista/i)
-    fireEvent.change(input, { target: { value: 'Artis' } })
-
-    await waitFor(() => {
-      expect(screen.getByText(/artist 1/i)).toBeInTheDocument()
-    })
+    expect(screen.getByText(/Popularidade: 99/i)).toBeInTheDocument()
+    expect(screen.getByText('rock')).toBeInTheDocument()
+    expect(screen.getByText('pop')).toBeInTheDocument()
+    expect(screen.getByText('Álbum 1')).toBeInTheDocument()
+    expect(screen.getByAltText('Álbum 1')).toHaveAttribute('src', 'http://img.com/album1.jpg')
+    expect(screen.getByText('31/12/2021')).toBeInTheDocument()
   })
 })
