@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+
 import { useSearchArtists } from '../../apis/spotify/queries/useSearchArtists'
 import SearchArtist from 'views/SearchArtist'
 import { MemoryRouter } from 'react-router-dom'
@@ -105,7 +106,7 @@ describe('SearchArtist component', () => {
     )
 
     const input = screen.getByLabelText(/buscar artista/i)
-    fireEvent.change(input, { target: { value: 'beatles' } })
+    fireEvent.change(input, { target: { value: 'Artis' } })
 
     await waitFor(() => {
       expect(screen.getByText(/artist 1/i)).toBeInTheDocument()

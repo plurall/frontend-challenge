@@ -5,6 +5,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.79.0",
     "@types/node": "^22.15.29",
+    "@types/testing-library__jest-dom": "^6.0.0",
     "history": "^5.2.0",
     "plurall-footer": "^2.4.29",
     "plurall-header": "^5",
@@ -23,7 +24,7 @@
     "@babel/preset-typescript": "^7.27.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.0",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
     "@types/react": "^18.0.8",

@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
 import 'jest-canvas-mock'
 import { configure } from '@testing-library/react'
@@ -12,6 +13,6 @@ const localStorageMock = {
   clear: jest.fn(),
 }
 
-Object.defineProperty(global, 'localStorage', {
+Object.defineProperty(globalThis, 'localStorage', {
   value: localStorageMock,
 })

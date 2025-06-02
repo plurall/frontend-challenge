@@ -37,7 +37,7 @@ describe('<SearchArtist />', () => {
     jest.spyOn(spotifyHooks, 'useSearchArtists').mockReturnValue({
       data: undefined,
       isLoading: false,
-      error: new Error('API error'),
+      error: 'API error',
     } as UseSearchArtistsReturn)
 
     render(<SearchArtist />)
