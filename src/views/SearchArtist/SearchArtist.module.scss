@@ -1,0 +1,21 @@
+.container {
+  padding: var(--padding);
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer));
+  position: relative;
+}
+
+.listResults {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.spinnerWrapper {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

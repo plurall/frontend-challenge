@@ -1,10 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
 
-import { Error, LoginCallback } from 'views'
+import { Error, Home, LoginCallback } from 'views'
 import { PrivateRoute } from 'components'
 import App from './App'
+import SearchArtist from 'views/SearchArtist'
+import Artist from 'views/Artist'
 
 const callbackHistory: Array<(callback: (location: any) => void) => void> = []
 window.PLURALL_CUSTOM_HISTORY = {
@@ -36,13 +38,18 @@ root.render(
         <Route path='/login/callback' element={<LoginCallback />} />
         <Route path='/error' element={<Error />} />
         <Route
-          path='*'
+          path='/*'
           element={
             <PrivateRoute>
               <App />
             </PrivateRoute>
           }
-        />
+        >
+          <Route index element={<Home />} />
+          <Route path='search' element={<SearchArtist />} />
+          <Route path='artist/:id' element={<Artist />} />
+          <Route path='*' element={<Navigate to='/' replace />} />
+        </Route>
       </Routes>
     </History>
   </BrowserRouter>,
