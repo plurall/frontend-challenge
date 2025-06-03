@@ -1,0 +1,96 @@
+.albunsSection {
+  margin-top: 50px;
+}
+
+.albunsTitle {
+  color: #1c1b1f;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #6750a4;
+    border-radius: 2px;
+  }
+}
+
+.albunsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.albumCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(103, 80, 164, 0.08);
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(103, 80, 164, 0.15);
+
+    .albumImage {
+      transform: scale(1.05);
+    }
+
+    .albumName {
+      color: #6750a4;
+    }
+  }
+}
+
+.albumImage {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.albumInfo {
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(103, 80, 164, 0.02) 100%);
+}
+
+.albumName {
+  color: #1c1b1f;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.albumDate {
+  color: #79747e;
+  font-size: 14px;
+  display: block;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .albunsTitle {
+    font-size: 24px;
+    text-align: center;
+    display: block;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .albunsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+}

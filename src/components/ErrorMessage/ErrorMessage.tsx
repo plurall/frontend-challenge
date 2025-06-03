@@ -1,3 +1,4 @@
+import React from 'react'
 import * as styles from './ErrorMessage.module.scss'
 
 interface IErrorMessageProps {
@@ -6,11 +7,11 @@ interface IErrorMessageProps {
   dataTestId?: string
 }
 
-const ErrorMessage = ({
+const ErrorMessage: React.FC<IErrorMessageProps> = ({
   subTitle,
-  title = 'Corremos e voamos, mas não encontramos o que você busca.',
+  title = 'Não encontramos o que você busca.',
   dataTestId,
-}: IErrorMessageProps) => {
+}) => {
   return (
     <div data-test-id={dataTestId} className={styles['no-results']}>
       <div className={styles['title-wrapper']}>

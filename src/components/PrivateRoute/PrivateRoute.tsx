@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { useSpotifyAuthentication } from 'hooks/useSpotifyAuthentication'
-
 import { getToken } from 'utils'
 
 interface IPrivateRoute {

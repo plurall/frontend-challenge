@@ -1,0 +1,19 @@
+.artistContent {
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .artistContent {
+    padding: 20px;
+  }
+}
